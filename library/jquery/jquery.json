@@ -1,0 +1,29 @@
+{
+    "name": "jQuery",
+    "vendor": "jquery",
+    "type": "library",
+    "license": "MIT",
+    "desc": "jQuery lib.",
+    "tags": [
+        "jquery",
+        "javascript"
+    ],
+    "versions": {
+        "2.1.1": {
+            "project": "https://github.com/components/jquery",
+            "url": "https://github.com/components/jquery/archive/master.zip",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.6"
+            ],
+            "mapping": [
+                {
+                    "src": "",
+                    "dest": "modules/ioly/lib/jquery/"
+                }
+            ]
+        }
+    }
+}

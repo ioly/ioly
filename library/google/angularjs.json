@@ -1,0 +1,29 @@
+{
+    "name": "angular.js",
+    "vendor": "google",
+    "type": "library",
+    "license": "MIT",
+    "desc": "angular.js lib.",
+    "tags": [
+        "angular",
+        "javascript"
+    ],
+    "versions": {
+        "1.3.0": {
+            "project": "https://github.com/components/angular.js",
+            "url": "https://github.com/components/angular.js/archive/master.zip",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.6"
+            ],
+            "mapping": [
+                {
+                    "src": "",
+                    "dest": "modules/ioly/lib/angularjs/"
+                }
+            ]
+        }
+    }
+}
