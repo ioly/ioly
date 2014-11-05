@@ -20,8 +20,11 @@
             "mapping": [
                 {
                     "src": "",
-                    "dest": "modules/processor/"
+                    "dest": "modules/gn2netwerk/processor/"
                 }
+            ],
+            "touch": [
+                "modules/gn2netwerk/vendormetadata.php"
             ]
         }
     }
