@@ -1,0 +1,29 @@
+{
+    "name": "HDI-Report",
+    "vendor": "ecomstyle",
+    "type": "oxid",
+    "license": "GNU",
+    "desc": "A more extensive statistical analysis of sales figures.",
+    "tags": [
+        "backend",
+        "statistics",
+        "orders"
+    ],
+    "versions": {
+        "0.9.6": {
+            "project": "https://github.com/ecomstyle/HDI-Report",
+            "url": "https://github.com/ecomstyle/HDI-Report/archive/master.zip",
+            "supported": [
+                "4,9",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "modules/hdiReport/",
+                    "dest": "modules/hdiReport/"
+                }
+            ]
+        }
+    }
+}

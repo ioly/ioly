@@ -1,0 +1,27 @@
+{
+    "name": "Later Review",
+    "vendor": "marmalade",
+    "type": "oxid",
+    "license": "MIT",
+    "desc": "A Schedular for OXID eShop to manage cronjobs from the backend.",
+    "tags": [
+        "backend",
+        "cronjobs"
+    ],
+    "versions": {
+        "0.2.0": {
+            "project": "https://github.com/marmaladeDE/marmScheduler",
+            "url": "https://github.com/marmaladeDE/marmScheduler/archive/master.zip",
+            "supported": [
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "modules/marm/",
+                    "dest": "modules/marm/"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "name": "OXID-Module-IDE",
+    "vendor": "dsb",
+    "type": "oxid",
+    "license": "unknown",
+    "desc": "This Module makes it impossible for IDE's to create auto completion for the existing parent classes - the IDE simply can't know that the current class extends the other.",
+    "tags": [
+        "backend",
+        "ide"
+    ],
+    "versions": {
+        "1.0.0": {
+            "project": "https://github.com/DSB/Oxid-Module-IDE-Helper",
+            "url": "https://github.com/DSB/Oxid-Module-IDE-Helper/archive/master.zip",
+            "supported": [
+                "4.8",
+                "4.7",
+                "4.6"
+            ],
+            "mapping": [
+                {
+                    "src": "modules/dsb_ide_helper",
+                    "dest": ""
+                }
+            ]
+        }
+    }
+}

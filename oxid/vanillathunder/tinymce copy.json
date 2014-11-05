@@ -1,0 +1,29 @@
+{
+    "name": "TinyMCE",
+    "vendor": "vanillathunder",
+    "type": "oxid",
+    "license": "GNU",
+    "desc": "Integrates TinyMCE into OXID eshop.",
+    "tags": [
+        "backend",
+        "cmspages",
+        "wysiwyg"
+    ],
+    "versions": {
+        "1.3.1": {
+            "project": "https://github.com/vanilla-thunder/bla-tinymce",
+            "url": "https://github.com/vanilla-thunder/bla-tinymce/archive/master.zip",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/",
+                    "dest": ""
+                }
+            ]
+        }
+    }
+}

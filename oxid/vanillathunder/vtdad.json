@@ -1,0 +1,28 @@
+{
+    "name": "Displaying Active Discounts",
+    "vendor": "vanillathunder",
+    "type": "oxid",
+    "license": "GPL",
+    "desc": "Displaying active discounts in frontend.",
+    "tags": [
+        "frontend",
+        "discounts",
+        "articles"
+    ],
+    "versions": {
+        "1.0.0": {
+            "project": "https://github.com/vanilla-thunder/vt-dad",
+            "url": "https://github.com/vanilla-thunder/vt-dad/archive/master.zip",
+            "supported": [
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "vt-dad/",
+                    "dest": "modules/vt-dad/"
+                }
+            ]
+        }
+    }
+}

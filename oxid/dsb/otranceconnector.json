@@ -1,0 +1,27 @@
+{
+    "name": "OXID-oTranCe-Connector",
+    "vendor": "dsb",
+    "type": "oxid",
+    "license": "unknown",
+    "desc": "Connector which makes it possible to edit the currently visible texts in OXID's frontend via oTranCe.",
+    "tags": [
+        "backend",
+        "ide"
+    ],
+    "versions": {
+        "1.0.0": {
+            "project": "https://github.com/DSB/Oxid-oTranCe-Connector",
+            "url": "https://github.com/DSB/Oxid-oTranCe-Connector/archive/master.zip",
+            "supported": [
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "modules/otrance-connector/",
+                    "dest": ""
+                }
+            ]
+        }
+    }
+}

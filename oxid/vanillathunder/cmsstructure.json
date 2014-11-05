@@ -1,0 +1,28 @@
+{
+    "name": "psArticleRequest",
+    "vendor": "vanillathunder",
+    "type": "oxid",
+    "license": "GNU",
+    "desc": "Provides the cms pages a simple category-like structure with some main and subpages.",
+    "tags": [
+        "frontend",
+        "cmspages"
+    ],
+    "versions": {
+        "1.2.0": {
+            "project": "https://github.com/vanilla-thunder/vt-cmsstructure",
+            "url": "https://github.com/vanilla-thunder/vt-cmsstructure/archive/master.zip",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/",
+                    "dest": ""
+                }
+            ]
+        }
+    }
+}

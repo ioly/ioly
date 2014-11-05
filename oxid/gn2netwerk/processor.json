@@ -1,0 +1,28 @@
+{
+    "name": "Processor",
+    "vendor": "gn2netwerk",
+    "type": "oxid",
+    "license": "GNU",
+    "desc": "Processor minifies, compresses and hashes any HTML files, .css and .js files within your OXID-Installation.",
+    "tags": [
+        "frontend",
+        "performance",
+        "minify"
+    ],
+    "versions": {
+        "1.0.0": {
+            "project": "https://bitbucket.org/gn2netwerk/processor",
+            "url": "https://bitbucket.org/gn2netwerk/processor/get/master.zip",
+            "supported": [
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "",
+                    "dest": "modules/processor/"
+                }
+            ]
+        }
+    }
+}

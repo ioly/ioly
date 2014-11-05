@@ -1,0 +1,41 @@
+{
+    "name": "mo4free",
+    "vendor": "digidesk",
+    "type": "oxid",
+    "license": "unknown",
+    "desc": "Mobile theme for OXID eshop.",
+    "tags": [
+        "frontend",
+        "mobile",
+        "theme"
+    ],
+    "versions": {
+        "1.0.0-v47": {
+            "project": "https://github.com/digidesk-media-solutions/OXID-mo4free",
+            "url": "https://github.com/digidesk-media-solutions/OXID-mo4free/archive/master.zip",
+            "supported": [
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "OXID-mo4free-ab-4_7/4_7_x/copy_this/",
+                    "dest": ""
+                }
+            ]
+        },
+        "1.0.0-v46": {
+            "project": "https://github.com/digidesk-media-solutions/OXID-mo4free",
+            "url": "https://github.com/digidesk-media-solutions/OXID-mo4free/archive/master.zip",
+            "supported": [
+                "4.6"
+            ],
+            "mapping": [
+                {
+                    "src": "OXID-mo4free-bis-4_6/copy_this/",
+                    "dest": ""
+                }
+            ]
+        }
+    }
+}

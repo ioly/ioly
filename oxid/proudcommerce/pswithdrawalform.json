@@ -1,0 +1,28 @@
+{
+    "name": "psBlocks",
+    "vendor": "proudcommerce",
+    "type": "oxid",
+    "license": "GNU",
+    "desc": "Form for handling returns (withdrawal) of orders.",
+    "tags": [
+        "frontend",
+        "withdrawal",
+        "orders"
+    ],
+    "versions": {
+        "1.1.2": {
+            "project": "https://github.com/proudcommerce/psWithdrawalForm/tree/1.1.2",
+            "url": "https://github.com/proudcommerce/psWithdrawalForm/archive/1.1.2.zip",
+            "supported": [
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/",
+                    "dest": ""
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "name": "Lightbox2OXID",
+    "vendor": "ecomstyle",
+    "type": "oxid",
+    "license": "GNU",
+    "desc": "Lightbox2 integration for OXID eshop.",
+    "tags": [
+        "frontend",
+        "articles",
+        "article details",
+        "pictures"
+    ],
+    "versions": {
+        "1.1.0": {
+            "project": "https://github.com/eComStyle-de/ECS_Lightbox2OXID",
+            "url": "https://github.com/eComStyle-de/ECS_Lightbox2OXID/archive/master.zip",
+            "supported": [
+                "4,9",
+                "4.8"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/modules/ecomstyle.de/",
+                    "dest": "modules/ecomstyle.de/"
+                }
+            ]
+        }
+    }
+}

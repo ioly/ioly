@@ -1,0 +1,29 @@
+{
+    "name": "TinyMCE",
+    "vendor": "vanillathunder",
+    "type": "oxid",
+    "license": "GNU",
+    "desc": "Responsive Filemanager integration for OXID eShop.",
+    "tags": [
+        "backend",
+        "cmspages",
+        "filemanager"
+    ],
+    "versions": {
+        "1.3.1": {
+            "project": "https://github.com/vanilla-thunder/bla-rfm",
+            "url": "https://github.com/vanilla-thunder/bla-rfm/archive/master.zip",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/",
+                    "dest": ""
+                }
+            ]
+        }
+    }
+}

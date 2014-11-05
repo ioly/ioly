@@ -1,0 +1,28 @@
+{
+    "name": "jxInventory",
+    "vendor": "job963",
+    "type": "oxid",
+    "license": "GNU",
+    "desc": "Module for managing the article inventory",
+    "tags": [
+        "backend",
+        "articles",
+        "stock"
+    ],
+    "versions": {
+        "0.2.2": {
+            "project": "https://github.com/job963/jxInventory",
+            "url": "https://github.com/job963/jxInventory/archive/master.zip",
+            "supported": [
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/modules/jxmods/",
+                    "dest": "modules/jxmods/"
+                }
+            ]
+        }
+    }
+}

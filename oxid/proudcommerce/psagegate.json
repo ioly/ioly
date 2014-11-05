@@ -1,0 +1,26 @@
+{
+    "name": "psAgeGate",
+    "vendor": "proudcommerce",
+    "type": "oxid",
+    "license": "GNU",
+    "desc": "Shows an age gate when customer enters the shop.",
+    "tags": [
+        "frontend"
+    ],
+    "versions": {
+        "1.1.2": {
+            "project": "https://github.com/proudcommerce/psAgeGate",
+            "url": "https://github.com/proudcommerce/psAgeGate/archive/master.zip",
+            "supported": [
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/",
+                    "dest": ""
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "name": "jxAttrEdit",
+    "vendor": "job963",
+    "type": "oxid",
+    "license": "GNU",
+    "desc": "Module for OXID eShop admin for editing attributes of products.",
+    "tags": [
+        "backend",
+        "articles",
+        "attributes"
+    ],
+    "versions": {
+        "0.4.1": {
+            "project": "https://github.com/job963/jxAttrEdit/tree/v0.4.1",
+            "url": "https://github.com/job963/jxAttrEdit/archive/v0.4.1.zip",
+            "supported": [
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/modules/jxattredit/",
+                    "dest": "modules/jxattredit/"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "name": "psBlocks",
+    "vendor": "proudcommerce",
+    "type": "oxid",
+    "license": "GNU",
+    "desc": "Management tool for OXID template blocks.",
+    "tags": [
+        "backend",
+        "oxblocks",
+        "modules"
+    ],
+    "versions": {
+        "1.0.0": {
+            "project": "https://github.com/proudcommerce/psBlocks",
+            "url": "https://github.com/proudcommerce/psBlocks/archive/master.zip",
+            "supported": [
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/",
+                    "dest": ""
+                }
+            ]
+        }
+    }
+}

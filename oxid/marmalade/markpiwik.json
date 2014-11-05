@@ -1,0 +1,28 @@
+{
+    "name": "marmalade Piwik Plugin",
+    "vendor": "marmalade",
+    "type": "oxid",
+    "license": "unknown",
+    "desc": "Integrates the Piwik tracking code into OXID eShop.",
+    "tags": [
+        "backend",
+        "statistics",
+        "piwik"
+    ],
+    "versions": {
+        "0.7.0": {
+            "project": "https://github.com/jkrug/marmPiwik",
+            "url": "https://github.com/jkrug/marmPiwik/archive/master.zip",
+            "supported": [
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "",
+                    "dest": "modules/marm/piwik/"
+                }
+            ]
+        }
+    }
+}

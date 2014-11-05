@@ -1,0 +1,28 @@
+{
+    "name": "jxGTaxo",
+    "vendor": "job963",
+    "type": "oxid",
+    "license": "GNU",
+    "desc": "OXID eShop Admin Extension for Setting up the Google Taxonomy for each Category.",
+    "tags": [
+        "backend",
+        "google",
+        "export"
+    ],
+    "versions": {
+        "0.1.0": {
+            "project": "https://github.com/job963/jxGTaxo",
+            "url": "https://github.com/job963/jxGTaxo/archive/master.zip",
+            "supported": [
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/modules/jxmods/",
+                    "dest": "modules/jxmods/"
+                }
+            ]
+        }
+    }
+}

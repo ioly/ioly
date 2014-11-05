@@ -1,0 +1,29 @@
+{
+    "name": "psHistory",
+    "vendor": "proudcommerce",
+    "type": "oxid",
+    "license": "GNU",
+    "desc": "Individual status information for orders. / Sending mails directly from shop admin to customer.",
+    "tags": [
+        "backend",
+        "customers",
+        "orders",
+        "history"
+    ],
+    "versions": {
+        "1.1.2": {
+            "project": "https://github.com/proudcommerce/psHistory",
+            "url": "https://github.com/proudcommerce/psHistory/archive/master.zip",
+            "supported": [
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/",
+                    "dest": ""
+                }
+            ]
+        }
+    }
+}

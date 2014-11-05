@@ -1,0 +1,29 @@
+{
+    "name": "Mindestbestellmenge",
+    "vendor": "ecomstyle",
+    "type": "oxid",
+    "license": "GNU",
+    "desc": "Setting a minimum order quantity of articles.",
+    "tags": [
+        "frontend",
+        "basket",
+        "order"
+    ],
+    "versions": {
+        "1.1.0": {
+            "project": "https://github.com/eComStyle-de/ECS_Mindestbestellmenge",
+            "url": "https://github.com/eComStyle-de/ECS_Mindestbestellmenge/archive/master.zip",
+            "supported": [
+                "4,9",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/modules/ecomstyle.de/",
+                    "dest": "modules/ecomstyle.de/"
+                }
+            ]
+        }
+    }
+}

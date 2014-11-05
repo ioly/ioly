@@ -1,0 +1,28 @@
+{
+    "name": "elefunds OXID",
+    "vendor": "suabo",
+    "type": "oxid",
+    "license": "unknown",
+    "desc": "Elefunds module for OXID eShop.",
+    "tags": [
+        "frontend",
+        "customers",
+        "marketing"
+    ],
+    "versions": {
+        "0.5.0": {
+            "project": "https://github.com/suabo/elefunds-OXID/tree/v1.0.1",
+            "url": "https://github.com/suabo/elefunds-OXID/archive/v1.0.1.zip",
+            "supported": [
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/",
+                    "dest": ""
+                }
+            ]
+        }
+    }
+}

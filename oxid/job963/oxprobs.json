@@ -1,0 +1,29 @@
+{
+    "name": "oxProbs",
+    "vendor": "job963",
+    "type": "oxid",
+    "license": "GNU",
+    "desc": "oxProbs analyzes the data of an OXID eShop installation in order to find problems.",
+    "tags": [
+        "backend",
+        "articles",
+        "problems",
+        "statistics"
+    ],
+    "versions": {
+        "0.7.0": {
+            "project": "https://github.com/job963/oxProbs",
+            "url": "https://github.com/job963/oxProbs/archive/master.zip",
+            "supported": [
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/modules/jxmods/",
+                    "dest": "modules/jxmods/"
+                }
+            ]
+        }
+    }
+}

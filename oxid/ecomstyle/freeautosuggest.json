@@ -1,0 +1,27 @@
+{
+    "name": "Free Autosuggest",
+    "vendor": "ecomstyle",
+    "type": "oxid",
+    "license": "GNU",
+    "desc": "Search suggestions for OXID eshop.",
+    "tags": [
+        "frontend",
+        "search"
+    ],
+    "versions": {
+        "3.2.0": {
+            "project": "https://github.com/ecomstyle/freeAutoSuggest",
+            "url": "https://github.com/ecomstyle/freeAutoSuggest/archive/master.zip",
+            "supported": [
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "modules/autosuggest/",
+                    "dest": "modules/autosuggest/"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "name": "smxSurveys",
+    "vendor": "shoptimax",
+    "type": "oxid",
+    "license": "GNU",
+    "desc": "Survey module for OXID eShop.",
+    "tags": [
+        "frontend",
+        "surveys",
+        "marketing"
+    ],
+    "versions": {
+        "0.5.0": {
+            "project": "https://github.com/shoptimax/smxsurveys",
+            "url": "https://github.com/shoptimax/smxsurveys/archive/master.zip",
+            "supported": [
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "modules/shoptimax/",
+                    "dest": "modules/shoptimax/"
+                }
+            ]
+        }
+    }
+}
