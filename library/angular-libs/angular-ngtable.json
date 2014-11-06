@@ -1,9 +1,9 @@
 {
     "name": "angular ngTable",
-    "vendor": "Vitalii Savchuk(esvit666@gmail.com)",
+    "vendor": "angular-libs",
     "type": "library",
     "license": "BSD",
-    "desc": "angular.js ngTable.",
+    "desc": "angular.js ngTable by Vitalii Savchuk(esvit666@gmail.com).",
     "tags": [
         "angular",
         "ngTable",
