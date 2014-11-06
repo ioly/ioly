@@ -62,7 +62,7 @@ Contributing
   }
 ```
 
-[Read more about writing an recipe.](https://github.com/ioly/ioly/wiki/Writing-a-recipe)
+[Read more about writing a recipe.](https://github.com/ioly/ioly/wiki/Writing-a-recipe)
 
 
 Requirements
