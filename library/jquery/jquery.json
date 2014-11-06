@@ -21,7 +21,7 @@
             "mapping": [
                 {
                     "src": "",
-                    "dest": "modules/ioly/lib/jquery/"
+                    "dest": "ioly/libs/jquery/2.1.1/"
                 }
             ]
         }

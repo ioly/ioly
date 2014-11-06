@@ -1,0 +1,30 @@
+{
+    "name": "angular ngTable",
+    "vendor": "Vitalii Savchuk(esvit666@gmail.com)",
+    "type": "library",
+    "license": "BSD",
+    "desc": "angular.js ngTable.",
+    "tags": [
+        "angular",
+        "ngTable",
+        "javascript"
+    ],
+    "versions": {
+        "0.3.2": {
+            "project": "https://github.com/esvit/ng-table",
+            "url": "https://github.com/esvit/ng-table/archive/master.zip",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.6"
+            ],
+            "mapping": [
+                {
+                    "src": "",
+                    "dest": "ioly/libs/ng-table/0.3.2/"
+                }
+            ]
+        }
+    }
+}
