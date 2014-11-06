@@ -13,7 +13,7 @@
     "versions": {
         "1.0.0": {
             "project": "https://github.com/ioly/",
-            "url": "https://github.com/ioly/ioly/blob/sauces/ioly/oxid-connector-js-libs/1.0.0.zip",
+            "url": "https://github.com/ioly/ioly/raw/sauces/ioly/oxid-connector-js-libs/1.0.0.zip",
             "supported": [
                 "4.9",
                 "4.8",
