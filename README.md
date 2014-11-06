@@ -1,5 +1,3 @@
-# ioly
-===
 ioly helps you easily integrate modules into your PHP application.
 
 
