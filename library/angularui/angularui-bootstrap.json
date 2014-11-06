@@ -1,0 +1,31 @@
+{
+    "name": "Angular UI Bootstrap",
+    "vendor": "angularui",
+    "type": "library",
+    "license": "MIT",
+    "desc": "Native AngularJS (Angular) directives for Bootstrap.",
+    "tags": [
+        "frontend",
+        "seo",
+        "sitemap"
+    ],
+    "versions": {
+        "0.11.2": {
+            "project": "https://github.com/angular-ui/bootstrap/tree/gh-pages",
+            "url": "https://github.com/angular-ui/bootstrap/archive/gh-pages.zip",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.6"
+            ],
+            "mapping": [
+                {
+                    "src": "bootstrap-gh-pages",
+                    "dest": "ioly/libs/bootstrap-gh-pages/"
+                }
+            ]
+        }
+    }
+}
+
