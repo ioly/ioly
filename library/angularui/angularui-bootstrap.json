@@ -21,8 +21,8 @@
             ],
             "mapping": [
                 {
-                    "src": "bootstrap-gh-pages",
-                    "dest": "ioly/libs/bootstrap-gh-pages/"
+                    "src": "",
+                    "dest": "ioly/libs/bootstrap-gh-pages/0.11.2/"
                 }
             ]
         }
