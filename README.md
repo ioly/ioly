@@ -27,7 +27,6 @@ $ export IOLY_SYSTEM_VERSION=4.8;
 $ php ioly.php update;
 $ php ioly.php list;
 $ php ioly.php search paypal;
-$ php ioly.php install paypal;
 $ php ioly.php show oxid/paypal;
 $ php ioly.php install oxid/paypal 3.2.1;
 ```
