@@ -20,7 +20,7 @@
             "mapping": [
                 {
                     "src": "modules/marm/",
-                    "dest": "mmodules/marm/"
+                    "dest": "modules/marm/"
                 }
             ]
         }
