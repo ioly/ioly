@@ -25,6 +25,7 @@ Using `ioly` module manager via console. In this example, we'll add a module to 
 $ export IOLY_SYSTEM_BASE=/var/www/myshop.de/;
 $ export IOLY_SYSTEM_VERSION=4.8;
 $ php ioly.php update;
+$ php ioly.php list;
 $ php ioly.php search paypal;
 $ php ioly.php install paypal;
 $ php ioly.php show oxid/paypal;
