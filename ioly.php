@@ -8,7 +8,7 @@
  * @package  Core
  * @author   Dave Holloway <dh@gn2-netwerk.de>
  * @author   Tobias Merkl <merkl@proudsourcing.de>
- * @author   Dave Holloway <stefan@rent-a-hero.de>
+ * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
  */
