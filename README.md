@@ -2,7 +2,9 @@
 
 > "Everybody loves ioly!"
 
-ioly helps you easily integrate modules into your PHP application. You can use it with any system that supports modules/extensions/packages etc..
+ioly is a decentralized/centralized universal package installer for web based php software. You can use it with any system that supports modules/extensions/packages. e.g. OXID eSales, Wordpress, Redaxo etc. etc. etc.. 
+
+The ioly system is driven by a "cookbook", stored on GitHub, which contains "recipes" to install any zip-based package. If something is missing, you can send us a pull request to extend/improve the main ioly cookbook. As soon as we merge your modifications, EVERY ioly installation has access to your package.
 
 ## Getting started
 
