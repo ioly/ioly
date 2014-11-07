@@ -20,7 +20,7 @@
             "mapping": [
                 {
                     "src": "",
-                    "dest": "modules/variantinherit/"
+                    "dest": "modules/gn2netwerk/variantinherit/"
                 }
             ],
             "touch": [
