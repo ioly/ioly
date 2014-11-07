@@ -1,32 +1,41 @@
-ioly helps you easily integrate modules into your PHP application.
+# ioly
 
+> "Everybody loves ioly!"
 
-Getting started
----
+ioly helps you easily integrate modules into your PHP application. You can use it with any system that supports modules/extensions/packages etc..
+
+## Getting started
+
 1. download ioly
-2. search for a recipe
-3. install recipe
+2. configure the ioly settings for your environment
+3. search for a recipe
+4. install recipe
 4. done
 
 
-Installation
----
-Download `ioly` core using console:
+## Installation
 
-  ``` sh
-  $ curl -sS https://github.com/ioly/ioly/archive/core.zip | unzip
-  ```
+Download `ioly` core via HTTP or via console :
 
-Download `ioly` core using FTP:
+`curl -O "https://raw.githubusercontent.com/ioly/ioly/core/ioly.php";`
 
-[https://github.com/ioly/ioly/archive/core.zip](https://github.com/ioly/ioly/archive/core.zip)
+``` sh
+$ export IOLY_SYSTEM_BASE=/path/to/your/installation;
+$ export IOLY_SYSTEM_VERSION=4.8;
+$ php ioly.php update;
+$ php ioly.php search paypal;
+$ php ioly.php install paypal;
+$ php ioly.php show oxid/paypal;
+$ php ioly.php install oxid/paypal 3.2.1;
+```
 
+### Contributing
 
-Contributing
----
 1. write a recipe
 2. commit your recipe
 3. done, everybody can use it!
+
+[Read more here!](https://github.com/ioly/ioly/wiki/Contributing-to-the-ioly-Cookbook)
 
 ##### Example
 ``` json
@@ -65,8 +74,8 @@ Contributing
 [Read more about writing a recipe.](https://github.com/ioly/ioly/wiki/Writing-a-recipe)
 
 
-Requirements
----
+### Requirements
+
 - PHP 5.3.0 or above (at least 5.3.4 recommended to avoid potential bugs)
 - PHP extensions:
   * cUrl
@@ -75,13 +84,13 @@ Requirements
   * ZIP
 
 
-Authors
+### Authors
 ---
 Dave Holloway - <http://www.gn2-netwerk.de> - <http://twitter.com/dajoho><br />
 Tobias Merkl - <http://www.proudsourcing.de> - <http://twitter.com/tabsl><br />
 Stefan Moises - <http://www.rent-a-hero.de> - <http://twitter.com/smxsm><br />
 
-See also the list of [contributors](https://github.com/ioly/ioly/contributors) who participated in this project.
+You can also view the list of [contributors](https://github.com/ioly/ioly/contributors) who participated in this project.
 
 
 License
