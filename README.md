@@ -2,7 +2,7 @@
 
 > "Everybody loves ioly!"
 
-<img align="right" width="150" src="https://raw.github.com/ioly/ioly/gh-pages/assets/img/ioly-logo.png"> 
+<img align="right" width="150" src="https://raw.github.com/ioly/ioly/gh-pages/assets/img/ioly-logo-github.png"> 
 
 ioly is a decentralized/centralized universal package installer for web based php software. You can use it with any system that supports modules/extensions/packages. e.g. OXID eSales, Wordpress, Redaxo etc. etc. etc.. 
 
