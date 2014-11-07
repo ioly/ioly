@@ -15,9 +15,11 @@ ioly helps you easily integrate modules into your PHP application. You can use i
 
 ## Installation
 
-Download `ioly` core via HTTP or via console :
+Download `ioly` core via console or via HTTP or:
 
 `curl -O "https://raw.githubusercontent.com/ioly/ioly/core/ioly.php";`
+
+Using `ioly` module manager via console:
 
 ``` sh
 $ export IOLY_SYSTEM_BASE=/path/to/your/installation;
@@ -36,7 +38,7 @@ $ php ioly.php install oxid/paypal 3.2.1;
 3. send a merge request
 4. done, everybody can use it!
 
-[Read more here!](https://github.com/ioly/ioly/wiki/Contributing-to-the-ioly-Cookbook)
+[Read more here!](https://github.com/ioly/ioly/wiki/Contributing-to-the-ioly-cookbook)
 
 ##### Example
 ``` json
