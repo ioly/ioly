@@ -22,7 +22,7 @@ Download `ioly` core via console or via HTTP or:
 Using `ioly` module manager via console. In this example, we'll add a module to an installation of OXID eSales:
 
 ``` sh
-$ export IOLY_SYSTEM_BASE=/path/to/your/installation;
+$ export IOLY_SYSTEM_BASE=/var/www/myshop.de/;
 $ export IOLY_SYSTEM_VERSION=4.8;
 $ php ioly.php update;
 $ php ioly.php search paypal;
