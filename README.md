@@ -33,7 +33,8 @@ $ php ioly.php install oxid/paypal 3.2.1;
 
 1. write a recipe
 2. commit your recipe
-3. done, everybody can use it!
+3. send a merge request
+4. done, everybody can use it!
 
 [Read more here!](https://github.com/ioly/ioly/wiki/Contributing-to-the-ioly-Cookbook)
 
