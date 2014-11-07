@@ -17,9 +17,9 @@ ioly helps you easily integrate modules into your PHP application. You can use i
 
 Download `ioly` core via console or via HTTP or:
 
-`curl -O "https://raw.githubusercontent.com/ioly/ioly/core/ioly.php";`
+`curl -O https://raw.githubusercontent.com/ioly/ioly/core/ioly.php`
 
-Using `ioly` module manager via console:
+Using `ioly` module manager via console. In this example, we'll add a module to an installation of OXID eSales:
 
 ``` sh
 $ export IOLY_SYSTEM_BASE=/path/to/your/installation;
