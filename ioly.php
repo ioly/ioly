@@ -24,6 +24,7 @@ class ioly
     protected $_curlCallback = null;
     protected $_systemBasePath = null;
     protected $_systemVersion = null;
+    protected $_debugLogging = false;
     protected $_cookbooks = array(
         'ioly' => 'http://github.com/ioly/ioly/archive/master.zip'
     );
@@ -36,6 +37,10 @@ class ioly
      */
     public function setSystemBasePath($systemBasePath)
     {
+        // path should not end with /  or \ so remove it
+        if($this->_endsWith($systemBasePath, '/') || $this->_endsWith($systemBasePath, '\\')) {
+            $systemBasePath = substr($systemBasePath, 0, strlen($systemBasePath)-1);
+        }
         $this->_systemBasePath = $systemBasePath;
     }
 
@@ -86,13 +91,21 @@ class ioly
     {
         return $this->_systemVersion;
     }
+    
+    /**
+     * Activate debug logging
+     * @param boolean $writeLog
+     */
+    public function setDebugLogging($writeLog) {
+        $this->_debugLogging = $writeLog;
+    }
 
     /**
      * Sets up file databases. Updates if the cache is empty.
      */
     public function __construct()
     {
-        $this->_baseDir = dirname(__FILE__);
+        $this->_baseDir = $this->_dirName(__FILE__);
         $this->_recipeCacheFile = $this->_baseDir.'/.recipes.db';
         $this->_digestCacheFile = $this->_baseDir.'/.digest.db';
         $this->_authFile = $this->_baseDir.'/.auth';
@@ -269,6 +282,22 @@ class ioly
     }
 
     /**
+     * Debug logging function, mainly for AJAX calls.
+     * @param string $sLogMessage
+     * @return int
+     */
+    protected function _writeLog($sLogMessage) {
+        if($this->_debugLogging) {
+            $sLogDist = $this->getSystemBasePath()."/log/ioly_core.log";
+            if ( ( $oHandle = fopen( $sLogDist, 'a' ) ) !== false ) {
+                fwrite( $oHandle, $sLogMessage );
+                $blOk = fclose( $oHandle );
+            }  
+        }
+        return $blOk;
+    }
+    
+    /**
      * Uninstalls a version of a specific package
      * @param $packageString
      * @param $versionString
@@ -276,14 +305,18 @@ class ioly
      */
     public function uninstall($packageString, $versionString)
     {
+        $msg = "\nuninstalling $packageString $versionString";
         if (array_key_exists($packageString, $this->_digestCache)) {
             $digestVersion = $this->_digestCache[$packageString];
+            $msg .= "\nexisting in digest!";
             if ($digestVersion['version'] == $versionString) {
+                $msg .= "\nmatching version in digest!";
                 $filesToDelete = $digestVersion['files'];
                 $blockedFiles = array();
                 $modifiedFiles = array();
                 $failedToDelete = array();
                 $checkDeleteFolders = array();
+                $msg .= "\nfiles to delete: " . print_r($filesToDelete, true);
 
                 /* Check other cached digests for the same file */
                 foreach ($this->_digestCache as $dgstPackageStr=>$dgstPackage) {
@@ -299,15 +332,17 @@ class ioly
                 /* Check SHA1s and delete */
                 foreach ($filesToDelete as $k=>$v) {
                     $deletePath = $this->getSystemBasePath().'/'.$k;
-
+                    $msg .= "\ndeletePath: $deletePath";
                     $continue = true;
-                    $delDir = dirname($deletePath);
+                    $delDir = $this->_dirName($deletePath);
                     /* Collect a list of directories to check for deletion */
                     while ($continue) {
                         if (!in_array($delDir, $checkDeleteFolders)) {
                             $checkDeleteFolders[] = $delDir;
                         }
-                        $delDir = dirname($delDir);
+                        $delDir = $this->_dirName($delDir);
+                        $msg .= "\ndelDir: $delDir syspath: " . $this->getSystemBasePath();
+                        
                         if ($delDir == $this->getSystemBasePath()) {
                             $continue = false;
                         }
@@ -318,11 +353,14 @@ class ioly
                         $modifiedFiles[] = $k;
                         unset($filesToDelete[$k]);
                     } else {
+                        
                         if (file_exists($deletePath)) {
+                            $msg .= "\ntrying to deletePath: $deletePath";
                             @unlink($deletePath);
 
                         }
                         if (file_exists($deletePath)) {
+                            $msg .= "\nfailed delete: $deletePath";
                             $failedToDelete[] = $k;
                         }
                     }
@@ -330,6 +368,7 @@ class ioly
 
                 usort($checkDeleteFolders, array($this, '_sortByFolderDepth'));
                 foreach ($checkDeleteFolders as $deleteFolder) {
+                    $msg .= "\nfolder to delete: $deleteFolder";
                     $pattern = $deleteFolder.'/{,.}*';
                     $remainingFiles = glob($pattern, GLOB_BRACE);
                     foreach ($remainingFiles as $k=>$v) {
@@ -344,10 +383,12 @@ class ioly
                             @unlink($dsStore);
                         }
                         @rmdir($deleteFolder);
+                        $msg .= "\nfolder deleted: $deleteFolder";
                     }
                 }
 
                 if (!empty($failedToDelete)) {
+                    $this->_writeLog("\nFailed to delete: " . print_r($failedToDelete));
                     $exception = new Exception(
                         "Module was uninstalled but the following ".
                         "files could not be deleted:\n"
@@ -359,6 +400,7 @@ class ioly
                 }
 
                 if (!empty($modifiedFiles)) {
+                    $this->_writeLog("\nModified, failed to delete: " . print_r($failedToDelete));
                     $exception = new Exception(
                         "Module was uninstalled but the following ".
                         "files were modified and not deleted:\n"
@@ -372,11 +414,15 @@ class ioly
                 foreach ($this->_digestCache as $dgstPackageStr=>$dgstPackage) {
                     if ($dgstPackageStr == $packageString) {
                         if ($dgstPackage['version'] == $versionString) {
+                            $msg .= "\nRemoving $packageString, version $versionString from digest...";
                             unset($this->_digestCache[$dgstPackageStr]);
                         }
                     }
                 }
+                $msg .= "\nSaving digest...";
                 $this->_saveDigestCache();
+                $this->update();
+                $this->_writeLog($msg);
             } else {
                 throw new Exception(
                     "Could not find specified digest version of "
@@ -390,6 +436,7 @@ class ioly
                 1020
             );
         }
+        $this->_writeLog($msg);
     }
 
     /**
@@ -405,6 +452,23 @@ class ioly
         return false;
     }
 
+    /**
+     * Always use / for directories, even on Windows
+     * @param string $path
+     * @return string The path with \ changed to /
+     */
+    protected function _dirName($path) {
+        return str_replace("\\", "/", dirname($path));        
+    }
+    /**
+     * Always use '/' for directories, even on Windows
+     * @param string $path
+     * @return string The path with '\' changed to '/'
+     */
+    protected function _endsWith($haystack, $needle) {
+        return $needle === "" || substr($haystack, -strlen($needle)) === $needle;        
+    }
+    
     /**
      * usort callback. Sorts a list of folders by depth.
      * Could probably be improved
@@ -587,7 +651,7 @@ class ioly
                         $filelist
                     );
                 } else {
-                    $destdir = dirname($destpath);
+                    $destdir = $this->_dirName($destpath);
                     if (!file_exists($destdir)) {
                         mkdir($destdir, 0777, true);
                     }
@@ -647,7 +711,7 @@ class ioly
                                 -5
                             );
                             $package['packageString'] =
-                                basename(dirname($file))
+                                basename($this->_dirName($file))
                                 .'/'.$package['_filename'];
                             if ($this->isInstalled($package['packageString'])) {
                                 $package['installed'] = true;
