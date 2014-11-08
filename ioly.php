@@ -451,6 +451,19 @@ class ioly
         }
         return false;
     }
+    
+    /**
+     * Checks if a package is installed in a specific version
+     * @param string $packageString
+     * @param string $versionString
+     * @return boolean
+     */
+    public function isInstalledInVersion($packageString, $versionString) {
+        if($this->isInstalled($packageString)) {
+            $aDigestInfo = $this->_digestCache[$packageString];
+            return $aDigestInfo['version'] == $versionString;
+        }
+    }
 
     /**
      * Always use / for directories, even on Windows
@@ -715,6 +728,21 @@ class ioly
                                 .'/'.$package['_filename'];
                             if ($this->isInstalled($package['packageString'])) {
                                 $package['installed'] = true;
+                            }
+                            foreach($package['versions'] as $version => $versionData) {
+                                if($this->isInstalledInVersion($package['packageString'], $version)) {
+                                    $package['versions'][$version]['installed'] = true;
+                                }
+                                $matchingVersions = is_array($versionData['supported']) ? $versionData['supported'] : explode(",", trim($versionData['supported']));
+                                if(count($matchingVersions)) {
+                                    foreach($matchingVersions as $matchingVersion) {
+                                        $this->_writeLog("\n{$package['packageString']} $matchingVersion -- " . $this->getSystemVersion());
+                                        if($matchingVersion == $this->getSystemVersion()) {
+                                            $package['versions'][$version]['matches'] = true;
+                                            break;
+                                        }
+                                    }
+                                }
                             }
                             $db[] = $package;
                         }
