@@ -1,0 +1,37 @@
+{
+    "name": "oxid|JSON",
+    "vendor": "shoptimax",
+    "type": "oxid",
+    "license": "GNU",
+    "desc": "REST interface for the OXID eShop using the Tonic PHP framework with AngularJS backend.",
+    "tags": [
+        "backend",
+        "REST",
+        "Tonic",
+        "angularjs"
+    ],
+    "versions": {
+        "1.0.0": {
+            "project": "https://github.com/shoptimax/oxidjson",
+            "url": "https://github.com/shoptimax/oxidjson/archive/master.zip",
+            "supported": [
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "app/",
+                    "dest": "app/"
+                },
+                {
+                    "src": "modules/",
+                    "dest": "modules/"
+                },
+                {
+                    "src": "oxrest/",
+                    "dest": "oxrest/"
+                }
+            ]
+        }
+    }
+}
