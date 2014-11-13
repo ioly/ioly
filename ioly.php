@@ -79,8 +79,18 @@ class ioly
      */
     public function setCookbook($url)
     {
+        if($this->_cookbooks['ioly'] != $url) {
         $this->_cookbooks['ioly'] = $url;
         $this->update();
+    }
+    }
+    /**
+     * Return the current cookbook URL
+     * @return string
+     */
+    public function getCookbook()
+    {
+        return $this->_cookbooks['ioly'];
     }
 
     /**
