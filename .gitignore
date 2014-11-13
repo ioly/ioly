@@ -1,0 +1,12 @@
+.idea
+.auth
+.recipes.db
+atlassian-ide-plugin.xml
+_*.php
+cookbook.*.zip
+cookbooks.json
+modules/ioly/ioly/.auth
+modules/ioly/ioly/ioly.master.zip
+modules/ioly/ioly/.recipes.db
+/nbproject/private/
+ioly.php

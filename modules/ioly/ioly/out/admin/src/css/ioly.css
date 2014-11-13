@@ -1,0 +1,105 @@
+/*
+* we all love ioly.
+*/
+/* 
+    Created on : 02.11.2014, 19:37:51
+    Author     : smxsm
+*/
+.spinner {
+    position: fixed;
+    top: 40%;
+    left: 30%;
+    margin-left: -50px; /* half width of the spinner gif */
+    margin-top: -50px; /* half height of the spinner gif */
+    text-align:center;
+    z-index:1234;
+    overflow: auto;
+    width: 100px; /* width of the spinner gif */
+    height: 102px; /*hight of the spinner gif +2px to fix IE8 issue */
+}   
+.downloadprogress {
+    position: fixed;
+    top: 90px;
+    left: 350px;
+    margin-left: -50px; /* half width of the spinner gif */
+    margin-top: -50px; /* half height of the spinner gif */
+    text-align:center;
+    z-index:1235;
+    overflow: auto;
+    width: 500px; /* width of the spinner gif */
+    height: 150px; /*hight of the spinner gif +2px to fix IE8 issue */
+}   
+#magicarea {
+    margin-left: 10px;
+}
+#magicarea #iolyheadline {
+    float:left;
+    width: 600px;
+}
+#magicarea #iolylogo {
+    float:right;
+    margin-right: 5px;
+    margin-top:-17px;
+}
+.iolyinfodiv {
+    overflow:hidden;
+    margin-top: 15px; 
+}
+#iolyintrotext {
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+#iolyNgTable {
+    margin-top: 10px;
+}
+.iolydownloadtd {
+    width: 500px;
+}
+ul.iolylist {
+    list-style-type: none !important;
+}
+ul.iolylist li, ul.pagination li{
+    background: none;
+}
+
+.pagination {
+	margin:0!important;
+}
+
+.iolydatakey {
+    font-style: italic;
+}
+span.success {
+    color: green;
+    font-weight: bold;
+}
+/* ng-table fixes */
+tbody>tr>td.iolynoline {
+    border: none;
+}
+.ng-table th.sortable, .table thead:first-child tr:first-child th {
+    background-color: #fff;
+    margin-bottom: 5px;
+    border: none;
+}
+.ng-table th {
+    text-align: left;
+}
+/* overlay placement bugfix */
+.ovh {
+    overflow:hidden;
+    margin-right: 0px !important;
+}
+
+.buttonwidth {
+	width: 250px!important;
+}
+
+#contributorslist li {
+	display: inline;
+        background: none;
+}
+    
+#contributorslist {
+	list-style-type: none;
+}
