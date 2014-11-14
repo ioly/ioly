@@ -1,0 +1,29 @@
+{
+    "name": "vtdevutils",
+    "vendor": "vanillathunder",
+    "type": "oxid",
+    "license": "GPL",
+    "desc": "Dev Utils for OXID eShop",
+    "tags": [
+        "backend",
+        "utils",
+        "cleartmp",
+        "logs"
+    ],
+    "versions": {
+        "2.1.0": {
+            "project": "https://github.com/vanilla-thunder/vt-devutils",
+            "url": "https://github.com/vanilla-thunder/vt-devutils/archive/master.zip",
+            "supported": [
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/",
+                    "dest": ""
+                }
+            ]
+        }
+    }
+}
