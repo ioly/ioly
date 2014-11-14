@@ -1,0 +1,29 @@
+{
+    "name": "infiniteScrolling",
+    "vendor": "vanillathunder",
+    "type": "oxid",
+    "license": "MIT",
+    "desc": "infinite scrolling aka dynamic pagination for article lists on category pages, vendors pages and within search",
+    "tags": [
+        "frontend",
+        "articles",
+        "pagination"
+    ],
+    "versions": {
+        "1.1.0": {
+            "project": "https://github.com/vanilla-thunder/ag-isal",
+            "url": "https://github.com/vanilla-thunder/ag-isal/archive/master.zip",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/",
+                    "dest": ""
+                }
+            ]
+        }
+    }
+}
