@@ -19,13 +19,13 @@ $sMetadataVersion = '1.1';
  */
 $aModule = array(
     'id'          => 'ioly',
-    'title'       => 'ioly Module Manager',
+    'title'       => 'ioly Module Manager OXID Connector',
     'description' => array(
         'de' => 'We all love ioly.',
         'en' => 'We all love ioly.',
     ),
     'thumbnail'   => 'ioly_logo.png',
-    'version'     => '0.0.1',
+    'version'     => '1.0.0',
     'author'      => 'ioly',
     'url'         => 'https://github.com/ioly/ioly',
     'email'       => 'hello@getioly.com',
@@ -58,6 +58,8 @@ $aModule = array(
     'events'      => array(
         //'onActivate' => 'ioly_setup::onActivate',
     ),
-    'settings'    => array()
+    'settings'    => array(
+        array('group' => 'IOLY', 'name' => 'iolycookbookurl', 'type' => 'str',  'value' => 'http://github.com/ioly/ioly/archive/master.zip'),        
+    )
 );
 ?>

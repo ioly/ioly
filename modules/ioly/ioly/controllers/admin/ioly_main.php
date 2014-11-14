@@ -82,6 +82,10 @@ class ioly_main extends oxAdminView
             $this->_ioly = new ioly\ioly();
             $this->_ioly->setSystemBasePath(oxRegistry::getConfig()->getConfigParam('sShopDir'));
             $this->_ioly->setSystemVersion($this->getShopMainVersion());
+            // set custom cookbook?
+            if(($sCookbookUrl = oxRegistry::getConfig()->getConfigParam('iolycookbookurl')) != '') {
+                $this->_ioly->setCookbook($sCookbookUrl);
+            }
             return true;
         }
         return false;

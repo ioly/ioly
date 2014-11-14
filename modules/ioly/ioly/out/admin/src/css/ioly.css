@@ -81,6 +81,7 @@ tbody>tr>td.iolynoline {
     background-color: #fff;
     margin-bottom: 5px;
     border: none;
+    box-shadow: none;
 }
 .ng-table th {
     text-align: left;

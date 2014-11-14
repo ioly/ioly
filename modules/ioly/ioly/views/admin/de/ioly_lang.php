@@ -60,6 +60,8 @@ $aLang = array(
 'IOLY_EXCEPTION_MESSAGE_CODE_1003'          => 'Konnte Modul-Version nicht finden:',    
 'IOLY_EXCEPTION_MESSAGE_CODE_1005'          => 'Konnte Modul nicht finden:',    
 'IOLY_EXCEPTION_MESSAGE_CODE_1006'          => 'Bitte benutzen Sie vendor/package um ein Modul zu installieren.',    
+'SHOP_MODULE_GROUP_IOLY'                    => 'ioly Einstellungen',
+'SHOP_MODULE_iolycookbookurl'               => 'ioly Cookbook URL (URL der Rezepte als ZIP-Archiv)',
  
 );
 ?>
