@@ -1,17 +1,17 @@
 <?php
-
 /**
  * ioly
  *
  * PHP version 5.3
  *
- * @category Ioly_Modulmanager
- * @package  Admin
+ * @category ioly_modulmanager
+ * @package  OXID Connector
  * @author   Dave Holloway <dh@gn2-netwerk.de>
  * @author   Tobias Merkl <merkl@proudsourcing.de>
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
+ * @version	 1.1.0
  */
 class ioly_main extends oxAdminView
 {
@@ -67,6 +67,7 @@ class ioly_main extends oxAdminView
             }
         }
     }
+    
     /**
      * Gets ioly core if it doesn't exist.
      */
@@ -82,13 +83,25 @@ class ioly_main extends oxAdminView
             $this->_ioly = new ioly\ioly();
             $this->_ioly->setSystemBasePath(oxRegistry::getConfig()->getConfigParam('sShopDir'));
             $this->_ioly->setSystemVersion($this->getShopMainVersion());
-            // set custom cookbook?
-            if(($sCookbookUrl = oxRegistry::getConfig()->getConfigParam('iolycookbookurl')) != '') {
-                $this->_ioly->setCookbook($sCookbookUrl);
+            if($this->_ioly->listAll() == false) {
+            	$this->_setCookbooks();
             }
             return true;
         }
         return false;
+    }
+    
+    /**
+     * 
+     * @param type $ex
+     * @return string
+     */
+    protected function _setCookbooks() {
+        if(($aCookbookUrls = oxRegistry::getConfig()->getConfigParam('iolycookbookurl'))) {
+            foreach($aCookbookUrls as $key => $value) {
+            	$this->_ioly->setCookbook($key, $value);
+            } 
+        }
     }
     
     /**

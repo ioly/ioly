@@ -1,14 +1,19 @@
 <?php
-
 /**
- * @author smxsm
- * @package ioly-oxid-ce-487
- * 
- * Encoding: UTF-8
- * Date: 02.11.2014
- * 
- * Description of vendormetadata
+ * ioly
+ *
+ * PHP version 5.3
+ *
+ * @category ioly_modulmanager
+ * @package  OXID Connector
+ * @author   Dave Holloway <dh@gn2-netwerk.de>
+ * @author   Tobias Merkl <merkl@proudsourcing.de>
+ * @author   Stefan Moises <stefan@rent-a-hero.de>
+ * @license  MIT License http://opensource.org/licenses/MIT
+ * @link     http://getioly.com/
+ * @version	 1.1.0
  */
+ 
 /**
  * Metadata version
  */
@@ -19,13 +24,13 @@ $sMetadataVersion = '1.1';
  */
 $aModule = array(
     'id'          => 'ioly',
-    'title'       => 'ioly Module Manager OXID Connector',
+    'title'       => 'ioly OXID Connector',
     'description' => array(
-        'de' => 'We all love ioly.',
-        'en' => 'We all love ioly.',
+        'de' => 'ioly Modulmanager (<a href="http://getioly.com" target="_blank">getioly.com</a> / <a href="https://github.com/ioly/ioly" target="_blank">github.com/ioly/ioly</a>)',
+        'en' => 'ioly module manager (<a href="http://getioly.com" target="_blank">getioly.com</a> / <a href="https://github.com/ioly/ioly" target="_blank">github.com/ioly/ioly</a>)',
     ),
     'thumbnail'   => 'ioly_logo.png',
-    'version'     => '1.0.0',
+    'version'     => '1.1.0',
     'author'      => 'ioly',
     'url'         => 'https://github.com/ioly/ioly',
     'email'       => 'hello@getioly.com',
@@ -59,7 +64,7 @@ $aModule = array(
         //'onActivate' => 'ioly_setup::onActivate',
     ),
     'settings'    => array(
-        array('group' => 'IOLY', 'name' => 'iolycookbookurl', 'type' => 'str',  'value' => 'http://github.com/ioly/ioly/archive/master.zip'),        
+        array('group' => 'IOLY', 'name' => 'iolycookbookurl', 'type' => 'aarr',  'value' => array('ioly' => 'http://github.com/ioly/ioly/archive/master.zip'),),        
     )
 );
 ?>

@@ -1,13 +1,17 @@
 <?php
-
 /**
- * @author smxsm
- * @package ioly-oxid-ce-487
- * 
- * Encoding: UTF-8
- * Date: 02.11.2014
- * 
- * Description of ioly_helper
+ * ioly
+ *
+ * PHP version 5.3
+ *
+ * @category ioly_modulmanager
+ * @package  OXID Connector
+ * @author   Dave Holloway <dh@gn2-netwerk.de>
+ * @author   Tobias Merkl <merkl@proudsourcing.de>
+ * @author   Stefan Moises <stefan@rent-a-hero.de>
+ * @license  MIT License http://opensource.org/licenses/MIT
+ * @link     http://getioly.com/
+ * @version	 1.1.0
  */
 class ioly_helper  {
 

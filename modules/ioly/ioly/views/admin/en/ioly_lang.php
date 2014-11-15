@@ -1,13 +1,17 @@
 <?php
-
 /**
- * @author smxsm
- * @package ioly-oxid-ce-487
- * 
- * Encoding: UTF-8
- * Date: 02.11.2014
- * 
- * Description of ioly_lang
+ * ioly
+ *
+ * PHP version 5.3
+ *
+ * @category ioly_modulmanager
+ * @package  OXID Connector
+ * @author   Dave Holloway <dh@gn2-netwerk.de>
+ * @author   Tobias Merkl <merkl@proudsourcing.de>
+ * @author   Stefan Moises <stefan@rent-a-hero.de>
+ * @license  MIT License http://opensource.org/licenses/MIT
+ * @link     http://getioly.com/
+ * @version	 1.1.0
  */
 $sLangName  = "English";
 // -------------------------------
@@ -17,7 +21,7 @@ $aLang = array(
 'charset'                                   => 'UTF-8',
 'mxioly'                                    => 'ioly',    
 'IOLY_MAIN_HEADLINE'                        => 'ioly',
-'IOLY_MAIN_TITLE'                        	=> 'ioly module manager',
+'IOLY_MAIN_TITLE'                        	=> 'ioly OXID connector',
 'IOLY_MODULE_NAME'                          => 'Module-Name',       
 'IOLY_MODULE_DOWNLOAD'                      => '',    
 'IOLY_IOLY_UPDATE_BUTTON'                   => 'Update ioly core',    
@@ -25,7 +29,7 @@ $aLang = array(
 'IOLY_MODULE_OXID_VERSION'                  => 'supported OXID-Versions',    
 'IOLY_MODULE_DOWNLOAD_SUCCESS'              => 'Module downloaded successfully!',    
 'IOLY_MODULE_UNINSTALL_SUCCESS'             => 'Module files removed successfully!',    
-'IOLY_MAIN_INFOTEXT'                        => 'With ioly you can download and install any module or lib via "recipes".',    
+'IOLY_MAIN_INFOTEXT'                        => 'With the ioly modul manager you can download and install OXID modules with one click in your shop.<br>For more information visit <a href="https://github.com/ioly/ioly" target="_blank">github.com/ioly/ioly</a> or <a href="https://getioly.com" target="_blank">getioly.com</a>.<br>',    
 'IOLY_RECIPE_UPDATE_SUCCESS'                => 'updated recipes successfully!',    
 'IOLY_RECIPE_UPDATE_ERROR'                  => 'problem updating recipes: ',    
 'IOLY_IOLY_UPDATE_SUCCESS'                  => 'updated ioly core lib successfully!',    
