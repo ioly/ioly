@@ -97,3 +97,8 @@ tbody>tr>td.iolynoline {
 #contributorslist {
 	list-style-type: none;
 }
+#recipeCounter {
+    font-weight: bold;
+    margin-top: 12px;
+    padding-left: 30px;
+}

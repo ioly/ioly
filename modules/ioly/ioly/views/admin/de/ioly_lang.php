@@ -21,7 +21,7 @@ $aLang = array(
 'charset'                                   => 'UTF-8',
 'mxioly'                                    => 'ioly',    
 'IOLY_MAIN_HEADLINE'                        => 'ioly',
-'IOLY_MAIN_TITLE'                        	=> 'ioly OXID Connector',
+'IOLY_MAIN_TITLE'                           => 'ioly OXID Connector',
 'IOLY_MODULE_NAME'                          => 'Modulname',     
 'IOLY_MODULE_DOWNLOAD'                      => '',    
 'IOLY_IOLY_UPDATE_BUTTON'                   => 'ioly Core aktualisieren',    
@@ -66,6 +66,6 @@ $aLang = array(
 'IOLY_EXCEPTION_MESSAGE_CODE_1006'          => 'Bitte benutzen Sie vendor/package um ein Modul zu installieren.',    
 'SHOP_MODULE_GROUP_IOLY'                    => 'ioly Einstellungen',
 'SHOP_MODULE_iolycookbookurl'               => 'ioly Cookbook URL (URL der Rezepte als ZIP-Archiv)',
- 
+'IOLY_RECIPES'                              => 'Rezepte', 
 );
 ?>
