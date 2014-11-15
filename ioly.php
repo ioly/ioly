@@ -4,13 +4,14 @@
  *
  * PHP version 5.3
  *
- * @category Ioly_Modulmanager
+ * @category ioly_modulmanager
  * @package  Core
  * @author   Dave Holloway <dh@gn2-netwerk.de>
  * @author   Tobias Merkl <merkl@proudsourcing.de>
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
+ * @version	 1.1.0
  */
 namespace ioly;
 
@@ -26,7 +27,7 @@ class ioly
     protected $_systemVersion = null;
     protected $_debugLogging = false;
     protected $_cookbooks = array(
-        'ioly' => 'http://github.com/ioly/ioly/archive/master.zip'
+    	#'ioly' => 'http://github.com/ioly/ioly/archive/master.zip'
     );
 
     /**
@@ -77,12 +78,12 @@ class ioly
      * Useful when testing merge-contributions
      * @param $url
      */
-    public function setCookbook($url)
+    public function setCookbook($key, $url)
     {
-        if($this->_cookbooks['ioly'] != $url) {
-        $this->_cookbooks['ioly'] = $url;
-        $this->update();
-    }
+    	if(!empty($key) && !empty($url)) {
+        	$this->_cookbooks[$key] = $url;
+        	$this->update();
+        }
     }
     /**
      * Return the current cookbook URL
@@ -90,7 +91,7 @@ class ioly
      */
     public function getCookbook()
     {
-        return $this->_cookbooks['ioly'];
+        return $this->_cookbooks;
     }
 
     /**
@@ -715,11 +716,11 @@ class ioly
      */
     protected function _parseRecipes()
     {
+        $db = array();
         foreach (glob($this->_baseDir.'/cookbook.*.zip') as $cookbookArchive) {
             $cookbook = new \PharData($cookbookArchive, 0);
             if ($cookbook) {
                 $files = new \RecursiveIteratorIterator($cookbook);
-                $db = array();
                 foreach ($files as $file) {
                     if (substr($file, -5) == '.json') {
                         $packageData = file_get_contents($file);
@@ -758,8 +759,8 @@ class ioly
                         }
                     }
                 }
-                file_put_contents($this->_recipeCacheFile, serialize($db));
             }
+            file_put_contents($this->_recipeCacheFile, serialize($db));
         }
     }
 }
@@ -812,9 +813,10 @@ if (php_sapi_name() == 'cli') {
                 break;
 
 
-            case "setcookbookurl":
-                $cookbookUrl= isset($argv[2]) ? $argv[2] : null;
-                $ioly->setCookbook($cookbookUrl);
+            case "addcookbook":
+            	$cookbookKey= isset($argv[2]) ? $argv[2] : null;
+                $cookbookUrl= isset($argv[3]) ? $argv[3] : null;
+                $ioly->setCookbook($cookbookKey, $cookbookUrl);
                 break;
 
             case "show":
@@ -833,6 +835,9 @@ if (php_sapi_name() == 'cli') {
                 echo "===================\n\n";
                 echo "Usage Examples:\n\n";
 
+                echo "\tlist recipes:\n";
+                echo "\t\t php ioly.php list\n\n";
+                
                 echo "\tupdate recipes:\n";
                 echo "\t\t php ioly.php update\n\n";
 
@@ -854,6 +859,10 @@ if (php_sapi_name() == 'cli') {
                 echo "\tuninstall recipe:\n";
                 echo "\t php ioly.php uninstall <vendor>/<package> <version>\n";
                 echo "\t php ioly.php uninstall gn2netwerk/processor 1.0.0\n\n";
+                
+                echo "\tadd cookbook:\n";
+                echo "\t php ioly.php addcookbook <key> <url>\n";
+                echo "\t php ioly.php addcookbook ioly http://github.com/ioly/ioly/archive/master.zip\n\n";
                 break;
         }
     } catch (Exception $e) {
