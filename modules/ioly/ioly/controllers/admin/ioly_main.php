@@ -1,17 +1,17 @@
 <?php
-
 /**
  * ioly
  *
  * PHP version 5.3
  *
- * @category Ioly_Modulmanager
- * @package  Admin
+ * @category ioly_modulmanager
+ * @package  OXID Connector
  * @author   Dave Holloway <dh@gn2-netwerk.de>
  * @author   Tobias Merkl <merkl@proudsourcing.de>
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
+ * @version	 1.1.0
  */
 class ioly_main extends oxAdminView
 {
@@ -67,6 +67,7 @@ class ioly_main extends oxAdminView
             }
         }
     }
+    
     /**
      * Gets ioly core if it doesn't exist.
      */
@@ -82,13 +83,22 @@ class ioly_main extends oxAdminView
             $this->_ioly = new ioly\ioly();
             $this->_ioly->setSystemBasePath(oxRegistry::getConfig()->getConfigParam('sShopDir'));
             $this->_ioly->setSystemVersion($this->getShopMainVersion());
-            // set custom cookbook?
-            if(($sCookbookUrl = oxRegistry::getConfig()->getConfigParam('iolycookbookurl')) != '') {
-                $this->_ioly->setCookbook($sCookbookUrl);
-            }
             return true;
         }
         return false;
+    }
+    
+    /**
+     * Set multiple cookbooks as defined in module settings.
+     * @return null
+     */
+    protected function _setCookbooks() {
+        if(($aCookbookUrls = oxRegistry::getConfig()->getConfigParam('iolycookbookurl')) && is_array($aCookbookUrls)) {
+            // remove local zip files
+            $this->_ioly->clearCookbooks();
+            // and download new ones....
+            $this->_ioly->setCookbooks($aCookbookUrls);
+        }
     }
     
     /**
@@ -188,7 +198,7 @@ class ioly_main extends oxAdminView
      */
     public function updateRecipesAjax() {
         try {
-            $this->_ioly->update();
+            $this->_setCookbooks();
             $msg = oxRegistry::getLang()->translateString('IOLY_RECIPE_UPDATE_SUCCESS');
             $headerStatus = "HTTP/1.1 200 Ok";
             $res = array("status" => $msg);

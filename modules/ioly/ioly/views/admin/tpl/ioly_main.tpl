@@ -61,6 +61,9 @@
             </div>
             <div id="iolylogo">
                 <img src="[{$oViewConf->getModuleUrl('ioly', 'ioly_logo.png')}]" border="0" alt="" title=""/>
+                <div id="recipeCounter">
+                    {{numRecipes}} [{oxmultilang ident="IOLY_RECIPES"}]
+                </div>
             </div>
             <div class="clear"></div>
             

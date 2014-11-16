@@ -1,13 +1,17 @@
 <?php
-
 /**
- * @author smxsm
- * @package ioly-oxid-ce-487
- * 
- * Encoding: UTF-8
- * Date: 02.11.2014
- * 
- * Description of ioly_lang
+ * ioly
+ *
+ * PHP version 5.3
+ *
+ * @category ioly_modulmanager
+ * @package  OXID Connector
+ * @author   Dave Holloway <dh@gn2-netwerk.de>
+ * @author   Tobias Merkl <merkl@proudsourcing.de>
+ * @author   Stefan Moises <stefan@rent-a-hero.de>
+ * @license  MIT License http://opensource.org/licenses/MIT
+ * @link     http://getioly.com/
+ * @version	 1.1.0
  */
 $sLangName  = "Deutsch";
 // -------------------------------
@@ -17,7 +21,7 @@ $aLang = array(
 'charset'                                   => 'UTF-8',
 'mxioly'                                    => 'ioly',    
 'IOLY_MAIN_HEADLINE'                        => 'ioly',
-'IOLY_MAIN_TITLE'                        	=> 'ioly Modulmanager',
+'IOLY_MAIN_TITLE'                           => 'ioly OXID Connector',
 'IOLY_MODULE_NAME'                          => 'Modulname',     
 'IOLY_MODULE_DOWNLOAD'                      => '',    
 'IOLY_IOLY_UPDATE_BUTTON'                   => 'ioly Core aktualisieren',    
@@ -25,7 +29,7 @@ $aLang = array(
 'IOLY_MODULE_OXID_VERSION'                  => 'unterst&uuml;tzte OXID-Version',    
 'IOLY_MODULE_DOWNLOAD_SUCCESS'              => 'Modul-Download erfolgreich!',    
 'IOLY_MODULE_UNINSTALL_SUCCESS'             => 'Modul-Dateien erfolgreich entfernt!',    
-'IOLY_MAIN_INFOTEXT'                        => 'Mit ioly kannst du mit einem Klick OXID Module herunterladen und in deinem Shop installieren.<br>Mehr Informationen zu ioly findest du unter <a href="https://github.com/ioly/ioly" target="_blank">github.com/ioly/ioly</a>.<br>',    
+'IOLY_MAIN_INFOTEXT'                        => 'Mit dem ioly Modulmanager kannst du mit einem Klick OXID Module herunterladen und in deinem Shop installieren.<br>Mehr Informationen zu ioly findest du unter <a href="https://github.com/ioly/ioly" target="_blank">github.com/ioly/ioly</a> bzw. <a href="http://getioly.com" target="_blank">getioly.com</a>.<br>',    
 'IOLY_RECIPE_UPDATE_SUCCESS'                => 'Rezepte erfolgreich aktualisiert!',    
 'IOLY_RECIPE_UPDATE_ERROR'                  => 'Problem beim Aktualisieren der Rezepte: ',    
 'IOLY_IOLY_UPDATE_SUCCESS'                  => 'ioly Core Lib erfolgreich aktualisiert!',    
@@ -62,6 +66,6 @@ $aLang = array(
 'IOLY_EXCEPTION_MESSAGE_CODE_1006'          => 'Bitte benutzen Sie vendor/package um ein Modul zu installieren.',    
 'SHOP_MODULE_GROUP_IOLY'                    => 'ioly Einstellungen',
 'SHOP_MODULE_iolycookbookurl'               => 'ioly Cookbook URL (URL der Rezepte als ZIP-Archiv)',
- 
+'IOLY_RECIPES'                              => 'Rezepte', 
 );
 ?>

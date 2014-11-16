@@ -8,7 +8,7 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
             $scope.downloading = false;
             $scope.dynamic = 0;
             $scope.timerPromise = null;
-            
+            $scope.numRecipes = 0;
             
             /**
              * Nice modal messsages
@@ -229,6 +229,7 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
                         var data = response.data.result;
                         $defer.resolve(data);
                         console.log("table data received: " + response.data.numObjects);
+                        $scope.numRecipes = response.data.numObjects;
                     }, function (error) {
                         $scope.addAlert('error', error.data + " (Error " + error.status + ")");
                     });
