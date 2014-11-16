@@ -10,8 +10,8 @@ The ioly system is driven by a "cookbook", stored on GitHub, which contains "rec
 
 ## Getting started
 
-1. download ioly
-2. configure the ioly settings for your environment
+1. download [ioly core](https://github.com/ioly/ioly/tree/core)
+2. download ioly connector (e. g. [OXID connector](https://github.com/ioly/ioly/tree/connector-oxid))
 3. search for a recipe
 4. install recipe
 4. done
