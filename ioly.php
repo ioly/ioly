@@ -4,13 +4,14 @@
  *
  * PHP version 5.3
  *
- * @category Ioly_Modulmanager
+ * @category ioly_modulmanager
  * @package  Core
  * @author   Dave Holloway <dh@gn2-netwerk.de>
  * @author   Tobias Merkl <merkl@proudsourcing.de>
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
+ * @version	 1.1.0
  */
 namespace ioly;
 
@@ -24,9 +25,10 @@ class ioly
     protected $_curlCallback = null;
     protected $_systemBasePath = null;
     protected $_systemVersion = null;
-    protected $_debugLogging = false;
-    protected $_cookbooks = array(
-        'ioly' => 'http://github.com/ioly/ioly/archive/master.zip'
+    protected $_debugLogging = true;
+    protected $_cookbooks = array();
+    protected $_defaultCookbooks = array(
+    	'ioly' => 'http://github.com/ioly/ioly/archive/master.zip'
     );
 
     /**
@@ -73,24 +75,59 @@ class ioly
     }
 
     /**
-     * Overwrites the default cookbook with a custom one.
-     * Useful when testing merge-contributions
-     * @param $url
+     * Add a cookbook.
+     * @param $key A unique identifier.
+     * @param $url The url to the cookbook.
      */
-    public function setCookbook($url)
+    public function addCookbook($key, $url)
     {
-        if($this->_cookbooks['ioly'] != $url) {
-        $this->_cookbooks['ioly'] = $url;
-        $this->update();
-    }
+    	if(!empty($key) && !empty($url)) {
+            $this->_writeLog("Adding cookbook: $key => $url");
+            $this->_cookbooks[$key] = $url;
+            $this->update();
+        }
     }
     /**
-     * Return the current cookbook URL
+     * Add a cookbook.
+     * @param $key A unique identifier.
+     * @param $url The url to the cookbook.
+     */
+    public function removeCookbook($key)
+    {
+    	if(!empty($key)) {
+            $zipFile = $this->_baseDir."/cookbook.{$key}.zip";
+            $this->_writeLog("Removing cookbook: $key, file: " . $zipFile);
+            if(isset($this->_cookbooks[$key])) {
+                unset($this->_cookbooks[$key]);
+            }
+            // remove file in any case
+            if(file_exists($zipFile)) {
+                @unlink($zipFile);
+            }
+            // and update
+            $this->update();
+        }
+    }
+    /**
+     * Set the cookbooks to use.
+     * @param array $aCookbooks
+     */
+    public function setCookbooks($aCookbooks)
+    {
+        foreach($aCookbooks as $key => $url) {
+            if(!empty($key) && !empty($url)) {
+                $this->_cookbooks[$key] = $url;
+            }
+        }
+        $this->update();
+    }
+    /**
+     * Return a specific cookbook URL
      * @return string
      */
-    public function getCookbook()
+    public function getCookbook($key)
     {
-        return $this->_cookbooks['ioly'];
+        return $this->_cookbooks[$key];
     }
 
     /**
@@ -169,9 +206,9 @@ class ioly
                 $packageName = $parts[1];
             }
             foreach ($this->_recipeCache as $package) {
-                if (     (strpos($package['name'], $query) !== false)
-                      || (strpos($package['vendor'], $query) !== false)
-                      || (strpos($package['_filename'], $query) !== false)
+                if (     (stripos($package['name'], $query) !== false)
+                      || (stripos($package['vendor'], $query) !== false)
+                      || (stripos($package['_filename'], $query) !== false)
                       || (in_array($query, $package['tags']))
                       || (isset($vendor) && isset($packageName)
                           && $package['vendor'] == $vendor
@@ -193,16 +230,33 @@ class ioly
         return $this->_recipeCache;
     }
 
-
+    /**
+     * Clear all cookbooks, removes zip files
+     */
+    public function clearCookbooks() {
+        // clear downloaded cookbooks
+        foreach (glob($this->_baseDir.'/cookbook.*.zip') as $cookbookArchive) {
+            @unlink($cookbookArchive);
+        }
+        $this->_cookbooks = array();
+    }
+    
     /**
      * Updates the internal list of recipes
      */
     public function update()
     {
+        // no specific cookbooks set, use default one
+        if(!count($this->_getCookbooks())) {
+            $this->setCookbooks($this->_defaultCookbooks);
+        }
+        
         foreach ($this->_getCookbooks() as $repo=>$url) {
+            $this->_writeLog("Trying to get recipe $repo from $url");
             $data = $this->_curlRequest($url, true);
             $fn = 'cookbook.'.$repo.'.zip';
             if ($data[0] != '') {
+                $this->_writeLog("Successfully downloaded recipe $repo from $url");
                 file_put_contents($this->_baseDir.'/'.$fn, $data[0]);
                 $this->_parseRecipes();
             }
@@ -298,8 +352,9 @@ class ioly
      */
     protected function _writeLog($sLogMessage) {
         if($this->_debugLogging) {
-            $sLogDist = $this->getSystemBasePath()."/log/ioly_core.log";
+            $sLogDist = dirname(__FILE__)."/ioly.log";
             if ( ( $oHandle = fopen( $sLogDist, 'a' ) ) !== false ) {
+                $sLogMessage = "\n" . date('Y-m-d H:i:s') . " " . $sLogMessage;
                 fwrite( $oHandle, $sLogMessage );
                 $blOk = fclose( $oHandle );
             }  
@@ -398,7 +453,7 @@ class ioly
                 }
 
                 if (!empty($failedToDelete)) {
-                    $this->_writeLog("\nFailed to delete: " . print_r($failedToDelete));
+                    $this->_writeLog("Failed to delete: " . print_r($failedToDelete));
                     $exception = new Exception(
                         "Module was uninstalled but the following ".
                         "files could not be deleted:\n"
@@ -410,7 +465,7 @@ class ioly
                 }
 
                 if (!empty($modifiedFiles)) {
-                    $this->_writeLog("\nModified, failed to delete: " . print_r($failedToDelete));
+                    $this->_writeLog("Modified, failed to delete: " . print_r($failedToDelete));
                     $exception = new Exception(
                         "Module was uninstalled but the following ".
                         "files were modified and not deleted:\n"
@@ -715,11 +770,11 @@ class ioly
      */
     protected function _parseRecipes()
     {
+        $db = array();
         foreach (glob($this->_baseDir.'/cookbook.*.zip') as $cookbookArchive) {
             $cookbook = new \PharData($cookbookArchive, 0);
             if ($cookbook) {
                 $files = new \RecursiveIteratorIterator($cookbook);
-                $db = array();
                 foreach ($files as $file) {
                     if (substr($file, -5) == '.json') {
                         $packageData = file_get_contents($file);
@@ -746,7 +801,7 @@ class ioly
                                 $matchingVersions = is_array($versionData['supported']) ? $versionData['supported'] : explode(",", trim($versionData['supported']));
                                 if(count($matchingVersions)) {
                                     foreach($matchingVersions as $matchingVersion) {
-                                        $this->_writeLog("\n{$package['packageString']} $matchingVersion -- " . $this->getSystemVersion());
+                                        #$this->_writeLog("{$package['packageString']} $matchingVersion -- " . $this->getSystemVersion());
                                         if($matchingVersion == $this->getSystemVersion()) {
                                             $package['versions'][$version]['matches'] = true;
                                             break;
@@ -758,8 +813,8 @@ class ioly
                         }
                     }
                 }
-                file_put_contents($this->_recipeCacheFile, serialize($db));
             }
+            file_put_contents($this->_recipeCacheFile, serialize($db));
         }
     }
 }
@@ -812,9 +867,17 @@ if (php_sapi_name() == 'cli') {
                 break;
 
 
-            case "setcookbookurl":
-                $cookbookUrl= isset($argv[2]) ? $argv[2] : null;
-                $ioly->setCookbook($cookbookUrl);
+            case "addcookbook":
+            	$cookbookKey= isset($argv[2]) ? $argv[2] : null;
+                $cookbookUrl= isset($argv[3]) ? $argv[3] : null;
+                $ioly->addCookbook($cookbookKey, $cookbookUrl);
+                break;
+            case "removecookbook":
+            	$cookbookKey= isset($argv[2]) ? $argv[2] : null;
+                $ioly->removeCookbook($cookbookKey);
+                break;
+            case "clearcookbooks":
+                $ioly->clearCookbooks();
                 break;
 
             case "show":
@@ -833,6 +896,9 @@ if (php_sapi_name() == 'cli') {
                 echo "===================\n\n";
                 echo "Usage Examples:\n\n";
 
+                echo "\tlist recipes:\n";
+                echo "\t\t php ioly.php list\n\n";
+                
                 echo "\tupdate recipes:\n";
                 echo "\t\t php ioly.php update\n\n";
 
@@ -854,6 +920,17 @@ if (php_sapi_name() == 'cli') {
                 echo "\tuninstall recipe:\n";
                 echo "\t php ioly.php uninstall <vendor>/<package> <version>\n";
                 echo "\t php ioly.php uninstall gn2netwerk/processor 1.0.0\n\n";
+                
+                echo "\tadd cookbook:\n";
+                echo "\t php ioly.php addcookbook <key> <url>\n";
+                echo "\t php ioly.php addcookbook ioly http://github.com/ioly/ioly/archive/master.zip\n\n";
+                
+                echo "\tremove cookbook:\n";
+                echo "\t php ioly.php removecookbook <key>\n";
+                echo "\t php ioly.php removecookbook ioly\n\n";
+                
+                echo "\tclear cookbooks:\n";
+                echo "\t php ioly.php clearcookbooks\n";
                 break;
         }
     } catch (Exception $e) {
