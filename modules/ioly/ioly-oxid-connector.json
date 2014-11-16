@@ -1,0 +1,43 @@
+{
+    "name": "ioly OXID Connector",
+    "vendor": "ioly",
+    "type": "oxid",
+    "license": "MIT",
+    "desc": "The ioly OXID Connector Backend. You should not uninstall this :)",
+    "tags": [
+        "ioly",
+        "backend"
+    ],
+    "versions": {
+        "1.0.0": {
+            "project": "https://github.com/ioly/",
+            "url": "https://github.com/ioly/ioly/archive/ioly_connector-oxid_v1.0.0.zip",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "",
+                    "dest": ""
+                }
+            ]
+        },
+        "1.1.0": {
+            "project": "https://github.com/ioly/",
+            "url": "https://github.com/ioly/ioly/archive/connector-oxid.zip",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "",
+                    "dest": ""
+                }
+            ]
+        }
+    }
+}
