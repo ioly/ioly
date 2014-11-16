@@ -94,6 +94,9 @@ class ioly_main extends oxAdminView
      */
     protected function _setCookbooks() {
         if(($aCookbookUrls = oxRegistry::getConfig()->getConfigParam('iolycookbookurl')) && is_array($aCookbookUrls)) {
+            // remove local zip files
+            $this->_ioly->clearCookbooks();
+            // and download new ones....
             $this->_ioly->setCookbooks($aCookbookUrls);
         }
     }
