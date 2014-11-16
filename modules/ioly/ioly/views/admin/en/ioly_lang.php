@@ -66,5 +66,6 @@ $aLang = array(
 'IOLY_EXCEPTION_MESSAGE_CODE_1006'          => 'Please use vendor/package to install a module.',    
 'SHOP_MODULE_GROUP_IOLY'                    => 'ioly settings',
 'SHOP_MODULE_iolycookbookurl'               => 'ioly Cookbook URL (URL to the recipes as ZIP file)',
+'IOLY_RECIPES'                              => 'Recipes', 
 );
 ?>

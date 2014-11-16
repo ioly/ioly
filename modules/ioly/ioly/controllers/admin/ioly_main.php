@@ -83,24 +83,21 @@ class ioly_main extends oxAdminView
             $this->_ioly = new ioly\ioly();
             $this->_ioly->setSystemBasePath(oxRegistry::getConfig()->getConfigParam('sShopDir'));
             $this->_ioly->setSystemVersion($this->getShopMainVersion());
-            if($this->_ioly->listAll() == false) {
-            	$this->_setCookbooks();
-            }
             return true;
         }
         return false;
     }
     
     /**
-     * 
-     * @param type $ex
-     * @return string
+     * Set multiple cookbooks as defined in module settings.
+     * @return null
      */
     protected function _setCookbooks() {
-        if(($aCookbookUrls = oxRegistry::getConfig()->getConfigParam('iolycookbookurl'))) {
-            foreach($aCookbookUrls as $key => $value) {
-            	$this->_ioly->setCookbook($key, $value);
-            } 
+        if(($aCookbookUrls = oxRegistry::getConfig()->getConfigParam('iolycookbookurl')) && is_array($aCookbookUrls)) {
+            // remove local zip files
+            $this->_ioly->clearCookbooks();
+            // and download new ones....
+            $this->_ioly->setCookbooks($aCookbookUrls);
         }
     }
     
@@ -201,7 +198,7 @@ class ioly_main extends oxAdminView
      */
     public function updateRecipesAjax() {
         try {
-            $this->_ioly->update();
+            $this->_setCookbooks();
             $msg = oxRegistry::getLang()->translateString('IOLY_RECIPE_UPDATE_SUCCESS');
             $headerStatus = "HTTP/1.1 200 Ok";
             $res = array("status" => $msg);
