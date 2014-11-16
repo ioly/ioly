@@ -95,11 +95,17 @@ class ioly
     public function removeCookbook($key)
     {
     	if(!empty($key)) {
-            $this->_writeLog("Removing cookbook: $key");
+            $zipFile = $this->_baseDir."/cookbook.{$key}.zip";
+            $this->_writeLog("Removing cookbook: $key, file: " . $zipFile);
             if(isset($this->_cookbooks[$key])) {
-                $this->_cookbooks[$key];
-                $this->update();
+                unset($this->_cookbooks[$key]);
             }
+            // remove file in any case
+            if(file_exists($zipFile)) {
+                @unlink($zipFile);
+            }
+            // and update
+            $this->update();
         }
     }
     /**
@@ -224,16 +230,22 @@ class ioly
         return $this->_recipeCache;
     }
 
-
+    /**
+     * Clear all cookbooks, removes zip files
+     */
+    public function clearCookbooks() {
+        // clear downloaded cookbooks
+        foreach (glob($this->_baseDir.'/cookbook.*.zip') as $cookbookArchive) {
+            @unlink($cookbookArchive);
+        }
+        $this->_cookbooks = array();
+    }
+    
     /**
      * Updates the internal list of recipes
      */
     public function update()
     {
-        // clear downloaded cookbooks
-        foreach (glob($this->_baseDir.'/cookbook.*.zip') as $cookbookArchive) {
-            @unlink($cookbookArchive);
-        }
         // no specific cookbooks set, use default one
         if(!count($this->_getCookbooks())) {
             $this->setCookbooks($this->_defaultCookbooks);
@@ -855,10 +867,17 @@ if (php_sapi_name() == 'cli') {
                 break;
 
 
-            case "setcookbook":
+            case "addcookbook":
             	$cookbookKey= isset($argv[2]) ? $argv[2] : null;
                 $cookbookUrl= isset($argv[3]) ? $argv[3] : null;
                 $ioly->addCookbook($cookbookKey, $cookbookUrl);
+                break;
+            case "removecookbook":
+            	$cookbookKey= isset($argv[2]) ? $argv[2] : null;
+                $ioly->removeCookbook($cookbookKey);
+                break;
+            case "clearcookbooks":
+                $ioly->clearCookbooks();
                 break;
 
             case "show":
@@ -902,9 +921,16 @@ if (php_sapi_name() == 'cli') {
                 echo "\t php ioly.php uninstall <vendor>/<package> <version>\n";
                 echo "\t php ioly.php uninstall gn2netwerk/processor 1.0.0\n\n";
                 
-                echo "\tset cookbook:\n";
-                echo "\t php ioly.php setcookbook <key> <url>\n";
-                echo "\t php ioly.php setcookbook ioly http://github.com/ioly/ioly/archive/master.zip\n\n";
+                echo "\tadd cookbook:\n";
+                echo "\t php ioly.php addcookbook <key> <url>\n";
+                echo "\t php ioly.php addcookbook ioly http://github.com/ioly/ioly/archive/master.zip\n\n";
+                
+                echo "\tremove cookbook:\n";
+                echo "\t php ioly.php removecookbook <key>\n";
+                echo "\t php ioly.php removecookbook ioly\n\n";
+                
+                echo "\tclear cookbooks:\n";
+                echo "\t php ioly.php clearcookbooks\n";
                 break;
         }
     } catch (Exception $e) {
