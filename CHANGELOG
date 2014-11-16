@@ -1,2 +1,6 @@
-v 1.1.0
+1.1.0 (2014-10-16)
   - add multiple cookbooks
+  - update CLI functions
+  
+1.1.0 (2014-10-12)
+  - ioly release
