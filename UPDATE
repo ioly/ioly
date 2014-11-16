@@ -1,0 +1,7 @@
+v1.0.0 -> v1.1.0
+---
+1. update ioly recipes in shop admin
+2. update ioly core in shop admin
+3. deactivate/activate ioly module in shop admin
+4. seach for "ioly" recipe
+5. install "ioly OXID Connector 1.1.0"
