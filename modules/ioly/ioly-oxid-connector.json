@@ -19,7 +19,7 @@
             ],
             "mapping": [
                 {
-                    "src": "",
+                    "src": "modules/ioly/",
                     "dest": ""
                 }
             ]
@@ -34,7 +34,7 @@
             ],
             "mapping": [
                 {
-                    "src": "",
+                    "src": "modules/ioly/",
                     "dest": ""
                 }
             ]
