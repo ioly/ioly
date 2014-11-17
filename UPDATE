@@ -5,4 +5,8 @@ v1.0.0 -> v1.1.0
 3. seach for "ioly" recipe
 4. install "ioly OXID Connector 1.1.0"
 5. deactivate/activate ioly module in shop admin
-6. now you can enter multiple cookbook urls in the module settings
+6. now you can enter multiple cookbook urls in the module settings etc.
+   if the array of urls is empty, add the default cookbook url, too:
+   ioly => http://github.com/ioly/ioly/archive/master.zip
+   and add other cookbooks urls you may have, e.g.
+   ownstuff => http://github.com/coolcompany/myownrecipes/archive/master.zip
