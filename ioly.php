@@ -405,12 +405,13 @@ class ioly
                         if (!in_array($delDir, $checkDeleteFolders)) {
                             $checkDeleteFolders[] = $delDir;
                         }
-                        $delDir = $this->_dirName($delDir);
-                        $msg .= "\ndelDir: $delDir syspath: " . $this->getSystemBasePath();
-                        
                         if ($delDir == $this->getSystemBasePath()) {
                             $continue = false;
+                            break;
                         }
+                        // go up ....
+                        $delDir = $this->_dirName($delDir);
+                        $msg .= "\ndelDir: $delDir syspath: " . $this->getSystemBasePath();
                     }
 
                     if (file_exists($deletePath)
