@@ -11,10 +11,11 @@
         "statistics"
     ],
     "versions": {
-        "0.7.0": {
+        "0.8.1": {
             "project": "https://github.com/job963/oxProbs",
             "url": "https://github.com/job963/oxProbs/archive/master.zip",
             "supported": [
+                "4.9",
                 "4.8",
                 "4.7"
             ],

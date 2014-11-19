@@ -1,18 +1,19 @@
 {
-    "name": "jxGTaxo",
+    "name": "jxArtUp",
     "vendor": "job963",
     "type": "oxid",
     "license": "GNU",
-    "desc": "OXID eShop Admin Extension for Setting up the Google Taxonomy for each Category.",
+    "desc": "OXID eShop module for scheduled updating of product fields/attributes.",
     "tags": [
         "backend",
-        "google",
-        "export"
+        "products",
+        "schedule",
+        "update"
     ],
     "versions": {
-        "0.1.1": {
-            "project": "https://github.com/job963/jxGTaxo",
-            "url": "https://github.com/job963/jxGTaxo/archive/master.zip",
+        "0.2.5": {
+            "project": "https://github.com/job963/jxArtUp",
+            "url": "https://github.com/job963/jxArtUp/archive/master.zip",
             "supported": [
                 "4.9",
                 "4.8",
