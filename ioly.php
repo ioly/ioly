@@ -11,7 +11,7 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version	 1.1.0
+ * @version	 1.1.1
  */
 namespace ioly;
 
@@ -195,7 +195,7 @@ class ioly
      * @param string $query Search string
      * @return array Associative array of results
      */
-    public function search($query = null)
+    public function search($query = null, $aFilter = array())
     {
         $results = array();
         if ($query !== null) {
@@ -206,14 +206,24 @@ class ioly
                 $packageName = $parts[1];
             }
             foreach ($this->_recipeCache as $package) {
-                if (     (stripos($package['name'], $query) !== false)
+                // filter active?
+                $filterRecipe = false;
+                if($aFilter && is_array($aFilter) && count($aFilter) > 0) {
+                    foreach($aFilter as $sKey => $sVal) {
+                        if(isset($package[$sKey]) && $package[$sKey] != $sVal) {
+                            $filterRecipe = true;
+                            break;
+                        }
+                    }
+                }
+                if ( !$filterRecipe  &&  ((stripos($package['name'], $query) !== false)
                       || (stripos($package['vendor'], $query) !== false)
                       || (stripos($package['_filename'], $query) !== false)
                       || (in_array($query, $package['tags']))
                       || (isset($vendor) && isset($packageName)
                           && $package['vendor'] == $vendor
                           && $package['_filename'] == $packageName)
-                    ) {
+                    )) {
                     $results[] = $package;
                 }
             }
@@ -225,8 +235,20 @@ class ioly
      * Lists all cached recipes
      * @return array
      */
-    public function listAll()
+    public function listAll($aFilter = array())
     {
+        if($aFilter && is_array($aFilter) && count($aFilter) > 0) {
+            $aFilteredPackages = array();
+            foreach($this->_recipeCache as $package) {
+                foreach($aFilter as $sKey => $sVal) {
+                    if(isset($package[$sKey]) && $package[$sKey] != $sVal) {
+                        continue;
+                    }
+                    $aFilteredPackages[] = $package;
+                }
+            }
+            return $aFilteredPackages;
+        }
         return $this->_recipeCache;
     }
 
@@ -833,14 +855,26 @@ if (php_sapi_name() == 'cli') {
         switch (strtolower($argv[1])) {
             case "search":
                 $query = isset($argv[2]) ? $argv[2] : null;
-                $results = $ioly->search($query);
+                $filter = isset($argv[3]) ? $argv[3] : null;
+                $aFilter = array();
+                if($filter !== null && strpos($filter, "=") !== FALSE) {
+                    $aTmp = explode("=", $filter);
+                    $aFilter = array($aTmp[0] => $aTmp[1]);
+                }
+                $results = $ioly->search($query, $aFilter);
                 foreach ($results as $package) {
                     echo $package['vendor'].'/'.$package['_filename']."\n";
                 }
                 break;
 
             case "list":
-                $results = $ioly->listAll();
+                $filter = isset($argv[2]) ? $argv[2] : null;
+                $aFilter = array();
+                if($filter !== null && strpos($filter, "=") !== FALSE) {
+                    $aTmp = explode("=", $filter);
+                    $aFilter = array($aTmp[0] => $aTmp[1]);
+                }
+                $results = $ioly->listAll( $aFilter );
                 foreach ($results as $package) {
                     echo $package['vendor'].'/'.$package['_filename']."\n";
                 }
@@ -897,16 +931,18 @@ if (php_sapi_name() == 'cli') {
                 echo "===================\n\n";
                 echo "Usage Examples:\n\n";
 
-                echo "\tlist recipes:\n";
-                echo "\t\t php ioly.php list\n\n";
+                echo "\tlist recipes with optional filter:\n";
+                echo "\t php ioly.php list <filterkey=filtervalue>\n";
+                echo "\t php ioly.php list vendor=gn2netwerk\n";
+                echo "\t php ioly.php list\n\n";
                 
                 echo "\tupdate recipes:\n";
-                echo "\t\t php ioly.php update\n\n";
+                echo "\t php ioly.php update\n\n";
 
-                echo "\tsearch recipes:\n";
-                echo "\t php ioly.php search <term>\n";
+                echo "\tsearch recipes with optional filter:\n";
+                echo "\t php ioly.php search <term> <filterkey=filtervalue>\n";
                 echo "\t php ioly.php search gn2\n";
-                echo "\t php ioly.php search proudcommerce\n";
+                echo "\t php ioly.php search proudcommerce type=oxid\n";
                 echo "\t php ioly.php search paypal\n\n";
 
                 echo "\tshow recipe:\n";
