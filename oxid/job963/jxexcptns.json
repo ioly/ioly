@@ -1,0 +1,30 @@
+{
+    "name": "jxExcptns",
+    "vendor": "job963",
+    "type": "oxid",
+    "license": "GNU",
+    "desc": "OXID eShop admin module for displaying the file exception_log.txt",
+    "tags": [
+        "backend",
+        "exceptions",
+        "logfile",
+        "highlight"
+    ],
+    "versions": {
+        "0.1.2": {
+            "project": "https://github.com/job963/jxExcptns",
+            "url": "https://github.com/job963/jxExcptns/archive/v0.1.2.zip",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/modules/jxmods/",
+                    "dest": "modules/jxmods/"
+                }
+            ]
+        }
+    }
+}
