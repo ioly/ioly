@@ -43,6 +43,11 @@ class ioly_main extends oxAdminView
     protected $_requiredJsLibs = array(
         "ioly/oxid-connector-js-libs" => "1.0.0"
     );
+    /**
+     * Filter ioly modules for OXID
+     * @var array 
+     */
+    protected $_iolyFilter = array('type' => 'oxid');
 
     /**
      * Constructor
@@ -110,11 +115,11 @@ class ioly_main extends oxAdminView
         if($this->_allModules === null) {
             $searchString = oxRegistry::getConfig()->getRequestParameter('searchstring');
             if($searchString != '') {
-                $allModules = $this->_ioly->search($searchString);
+                $allModules = $this->_ioly->search($searchString, $this->_iolyFilter);
                 $this->addTplParam('searchstring', $searchString);
             }
             else {
-                $allModules = $this->_ioly->listAll();
+                $allModules = $this->_ioly->listAll( $this->_iolyFilter );
             }
             $this->_allModules = $allModules;
         }
