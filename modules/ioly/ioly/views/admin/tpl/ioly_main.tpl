@@ -17,7 +17,7 @@
     <div ng-controller="IolyCtrl">
 
         [{if $iolyerrorfatal ne ''}]
-            <h2>[{oxmultilang ident='IOLY_MAIN_TITLE'}]</h2>
+            <h2>[{oxmultilang ident='IOLY_MAIN_TITLE'}] [{ $moduleVersion }]</h2>
             <div class="error alert alert-danger alert-dismissable">
                 [{$iolyerrorfatal}]
             </div>
@@ -42,7 +42,7 @@
             </script>
         
             <div id="iolyheadline">
-                <h2>[{oxmultilang ident='IOLY_MAIN_TITLE'}]</h2>
+                <h2>[{oxmultilang ident='IOLY_MAIN_TITLE'}] [{ $moduleVersion }]</h2>
                 <div id="iolyinfo">
                     <div id='iolyintrotext'>[{oxmultilang ident="IOLY_MAIN_INFOTEXT"}]</div>
                     <div id="contributors">

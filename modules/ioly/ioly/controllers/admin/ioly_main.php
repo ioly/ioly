@@ -11,7 +11,7 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version	 1.2.0
+ * @version	 1.2.1
  */
 class ioly_main extends oxAdminView
 {
@@ -381,6 +381,17 @@ class ioly_main extends oxAdminView
         }
         return false;
     }
+    
+    /**
+     * Gets ioly OXID connector version
+     *
+     * @return string
+     */
+    protected function _getModuleVersion() {
+    	$oModule = oxNew("oxModule");
+    	$aModuleVersion = $oModule->getModuleVersions();
+    	return $aModuleVersion["ioly"];
+    }
 
     /**
      * Executes parent method parent::render(), passes shop configuration parameters
@@ -392,6 +403,7 @@ class ioly_main extends oxAdminView
     {
         parent::render();
         $this->addTplParam("shopVersion", $this->getShopMainVersion());
+        $this->addTplParam("moduleVersion", $this->_getModuleVersion());
         $isAjax = oxRegistry::getConfig()->getRequestParameter('isajax');
         if($isAjax) {
             die("ajax");

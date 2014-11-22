@@ -11,7 +11,7 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version	 1.2.0
+ * @version	 1.2.1
  */
 $sLangName  = "English";
 // -------------------------------
