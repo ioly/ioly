@@ -9,7 +9,7 @@
         "backend"
     ],
     "versions": {
-        "1.1.0": {
+        "latest": {
             "project": "https://github.com/ioly/",
             "url": "https://github.com/ioly/ioly/archive/connector-oxid.zip",
             "supported": [
