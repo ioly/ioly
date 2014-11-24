@@ -22,7 +22,7 @@
             "mapping": [
                 {
                     "src": "function.getobject.php",
-                    "dest": "core/smarty/plugins/function.getobject.php"
+                    "dest": "core/smarty/plugins/"
                 }
             ]
         }
