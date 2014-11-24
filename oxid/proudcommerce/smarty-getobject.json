@@ -1,0 +1,30 @@
+{
+    "name": "Smarty getobject",
+    "vendor": "proudcommerce",
+    "type": "oxid",
+    "license": "GNU",
+    "desc": "Allows you to load any OXID-Object using a smarty tag",
+    "tags": [
+        "frontend",
+        "seo",
+        "sitemap"
+    ],
+    "versions": {
+        "1.0.0": {
+            "project": "https://github.com/OXID-eSales/oxideshop_ce/pull/177",
+            "url": "https://raw.githubusercontent.com/OXID-eSales/oxideshop_ce/fd88da56e04fed898bd5fec359c7d93d44291820/source/core/smarty/plugins/function.getobject.php",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.6"
+            ],
+            "mapping": [
+                {
+                    "src": "function.getobject.php",
+                    "dest": "core/smarty/plugins/"
+                }
+            ]
+        }
+    }
+}
