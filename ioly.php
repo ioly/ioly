@@ -617,7 +617,11 @@ class ioly
         $data = $this->_curlRequest($url);
         if ($data[1] == 200) {
             if ($data[0] != '') {
-                file_put_contents($tmpName, $data[0]);
+                if (substr($url, -4) != ".zip") {
+                    $this->_createPseudoZip($data[0], basename($url), $tmpName);
+                } else {
+                    file_put_contents($tmpName, $data[0]);
+                }
                 return $tmpName;
             }
         } else {
@@ -628,6 +632,20 @@ class ioly
             );
         }
         return null;
+    }
+
+    /**
+     * Creates a pseudo zip file if the downloaded file isn't a zip.
+     * This is useful for snippets.
+     **/
+    protected function _createPseudoZip($content, $baseName, $zipName)
+    {
+        $zip = new \ZipArchive;
+        $res = $zip->open($zipName, \ZipArchive::CREATE);
+        if ($res === TRUE) {
+            $zip->addFromString($baseName, $content);
+            $zip->close();
+        }
     }
 
     /**
