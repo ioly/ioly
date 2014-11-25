@@ -152,6 +152,11 @@ class ioly
      */
     public function __construct()
     {
+        $tz = ini_get('date.timezone');
+        if (!$tz) {
+            $tz = 'Europe/Berlin';
+        }
+        date_default_timezone_set($tz);
         $this->_baseDir = $this->_dirName(__FILE__);
         $this->_recipeCacheFile = $this->_baseDir.'/.recipes.db';
         $this->_digestCacheFile = $this->_baseDir.'/.digest.db';
