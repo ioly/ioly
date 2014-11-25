@@ -11,7 +11,7 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version	 1.2.1
+ * @version	 1.2.2
  */
 class ioly_main extends oxAdminView
 {
@@ -388,8 +388,8 @@ class ioly_main extends oxAdminView
      * @return string
      */
     protected function _getModuleVersion() {
-    	$oModule = oxNew("oxModule");
-    	$aModuleVersion = $oModule->getModuleVersions();
+    	$oModuleList = oxNew("oxModuleList");
+    	$aModuleVersion = $oModuleList->getModuleVersions();
     	return $aModuleVersion["ioly"];
     }
 
