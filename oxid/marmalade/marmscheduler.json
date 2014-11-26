@@ -13,7 +13,6 @@
             "project": "https://github.com/marmaladeDE/marmScheduler",
             "url": "https://github.com/marmaladeDE/marmScheduler/archive/master.zip",
             "supported": [
-                "4.8",
                 "4.7"
             ],
             "mapping": [
