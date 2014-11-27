@@ -2,7 +2,7 @@
   "name": "scrolltoselected",
   "vendor": "zunderweb",
   "type": "oxid",
-  "license": "",
+  "license": "unknown",
   "desc": "Lists in OXID eShop Backend scroll automatically to the currently selected entry.",
   "tags": [
       "backend",
@@ -12,9 +12,9 @@
   "versions": {
       "1.0.0": {
           "project": "https://github.com/leofonic/oxid_admin_autoscroll",
-          "url": "https://github.com/leofonic/oxid_admin_autoscroll/archive/master.zip",
+          "url": "https://github.com/leofonic/oxid_admin_autoscroll/archive/0772e71fb3eb96e3e4616b044dfd5a6c03642a69.zip",
           "supported": [
-				"4.9",
+		"4.9",
                 "4.8",
                 "4.7",
                 "4.6"
