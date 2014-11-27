@@ -23,12 +23,6 @@
             </div>
         [{else}]
 
-            <!--
-            <div class="downloadprogress">
-                <progressbar class="progress-striped active" animate="true" ng-show="downloading" value="dynamic" type="success"><b>{{dynamic}}%</b></progressbar>
-            </div>
-            -->
-            
             <script type="text/ng-template" id="myModalContent.html">
                 <div class="modal-header">
                     <h3 class="modal-title">Info</h3>

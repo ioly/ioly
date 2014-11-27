@@ -1,21 +1,16 @@
 var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.bootstrap', 'angular-loading-bar']).
-        controller('IolyCtrl', function ($scope, ngTableParams, IolyService, $modal, $filter, $document, $timeout, $location, $anchorScroll, $sce) {
+        controller('IolyCtrl', function ($scope, ngTableParams, IolyService, $modal, $document, $timeout, $location, $anchorScroll, $sce) {
 
             // Register a body reference to use later
             var bodyRef = angular.element( $document[0].body );
-            // loading flag
-            $scope.loading = false;
-            $scope.downloading = false;
-            $scope.dynamic = 0;
-            $scope.timerPromise = null;
             $scope.numRecipes = 0;
-            
             /**
              * Nice modal messsages
              */
             $scope.content = '';
             $scope.showMsg = function (content) {
                 // Add our overflow hidden class on opening
+                // to prevent from scrollbar / page flickering
                 bodyRef.addClass('ovh');
                 $scope.content = content;
                 var modalInstance = $modal.open({
@@ -44,28 +39,24 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
                 $scope.alerts.push({type: type, msg: msg, trustedMsg: $sce.trustAsHtml(msg)});
                 $location.hash('iolyerrors');
                 $anchorScroll();
+                // set timeout to remove message auto-magically :)
+                $timeout(function(){
+                    $scope.closeAlert($scope.alerts.length-1);
+                }, 8000);
             };
             $scope.closeAlert = function (index) {
                 $scope.alerts.splice(index, 1);
             };
-
-            /**
-             * should the info divs be collapsed on load?
-             */
-            $scope.isCollapsed = true;
             /**
              * 
              * Update the core ioly lib
              */
             $scope.updateIoly = function () {
-                $scope.loading = true;
                 var responsePromise = IolyService.updateIoly();
 
                 responsePromise.then(function (response) {
                     $scope.showMsg(response.data.status);
-                    $scope.loading = false;
                 }, function (error) {
-                    $scope.loading = false;
                     console.log(error);
                     $scope.addAlert('danger', error.data.message);
                 });
@@ -92,16 +83,13 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
              * Update the recipes db
              */
             $scope.updateRecipes = function () {
-                $scope.loading = true;
                 var responsePromise = IolyService.updateRecipes();
 
                 responsePromise.then(function (response) {
-                    $scope.loading = false;
                     $scope.showMsg(response.data.status);
                     // reload ng-table, too
                     $scope.refreshTable();
                 }, function (error) {
-                    $scope.loading = false;
                     console.log(error);
                     $scope.addAlert('danger', error.data.message);
                 });
@@ -114,7 +102,6 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
              */
             $scope.refreshTable = function () {
                 var currPage = $scope.tableParams.$params.page;
-                console.log("refreshing table, page: " + currPage);
                 $scope.tableParams.reload();
                 $scope.tableParams.$params.page = currPage;
             };
@@ -147,49 +134,13 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
              */
             $scope.downloadModule = function (packageString, moduleversion, successtext) {
                 console.log("loading module " + packageString + ", version:" + moduleversion);
-                //$scope.downloading = true;
-                $scope.dynamic = 1;
-                $scope.updateCurlStatus();
                 var responsePromise = IolyService.downloadModule(packageString, moduleversion);
 
                 responsePromise.then(function (response) {
                     $scope.showMsg(successtext);
-                    $scope.downloading = false;
-                    $timeout.cancel($scope.timerPromise);
                     // reload ng-table, too
                     $scope.refreshTable();
                 }, function (error) {
-                    $timeout.cancel($scope.timerPromise);
-                    $scope.downloading = false;
-                    $scope.dynamic = 0;
-                    console.log(error);
-                    $scope.addAlert('danger', error.data.message);
-                });
-            };
-            /**
-             * Update CURL progress bar
-             */
-            $scope.updateCurlStatus = function() {
-                var responsePromise = IolyService.getCurlStatusAjax();
-
-                responsePromise.then(function (response) {
-                    console.log(response.data);
-                    if(typeof response.data.status !== "undefined") {
-                        var percent = response.data.status.progress;
-                        $scope.dynamic = percent;
-                        console.log("percent: " + percent);
-                        if(percent < 100) {
-                            $scope.timerPromise = $timeout(function(){
-                                $scope.updateCurlStatus();
-                            }, 50);
-                        }
-                        else {
-                            $timeout.cancel($scope.timerPromise);
-                        }
-                    }
-
-                }, function (error) {
-                    $timeout.cancel($scope.timerPromise);
                     console.log(error);
                     $scope.addAlert('danger', error.data.message);
                 });
