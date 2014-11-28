@@ -1,3 +1,7 @@
+1.3.0 (2014-11-25)
+  - add snippets support
+  - fix console error message
+  
 1.2.0 (2014-11-21)
   - add recipe filter
   
