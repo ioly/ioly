@@ -1,3 +1,9 @@
+1.4.0 (2014-11-28)
+  - fixed alert removal order
+  - made alert remove timeout configurable
+  - added handling of "preinstall" and "postinstall" hooks for recipes, possible values are "type" [alert|overlay], "message" (any text) and "link" (url to README etc.)
+    which are displayed before/after download of modules. The default "type" for preinstall is "alert", for postinstall "overlay".
+    
 1.3.0 (2014-11-27)
   - automatically remove alert messages after some seconds
   - code cleanup

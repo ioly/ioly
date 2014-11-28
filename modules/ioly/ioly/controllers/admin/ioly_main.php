@@ -11,7 +11,7 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version	 1.3.0
+ * @version	 1.4.0
  */
 class ioly_main extends oxAdminView
 {
@@ -248,6 +248,25 @@ class ioly_main extends oxAdminView
             $res = array("status" => $aStatus);
             $this->_returnJsonResponse($headerStatus, $res);
         }
+    }
+    
+    /**
+     * Read "hooks" data from module package
+     * to get preinstall and postinstall hooks
+     */
+    public function getModuleHooksAjax() {
+        $moduleId = strtolower(urldecode(oxRegistry::getConfig()->getRequestParameter('moduleid')));
+        $moduleVersion = oxRegistry::getConfig()->getRequestParameter('moduleversion');
+        try {
+            $value = $this->_ioly->getJsonValueFromPackage($moduleId, $moduleVersion, "hooks");
+            $headerStatus = "HTTP/1.1 200 Ok";
+            $res = array("status" => $value);
+        }
+        catch(Exception $ex) {
+            $headerStatus = "HTTP/1.1 500 Internal Server Error";
+            $res = array("status" => 500, "message" => $this->_getIolyErrorMsg($ex));
+        }
+        $this->_returnJsonResponse($headerStatus, $res);
     }
     
     /**

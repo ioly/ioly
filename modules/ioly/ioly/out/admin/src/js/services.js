@@ -43,6 +43,9 @@ angular.module('main.services', [])
     getContributors: function(){
         return $http.get('https://api.github.com/repos/ioly/ioly/contributors');
     },
+    getModuleHooks: function(moduleid, moduleversion){
+        return $http.get(gOxidSelfLink, {params: {cl:'ioly_main', isajax:true, fnc:'getModuleHooksAjax',moduleid: moduleid, moduleversion: moduleversion}});
+    },
     saveFooBar: function(mapping){
         return postFormData('savefoobar', mapping);
     }
