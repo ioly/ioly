@@ -27,7 +27,7 @@
                 <div class="modal-header">
                     <h3 class="modal-title">Info</h3>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" ng-bind-html="content">
                     {{content}}
                 </div>
                 <div class="modal-footer">
