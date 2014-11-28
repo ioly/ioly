@@ -33,5 +33,16 @@
                 }
             ]
         }
+    },
+    "hooks": {
+        "preinstall": {
+            "type" : "alert",
+            "message": "Thank you for using oxid|json! Have fun with this module :)"
+        },
+        "postinstall": {
+            "type" : "overlay",
+            "message": "Please adjust your .htaccess file and make sure that the required libs are installed!",
+            "link": "https://github.com/shoptimax/oxidjson"
+        }
     }
 }
