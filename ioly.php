@@ -11,7 +11,7 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version	 1.3.0
+ * @version	 1.4.0
  */
 namespace ioly;
 
@@ -370,6 +370,46 @@ class ioly
             );
         }
         return true;
+    }
+
+    /**
+     * Read a specific JSON / array value from a package
+     * @param string $packageString
+     * @param string $packageVersion
+     * @param string $jsonKey
+     * @return array
+     */
+    public function getJsonValueFromPackage($packageString, $packageVersion, $jsonKey) 
+    {
+        if (strpos($packageString, '/') !== false) {
+            $results = $this->search($packageString);
+            if (count($results) == 1) {
+                $package = $results[0];
+                if (array_key_exists($packageVersion, $package['versions'])) {
+                    return $this->recursiveFind($package, $jsonKey);
+                    
+                }
+            }
+        }
+    }
+
+    /**
+     * Iterate through an array recursively
+     * @param array $array
+     * @param string $needle
+     * @return array
+     */
+    private function recursiveFind(array $array, $needle)
+    {
+        $iterator  = new \RecursiveArrayIterator($array);
+        $recursive = new \RecursiveIteratorIterator($iterator, \RecursiveIteratorIterator::SELF_FIRST);
+        $aHitList = array();
+        foreach ($recursive as $key => $value) {
+            if ($key === $needle) {
+                array_push($aHitList, $value);
+            }
+        }
+        return $aHitList;
     }
 
     /**
@@ -945,6 +985,15 @@ if (php_sapi_name() == 'cli') {
                     print_r($results[0]);
                 }
                 break;
+            case "getjsonvalue":
+                $package = isset($argv[2]) ? $argv[2] : null;
+                $version = isset($argv[3]) ? $argv[3] : null;
+                $key = isset($argv[4]) ? $argv[4] : null;
+                $res = $ioly->getJsonValueFromPackage($package, $version, $key);
+                if($res) {
+                    print_r($res);
+                }
+                break;
 
             case "help":
             case "-v":
@@ -980,6 +1029,10 @@ if (php_sapi_name() == 'cli') {
                 echo "\tuninstall recipe:\n";
                 echo "\t php ioly.php uninstall <vendor>/<package> <version>\n";
                 echo "\t php ioly.php uninstall gn2netwerk/processor 1.0.0\n\n";
+                
+                echo "\tget JSON value from recipe:\n";
+                echo "\t php ioly.php getjsonvalue <vendor>/<package> <version> <key>\n";
+                echo "\t php ioly.php getjsonvalue gn2netwerk/processor 1.0.0 versions\n\n";
                 
                 echo "\tadd cookbook:\n";
                 echo "\t php ioly.php addcookbook <key> <url>\n";

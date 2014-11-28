@@ -1,3 +1,6 @@
+1.4.0 (2014-11-28)
+  - added functionality to get JSON values from package by key (getjsonvalue)
+
 1.3.0 (2014-11-25)
   - add snippets support
   - fix console error message
