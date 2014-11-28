@@ -3,17 +3,16 @@
     "vendor": "ecomstyle",
     "type": "oxid",
     "license": "GNU",
-    "desc": "Ist dieses Modul aktiv, wird immer Umsatzsteuer berechnet. Umsatzsteuerfreie Lieferungen in das Ausland gibt es nicht mehr.",
+    "desc": "This module always calculates VAT also in foreign countries.",
     "tags": [
         "frontend",
         "vat",
-        "payment",
-        "checkout"
+        "payment"
     ],
     "versions": {
         "master": {
             "project": "https://github.com/eComStyle-de/ECS_AlwaysVAT",
-            "url": "https://github.com/eComStyle-de/ECS_AlwaysVAT/archive/master.zip",
+            "url": "https://github.com/eComStyle-de/ECS_AlwaysVAT/archive/bd2af6227fb78e846dd9a13565ec626d953c97c0.zip",
             "supported": [
                 "4.9",
                 "4.8",
