@@ -32,8 +32,8 @@
     "hooks": {
         "postinstall": {
             "type" : "overlay",
-            "message": "Please adjust your .htaccess file! <br/>&lt;Files<br/> \"oxid\"&gt;order allow,deny<br/>deny from all<br/>&lt;/Files&gt;<br/>See",
-            "link": "https://github.com/shoptimax/oxidjson"
+            "message": "Please adjust your .htaccess file! <br/># Deny access to console application entry point from HTTP<br/><strong>&lt;Files \"oxid\"&gt;order allow,deny<br/>deny from all<br/>&lt;/Files&gt;</strong><br/>See",
+            "link": "https://github.com/EllisV/oxid-console/blob/master/changed_full/.htaccess"
         }
     }
 
