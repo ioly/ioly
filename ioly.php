@@ -11,7 +11,7 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version	 1.4.0
+ * @version	 1.4.1
  */
 namespace ioly;
 
@@ -221,10 +221,12 @@ class ioly
                         }
                     }
                 }
+                // lowercase all tags and use them as keys for faster access
+                $search_array = array_combine(array_map('strtolower', $package['tags']), $package['tags']);
                 if ( !$filterRecipe  &&  ((stripos($package['name'], $query) !== false)
                       || (stripos($package['vendor'], $query) !== false)
                       || (stripos($package['_filename'], $query) !== false)
-                      || (in_array($query, $package['tags']))
+                      || ($search_array[strtolower($query)])
                       || (isset($vendor) && isset($packageName)
                           && $package['vendor'] == $vendor
                           && $package['_filename'] == $packageName)
