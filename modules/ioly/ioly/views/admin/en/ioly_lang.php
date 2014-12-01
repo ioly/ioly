@@ -67,5 +67,6 @@ $aLang = array(
 'SHOP_MODULE_GROUP_IOLY'                    => 'ioly settings',
 'SHOP_MODULE_iolycookbookurl'               => 'ioly Cookbook URL (URL to the recipes as ZIP file)',
 'IOLY_RECIPES'                              => 'Recipes', 
+'IOLY_EXCEPTION_MESSAGE_MODULE_ACTIVE'      => 'The module is still active in the shop and cannot be removed! Please deactivate it before removal.',    
 );
 ?>

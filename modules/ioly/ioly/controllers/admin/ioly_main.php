@@ -11,7 +11,7 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version	 1.4.0
+ * @version	 1.5.0
  */
 class ioly_main extends oxAdminView
 {
@@ -320,9 +320,17 @@ class ioly_main extends oxAdminView
         $moduleId = strtolower(urldecode(oxRegistry::getConfig()->getRequestParameter('moduleid')));
         $moduleVersion = oxRegistry::getConfig()->getRequestParameter('moduleversion');
         try {
+            // check if the module is still activated!
+            $isStillActive = $this->isModuleActive($moduleId, $moduleVersion);
+            if(!$isStillActive) {
             $success = $this->_ioly->uninstall($moduleId, $moduleVersion);
             $headerStatus = "HTTP/1.1 200 Ok";
             $res = array("status" => $success);
+        }
+            else {
+                $headerStatus = "HTTP/1.1 412 Precondition Failed";
+                $res = array("status" => 412, "message" => oxRegistry::getLang()->translateString('IOLY_EXCEPTION_MESSAGE_MODULE_ACTIVE'));
+            }
         }
         catch(Exception $ex) {
             $headerStatus = "HTTP/1.1 500 Internal Server Error";
@@ -331,6 +339,47 @@ class ioly_main extends oxAdminView
         $this->_returnJsonResponse($headerStatus, $res);
     }
     
+    /**
+     * Check if an installed module is still active in the shop
+     * and should not be removed!
+     * @param string $moduleId
+     * @param string $moduleVersion
+     * @return boolean
+     */
+    public function isModuleActive($moduleId, $moduleVersion) {
+        $moduleOxid = $this->getModuleOxid($moduleId, $moduleVersion);
+        if($moduleOxid) {
+            /* @var $oModule oxModule */
+            $oModule = oxNew('oxModule');
+            if($oModule->load($moduleOxid) && $oModule->isActive()) {
+                    return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Get OXID ID of an installed module
+     * Reads metadata.php since we don't have that info in the JSON files.
+     * @param string $moduleId
+     * @param string $moduleVersion
+     * @return string
+     */
+    public function getModuleOxid($moduleId, $moduleVersion) {
+        $aFiles = $this->_ioly->getFileList($moduleId, $moduleVersion);
+        foreach(array_keys($aFiles) as $filePath) {
+            if(strpos($filePath, "metadata.php") !== FALSE) {
+                $metaPath = oxRegistry::getConfig()->getConfigParam('sShopDir') . $filePath;
+                if(file_exists($metaPath)) {
+                    include_once $metaPath;
+                    return $aModule['id'];
+                }
+            }
+        }
+        return null;
+    }
+
+
     /**
      * Return JSON and exit
      * @param string $headerStatus

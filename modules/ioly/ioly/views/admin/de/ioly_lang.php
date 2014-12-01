@@ -67,5 +67,6 @@ $aLang = array(
 'SHOP_MODULE_GROUP_IOLY'                    => 'ioly Einstellungen',
 'SHOP_MODULE_iolycookbookurl'               => 'ioly Cookbook URL (URL der Rezepte als ZIP-Archiv)',
 'IOLY_RECIPES'                              => 'Rezepte', 
+'IOLY_EXCEPTION_MESSAGE_MODULE_ACTIVE'      => 'Das Modul ist noch im Shop aktiv und kann nicht entfernt werden! Bitte deaktivieren Sie es vor dem Entfernen.',    
 );
 ?>
