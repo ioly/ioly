@@ -11,7 +11,7 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version	 1.4.1
+ * @version	 1.5.0
  */
 namespace ioly;
 
@@ -429,6 +429,23 @@ class ioly
             }  
         }
         return $blOk;
+    }
+    
+    /**
+     * Get a list of files for the installed package
+     * @param string $packageString
+     * @param string $versionString
+     * @return array
+     */
+    public function getFileList($packageString, $versionString)
+    {
+        if (array_key_exists($packageString, $this->_digestCache)) {
+            $digestVersion = $this->_digestCache[$packageString];
+            if ($digestVersion['version'] == $versionString) {
+                return $digestVersion['files'];
+            }
+        }
+        return null;
     }
     
     /**

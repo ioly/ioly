@@ -1,3 +1,6 @@
+1.5.0 (2014-12-01)
+  - added function to get all files of a package
+  
 1.4.1 (2014-11-29)
   - made search in tags case-insensitive
 1.4.0 (2014-11-28)
