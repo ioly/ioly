@@ -36,7 +36,7 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
              */
             $scope.alerts = [];
             $scope.addAlert = function (type, msg, timeout) {
-                if(timeout === '') {
+                if(timeout === '' || typeof timeout === "undefined") {
                     timeout = 10000;
                 }
                 $scope.alerts.push({type: type, msg: msg, trustedMsg: $sce.trustAsHtml(msg)});
