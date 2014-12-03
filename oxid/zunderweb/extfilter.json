@@ -1,0 +1,29 @@
+{
+    "name": "Attribute Filter Extension",
+    "vendor": "zunderweb",
+    "type": "oxid",
+    "license": "MIT",
+    "desc": "With OXID standard attribute filters, if a customer has selected a filter value, all other values are hidden in the select-box. When this module is active, all possible values are selectable. ",
+    "tags": [
+        "frontend",
+        "attribute",
+        "filter",
+        "articles"
+    ],
+    "versions": {
+        "1.1.0": {
+            "project": "https://github.com/leofonic/oxid_extfilter",
+            "url": "https://github.com/leofonic/oxid_extfilter/archive/12a27ae63299ab91daf71f62b644cfe3edeed4a8.zip",
+            "supported": [
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "oxid_4.8/copy_this/modules/",
+                    "dest": "modules/"
+                }
+            ]
+        }
+    }
+}
