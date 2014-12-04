@@ -11,10 +11,11 @@
         "customers"
     ],
     "versions": {
-        "0.2.0": {
-            "project": "https://github.com/job963/jxNewsletter/tree/0.2",
-            "url": "https://github.com/job963/jxNewsletter/archive/0.2.zip",
+        "0.3.1": {
+            "project": "https://github.com/job963/jxNewsletter",
+            "url": "https://github.com/job963/jxNewsletter/archive/master.zip",
             "supported": [
+                "4.9",
                 "4.8",
                 "4.7"
             ],
