@@ -1,0 +1,31 @@
+{
+    "name": "OXID Module Configuration Im-/Exporter",
+    "vendor": "oxps",
+    "type": "oxid",
+    "license": "GNU",
+    "desc": "Tools to export, backup and import OXID eShop modules configuration data.",
+    "tags": [
+        "backend",
+        "modules",
+        "configuration",
+        "import",
+        "export",
+        "backup"
+    ],
+    "versions": {
+        "3.2.1": {
+            "project": "https://github.com/druteika/oxid_modules_config/tree/master",
+            "url": "https://github.com/druteika/oxid_modules_config/archive/master.zip",
+            "supported": [
+                "4.9",
+                "4.8"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/modules/oxps/modulesconfig",
+                    "dest": "modules/oxps/modulesconfig/"
+                }
+            ]
+        }
+    }
+}
