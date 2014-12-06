@@ -13,9 +13,9 @@
         "backup"
     ],
     "versions": {
-        "3.2.1": {
+        "0.2.0": {
             "project": "https://github.com/druteika/oxid_modules_config/tree/master",
-            "url": "https://github.com/druteika/oxid_modules_config/archive/master.zip",
+            "url": "https://github.com/druteika/oxid_modules_config/archive/f53ca4551.zip",
             "supported": [
                 "4.9",
                 "4.8"
