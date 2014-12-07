@@ -15,7 +15,7 @@
     "versions": {
         "0.2.0": {
             "project": "https://github.com/druteika/oxid_modules_config/tree/master",
-            "url": "https://github.com/druteika/oxid_modules_config/archive/f53ca4551.zip",
+            "url": "https://github.com/druteika/oxid_modules_config/archive/v020.zip",
             "supported": [
                 "4.9",
                 "4.8"
