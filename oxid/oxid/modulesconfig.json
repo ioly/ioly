@@ -22,8 +22,8 @@
             ],
             "mapping": [
                 {
-                    "src": "copy_this/modules/oxps/modulesconfig/",
-                    "dest": "modules/oxps/modulesconfig/"
+                    "src": "copy_this/",
+                    "dest": ""
                 }
             ]
         }
