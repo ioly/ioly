@@ -27,8 +27,8 @@
             ],
             "mapping": [
                 {
-                    "src": "copy_this/modules/ddr/diamondsearch/",
-                    "dest": "modules/ddr/diamondsearch/"
+                    "src": "copy_this/",
+                    "dest": ""
                 }
             ]
         }
