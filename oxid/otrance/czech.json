@@ -1,0 +1,48 @@
+{
+    "name": "Czech translations for OXID eShop",
+    "vendor": "otrance",
+    "type": "oxid",
+    "license": "GPLv3",
+    "desc": "Czech language file translations for OXID eShop front end and admin panel",
+    "tags": [
+        "frontend",
+        "admin",
+        "translation",
+        "language"
+    ],
+    "versions": {
+        "4.9.2": {
+            "project": "https://github.com/OXIDprojects/languages",
+            "url": "https://github.com/OXIDprojects/languages/archive/master.zip",
+            "supported": [
+                "4.9",
+                "4.8"
+            ],
+            "mapping": [
+                {
+                    "src": "application/translations/cs/",
+                    "dest": "application/translations/cs/"
+                },
+                {
+                    "src": "application/views/azure/cs/",
+                    "dest": "application/views/azure/cs/"
+                },
+                {
+                    "src": "application/views/admin/cs/",
+                    "dest": "application/views/admin/cs/"
+                },
+                {
+                    "src": "out/azure/img/lang/cs.png",
+                    "dest": "out/azure/img/lang/"
+                }
+            ]
+        }
+    },
+    "hooks": {
+        "postinstall": {
+            "type": "overlay",
+            "message": "Please go to admin -> Master settings -> Languages. Create a new language by entering \"cs\" as locale and \"Česky\" as name. If you find any mistakes please feel free to register at the translation center.",
+            "link": "http://translate.oxidforge.org"
+        }
+    }
+}
