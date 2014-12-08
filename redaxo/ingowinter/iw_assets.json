@@ -23,7 +23,7 @@
             "mapping": [
                 {
                     "src": "",
-                    "dest": "redaxo/include/addons/iw_assets"
+                    "dest": "redaxo/include/addons/iw_assets/"
                 }
             ]
         }
