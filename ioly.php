@@ -226,7 +226,7 @@ class ioly
                 if ( !$filterRecipe  &&  ((stripos($package['name'], $query) !== false)
                       || (stripos($package['vendor'], $query) !== false)
                       || (stripos($package['_filename'], $query) !== false)
-                      || ($search_array[strtolower($query)])
+                      || !empty($search_array[strtolower($query)])
                       || (isset($vendor) && isset($packageName)
                           && $package['vendor'] == $vendor
                           && $package['_filename'] == $packageName)
