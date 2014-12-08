@@ -8,7 +8,7 @@
         "less",
         "php",
         "minify",
-        "assets",
+        "assets"
     ],
     "versions": {
         "1.0.0": {
