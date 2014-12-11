@@ -13,7 +13,7 @@
     "versions": {
         "0.1.2": {
             "project": "https://github.com/job963/jxExcptns",
-            "url": "https://github.com/job963/jxExcptns/archive/master.zip",
+            "url": "https://github.com/job963/jxExcptns/archive/v0.1.2.zip",
             "supported": [
                 "4.9",
                 "4.8",

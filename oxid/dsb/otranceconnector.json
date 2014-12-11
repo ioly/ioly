@@ -19,7 +19,7 @@
             "mapping": [
                 {
                     "src": "modules/otrance-connector/",
-                    "dest": ""
+                    "dest": "modules/otrance-connector/"
                 }
             ]
         }

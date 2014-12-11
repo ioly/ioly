@@ -1,0 +1,40 @@
+{
+    "name": "oxidconsole",
+    "vendor": "oxid",
+    "type": "oxid",
+    "license": "GNU",
+    "desc": "OXID Console is php console application for OXID Shop. It provides an API for writing various commands. We have shipped very common for every oxid shop project commands out of the box.",
+    "tags": [
+        "frontend",
+        "backend",
+        "console",
+        "tools",
+        "migration",
+        "automation"
+    ],
+    "versions": {
+        "1.2.0": {
+            "project": "https://github.com/EllisV/oxid-console/",
+            "url": "https://github.com/EllisV/oxid-console/archive/1.2.zip",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/",
+                    "dest": ""
+                }
+            ]
+        }
+    },
+    "hooks": {
+        "postinstall": {
+            "type" : "overlay",
+            "message": "Please adjust your .htaccess file! <br/># Deny access to console application entry point from HTTP<br/><strong>&lt;Files \"oxid\"&gt;<br/>order allow,deny<br/>deny from all<br/>&lt;/Files&gt;</strong><br/>See",
+            "link": "https://github.com/EllisV/oxid-console/blob/master/changed_full/.htaccess"
+        }
+    }
+
+}

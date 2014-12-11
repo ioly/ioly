@@ -11,9 +11,9 @@
         "attributes"
     ],
     "versions": {
-        "0.4.1": {
+        "0.4.2": {
             "project": "https://github.com/job963/jxAttrEdit",
-            "url": "https://github.com/job963/jxAttrEdit/archive/master.zip",
+            "url": "https://github.com/job963/jxAttrEdit/archive/v0.4.2.zip",
             "supported": [
                 "4.9",
                 "4.8",
