@@ -11,9 +11,9 @@
         "update"
     ],
     "versions": {
-        "0.3.1": {
+        "0.3.2": {
             "project": "https://github.com/job963/jxArtUp",
-            "url": "https://github.com/job963/jxArtUp/archive/master.zip",
+            "url": "https://github.com/job963/jxArtUp/archive/v0.3.2.zip",
             "supported": [
                 "4.9",
                 "4.8",
