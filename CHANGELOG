@@ -1,3 +1,6 @@
+1.5.1 (2014-12-13)
+  - fixed bug ioly oxid connector version
+  
 1.5.0 (2014-12-01)
   - added check if module is active in the shop before removing it
   - fixed bug with alert removal timeout
