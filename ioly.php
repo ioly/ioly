@@ -11,12 +11,14 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version	 1.5.0
+ * @version	 1.6.0
  */
 namespace ioly;
 
 class ioly
 {
+    protected $_version = "1.6.0";
+    
     protected $_baseDir = null;
     protected $_recipeCacheFile = null;
     protected $_recipeCache = array();
@@ -46,6 +48,15 @@ class ioly
         $this->_systemBasePath = $systemBasePath;
     }
 
+    /**
+     * Gets ioly core version
+     * @return string version
+     */
+    public function getCoreVersion()
+    {
+        return $this->_version;
+    }
+    
     /**
      * Gets base path to the PHP installation.
      * @return string Base Path
