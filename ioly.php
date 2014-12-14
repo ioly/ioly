@@ -11,13 +11,13 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version	 1.6.0
+ * @version	 1.7.0
  */
 namespace ioly;
 
 class ioly
 {
-    protected $_version = "1.6.0";
+    protected $_version = "1.7.0";
     
     protected $_baseDir = null;
     protected $_recipeCacheFile = null;
@@ -32,6 +32,45 @@ class ioly
     protected $_defaultCookbooks = array(
     	'ioly' => 'http://github.com/ioly/ioly/archive/master.zip'
     );
+    
+    /**
+     * Sets up file databases. Updates if the cache is empty.
+     */
+    public function __construct()
+    {
+        $tz = ini_get('date.timezone');
+        if (!$tz) {
+            $tz = 'Europe/Berlin';
+        }
+        date_default_timezone_set($tz);
+        $this->_baseDir = $this->_dirName(__FILE__);
+        $this->_recipeCacheFile = $this->_baseDir.'/.recipes.db';
+        $this->_digestCacheFile = $this->_baseDir.'/.digest.db';
+        $this->_authFile = $this->_baseDir.'/.auth';
+        $this->_init();
+        if (empty($this->_recipeCache)) {
+            $this->update();
+        }
+    }
+
+    /**
+     * General init function. Used by the constructor to create caches.
+     */
+    public function _init()
+    {
+        if (file_exists($this->_recipeCacheFile)) {
+            $cache = unserialize(file_get_contents($this->_recipeCacheFile));
+            if (is_array($cache)) {
+                $this->_recipeCache = $cache;
+            }
+        }
+        if (file_exists($this->_digestCacheFile)) {
+            $cache = unserialize(file_get_contents($this->_digestCacheFile));
+            if (is_array($cache)) {
+                $this->_digestCache = $cache;
+            }
+        }
+    }
 
     /**
      * Sets base path to the PHP installation.
@@ -55,6 +94,25 @@ class ioly
     public function getCoreVersion()
     {
         return $this->_version;
+    }
+  
+    /**
+     * Gets cookbook/s version
+     * @return array
+     */  
+    public function getCookbookVersion()
+    {
+    	$aCookbooks = array();
+    	foreach (glob($this->_baseDir.'/cookbook.*.zip') as $cookbookArchive)
+    	{
+            $aCookbook = explode("cookbook.", $cookbookArchive);
+            $key = trim($aCookbook[1]);
+            if(!empty($key) && strstr($key, ".zip"))
+            {
+            	$aCookbooks[$key] = sha1_file($cookbookArchive);
+            }
+        }
+        return $aCookbooks;
     }
     
     /**
@@ -156,45 +214,6 @@ class ioly
      */
     public function setDebugLogging($writeLog) {
         $this->_debugLogging = $writeLog;
-    }
-
-    /**
-     * Sets up file databases. Updates if the cache is empty.
-     */
-    public function __construct()
-    {
-        $tz = ini_get('date.timezone');
-        if (!$tz) {
-            $tz = 'Europe/Berlin';
-        }
-        date_default_timezone_set($tz);
-        $this->_baseDir = $this->_dirName(__FILE__);
-        $this->_recipeCacheFile = $this->_baseDir.'/.recipes.db';
-        $this->_digestCacheFile = $this->_baseDir.'/.digest.db';
-        $this->_authFile = $this->_baseDir.'/.auth';
-        $this->_init();
-        if (empty($this->_recipeCache)) {
-            $this->update();
-        }
-    }
-
-    /**
-     * General init function. Used by the constructor to create caches.
-     */
-    public function _init()
-    {
-        if (file_exists($this->_recipeCacheFile)) {
-            $cache = unserialize(file_get_contents($this->_recipeCacheFile));
-            if (is_array($cache)) {
-                $this->_recipeCache = $cache;
-            }
-        }
-        if (file_exists($this->_digestCacheFile)) {
-            $cache = unserialize(file_get_contents($this->_digestCacheFile));
-            if (is_array($cache)) {
-                $this->_digestCache = $cache;
-            }
-        }
     }
 
     /**
