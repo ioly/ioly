@@ -10,7 +10,7 @@
         "payment"
     ],
     "versions": {
-        "master": {
+        "1.1.0": {
             "project": "https://github.com/eComStyle-de/ECS_AlwaysVAT",
             "url": "https://github.com/eComStyle-de/ECS_AlwaysVAT/archive/bd2af6227fb78e846dd9a13565ec626d953c97c0.zip",
             "supported": [
