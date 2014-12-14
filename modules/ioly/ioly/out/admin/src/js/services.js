@@ -40,6 +40,9 @@ angular.module('main.services', [])
     updateRecipes: function(){
         return $http.get(gOxidSelfLink, {params: {cl:'ioly_main', isajax:true, fnc:'updateRecipesAjax'}});
     },
+    updateConnector: function(){
+        return $http.get(gOxidSelfLink, {params: {cl:'ioly_main', isajax:true, fnc:'downloadModuleAjax',moduleid: moduleid, moduleversion: moduleversion}});
+    },
     getContributors: function(){
         return $http.get('https://api.github.com/repos/ioly/ioly/contributors');
     },

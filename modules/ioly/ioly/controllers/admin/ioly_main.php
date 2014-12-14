@@ -11,7 +11,7 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version	 1.5.1
+ * @version	 1.6.0
  */
 class ioly_main extends oxAdminView
 {
@@ -103,7 +103,9 @@ class ioly_main extends oxAdminView
             $this->_ioly->clearCookbooks();
             // and download new ones....
             $this->_ioly->setCookbooks($aCookbookUrls);
+            return true;
         }
+        return false;
     }
     
     /**
@@ -111,7 +113,6 @@ class ioly_main extends oxAdminView
      * @return type
      */
     public function getAllModules() {
-
         if($this->_allModules === null) {
             $searchString = oxRegistry::getConfig()->getRequestParameter('searchstring');
             if($searchString != '') {
@@ -455,13 +456,76 @@ class ioly_main extends oxAdminView
      *
      * @return string
      */
-    protected function _getModuleVersion()
+    public function getModuleVersion()
     {
     	$sMetaDataPath = oxRegistry::getConfig()->getConfigParam("sShopDir")."modules/ioly/ioly/metadata.php";
     	include_once($sMetaDataPath);
     	return $aModule["version"];
     }
+    
+    /**
+     * Gets ioly core version
+     *
+     * @return string
+     */
+    public function getIolyCoreVersion()
+    {
+    	return $this->_ioly->getCoreVersion();
+    }
 
+    /**
+     * Gets ioly cookbooks version
+     *
+     * @return string
+     */
+    public function getIolyCookbookVersion()
+    {
+    	return $this->_ioly->getCookbookVersion();
+    }
+    
+    /**
+     * Gets ioly cookbooks version
+     *
+     * @return string
+     */
+    public function iolyAutoUpdate()
+    {
+        if(oxRegistry::getConfig()->getConfigParam('iolyautoupdate') == true)
+        {
+        	if($this->updateIoly())
+        	{
+        		$message_success = oxRegistry::getLang()->translateString('IOLY_IOLY_UPDATE_SUCCESS').'<br>';
+        	}
+        	else
+        	{
+        		$message_error = oxRegistry::getLang()->translateString('IOLY_EXCEPTION_CORE_NOT_LOADED').'<br>';
+        	}
+        	
+        	if($this->_setCookbooks())
+        	{
+        		$message_success .= oxRegistry::getLang()->translateString('IOLY_RECIPE_UPDATE_SUCCESS').'<br>';
+        	}
+        	else
+        	{
+        		$message_error .= oxRegistry::getLang()->translateString('IOLY_EXCEPTION_CORE_NOT_LOADED').'<br>';
+        	}
+        	
+        	try {
+            	$this->_ioly->setCurlCallback(array($this, "getCurlStatus"));
+            	oxRegistry::getSession()->deleteVariable('iolyDownloadStatus');
+            	$success = $this->_ioly->install("ioly/ioly-oxid-connector", "latest");
+            	$message_success .= oxRegistry::getLang()->translateString('IOLY_CONNECTOR_UPDATE_SUCCESS').'<br>';
+            	$res = array("status" => $success);
+        	}
+        	catch(Exception $ex) {
+            	$message_error .= oxRegistry::getLang()->translateString('IOLY_CONNECTOR_UPDATE_ERROR').'<br>'.$this->_getIolyErrorMsg($ex).'<br>';
+        	}
+        	
+        	$this->addTplParam("iolymsg", $message_success);
+        	$this->addTplParam("iolyerror", $message_error);
+        }
+    }
+    
     /**
      * Executes parent method parent::render(), passes shop configuration parameters
      * to Smarty and returns name of template file "shop_config.tpl".
@@ -471,13 +535,15 @@ class ioly_main extends oxAdminView
     public function render()
     {
         parent::render();
-        $this->addTplParam("shopVersion", $this->getShopMainVersion());
-        $this->addTplParam("moduleVersion", $this->_getModuleVersion());
+        
+        $this->iolyAutoUpdate();
+        
+        // ajax call?
         $isAjax = oxRegistry::getConfig()->getRequestParameter('isajax');
         if($isAjax) {
             die("ajax");
         }
- 
+        
         return $this->_sThisTemplate;
     }
 }

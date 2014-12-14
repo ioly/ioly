@@ -17,7 +17,7 @@
     <div ng-controller="IolyCtrl">
 
         [{if $iolyerrorfatal ne ''}]
-            <h2>[{oxmultilang ident='IOLY_MAIN_TITLE'}] [{ $moduleVersion }]</h2>
+            <h2>[{oxmultilang ident='IOLY_MAIN_TITLE'}]</h2>
             <div class="error alert alert-danger alert-dismissable">
                 [{$iolyerrorfatal}]
             </div>
@@ -36,7 +36,7 @@
             </script>
         
             <div id="iolyheadline">
-                <h2>[{oxmultilang ident='IOLY_MAIN_TITLE'}] [{ $moduleVersion }]</h2>
+                <h2>[{oxmultilang ident='IOLY_MAIN_TITLE'}]</h2>
                 <div id="iolyinfo">
                     <div id='iolyintrotext'>[{oxmultilang ident="IOLY_MAIN_INFOTEXT"}]</div>
                     <div id="contributors">
@@ -49,9 +49,10 @@
                 </div>
                 <br/>
                 <div class="">
-                    <label tooltip-placement="bottom" tooltip="[{oxmultilang ident='IOLY_IOLY_UPDATE_HINT'}]" class="btn btn-primary" ng-click="updateIoly()">[{oxmultilang ident='IOLY_IOLY_UPDATE_BUTTON'}]</label>
-                    <label tooltip-placement="bottom" tooltip="[{oxmultilang ident='IOLY_RECIPE_UPDATE_HINT'}]" class="btn btn-primary" ng-click="updateRecipes()">[{oxmultilang ident='IOLY_RECIPE_UPDATE_BUTTON'}]</label>
-                </div>                
+                    <label class="btn btn-primary" ng-click="updateIoly()">[{oxmultilang ident='IOLY_IOLY_UPDATE_BUTTON'}]</label>
+                    <label class="btn btn-primary" ng-click="updateRecipes()">[{oxmultilang ident='IOLY_RECIPE_UPDATE_BUTTON'}]</label>
+                    <label class="btn btn-primary" ng-click="updateConnector('[{oxmultilang ident='IOLY_CONNECTOR_UPDATE_SUCCESS'}]')">[{oxmultilang ident='IOLY_CONNECTOR_UPDATE_BUTTON'}]</label>
+                </div>      
             </div>
             <div id="iolylogo">
                 <img src="[{$oViewConf->getModuleUrl('ioly', 'ioly_logo.png')}]" border="0" alt="" title=""/>
@@ -61,17 +62,23 @@
             </div>
             <div class="clear"></div>
             
+            <br>
             <a name="iolyerrors" id="iolyerrors"></a>
             [{if $iolyerror ne ''}]
-                <div class="alert alert-danger alert-dismissable">
+                <div id="iolyerror" class="alert alert-danger alert-dismissable">
                     [{$iolyerror}]
                 </div>
             [{/if}]
 
             [{if $iolymsg ne ''}]
-            <div class="alert alert-success alert-dismissable">
-                [{$iolymsg}]
-            </div>
+            	<script>
+                	setTimeout(function() {
+        				document.getElementById('iolymsg').style.display = 'none';
+    				}, 4000);
+            	</script>
+            	<div id="iolymsg" class="alert alert-success alert-dismissable">
+                	[{$iolymsg}]
+            	</div>
             [{/if}]
 
             <div>
@@ -103,7 +110,7 @@
                                             <div ng:repeat="(subkey, versiondata) in version">
                                                 <div ng-switch="subkey">
                                                     <div ng-switch-when="supported" style="float: left;  margin-left: 15px;">
-                                                        <span class="glyphicon glyphicon-ok-sign"></span> [{oxmultilang ident="IOLY_OXID_VERSIONS"}] <span ng-class="{success: oxidversion == '[{$shopVersion}]'}" ng:repeat="oxidversion in versiondata">{{oxidversion}}<span ng-if="!$last">,</span> </span>
+                                                        <span class="glyphicon glyphicon-ok-sign"></span> [{oxmultilang ident="IOLY_OXID_VERSIONS"}] <span ng-class="{success: oxidversion == '[{ $oView->getShopMainVersion() }]'}" ng:repeat="oxidversion in versiondata">{{oxidversion}}<span ng-if="!$last">,</span> </span>
                                                     </div>
                                                     <div ng-switch-when="project" style="float: left;">
                                                     	<span class="glyphicon glyphicon-info-sign"></span> <a href="{{versiondata}}" target="_blank">[{oxmultilang ident="IOLY_PROJECT_URL"}]</a> 
@@ -130,6 +137,19 @@
 </div> <!-- /magicarea -->
 
 <div class="clear"></div>
+
+<hr>
+
+<div style="font-size: 11px; margin-bottom: 10px;">
+	[{oxmultilang ident="IOLY_VERSION_MODULE"}] <b>[{ $oView->getModuleVersion() }]</b> &mdash; [{oxmultilang ident="IOLY_VERSION_CORE"}] <b>[{ $oView->getIolyCoreVersion() }]</b>
+	[{ if $oView->getIolyCookbookVersion()|count > 0  }]
+		 &mdash; [{oxmultilang ident="IOLY_VERSION_RECIPES"}]
+		[{ foreach key=basketindex from=$oView->getIolyCookbookVersion() name=cookbooks key=cbkey item=cbversion }]
+			<b>[{ $cbkey }]</b> ([{ $cbversion }])
+			[{ if !$smarty.foreach.cookbooks.last }], [{ /if }]
+		[{ /foreach }]
+	[{ /if }]
+</div>
 
 [{include file="bottomnaviitem.tpl"}]
 

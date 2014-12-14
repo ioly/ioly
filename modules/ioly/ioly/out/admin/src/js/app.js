@@ -97,7 +97,22 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
                     $scope.addAlert('danger', error.data.message);
                 });
             };
+            /**
+             * 
+             * Update the ioly oxid connector
+             */
+            $scope.updateConnector = function (successtext) {
+                var responsePromise = IolyService.downloadModule("ioly/ioly-oxid-connector", "latest", '');
 
+                responsePromise.then(function (response) {
+                    $scope.showMsg(successtext);
+                    // reload ng-table, too
+                    $scope.refreshTable();
+                }, function (error) {
+                    console.log(error);
+                    $scope.addAlert('danger', error.data.message);
+                });
+            };
             /**
              * 
              * @param {type} page
