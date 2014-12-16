@@ -9,15 +9,7 @@
         "sdk",
         "backend",
         "modules",
-        "skeleton",
-        "scaffold",
-        "generation",
-        "generator",
-        "creation",
-        "metadata",
-        "vendor",
-        "structure",
-        "folders"
+        "metadata"
     ],
     "versions": {
         "0.5.0": {
