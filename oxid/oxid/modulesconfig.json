@@ -5,6 +5,8 @@
     "license": "GNU",
     "desc": "Tools to export, backup and import OXID eShop modules configuration data.",
     "tags": [
+        "oxid",
+        "sdk",
         "backend",
         "modules",
         "configuration",
