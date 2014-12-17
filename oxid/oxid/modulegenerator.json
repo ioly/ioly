@@ -2,6 +2,7 @@
     "name": "OXID Module Skeleton Generator",
     "vendor": "oxid",
     "type": "oxid",
+    "price": "0.00",
     "license": "GNU",
     "desc": "Folders structure, empty classes and metadata generation for new OXID eShop modules.",
     "tags": [

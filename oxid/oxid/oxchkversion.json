@@ -2,6 +2,7 @@
     "name": "oxchkversion",
     "vendor": "oxid",
     "type": "oxid",
+    "price": "0.00",
     "license": "unkown",
     "desc": "This test checks your OXID eShop and assists you when updating. It detects if you missed to update files and tells you which file has been modified.",
     "tags": [

@@ -2,6 +2,7 @@
     "name": "PayPal",
     "vendor": "oxid",
     "type": "oxid",
+    "price": "0.00",
     "license": "GNU",
     "desc": "PayPal payment method for checkout.",
     "tags": [

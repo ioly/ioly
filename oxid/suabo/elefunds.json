@@ -2,6 +2,7 @@
     "name": "elefunds OXID",
     "vendor": "suabo",
     "type": "oxid",
+    "price": "0.00",
     "license": "unknown",
     "desc": "Elefunds module for OXID eShop.",
     "tags": [

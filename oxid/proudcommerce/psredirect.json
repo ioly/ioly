@@ -2,6 +2,7 @@
     "name": "psRedirect404",
     "vendor": "proudcommerce",
     "type": "oxid",
+    "price": "0.00",
     "license": "GNU",
     "desc": "Redirect on 404 eror pages with levenshtein algorithm.",
     "tags": [

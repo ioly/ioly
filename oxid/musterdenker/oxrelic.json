@@ -2,6 +2,7 @@
     "name": "oxRelic",
     "vendor": "musterdenker",
     "type": "oxid",
+    "price": "0.00",
     "license": "GNU",
     "desc": "A OXID eShop module that integrates New Relic Application Monitor.",
     "tags": [

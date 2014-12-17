@@ -2,6 +2,7 @@
     "name": "psHistory",
     "vendor": "proudcommerce",
     "type": "oxid",
+    "price": "0.00",
     "license": "GNU",
     "desc": "Individual status information for orders. / Sending mails directly from shop admin to customer.",
     "tags": [

@@ -2,6 +2,7 @@
     "name": "OXID Module Configuration Im-/Exporter",
     "vendor": "oxid",
     "type": "oxid",
+    "price": "0.00",
     "license": "GNU",
     "desc": "Tools to export, backup and import OXID eShop modules configuration data.",
     "tags": [

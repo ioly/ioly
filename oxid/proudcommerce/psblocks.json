@@ -2,6 +2,7 @@
     "name": "psBlocks",
     "vendor": "proudcommerce",
     "type": "oxid",
+    "price": "0.00",
     "license": "GNU",
     "desc": "Management tool for OXID template blocks.",
     "tags": [

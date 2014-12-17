@@ -2,6 +2,7 @@
     "name": "Mobile Theme",
     "vendor": "oxid",
     "type": "oxid",
+    "price": "0.00",
     "license": "GNU",
     "desc": "Mobile theme for OXID eshop.",
     "tags": [

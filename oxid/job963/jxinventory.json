@@ -2,6 +2,7 @@
     "name": "jxInventory",
     "vendor": "job963",
     "type": "oxid",
+    "price": "0.00",
     "license": "GNU",
     "desc": "Module for managing the article inventory",
     "tags": [

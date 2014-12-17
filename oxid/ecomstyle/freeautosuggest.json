@@ -2,6 +2,7 @@
     "name": "Free Autosuggest",
     "vendor": "ecomstyle",
     "type": "oxid",
+    "price": "0.00",
     "license": "GNU",
     "desc": "Search suggestions for OXID eshop.",
     "tags": [
