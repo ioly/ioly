@@ -12,10 +12,10 @@
         "filters",
         "advanced search",
         "extended search",
-		    "easy setup",
-		    "easy configuration",
-		    "automatic indexing",
-		    "promotion"
+        "easy setup",
+        "easy configuration",
+        "automatic indexing",
+        "promotion"
     ],
     "versions": {
         "0.4.0 CE": {

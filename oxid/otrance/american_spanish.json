@@ -42,7 +42,7 @@
     "hooks": {
         "postinstall": {
             "type": "overlay",
-            "message": "Please go to admin -> Master settings -> Languages. Create a new language by entering \"es_LA\" as locale and \"Español de América\" as name. If you find any mistakes please feel free to register at the translation center.",
+            "message": "Please go to admin -> Master settings -> Languages. Create a new language by entering \"es_LA\" as locale and \"Espa\u00f1ol de Am\u00e9rica\" as name. If you find any mistakes please feel free to register at the translation center.",
             "link": "http://translate.oxidforge.org"
         }
     }

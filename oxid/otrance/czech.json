@@ -42,7 +42,7 @@
     "hooks": {
         "postinstall": {
             "type": "overlay",
-            "message": "Please go to admin -> Master settings -> Languages. Create a new language by entering \"cs\" as locale and \"Česky\" as name. If you find any mistakes please feel free to register at the translation center.",
+            "message": "Please go to admin -> Master settings -> Languages. Create a new language by entering \"cs\" as locale and \"\u010cesky\" as name. If you find any mistakes please feel free to register at the translation center.",
             "link": "http://translate.oxidforge.org"
         }
     }
