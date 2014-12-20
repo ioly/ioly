@@ -4,7 +4,9 @@
     "type": "oxid",
     "price": "0.00",
     "license": "GNU",
-    "desc": "OXID eShop admin module for displaying the file exception_log.txt",
+    "desc": {
+        "en": "OXID eShop admin module for displaying the file exception_log.txt"
+    },
     "tags": [
         "backend",
         "exceptions",

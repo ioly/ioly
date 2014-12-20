@@ -4,7 +4,9 @@
     "type": "oxid",
     "price": "0.00",
     "license": "GNU",
-    "desc": "oxProbs analyzes the data of an OXID eShop installation in order to find problems.",
+    "desc": {
+        "en": "oxProbs analyzes the data of an OXID eShop installation in order to find problems."
+    },
     "tags": [
         "backend",
         "articles",

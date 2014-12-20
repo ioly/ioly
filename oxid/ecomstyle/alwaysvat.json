@@ -4,7 +4,9 @@
     "type": "oxid",
     "price": "0.00",
     "license": "GNU",
-    "desc": "This module always calculates VAT also in foreign countries.",
+    "desc": {
+        "en": "This module always calculates VAT also in foreign countries."
+    },
     "tags": [
         "frontend",
         "vat",

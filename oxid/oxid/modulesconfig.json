@@ -4,7 +4,9 @@
     "type": "oxid",
     "price": "0.00",
     "license": "GNU",
-    "desc": "Tools to export, backup and import OXID eShop modules configuration data.",
+    "desc": {
+        "en": "Tools to export, backup and import OXID eShop modules configuration data."
+    },
     "tags": [
         "oxid",
         "sdk",

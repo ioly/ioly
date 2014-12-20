@@ -4,7 +4,9 @@
     "type": "oxid",
     "price": "0.00",
     "license": "GNU",
-    "desc": "Processor minifies, compresses and hashes any HTML files, .css and .js files within your OXID-Installation.",
+    "desc": {
+        "en": "Processor minifies, compresses and hashes any HTML files, .css and .js files within your OXID-Installation."
+    },
     "tags": [
         "frontend",
         "performance",

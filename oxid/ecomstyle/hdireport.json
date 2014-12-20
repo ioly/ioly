@@ -4,7 +4,9 @@
     "type": "oxid",
     "price": "0.00",
     "license": "GNU",
-    "desc": "A more extensive statistical analysis of sales figures.",
+    "desc": {
+        "en": "A more extensive statistical analysis of sales figures."
+    },
     "tags": [
         "backend",
         "statistics",

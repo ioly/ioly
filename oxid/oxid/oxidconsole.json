@@ -4,7 +4,9 @@
     "type": "oxid",
     "price": "0.00",
     "license": "GNU",
-    "desc": "OXID Console is php console application for OXID Shop. It provides an API for writing various commands. We have shipped very common for every oxid shop project commands out of the box.",
+    "desc": {
+        "en": "OXID Console is php console application for OXID Shop. It provides an API for writing various commands. We have shipped very common for every oxid shop project commands out of the box."
+    },
     "tags": [
         "frontend",
         "backend",

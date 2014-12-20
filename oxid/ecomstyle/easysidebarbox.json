@@ -4,7 +4,9 @@
     "type": "oxid",
     "price": "0.00",
     "license": "GNU",
-    "desc": "Create sidebar boxes in shop administation.",
+    "desc": {
+        "en": "Create sidebar boxes in shop administation."
+    },
     "tags": [
         "frontend",
         "sidebar"

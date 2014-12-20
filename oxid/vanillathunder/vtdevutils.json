@@ -4,7 +4,9 @@
     "type": "oxid",
     "price": "0.00",
     "license": "GPL",
-    "desc": "Dev Utils for OXID eShop",
+    "desc": {
+        "en": "Dev Utils for OXID eShop"
+    },
     "tags": [
         "backend",
         "utils",

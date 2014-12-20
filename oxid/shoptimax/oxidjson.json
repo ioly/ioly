@@ -4,7 +4,9 @@
     "type": "oxid",
     "price": "0.00",
     "license": "GNU",
-    "desc": "REST interface for the OXID eShop using the Tonic PHP framework with AngularJS backend.",
+    "desc": {
+        "en": "REST interface for the OXID eShop using the Tonic PHP framework with AngularJS backend."
+    },
     "tags": [
         "backend",
         "REST",

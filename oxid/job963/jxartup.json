@@ -4,7 +4,9 @@
     "type": "oxid",
     "price": "0.00",
     "license": "GNU",
-    "desc": "OXID eShop module for scheduled updating of product fields/attributes.",
+    "desc": {
+        "en": "OXID eShop module for scheduled updating of product fields/attributes."
+    },
     "tags": [
         "backend",
         "products",

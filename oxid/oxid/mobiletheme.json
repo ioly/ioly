@@ -4,7 +4,9 @@
     "type": "oxid",
     "price": "0.00",
     "license": "GNU",
-    "desc": "Mobile theme for OXID eshop.",
+    "desc": {
+        "en": "Mobile theme for OXID eshop."
+    },
     "tags": [
         "frontend",
         "mobile",

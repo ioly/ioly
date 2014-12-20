@@ -4,7 +4,9 @@
     "type": "oxid",
     "price": "0.00",
     "license": "GPL",
-    "desc": "Displaying active discounts in frontend.",
+    "desc": {
+        "en": "Displaying active discounts in frontend."
+    },
     "tags": [
         "frontend",
         "discounts",

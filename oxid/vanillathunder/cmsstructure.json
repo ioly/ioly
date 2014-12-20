@@ -4,7 +4,9 @@
     "type": "oxid",
     "price": "0.00",
     "license": "GNU",
-    "desc": "Provides the cms pages a simple category-like structure with some main and subpages.",
+    "desc": {
+        "en": "Provides the cms pages a simple category-like structure with some main and subpages."
+    },
     "tags": [
         "frontend",
         "cmspages"

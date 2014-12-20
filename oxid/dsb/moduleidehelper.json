@@ -4,7 +4,9 @@
     "type": "oxid",
     "price": "0.00",
     "license": "unknown",
-    "desc": "This Module makes it impossible for IDE's to create auto completion for the existing parent classes - the IDE simply can't know that the current class extends the other.",
+    "desc": {
+        "en": "This Module makes it impossible for IDE's to create auto completion for the existing parent classes - the IDE simply can't know that the current class extends the other."
+    },
     "tags": [
         "backend",
         "ide"

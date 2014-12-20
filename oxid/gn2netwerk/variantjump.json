@@ -4,7 +4,9 @@
     "type": "oxid",
     "price": "0.00",
     "license": "GNU",
-    "desc": "Passes defined parent fields to child articles (variants).",
+    "desc": {
+        "en": "Passes defined parent fields to child articles (variants)."
+    },
     "tags": [
         "frontend",
         "articles",

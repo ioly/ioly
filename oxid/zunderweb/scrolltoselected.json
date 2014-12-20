@@ -3,7 +3,9 @@
     "vendor": "zunderweb",
     "type": "oxid",
     "license": "unknown",
-    "desc": "Lists in OXID eShop Backend scroll automatically to the currently selected entry.",
+    "desc": {
+        "en": "Lists in OXID eShop Backend scroll automatically to the currently selected entry."
+    },
     "tags": [
         "backend",
         "admin",

@@ -4,7 +4,9 @@
     "type": "oxid",
     "price": "0.00",
     "license": "GNU",
-    "desc": "Module for admin OXID eShop for displaying, filtering and exporting newsletter users.",
+    "desc": {
+        "en": "Module for admin OXID eShop for displaying, filtering and exporting newsletter users."
+    },
     "tags": [
         "backend",
         "newsletter",

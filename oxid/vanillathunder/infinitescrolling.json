@@ -4,7 +4,9 @@
     "type": "oxid",
     "price": "0.00",
     "license": "MIT",
-    "desc": "infinite scrolling aka dynamic pagination for article lists on category pages, vendors pages and within search",
+    "desc": {
+        "en": "infinite scrolling aka dynamic pagination for article lists on category pages, vendors pages and within search"
+    },
     "tags": [
         "frontend",
         "articles",

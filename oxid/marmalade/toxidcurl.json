@@ -4,7 +4,9 @@
     "type": "oxid",
     "price": "0.00",
     "license": "unknown",
-    "desc": "TOXID cURL enables you to load dynamic CMS content into your OXID eShop.",
+    "desc": {
+        "en": "TOXID cURL enables you to load dynamic CMS content into your OXID eShop."
+    },
     "tags": [
         "frontend",
         "content",

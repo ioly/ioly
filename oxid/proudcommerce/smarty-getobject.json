@@ -4,7 +4,9 @@
     "type": "oxid",
     "price": "0.00",
     "license": "GNU",
-    "desc": "Allows you to load any OXID-Object using a smarty tag",
+    "desc": {
+        "en": "Allows you to load any OXID-Object using a smarty tag"
+    },
     "tags": [
         "frontend",
         "seo",

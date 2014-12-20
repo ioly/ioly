@@ -4,7 +4,9 @@
     "type": "oxid",
     "price": "0.00",
     "license": "MIT",
-    "desc": "A Schedular for OXID eShop to manage cronjobs from the backend.",
+    "desc": {
+        "en": "A Schedular for OXID eShop to manage cronjobs from the backend."
+    },
     "tags": [
         "backend",
         "cronjobs"
