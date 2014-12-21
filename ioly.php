@@ -28,9 +28,8 @@ class ioly
     protected $_systemBasePath = null;
     protected $_systemVersion = null;
     protected $_debugLogging = true;
-    protected $_cookbooks = array();
-    protected $_defaultCookbooks = array(
-    	'ioly' => 'http://github.com/ioly/ioly/archive/master.zip'
+    protected $_cookbooks = array(
+        array('ioly', 'http://github.com/ioly/ioly/archive/master.zip')
     );
     
     /**
@@ -46,6 +45,7 @@ class ioly
         $this->_baseDir = $this->_dirName(__FILE__);
         $this->_recipeCacheFile = $this->_baseDir.'/.recipes.db';
         $this->_digestCacheFile = $this->_baseDir.'/.digest.db';
+        $this->_cookbookCacheFile = $this->_baseDir.'/.cookbooks.db';
         $this->_authFile = $this->_baseDir.'/.auth';
         $this->_init();
         if (empty($this->_recipeCache)) {
@@ -58,6 +58,12 @@ class ioly
      */
     public function _init()
     {
+        if (file_exists($this->_cookbookCacheFile)) {
+            $cache = unserialize(file_get_contents($this->_cookbookCacheFile));
+            if (is_array($cache)) {
+                $this->_cookbooks = $cache;
+            }
+        }
         if (file_exists($this->_recipeCacheFile)) {
             $cache = unserialize(file_get_contents($this->_recipeCacheFile));
             if (is_array($cache)) {
@@ -152,7 +158,7 @@ class ioly
     {
     	if(!empty($key) && !empty($url)) {
             $this->_writeLog("Adding cookbook: $key => $url");
-            $this->_cookbooks[$key] = $url;
+            $this->_cookbooks[] = array($key, $url);
             $this->update();
         }
     }
@@ -166,8 +172,10 @@ class ioly
     	if(!empty($key)) {
             $zipFile = $this->_baseDir."/cookbook.{$key}.zip";
             $this->_writeLog("Removing cookbook: $key, file: " . $zipFile);
-            if(isset($this->_cookbooks[$key])) {
-                unset($this->_cookbooks[$key]);
+            foreach ($this->_cookbooks as $k=>$cookbook) {
+                if ($cookbook[0] == $key) {
+                    unset($this->_cookbooks[$k]);
+                }
             }
             // remove file in any case
             if(file_exists($zipFile)) {
@@ -181,14 +189,21 @@ class ioly
      * Set the cookbooks to use.
      * @param array $aCookbooks
      */
-    public function setCookbooks($aCookbooks)
+    public function setCookbooks($cookbooks)
     {
-        foreach($aCookbooks as $key => $url) {
-            if(!empty($key) && !empty($url)) {
-                $this->_cookbooks[$key] = $url;
+        $newCookbooks = array();
+        if (is_array($cookbooks)) {
+            foreach ($cookbooks as $cookbook) {
+                if (count($cookbook) == 2) {
+                    $key = $cookbook[0];
+                    $url = $cookbook[1];
+                    $newCookbooks[] = array($key, $url);
+                } 
             }
         }
+        $this->_cookbooks = $newCookbooks;
         $this->update();
+
     }
     /**
      * Return a specific cookbook URL
@@ -196,7 +211,12 @@ class ioly
      */
     public function getCookbook($key)
     {
-        return $this->_cookbooks[$key];
+        foreach ($this->_cookbooks as $cookbook) {
+            if ($cookbook[0] == $key) {
+                return $cookbook[1];
+            }
+        }
+        return false;
     }
 
     /**
@@ -305,21 +325,19 @@ class ioly
      */
     public function update()
     {
-        // no specific cookbooks set, use default one
-        if(!count($this->_getCookbooks())) {
-            $this->setCookbooks($this->_defaultCookbooks);
-        }
-        
-        foreach ($this->_getCookbooks() as $repo=>$url) {
+        foreach ($this->_getCookbooks() as $cookbook) {
+            $repo = $cookbook[0];
+            $url = $cookbook[1];
             $this->_writeLog("Trying to get recipe $repo from $url");
             $data = $this->_curlRequest($url, true);
             $fn = 'cookbook.'.$repo.'.zip';
             if ($data[0] != '') {
                 $this->_writeLog("Successfully downloaded recipe $repo from $url");
                 file_put_contents($this->_baseDir.'/'.$fn, $data[0]);
-                $this->_parseRecipes();
             }
         }
+        file_put_contents($this->_cookbookCacheFile, serialize($this->_cookbooks));
+        $this->_parseRecipes();
         $this->_init();
     }
 
@@ -906,7 +924,10 @@ class ioly
     protected function _parseRecipes()
     {
         $db = array();
-        foreach (glob($this->_baseDir.'/cookbook.*.zip') as $cookbookArchive) {
+        $cachedCookbooks = unserialize(file_get_contents($this->_cookbookCacheFile));
+        foreach ($cachedCookbooks as $cookbook) {
+            $cookbookArchive = $this->_baseDir.'/cookbook.'.$cookbook[0].'.zip'; 
+
             $tmpDir = tempnam(sys_get_temp_dir(), 'IOLY_');
             unlink($tmpDir);
             mkdir($tmpDir);
@@ -922,8 +943,6 @@ class ioly
                         $packageData = file_get_contents($file);
                         $package = json_decode($packageData, true);
                         if ($package !== null) {
-                            //TODO: sanity checks? is json valid?....
-                            //TODO: minimum 1 valid version???
                             $package['_cookbook'] = $cookbookArchive;
                             $package['_filename'] = substr(
                                 basename($file),
@@ -943,7 +962,6 @@ class ioly
                                 $matchingVersions = is_array($versionData['supported']) ? $versionData['supported'] : explode(",", trim($versionData['supported']));
                                 if(count($matchingVersions)) {
                                     foreach($matchingVersions as $matchingVersion) {
-                                        #$this->_writeLog("{$package['packageString']} $matchingVersion -- " . $this->getSystemVersion());
                                         if($matchingVersion == $this->getSystemVersion()) {
                                             $package['versions'][$version]['matches'] = true;
                                             break;
@@ -951,7 +969,17 @@ class ioly
                                     }
                                 }
                             }
-                            $db[] = $package;
+                            $replacePackage = null;
+                            foreach ($db as $k=>$cachedPackage) {
+                                if ($cachedPackage['packageString'] == $package['packageString']) {
+                                    $replacePackage = $k;
+                                }
+                            }
+                            if ($replacePackage) {
+                                $db[$replacePackage] = $package;
+                            } else {
+                                $db[] = $package;
+                            }
                         }
                     }
                 }
