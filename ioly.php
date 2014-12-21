@@ -191,19 +191,11 @@ class ioly
      */
     public function setCookbooks($cookbooks)
     {
-        $newCookbooks = array();
-        if (is_array($cookbooks)) {
-            foreach ($cookbooks as $cookbook) {
-                if (count($cookbook) == 2) {
-                    $key = $cookbook[0];
-                    $url = $cookbook[1];
-                    $newCookbooks[] = array($key, $url);
-                } 
-            }
+        $this->_cookbooks = array();
+        foreach ($cookbooks as $key=>$url) {
+            $this->_cookbooks[] = array($key, $url);
         }
-        $this->_cookbooks = $newCookbooks;
         $this->update();
-
     }
     /**
      * Return a specific cookbook URL
