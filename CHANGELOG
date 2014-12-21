@@ -1,5 +1,7 @@
 1.8.0 (2014-12-21)
-  - multilingual descriptions (array)
+ - fixed addCookbooks
+ - multilingual descriptions
+ - moved to ZipArchive instead phar
   
 1.7.0 (2014-12-14)
   - added getter for ioly cookbooks version
