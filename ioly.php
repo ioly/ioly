@@ -907,9 +907,16 @@ class ioly
     {
         $db = array();
         foreach (glob($this->_baseDir.'/cookbook.*.zip') as $cookbookArchive) {
-            $cookbook = new \PharData($cookbookArchive, 0);
-            if ($cookbook) {
-                $files = new \RecursiveIteratorIterator($cookbook);
+            $tmpDir = tempnam(sys_get_temp_dir(), 'IOLY_');
+            unlink($tmpDir);
+            mkdir($tmpDir);
+            $zip = new \ZipArchive();
+            if ($zip->open($cookbookArchive)) {
+                $zip->extractTo($tmpDir);
+                $zip->close();
+            }
+            if (is_writable($tmpDir)) {
+                $files = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($tmpDir));
                 foreach ($files as $file) {
                     if (substr($file, -5) == '.json') {
                         $packageData = file_get_contents($file);
