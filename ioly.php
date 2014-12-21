@@ -17,7 +17,7 @@ namespace ioly;
 
 class ioly
 {
-    protected $_version = "1.7.0";
+    protected $_version = "1.8.0";
     
     protected $_baseDir = null;
     protected $_recipeCacheFile = null;
