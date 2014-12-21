@@ -1,7 +1,5 @@
 2014-12-21
-  - fixed addCookbooks
-  - multilingual descriptions
-  - moved to ZipArchive
+  - multilingual descriptions (array)
 
 2014-12-17
   - added "price" field (value examples: 0.00 [free modules] or 39.99)
