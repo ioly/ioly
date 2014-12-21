@@ -51,7 +51,10 @@ $ php ioly.php install oxid/paypal 3.2.1;
       "vendor": "oxid",
       "type": "oxid",
       "license": "GNU",
-      "desc": "PayPal payment method for checkout.",
+      "desc": [
+          "en": "PayPal payment method for checkout.",
+          "de": "PayPal als Zahlart."
+      ],
       "tags": [
           "frontend",
           "paypal",
