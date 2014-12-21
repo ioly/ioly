@@ -90,7 +90,6 @@ $ php ioly.php install oxid/paypal 3.2.1;
 - PHP extensions:
   * cUrl
   * JSON
-  * Phar
   * ZIP
 
 
