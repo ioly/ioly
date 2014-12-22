@@ -3,9 +3,10 @@
     "vendor": "job963",
     "type": "oxid",
     "price": "0.00",
-    "license": "GNU",
+    "license": "GPL 3+",
     "desc": {
-        "en": "OXID eShop module for scheduled updating of product fields/attributes."
+        "de": "Admin-Modul für die Planung und Ausführung von Artikel-Updates",
+        "en": "Admin Module for Scheduling and Running Product Updates"
     },
     "tags": [
         "backend",

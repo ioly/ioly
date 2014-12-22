@@ -5,7 +5,8 @@
     "price": "0.00",
     "license": "GNU",
     "desc": {
-        "en": "Module for OXID eShop admin for editing attributes of products."
+        "de": "Admin-Modul für das Bearbeiten aller Artikel Attibute auf einer Seite",
+        "en": "Module for editing all product attributes on one page"
     },
     "tags": [
         "backend",
