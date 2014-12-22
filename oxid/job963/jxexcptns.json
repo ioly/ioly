@@ -5,7 +5,8 @@
     "price": "0.00",
     "license": "GNU",
     "desc": {
-        "en": "OXID eShop admin module for displaying the file exception_log.txt"
+        "de": "Admin-Modul für die Anzeige der Datei exception_log.txt",
+        "en": "Admin module for displaying the file exception_log.txt"
     },
     "tags": [
         "backend",

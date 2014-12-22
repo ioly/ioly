@@ -5,7 +5,8 @@
     "price": "0.00",
     "license": "GNU",
     "desc": {
-        "en": "oxProbs analyzes the data of an OXID eShop installation in order to find problems."
+        "dn": "Analyse-Modul zum Auffinden problematischer Shop Daten",
+        "en": "Analysis module for finding problematical shop data"
     },
     "tags": [
         "backend",
