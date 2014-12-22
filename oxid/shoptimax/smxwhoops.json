@@ -2,8 +2,11 @@
     "name": "smxWhoops",
     "vendor": "shoptimax",
     "type": "oxid",
+    "price": "0.00",
     "license": "GNU",
-    "desc": "Integration of the whoops error handler base/framework for PHP into the OXID eShop.",
+    "desc": {
+        "en": "Integration of the whoops error handler base/framework for PHP into the OXID eShop."
+    },
     "tags": [
         "frontend",
         "surveys",

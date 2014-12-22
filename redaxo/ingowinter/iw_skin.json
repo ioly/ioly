@@ -2,8 +2,11 @@
     "name": "iw_skin",
     "vendor": "ingowinter",
     "type": "redaxo",
+    "price": "0.00",
     "license": "GNU",
-    "desc": "iw_skin ist ein less-basiertes Backend Skin für Redaxo. Zum Kompilieren der less Dateien wird iw_assets genutzt, für die Modulwidgets (Mediabutton/ -list, Linkbutton/ -list) jQuery UI.",
+    "desc": {
+        "en": "iw_skin ist ein less-basiertes Backend Skin f\u00fcr Redaxo. Zum Kompilieren der less Dateien wird iw_assets genutzt, f\u00fcr die Modulwidgets (Mediabutton/ -list, Linkbutton/ -list) jQuery UI."
+    },
     "tags": [
         "less",
         "php",

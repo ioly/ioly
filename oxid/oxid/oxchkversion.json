@@ -2,12 +2,15 @@
     "name": "oxchkversion",
     "vendor": "oxid",
     "type": "oxid",
+    "price": "0.00",
     "license": "unkown",
-    "desc": "This test checks your OXID eShop and assists you when updating. It detects if you missed to update files and tells you which file has been modified.",
+    "desc": {
+        "en": "This test checks your OXID eShop and assists you when updating. It detects if you missed to update files and tells you which file has been modified."
+    },
     "tags": [
         "backend",
         "modules",
-        "testing",
+        "testing"
     ],
     "versions": {
         "3.2.1": {

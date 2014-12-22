@@ -2,8 +2,11 @@
     "name": "Polish translations for OXID eShop",
     "vendor": "otrance",
     "type": "oxid",
+    "price": "0.00",
     "license": "GPLv3",
-    "desc": "Polish language file translations for OXID eShop front end and admin panel",
+    "desc": {
+        "en": "Polish language file translations for OXID eShop front end and admin panel"
+    },
     "tags": [
         "frontend",
         "admin",

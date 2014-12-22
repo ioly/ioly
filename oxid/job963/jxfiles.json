@@ -2,8 +2,11 @@
     "name": "jxFiles",
     "vendor": "job963",
     "type": "oxid",
+    "price": "0.00",
     "license": "GNU",
-    "desc": "OXID eShop Admin Extension for Managing Files",
+    "desc": {
+        "en": "OXID eShop Admin Extension for Managing Files"
+    },
     "tags": [
         "backend",
         "delete",

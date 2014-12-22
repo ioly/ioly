@@ -3,7 +3,9 @@
     "vendor": "ioly",
     "type": "library",
     "license": "MIT",
-    "desc": "JS libs needed for the ioly OXID Connector Backend, mainly AngularJS related.",
+    "desc": {
+        "en": "JS libs needed for the ioly OXID Connector Backend, mainly AngularJS related."
+    },
     "tags": [
         "ioly",
         "js",
