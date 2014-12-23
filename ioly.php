@@ -11,7 +11,7 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version	 1.8.0
+ * @version	 1.8.1
  */
 namespace ioly;
 
@@ -946,6 +946,12 @@ class ioly
                                 .'/'.$package['_filename'];
                             if ($this->isInstalled($package['packageString'])) {
                                 $package['installed'] = true;
+                            }
+                            // handle multilang desc
+                            $defaultDesc = $package['desc']['en'];
+                            // for now, set the DE desc to the EN desc, if not set in the JSON file yet...
+                            if(!isset($package['desc']['de']) || $package['desc']['de'] == '') {
+                                $package['desc']['de'] = $defaultDesc;
                             }
                             foreach($package['versions'] as $version => $versionData) {
                                 if($this->isInstalledInVersion($package['packageString'], $version)) {
