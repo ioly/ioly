@@ -1,3 +1,8 @@
+* {
+	font-family: 'Open Sans', sans-serif;
+	line-height: 1.2;
+}
+
 .spinner {
     position: fixed;
     top: 40%;
@@ -85,7 +90,7 @@ tbody>tr>td.iolynoline {
 }
 
 .buttonwidth {
-	width: 250px!important;
+	width: 260px!important;
 }
 
 #contributorslist li {
@@ -99,4 +104,20 @@ tbody>tr>td.iolynoline {
 }
 #recipeCounter {
 	text-align: center;
+}
+
+h1 {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 15px;
+	font-weight: bold;
+	margin: 15px 0 15px 0;
+}
+
+h3 {
+	font-size: 15px;
+	color: orange;
 }

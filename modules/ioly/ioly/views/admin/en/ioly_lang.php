@@ -11,7 +11,7 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version	 1.6.0
+ * @version	 1.6.2
  */
 $sLangName  = "English";
 // -------------------------------
@@ -33,7 +33,7 @@ $aLang = array(
 'IOLY_MODULE_OXID_VERSION'                  => 'supported OXID-Versions',    
 'IOLY_MODULE_DOWNLOAD_SUCCESS'              => 'Module downloaded successfully!',    
 'IOLY_MODULE_UNINSTALL_SUCCESS'             => 'Module files removed successfully!',    
-'IOLY_MAIN_INFOTEXT'                        => 'With the ioly modul manager you can download and install OXID modules with one click in your shop.<br>For more information visit <a href="https://github.com/ioly/ioly" target="_blank">github.com/ioly/ioly</a> or <a href="https://getioly.com" target="_blank">getioly.com</a>.<br>',    
+'IOLY_MAIN_INFOTEXT'                        => 'With the ioly modul manager you can download and install OXID modules with one click in your shop. For more information visit <a href="https://github.com/ioly/ioly" target="_blank">github.com/ioly/ioly</a> or <a href="https://getioly.com" target="_blank">getioly.com</a>.<br>',    
 'IOLY_RECIPE_UPDATE_SUCCESS'                => 'updated ioly recipes successfully!',    
 'IOLY_RECIPE_UPDATE_ERROR'                  => 'problem while updating ioly recipes: ',    
 'IOLY_IOLY_UPDATE_SUCCESS'                  => 'updated ioly core successfully!',    
@@ -45,7 +45,8 @@ $aLang = array(
 'IOLY_UNINSTALL_MODULE_HINT'                => 'remove module files from shop directory?', 
 'IOLY_MODULE_INSTALLED'                     => 'Module installed',    
 'IOLY_EXCEPTION_CORE_NOT_LOADED'            => "Unable to load ioly core!<br>Please check write permissions in the following folders:<i>&lsaquo;shoproot&rsaquo;/ioly/<br>&lsaquo;shoproot&rsaquo;/modules/<br>&lsaquo;shoproot&rsaquo;/modules/ioly/ioly/</i>",    
-'IOLY_PROJECT_URL'                          => 'module details',    
+'IOLY_PROJECT_URL'                          => 'module details', 
+'IOLY_PRICE_FREE'                          	=> 'free',    
 'IOLY_OXID_VERSIONS'                        => 'OXID',    
 'IOLY_TOGGLE_INFO'                          => 'Toggle info',    
 'IOLY_ERROR_BASELIB_MISSING'                => "JS libs not found. Installing '%s' in version '%s' to 'ioly/libs' ...",    

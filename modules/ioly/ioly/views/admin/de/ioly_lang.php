@@ -11,7 +11,7 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version	 1.6.0
+ * @version	 1.6.2
  */
 $sLangName  = "Deutsch";
 // -------------------------------
@@ -33,7 +33,7 @@ $aLang = array(
 'IOLY_MODULE_OXID_VERSION'                  => 'unterst&uuml;tzte OXID-Version',    
 'IOLY_MODULE_DOWNLOAD_SUCCESS'              => 'Modul-Download erfolgreich!',    
 'IOLY_MODULE_UNINSTALL_SUCCESS'             => 'Modul-Dateien erfolgreich entfernt!',    
-'IOLY_MAIN_INFOTEXT'                        => 'Mit dem ioly Modulmanager kannst du mit einem Klick OXID Module herunterladen und in deinem Shop installieren.<br>Mehr Informationen zu ioly findest du unter <a href="https://github.com/ioly/ioly" target="_blank">github.com/ioly/ioly</a> bzw. <a href="http://getioly.com" target="_blank">getioly.com</a>.<br>',    
+'IOLY_MAIN_INFOTEXT'                        => 'Mit dem ioly Modulmanager kannst du mit einem Klick OXID Module herunterladen und in deinem Shop installieren. Mehr Informationen zu ioly findest du unter <a href="https://github.com/ioly/ioly" target="_blank">github.com/ioly/ioly</a> bzw. <a href="http://getioly.com" target="_blank">getioly.com</a>.<br>',    
 'IOLY_RECIPE_UPDATE_SUCCESS'                => 'ioly Rezepte erfolgreich aktualisiert!',    
 'IOLY_RECIPE_UPDATE_ERROR'                  => 'Problem beim Aktualisieren der ioly Rezepte: ',    
 'IOLY_IOLY_UPDATE_SUCCESS'                  => 'ioly Core erfolgreich aktualisiert!',    
@@ -46,6 +46,7 @@ $aLang = array(
 'IOLY_MODULE_INSTALLED'                     => 'Modul installiert',  
 'IOLY_EXCEPTION_CORE_NOT_LOADED'            => "ioly Core konnte nicht geladen werden!<br>Folgende Verzeichnisse ben&ouml;tigen Schreibrechte:<br><br><i>&lsaquo;shoproot&rsaquo;/ioly/<br>&lsaquo;shoproot&rsaquo;/modules/<br>&lsaquo;shoproot&rsaquo;/modules/ioly/ioly/</i>", 
 'IOLY_PROJECT_URL'                          => 'Moduldetails',    
+'IOLY_PRICE_FREE'                          	=> 'kostenlos', 
 'IOLY_OXID_VERSIONS'                        => 'OXID',    
 'IOLY_TOGGLE_INFO'                          => 'Infos anzeigen',    
 'IOLY_ERROR_BASELIB_MISSING'                => "JS Bibliotheken nocht nicht vorhanden. Installiere '%s' in Version '%s' in 'ioly/libs' ...",    

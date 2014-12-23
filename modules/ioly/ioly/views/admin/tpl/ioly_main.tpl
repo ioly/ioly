@@ -17,7 +17,7 @@
     <div ng-controller="IolyCtrl">
 
         [{if $iolyerrorfatal ne ''}]
-            <h2>[{oxmultilang ident='IOLY_MAIN_TITLE'}]</h2>
+            <h1>[{oxmultilang ident='IOLY_MAIN_TITLE'}]</h1>
             <div class="error alert alert-danger alert-dismissable">
                 [{$iolyerrorfatal}]
             </div>
@@ -36,7 +36,7 @@
             </script>
         
             <div id="iolyheadline">
-                <h2>[{oxmultilang ident='IOLY_MAIN_TITLE'}]</h2>
+                <h1>[{oxmultilang ident='IOLY_MAIN_TITLE'}]</h1>
                 <div id="iolyinfo">
                     <div id='iolyintrotext'>[{oxmultilang ident="IOLY_MAIN_INFOTEXT"}]</div>
                     <div id="contributors">
@@ -90,11 +90,20 @@
                 <tr ng-repeat="module in $data">
                     <td data-title="'[{oxmultilang ident="IOLY_MODULE_NAME"}]'" sortable="'name'" filter="{ 'name': 'text' }" style="width: 50%;">
                         <div ng-hide="module.installed">
-                        	<strong>{{module.name}} [ {{module.vendor}} ]</strong><p>{{module.desc.[{$langabbrev}]}}</p>
+                        	<h2>{{module.name}}</h2>
+                        	<p>{{module.desc.[{$langabbrev}]}}</p>
+                        	<span class="glyphicon glyphicon-user"></span>&nbsp; {{module.vendor}}
+                        	&nbsp;&nbsp;&nbsp;
+                        	<span class="glyphicon glyphicon-euro"></span>&nbsp; <span ng-if="module.price == '0.00'">[{oxmultilang ident='IOLY_PRICE_FREE'}]</span><span ng-if="module.price != '0.00'">{{module.price}}</span>
+                        	<br><br>
                         </div>
                         <div ng-show="module.installed" style="color: #449d44;">
-                        	<span class="glyphicon glyphicon-ok-sign"></span> 
-                        	<strong>{{module.name}} [ {{module.vendor}} ]</strong><p>{{module.desc.[{$langabbrev}]}}</p>
+                        	<h2>{{module.name}} <span class="glyphicon glyphicon-ok-sign"></span></h2>
+                        	<p>{{module.desc.[{$langabbrev}]}}</p>
+                        	<span class="glyphicon glyphicon-user"></span>&nbsp; {{module.vendor}}
+                        	&nbsp;&nbsp;&nbsp;
+                        	<span class="glyphicon glyphicon-euro"></span>&nbsp; <span ng-if="module.price == '0.00'">kostenlos</span><span ng-if="module.price != '0.00'">{{module.price}}</span>
+                        	<br><br>
                         </div>
                     </td>
                     <td data-title="''" style="width: 35%;"></td>
