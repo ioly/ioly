@@ -11,7 +11,7 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version	 1.6.0
+ * @version	 1.6.1
  */
 class ioly_main extends oxAdminView
 {
@@ -537,7 +537,10 @@ class ioly_main extends oxAdminView
         parent::render();
         
         $this->iolyAutoUpdate();
-        
+        // add curr language abbrevation to the template
+        $iLang = oxRegistry::getLang()->getTplLanguage();
+        $sLang = oxRegistry::getLang()->getLanguageAbbr($iLang);
+        $this->addTplParam("langabbrev", $sLang);
         // ajax call?
         $isAjax = oxRegistry::getConfig()->getRequestParameter('isajax');
         if($isAjax) {

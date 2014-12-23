@@ -90,11 +90,11 @@
                 <tr ng-repeat="module in $data">
                     <td data-title="'[{oxmultilang ident="IOLY_MODULE_NAME"}]'" sortable="'name'" filter="{ 'name': 'text' }" style="width: 50%;">
                         <div ng-hide="module.installed">
-                        	<strong>{{module.name}} [ {{module.vendor}} ]</strong><p>{{module.desc}}</p>
+                        	<strong>{{module.name}} [ {{module.vendor}} ]</strong><p>{{module.desc.[{$langabbrev}]}}</p>
                         </div>
                         <div ng-show="module.installed" style="color: #449d44;">
                         	<span class="glyphicon glyphicon-ok-sign"></span> 
-                        	<strong>{{module.name}} [ {{module.vendor}} ]</strong><p>{{module.desc}}</p>
+                        	<strong>{{module.name}} [ {{module.vendor}} ]</strong><p>{{module.desc.[{$langabbrev}]}}</p>
                         </div>
                     </td>
                     <td data-title="''" style="width: 35%;"></td>
