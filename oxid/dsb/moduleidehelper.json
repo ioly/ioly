@@ -23,7 +23,7 @@
             "mapping": [
                 {
                     "src": "modules/dsb_ide_helper",
-                    "dest": ""
+                    "dest": "modules/dsb_ide_helper"
                 }
             ]
         }
