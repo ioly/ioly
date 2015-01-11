@@ -1,25 +1,22 @@
 {
-    "name": "jxFiles",
+    "name": "jxFind",
     "vendor": "job963",
     "type": "oxid",
     "price": "0.00",
     "license": "GNU",
     "desc": {
-        "de": "OXID eShop Admin Modul für die Verwaltung von Dateien",
-        "en": "OXID eShop Admin Module for Managing Files"
+        "de": "OXID eShop Admin Modul für die Suche von Texten in Artikeln, Kategories und CMS-Seiten",
+        "en": "OXID eShop Admin Module for Searching Texts in Articles, Categories and CMS Pages"
     },
     "tags": [
         "backend",
-        "delete",
-        "files",
-        "manage",
-        "rename",
-        "upload"
+        "search",
+        "text"
     ],
     "versions": {
-        "0.2.1": {
-            "project": "https://github.com/job963/jxFiles",
-            "url": "https://github.com/job963/jxFiles/archive/v0.2.1.zip",
+        "0.1": {
+            "project": "https://github.com/job963/jxFind",
+            "url": "https://github.com/job963/jxFind/archive/0.1.zip",
             "supported": [
                 "4.9",
                 "4.8",

@@ -2,8 +2,11 @@
     "name": "eVAT",
     "vendor": "oxid",
     "type": "oxid",
+    "price": "0.00",
     "license": "GNU",
-    "desc": "This module implements requirements that is to allow an OXID eShop to comply with the EU regulations as specified by the EU VAT directive 1042/2013 regarding VAT for telecommunications, broadcasting and electronic services.",
+    "desc": {
+        "en": "This module implements requirements that is to allow an OXID eShop to comply with the EU regulations as specified by the EU VAT directive 1042/2013 regarding VAT for telecommunications, broadcasting and electronic services."
+    },
     "tags": [
         "frontend",
         "vat",

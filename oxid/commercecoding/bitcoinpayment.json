@@ -2,8 +2,11 @@
     "name": "Bitcoin Payment",
     "vendor": "commercecoding",
     "type": "oxid",
+    "price": "0.00",
     "license": "GNU",
-    "desc": "Accept Bitcoins as payment method.",
+    "desc": {
+        "en": "Accept Bitcoins as payment method."
+    },
     "tags": [
         "frontend",
         "payments"

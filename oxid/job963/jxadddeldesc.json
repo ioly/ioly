@@ -1,25 +1,21 @@
 {
-    "name": "jxFiles",
+    "name": "jxAddDelDesc",
     "vendor": "job963",
     "type": "oxid",
     "price": "0.00",
     "license": "GNU",
     "desc": {
-        "de": "OXID eShop Admin Modul für die Verwaltung von Dateien",
-        "en": "OXID eShop Admin Module for Managing Files"
+        "de": "OXID eShop Modul für die Erweiterung der Versandarten um ein Beschreibungsfeld",
+        "en": "OXID eShop Module for Enhancing the Shipping Methods by a Description field"
     },
     "tags": [
-        "backend",
-        "delete",
-        "files",
-        "manage",
-        "rename",
-        "upload"
+        "shipping",
+        "description"
     ],
     "versions": {
-        "0.2.1": {
-            "project": "https://github.com/job963/jxFiles",
-            "url": "https://github.com/job963/jxFiles/archive/v0.2.1.zip",
+        "0.1": {
+            "project": "https://github.com/job963/jxAddDelDesc",
+            "url": "https://github.com/job963/jxAddDelDesc/archive/0.1.zip",
             "supported": [
                 "4.9",
                 "4.8",

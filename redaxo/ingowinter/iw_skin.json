@@ -1,0 +1,34 @@
+{
+    "name": "iw_skin",
+    "vendor": "ingowinter",
+    "type": "redaxo",
+    "price": "0.00",
+    "license": "GNU",
+    "desc": {
+        "en": "iw_skin ist ein less-basiertes Backend Skin f\u00fcr Redaxo. Zum Kompilieren der less Dateien wird iw_assets genutzt, f\u00fcr die Modulwidgets (Mediabutton/ -list, Linkbutton/ -list) jQuery UI."
+    },
+    "tags": [
+        "less",
+        "php",
+        "minify",
+        "assets"
+    ],
+    "versions": {
+        "1.0.0": {
+            "project": "https://bitbucket.org/IngoWinter/iw_skin",
+            "url": "https://bitbucket.org/IngoWinter/iw_skin/get/b233d1a28b3747c17adb49cec52aa7da0433f56b.zip",
+            "supported": [
+                "4.3",
+                "4.4",
+                "4.5",
+                "4.6"
+            ],
+            "mapping": [
+                {
+                    "src": "",
+                    "dest": "redaxo/include/addons/be_style/plugins/iw_skin/"
+                }
+            ]
+        }
+    }
+}

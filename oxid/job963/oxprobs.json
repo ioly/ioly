@@ -2,8 +2,12 @@
     "name": "oxProbs",
     "vendor": "job963",
     "type": "oxid",
+    "price": "0.00",
     "license": "GNU",
-    "desc": "oxProbs analyzes the data of an OXID eShop installation in order to find problems.",
+    "desc": {
+        "dn": "Analyse-Modul zum Auffinden problematischer Shop Daten",
+        "en": "Analysis module for finding problematical shop data"
+    },
     "tags": [
         "backend",
         "articles",

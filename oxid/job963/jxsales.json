@@ -1,25 +1,24 @@
 {
-    "name": "jxFiles",
+    "name": "jxSales",
     "vendor": "job963",
     "type": "oxid",
     "price": "0.00",
     "license": "GNU",
     "desc": {
-        "de": "OXID eShop Admin Modul für die Verwaltung von Dateien",
-        "en": "OXID eShop Admin Module for Managing Files"
+        "de": "OXID eShop Admin Modul für die Suche von Bestellungen und Kunden anhand von Artikeln",
+        "en": "OXID eShop Admin Module for Searching Orders and Customers by Articles"
     },
     "tags": [
         "backend",
-        "delete",
-        "files",
-        "manage",
-        "rename",
-        "upload"
+        "search",
+        "orders",
+        "customers",
+        "articles"
     ],
     "versions": {
-        "0.2.1": {
-            "project": "https://github.com/job963/jxFiles",
-            "url": "https://github.com/job963/jxFiles/archive/v0.2.1.zip",
+        "0.3": {
+            "project": "https://github.com/job963/jxSales",
+            "url": "https://github.com/job963/jxSales/archive/0.3.zip",
             "supported": [
                 "4.9",
                 "4.8",

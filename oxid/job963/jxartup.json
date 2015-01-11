@@ -2,8 +2,12 @@
     "name": "jxArtUp",
     "vendor": "job963",
     "type": "oxid",
-    "license": "GNU",
-    "desc": "OXID eShop module for scheduled updating of product fields/attributes.",
+    "price": "0.00",
+    "license": "GPL 3+",
+    "desc": {
+        "de": "Admin-Modul für die Planung und Ausführung von Artikel-Updates",
+        "en": "Admin Module for Scheduling and Running Product Updates"
+    },
     "tags": [
         "backend",
         "products",
@@ -11,9 +15,9 @@
         "update"
     ],
     "versions": {
-        "0.3.1": {
+        "0.3.2": {
             "project": "https://github.com/job963/jxArtUp",
-            "url": "https://github.com/job963/jxArtUp/archive/master.zip",
+            "url": "https://github.com/job963/jxArtUp/archive/v0.3.2.zip",
             "supported": [
                 "4.9",
                 "4.8",

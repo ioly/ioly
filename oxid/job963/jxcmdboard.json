@@ -1,25 +1,21 @@
 {
-    "name": "jxFiles",
+    "name": "jxCmdBoard",
     "vendor": "job963",
     "type": "oxid",
     "price": "0.00",
     "license": "GNU",
     "desc": {
-        "de": "OXID eShop Admin Modul für die Verwaltung von Dateien",
-        "en": "OXID eShop Admin Module for Managing Files"
+        "de": "OXID eShop Admin Modul für die Anzeige von Befehlen als Button Tabelle",
+        "en": "OXID eShop Admin Module for Displaying Commands as Button Matrix"
     },
     "tags": [
         "backend",
-        "delete",
-        "files",
-        "manage",
-        "rename",
-        "upload"
+        "execute"
     ],
     "versions": {
-        "0.2.1": {
-            "project": "https://github.com/job963/jxFiles",
-            "url": "https://github.com/job963/jxFiles/archive/v0.2.1.zip",
+        "0.3": {
+            "project": "https://github.com/job963/jxCmdBoard",
+            "url": "https://github.com/job963/jxCmdBoard/archive/0.3.zip",
             "supported": [
                 "4.9",
                 "4.8",

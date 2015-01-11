@@ -2,8 +2,11 @@
     "name": "ioly OXID Connector",
     "vendor": "ioly",
     "type": "oxid",
+    "price": "0.00",
     "license": "MIT",
-    "desc": "The ioly OXID Connector Backend. You should not uninstall this :)",
+    "desc": {
+        "en": "The ioly OXID Connector Backend. You should not uninstall this :)"
+    },
     "tags": [
         "ioly",
         "backend"

@@ -2,8 +2,11 @@
     "name": "Admin Bestell Statistik",
     "vendor": "suabo",
     "type": "oxid",
+    "price": "0.00",
     "license": "unknown",
-    "desc": "Extended order analytics for OXID eShop.",
+    "desc": {
+        "en": "Extended order analytics for OXID eShop."
+    },
     "tags": [
         "backend",
         "statistics",
