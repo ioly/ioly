@@ -5,7 +5,7 @@
     "price": "0.00",
     "license": "GPLv3",
     "desc": {
-        "en": "Shows the percentage of saving in percent on the product detail page closed to the price information",
+        "en": "Shows the percentage of saving in percent on the product detail page close to the price information",
         "de": "Zeigt die Ersparnis bei Streichpreisen in Prozent auf der Produktdetailseite nahe der Preisinformation",
         "ru": "Показывает процент экономии на странице продукта закрыто до информации о ценах."
     },
