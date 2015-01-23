@@ -12,7 +12,6 @@
         "frontend",
         "article",
         "details",
-        "article number",
         "ean"
     ],
     "versions": {
@@ -21,6 +20,8 @@
             "url": "https://github.com/Alpha-Sys/asy_artnum/archive/master.zip",
             "supported": [
                 "4.9",
+                "4.8",
+                "4.7"
             ],
             "mapping": [
                 {
