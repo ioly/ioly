@@ -1,0 +1,33 @@
+{
+    "name": "asy_artnum",
+    "vendor": "alphasys",
+    "type": "oxid",
+    "price": "0.00",
+    "license": "GNU",
+    "desc": {
+        "de": "Mit dem Modul ist es möglich eine Artikeldetailseite per Artikelnummer oder EAN in der URL aufzurufen.",
+        "en": "You can call an article details page with the article number or the EAN as parameter in the url."
+    },
+    "tags": [
+        "frontend",
+        "article",
+        "details",
+        "article number",
+        "ean"
+    ],
+    "versions": {
+        "1.0.0": {
+            "project": "https://github.com/Alpha-Sys/asy_artnum",
+            "url": "https://github.com/Alpha-Sys/asy_artnum/archive/master.zip",
+            "supported": [
+                "4.9",
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/",
+                    "dest": ""
+                }
+            ]
+        }
+    }
+}
