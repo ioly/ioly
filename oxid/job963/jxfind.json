@@ -14,9 +14,9 @@
         "text"
     ],
     "versions": {
-        "0.1": {
+        "0.1.5": {
             "project": "https://github.com/job963/jxFind",
-            "url": "https://github.com/job963/jxFind/archive/0.1.zip",
+            "url": "https://github.com/job963/jxFind/archive/0.1.5.zip",
             "supported": [
                 "4.9",
                 "4.8",
