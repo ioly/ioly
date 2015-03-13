@@ -75,6 +75,9 @@ $ php ioly.php install oxid/paypal 3.2.1;
                     "src": "source/modules/oe/",
                     "dest": "modules/oe/"
                 }
+            ],
+            "touch": [
+                "modules/oe/vendormetadata.php"
             ]
         }
     }
