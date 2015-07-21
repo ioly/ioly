@@ -17,6 +17,9 @@
             "project": "https://github.com/ioly/",
             "url": "https://github.com/ioly/ioly/raw/sauces/ioly/oxid-connector-js-libs/1.0.0.zip",
             "supported": [
+                "5.2",
+                "5.1",
+                "5.0",
                 "4.9",
                 "4.8",
                 "4.7"
@@ -24,7 +27,7 @@
             "mapping": [
                 {
                     "src": "",
-                    "dest": "modules/ioly/libs/"
+                    "dest": "modules/ioly/ioly/libs/"
                 }
             ]
         }
