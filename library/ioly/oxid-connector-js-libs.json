@@ -24,7 +24,7 @@
             "mapping": [
                 {
                     "src": "",
-                    "dest": "ioly/libs/"
+                    "dest": "modules/ioly/libs/"
                 }
             ]
         }
