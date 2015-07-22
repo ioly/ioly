@@ -11,7 +11,7 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version	 1.6.2
+ * @version	 1.6.3
  */
 class ioly_helper  {
 
@@ -24,6 +24,9 @@ class ioly_helper  {
      */
     public function getIolyLibPath($sModuleId, $sVersion, $sFileName = '') {
         $sFilePath = oxRegistry::getConfig()->getCurrentShopUrl(false).'ioly/libs/' .$sModuleId . '/' . $sVersion;
+        if(!file_exists($sFilePath)) {
+            $sFilePath = oxRegistry::getConfig()->getCurrentShopUrl(false).'modules/ioly/ioly/libs/' .$sModuleId . '/' . $sVersion;
+        }
         if($sFileName != '') {
             $sFilePath .= '/' . $sFileName;
         }

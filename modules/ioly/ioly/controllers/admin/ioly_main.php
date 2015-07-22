@@ -11,7 +11,7 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version	 1.6.2
+ * @version	 1.6.3
  */
 class ioly_main extends oxAdminView
 {
@@ -68,7 +68,12 @@ class ioly_main extends oxAdminView
     protected function _checkForJsLibs() {
         foreach($this->_requiredJsLibs as $jsLib => $jsVersion) {
             if(!$this->_ioly->isInstalled($jsLib)) {
-                $this->_ioly->install($jsLib, $jsVersion);
+                try {
+                    $this->_ioly->install($jsLib, $jsVersion);
+                }
+                catch(Exception $ex) {
+                    $this->addTplParam("iolyerrorfatal", $ex->getMessage());
+                }
             }
         }
     }
