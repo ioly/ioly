@@ -11,13 +11,13 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version	 1.8.1
+ * @version	 1.8.2
  */
 namespace ioly;
 
 class ioly
 {
-    protected $_version = "1.8.1";
+    protected $_version = "1.8.2";
     
     protected $_baseDir = null;
     protected $_recipeCacheFile = null;
@@ -58,6 +58,9 @@ class ioly
      */
     public function _init()
     {
+        // try to set rights
+        chmod($this->_baseDir, 0777);
+
         if (file_exists($this->_cookbookCacheFile)) {
             $cache = unserialize(file_get_contents($this->_cookbookCacheFile));
             if (is_array($cache)) {
@@ -94,7 +97,7 @@ class ioly
     }
 
     /**
-     * Gets ioly core version
+     * Gets ioly 33 version
      * @return string version
      */
     public function getCoreVersion()
@@ -325,7 +328,11 @@ class ioly
             $fn = 'cookbook.'.$repo.'.zip';
             if ($data[0] != '') {
                 $this->_writeLog("Successfully downloaded recipe $repo from $url");
+                if(file_exists($this->_baseDir.'/'.$fn)) {
+                    unlink($this->_baseDir.'/'.$fn);
+                }
                 file_put_contents($this->_baseDir.'/'.$fn, $data[0]);
+                chmod($this->_baseDir.'/'.$fn, 0777);
             }
         }
         file_put_contents($this->_cookbookCacheFile, serialize($this->_cookbooks));
@@ -774,6 +781,9 @@ class ioly
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         $data = curl_exec($ch);
+        if( ($err = curl_error($ch)) != '') {
+            $this->_writeLog("CURL error: " . $err);
+        }
         $responseCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         curl_close($ch);
         $response = array($data, intVal($responseCode));
@@ -853,7 +863,7 @@ class ioly
      * @param array $filelist Array of copied files
      * @throws Exception Applicable errors
      */
-    function _recursiveCopy($source, $dest, &$filelist=array())
+    protected function _recursiveCopy($source, $dest, &$filelist=array())
     {
         if (is_dir($source)) {
             $pattern = $source.'/{,.}*';
@@ -867,6 +877,7 @@ class ioly
             $basename = basename($file);
             if ($basename != "." && $basename != "..") {
                 $destpath = $dest.'/'.$basename;
+                $destpath = str_replace("//", "/", $destpath);
                 if (is_dir($file)) {
                     $this->_recursiveCopy(
                         $file,
@@ -876,7 +887,7 @@ class ioly
                 } else {
                     $destdir = $this->_dirName($destpath);
                     if (!file_exists($destdir)) {
-                        mkdir($destdir, 0777, true);
+                        $this->_mkdirRecursive($destdir);
                     }
                     if (@copy($file, $destpath)) {
                         if (is_file($destpath)) {
@@ -911,6 +922,36 @@ class ioly
     }
 
     /**
+     * Try to create directory recursively
+     * We try to chmod each directory part, otherwise we could
+     * just use mkdir($dirname, 0777, true)
+     *
+     * @param string $dirName
+     */
+    protected function _mkdirRecursive($dirName)
+    {
+        $subDir = "/";
+        $numFoldersBasePath = count(explode('/', $this->_dirName($this->_baseDir)));
+        $aSubfolders = explode('/', $dirName);
+        $numSubfolders = count($aSubfolders);
+        for($i=1; $i<=$numSubfolders; $i++) {
+            if($aSubfolders[$i] != '') {
+                $subDir .= $aSubfolders[$i] . '/';
+            }
+            if(!file_exists($subDir)) {
+                mkdir($subDir, 0777, true);
+            }
+            else {
+                if($i >= $numFoldersBasePath) {
+                    // for every new part that exists, try chmod
+                    chmod($subDir, 0777);
+                }
+            }
+        }
+
+    }
+
+    /**
      * Unzips and parses a cookbook repo zip file
      */
     protected function _parseRecipes()
@@ -923,6 +964,8 @@ class ioly
             $tmpDir = tempnam(sys_get_temp_dir(), 'IOLY_');
             unlink($tmpDir);
             mkdir($tmpDir);
+            chmod($tmpDir, 0777);
+            chmod($cookbookArchive, 0777);
             $zip = new \ZipArchive();
             if ($zip->open($cookbookArchive)) {
                 $zip->extractTo($tmpDir);
