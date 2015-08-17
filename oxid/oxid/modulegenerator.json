@@ -16,8 +16,8 @@
     ],
     "versions": {
         "0.5.0": {
-            "project": "https://github.com/druteika/oxid_module_generator/tree/master",
-            "url": "https://github.com/druteika/oxid_module_generator/archive/v050.zip",
+            "project": "https://github.com/OXID-eSales/module_skeleton_generator/tree/master",
+            "url": "https://github.com/OXID-eSales/module_skeleton_generator/archive/v0.5.0.zip",
             "supported": [
                 "4.9",
                 "4.8",
