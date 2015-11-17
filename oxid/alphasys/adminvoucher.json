@@ -4,7 +4,9 @@
     "type": "oxid",
     "price": "0.00",
     "license": "GNU",
-    "desc": "Oxid admin module which allows to generate voucher codes with your own code structure.",
+    "desc": {
+        "en": "Oxid admin module which allows to generate voucher codes with your own code structure."
+    },
     "tags": [
         "backend",
         "vouchers",
@@ -25,5 +27,6 @@
                     "dest": ""
                 }
             ]
+        }
     }
 }

@@ -4,7 +4,9 @@
     "type": "oxid",
     "price": "0.00",
     "license": "GNU",
-    "desc": "PayPal payment method for checkout.",
+    "desc": {
+        "en": "PayPal payment method for checkout."
+    },
     "tags": [
         "frontend",
         "paypal",

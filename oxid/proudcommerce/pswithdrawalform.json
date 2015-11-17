@@ -4,7 +4,9 @@
     "type": "oxid",
     "price": "0.00",
     "license": "GNU",
-    "desc": "Form for handling returns (withdrawal) of orders.",
+    "desc": {
+        "en": "Form for handling returns (withdrawal) of orders."
+    },
     "tags": [
         "frontend",
         "withdrawal",

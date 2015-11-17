@@ -4,7 +4,9 @@
     "type": "oxid",
     "price": "0.00",
     "license": "GNU",
-    "desc": "Individual status information for orders. / Sending mails directly from shop admin to customer.",
+    "desc": {
+        "en": "Individual status information for orders. / Sending mails directly from shop admin to customer."
+    },
     "tags": [
         "backend",
         "customers",

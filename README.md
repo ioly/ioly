@@ -46,36 +46,42 @@ $ php ioly.php install oxid/paypal 3.2.1;
 
 ##### Example
 ``` json
-  {
-      "name": "PayPal",
-      "vendor": "oxid",
-      "type": "oxid",
-      "license": "GNU",
-      "desc": "PayPal payment method for checkout.",
-      "tags": [
-          "frontend",
-          "paypal",
-          "payment",
-          "checkout"
-      ],
-      "versions": {
-          "3.2.1": {
-              "project": "https://github.com/OXID-eSales/paypal/tree/v3.2.1",
-              "url": "https://github.com/OXID-eSales/paypal/archive/v3.2.1.zip",
-              "supported": [
-                  	"4.9",
-                  	"4.8",
-                  	"4.7"
-              ],
-              "mapping": [
-              	{
-                  	"src": "source/modules/oe/",
-                  	"dest": "modules/oe/"
-              	}
-              ]
-          }
-      }
-  }
+{
+    "name": "PayPal",
+    "vendor": "oxid",
+    "type": "oxid",
+    "license": "GNU",
+    "desc": {
+        "en": "PayPal payment method for checkout.",
+        "de": "PayPal als Zahlart."
+    },
+    "tags": [
+        "frontend",
+        "paypal",
+        "payment",
+        "checkout"
+    ],
+    "versions": {
+        "3.2.1": {
+            "project": "https://github.com/OXID-eSales/paypal/tree/v3.2.1",
+            "url": "https://github.com/OXID-eSales/paypal/archive/v3.2.1.zip",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "source/modules/oe/",
+                    "dest": "modules/oe/"
+                }
+            ],
+            "touch": [
+                "modules/oe/vendormetadata.php"
+            ]
+        }
+    }
+}
 ```
 
 [Read more about writing a recipe.](https://github.com/ioly/ioly/wiki/Writing-a-recipe)
@@ -87,7 +93,6 @@ $ php ioly.php install oxid/paypal 3.2.1;
 - PHP extensions:
   * cUrl
   * JSON
-  * Phar
   * ZIP
 
 

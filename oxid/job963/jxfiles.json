@@ -4,7 +4,10 @@
     "type": "oxid",
     "price": "0.00",
     "license": "GNU",
-    "desc": "OXID eShop Admin Extension for Managing Files",
+    "desc": {
+        "de": "OXID eShop Admin Modul für die Verwaltung von Dateien",
+        "en": "OXID eShop Admin Module for Managing Files"
+    },
     "tags": [
         "backend",
         "delete",
@@ -16,7 +19,7 @@
     "versions": {
         "0.2.1": {
             "project": "https://github.com/job963/jxFiles",
-            "url": "https://github.com/job963/jxFiles/archive/v0.2.1.zip",
+            "url": "https://github.com/job963/jxFiles/archive/v0.2.2.zip",
             "supported": [
                 "4.9",
                 "4.8",

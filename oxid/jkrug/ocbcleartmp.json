@@ -4,7 +4,9 @@
     "type": "oxid",
     "price": "0.00",
     "license": "GNU",
-    "desc": "This module adds a new option in the header to clear the tmp directory from each page.",
+    "desc": {
+        "en": "This module adds a new option in the header to clear the tmp directory from each page."
+    },
     "tags": [
         "backend",
         "tools",

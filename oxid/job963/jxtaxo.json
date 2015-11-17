@@ -1,0 +1,35 @@
+{
+    "name": "jxTaxo",
+    "vendor": "job963",
+    "type": "oxid",
+    "price": "0.00",
+    "license": "GNU",
+    "desc": {
+        "de": "Definition der Taxonomie/Klassifizierung je Kategorie für die Preissuchmaschinen Google Shopping, Amazon Produktanzeigen und Nextag",
+        "en": "Define the Taxonomy/Classification of each Category for the Shopping Portals Google Shopping, Amazon Product Ads and Nextag"
+    },
+    "tags": [
+        "backend",
+        "amazon",
+        "google",
+        "nextag",
+        "export"
+    ],
+    "versions": {
+        "0.2": {
+            "project": "https://github.com/job963/jxTaxo",
+            "url": "https://github.com/job963/jxTaxo/archive/v0.2.zip",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/modules/jxmods/",
+                    "dest": "modules/jxmods/"
+                }
+            ]
+        }
+    }
+}

@@ -4,7 +4,9 @@
     "type": "redaxo",
     "price": "0.00",
     "license": "GNU",
-    "desc": "iw_assets kombiniert lessphp und minify. CSS und Javascript Dateien werden zusammengefasst und als eine Cachedatei gespeichert.",
+    "desc": {
+        "en": "iw_assets kombiniert lessphp und minify. CSS und Javascript Dateien werden zusammengefasst und als eine Cachedatei gespeichert."
+    },
     "tags": [
         "less",
         "php",

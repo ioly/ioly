@@ -4,7 +4,9 @@
     "type": "oxid",
     "price": "0.00",
     "license": "unknown",
-    "desc": "Connector which makes it possible to edit the currently visible texts in OXID's frontend via oTranCe.",
+    "desc": {
+        "en": "Connector which makes it possible to edit the currently visible texts in OXID's frontend via oTranCe."
+    },
     "tags": [
         "backend",
         "ide"

@@ -4,7 +4,9 @@
     "type": "oxid",
     "price": "0.00",
     "license": "unknown",
-    "desc": "Module to show difference to free Shipping.",
+    "desc": {
+        "en": "Module to show difference to free Shipping."
+    },
     "tags": [
         "frontend",
         "basket",

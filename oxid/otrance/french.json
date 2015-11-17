@@ -4,7 +4,9 @@
     "type": "oxid",
     "price": "0.00",
     "license": "GPLv3",
-    "desc": "French language file translations for OXID eShop front end and admin panel",
+    "desc": {
+        "en": "French language file translations for OXID eShop front end and admin panel"
+    },
     "tags": [
         "frontend",
         "admin",
@@ -42,7 +44,7 @@
     "hooks": {
         "postinstall": {
             "type": "overlay",
-            "message": "Please go to admin -> Master settings -> Languages. Create a new language by entering \"fr\" as locale and \"Français\" as name. If you find any mistakes please feel free to register at the translation center.",
+            "message": "Please go to admin -> Master settings -> Languages. Create a new language by entering \"fr\" as locale and \"Fran\u00e7ais\" as name. If you find any mistakes please feel free to register at the translation center.",
             "link": "http://translate.oxidforge.org"
         }
     }

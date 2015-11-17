@@ -4,7 +4,9 @@
     "type": "oxid",
     "price": "0.00",
     "license": "unknown",
-    "desc": "Internal OXID eShop module system information and troubleshooting tools.",
+    "desc": {
+        "en": "Internal OXID eShop module system information and troubleshooting tools."
+    },
     "tags": [
         "backend",
         "tools",

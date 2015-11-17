@@ -4,7 +4,9 @@
     "type": "oxid",
     "price": "0.00",
     "license": "GNU",
-    "desc": "Lightbox2 integration for OXID eshop.",
+    "desc": {
+        "en": "Lightbox2 integration for OXID eshop."
+    },
     "tags": [
         "frontend",
         "articles",
@@ -16,7 +18,7 @@
             "project": "https://github.com/eComStyle-de/ECS_Lightbox2OXID",
             "url": "https://github.com/eComStyle-de/ECS_Lightbox2OXID/archive/master.zip",
             "supported": [
-                "4,9",
+                "4.9",
                 "4.8"
             ],
             "mapping": [

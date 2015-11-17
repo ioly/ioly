@@ -4,7 +4,9 @@
     "type": "oxid",
     "price": "0.00",
     "license": "MIT",
-    "desc": "With OXID standard attribute filters, if a customer has selected a filter value, all other values are hidden in the select-box. When this module is active, all possible values are selectable. ",
+    "desc": {
+        "en": "With OXID standard attribute filters, if a customer has selected a filter value, all other values are hidden in the select-box. When this module is active, all possible values are selectable. "
+    },
     "tags": [
         "frontend",
         "attribute",
@@ -12,17 +14,18 @@
         "articles"
     ],
     "versions": {
-        "1.1.0": {
+        "2.0.0": {
             "project": "https://github.com/leofonic/oxid_extfilter",
-            "url": "https://github.com/leofonic/oxid_extfilter/archive/12a27ae63299ab91daf71f62b644cfe3edeed4a8.zip",
+            "url": "https://github.com/leofonic/oxid_extfilter/archive/ff2ce2cbc0a6ddf18329175a4751880deffcbf05.zip",
             "supported": [
+                "4.9",
                 "4.8",
                 "4.7"
             ],
             "mapping": [
                 {
-                    "src": "oxid_4.8/copy_this/modules/",
-                    "dest": "modules/"
+                    "src": "copy_this/",
+                    "dest": ""
                 }
             ]
         }

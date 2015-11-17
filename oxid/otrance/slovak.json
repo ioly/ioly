@@ -4,7 +4,9 @@
     "type": "oxid",
     "price": "0.00",
     "license": "GPLv3",
-    "desc": "Slovak language file translations for OXID eShop front end and admin panel",
+    "desc": {
+        "en": "Slovak language file translations for OXID eShop front end and admin panel"
+    },
     "tags": [
         "frontend",
         "admin",
@@ -42,7 +44,7 @@
     "hooks": {
         "postinstall": {
             "type": "overlay",
-            "message": "Please go to admin -> Master settings -> Languages. Create a new language by entering \"sk\" as locale and \"Slovenčina\" as name. If you find any mistakes please feel free to register at the translation center.",
+            "message": "Please go to admin -> Master settings -> Languages. Create a new language by entering \"sk\" as locale and \"Sloven\u010dina\" as name. If you find any mistakes please feel free to register at the translation center.",
             "link": "http://translate.oxidforge.org"
         }
     }

@@ -4,7 +4,9 @@
     "type": "oxid",
     "price": "0.00",
     "license": "GNU",
-    "desc": "A OXID eShop module that integrates New Relic Application Monitor.",
+    "desc": {
+        "en": "A OXID eShop module that integrates New Relic Application Monitor."
+    },
     "tags": [
         "backend",
         "monitoring",
@@ -12,9 +14,9 @@
         "newrelic"
     ],
     "versions": {
-        "0.0.1": {
-            "project": "https://github.com/OXID-eSales/paypal/tree/v3.2.1",
-            "url": "https://github.com/OXID-eSales/paypal/archive/v3.2.1.zip",
+        "0.1": {
+            "project": "https://github.com/majofi/mude_oxrelic",
+            "url": "https://github.com/majofi/mude_oxrelic/archive/master.zip",
             "supported": [
                 "4.8",
                 "4.7"

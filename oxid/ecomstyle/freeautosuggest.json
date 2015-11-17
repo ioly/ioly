@@ -4,16 +4,19 @@
     "type": "oxid",
     "price": "0.00",
     "license": "GNU",
-    "desc": "Search suggestions for OXID eshop.",
+    "desc": {
+        "en": "Search suggestions for OXID eshop."
+    },
     "tags": [
         "frontend",
         "search"
     ],
     "versions": {
-        "3.2.0": {
+        "3.3.0": {
             "project": "https://github.com/ecomstyle/freeAutoSuggest",
-            "url": "https://github.com/ecomstyle/freeAutoSuggest/archive/master.zip",
+            "url": "https://github.com/ecomstyle/freeAutoSuggest/archive/2b1085ce27ed68c54441900e621a58751a1cde30.zip",
             "supported": [
+                "4.9",
                 "4.8",
                 "4.7"
             ],
