@@ -1,6 +1,11 @@
-1.8.1 (2014-12-23)
-- use english desc if no german desc provided yet
+1.8.3 (2014-11-29)
+- add @ for chmod warnings
 
+1.8.2 (2015-07-22)
+- Some changes to change folder rights etc.
+
+1.8.2 (2015-07-22)
+- Some changes to change folder rights etc.
 1.8.0 (2014-12-21)
  - fixed addCookbooks
  - multilingual descriptions
