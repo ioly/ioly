@@ -11,13 +11,13 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version	 1.8.2
+ * @version	 1.8.3
  */
 namespace ioly;
 
 class ioly
 {
-    protected $_version = "1.8.2";
+    protected $_version = "1.8.3";
     
     protected $_baseDir = null;
     protected $_recipeCacheFile = null;
@@ -59,7 +59,7 @@ class ioly
     public function _init()
     {
         // try to set rights
-        chmod($this->_baseDir, 0777);
+        @chmod($this->_baseDir, 0777);
 
         if (file_exists($this->_cookbookCacheFile)) {
             $cache = unserialize(file_get_contents($this->_cookbookCacheFile));
