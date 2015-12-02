@@ -11,7 +11,7 @@ The ioly system is driven by a "cookbook", stored on GitHub, which contains "rec
 ## Getting started
 
 1. download [ioly core](https://github.com/ioly/ioly/tree/core)
-2. download ioly connector (e. g. [OXID connector](https://github.com/ioly/ioly/tree/connector-oxid))
+2. download ioly connector (e. g. [OXID connector](https://github.com/ioly/ioly/tree/connector-oxid)) OR install it via ioly core, see below :) E.g. "php ioly.php install ioly/ioly-oxid-connector latest"
 3. search for a recipe
 4. install recipe
 4. done
@@ -26,13 +26,14 @@ Download `ioly` core via console or via HTTP or:
 Using `ioly` module manager via console. In this example, we'll add a module to an installation of OXID eSales:
 
 ``` sh
-$ export IOLY_SYSTEM_BASE=/var/www/myshop.de/;
-$ export IOLY_SYSTEM_VERSION=4.8;
-$ php ioly.php update;
-$ php ioly.php list;
-$ php ioly.php search paypal;
-$ php ioly.php show oxid/paypal;
-$ php ioly.php install oxid/paypal 3.2.1;
+$ export IOLY_SYSTEM_BASE=/var/www/myshop.de/
+$ export IOLY_SYSTEM_VERSION=4.9
+$ php ioly.php update
+$ php ioly.php install ioly/ioly-oxid-connector latest
+$ php ioly.php list
+$ php ioly.php search paypal
+$ php ioly.php show oxid/paypal
+$ php ioly.php install oxid/paypal 3.2.1
 ```
 
 ### Contributing
