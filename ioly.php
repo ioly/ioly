@@ -17,7 +17,7 @@ namespace ioly;
 
 class ioly
 {
-    protected $_version = "1.8.3";
+    protected $_version = "1.8.4";
     
     protected $_baseDir = null;
     protected $_recipeCacheFile = null;
@@ -935,7 +935,7 @@ class ioly
         $aSubfolders = explode('/', $dirName);
         $numSubfolders = count($aSubfolders);
         for($i=1; $i<=$numSubfolders; $i++) {
-            if($aSubfolders[$i] != '') {
+            if(isset($aSubfolders[$i]) && $aSubfolders[$i] != '') {
                 $subDir .= $aSubfolders[$i] . '/';
             }
             if(!file_exists($subDir)) {
@@ -991,6 +991,10 @@ class ioly
                                 $package['installed'] = true;
                             }
                             // handle multilang desc
+                            if (!is_array($package['desc']) || !isset($package['desc']['en'])) {
+                                $package['desc'] = array();
+                                $package['desc']['en'] = $package['desc'];
+                            }
                             $defaultDesc = $package['desc']['en'];
                             // for now, set the DE desc to the EN desc, if not set in the JSON file yet...
                             if(!isset($package['desc']['de']) || $package['desc']['de'] == '') {
