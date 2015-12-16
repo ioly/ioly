@@ -1,21 +1,20 @@
 {
-    "name": "psWithdrawalForm",
+    "name": "psHiddenArticles",
     "vendor": "proudcommerce",
     "type": "oxid",
     "price": "0.00",
     "license": "GNU",
-    "desc": {
-        "en": "Form for handling returns (withdrawal) of orders."
-    },
+    "desc": "Hide articles from articles lists.",
     "tags": [
         "frontend",
-        "withdrawal",
-        "orders"
+        "articles",
+        "articlelist",
+        "modules"
     ],
     "versions": {
-        "1.1.3": {
-            "project": "https://github.com/proudcommerce/psWithdrawalForm",
-            "url": "https://github.com/proudcommerce/psWithdrawalForm/archive/master.zip",
+        "1.0.0": {
+            "project": "https://github.com/proudcommerce/psHiddenArticles",
+            "url": "https://github.com/proudcommerce/psHiddenArticles/archive/master.zip",
             "supported": [
                 "4.9",
                 "4.8",
