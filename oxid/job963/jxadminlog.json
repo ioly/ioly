@@ -16,9 +16,9 @@
         "history"
     ],
     "versions": {
-        "0.1.0": {
+        "0.2.0": {
             "project": "https://github.com/job963/jxAdminLog",
-            "url": "https://github.com/job963/jxAdminLog/archive/v0.1.0.zip",
+            "url": "https://github.com/job963/jxAdminLog/archive/v0.2.0.zip",
             "supported": [
                 "4.9",
                 "4.8",
