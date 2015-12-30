@@ -1,25 +1,24 @@
 {
-    "name": "psHistory",
+    "name": "psCmsSnippets",
     "vendor": "proudcommerce",
     "type": "oxid",
     "price": "0.00",
     "license": "GNU",
     "desc": {
-        "en": "Individual status information for orders. / Sending mails directly from shop admin to customer."
+        "en": "Setting for CMS pages, which may not be accessible via browser."
     },
     "tags": [
         "backend",
-        "customers",
-        "orders",
-        "history"
+        "content",
+        "cms"
     ],
     "versions": {
         "1.1.0": {
-            "project": "https://github.com/proudcommerce/psHistory",
-            "url": "https://github.com/proudcommerce/psHistory/archive/bf4e34fd22ef3c2e47c899623b768e69b5f2fadf.zip",
+            "project": "https://github.com/proudcommerce/psCmsSnippets",
+            "url": "https://github.com/proudcommerce/psCmsSnippets/archive/9611e8db2c4dae38751a9f33e2af8dc98c4e9d0d.zip",
             "supported": [
-                "4.7",
                 "4.8",
+                "4.7",
                 "4.9"
             ],
             "mapping": [
