@@ -5,8 +5,8 @@
     "price": "0.00",
     "license": "GNU",
     "desc": {
-        "de": "Admin-Modul für die Barcode-Reader Unterstützung bei Wareneingang und Verpacken",
-        "en": "Admin Module for barcode reader support on goods receipt and packing"
+        "de": "Admin-Modul für die Anzeige der Shop- und Moduleinstellungen als Gesamtbericht",
+        "en": "Admin Module for displaying of shop and module settings as complete report"
     },
     "tags": [
         "backend",
@@ -14,9 +14,9 @@
         "display"
     ],
     "versions": {
-        "0.1.1": {
+        "0.1.2": {
             "project": "https://github.com/job963/jxConfig",
-            "url": "https://github.com/job963/jxConfig/archive/v0.1.1.zip",
+            "url": "https://github.com/job963/jxConfig/archive/v0.1.2.zip",
             "supported": [
                 "4.9",
                 "4.8",
