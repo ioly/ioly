@@ -12,7 +12,7 @@
         "modules"
     ],
     "versions": {
-        "1.0.0": {
+        "1.0.1": {
             "project": "https://github.com/proudcommerce/psHiddenArticles",
             "url": "https://github.com/proudcommerce/psHiddenArticles/archive/master.zip",
             "supported": [
