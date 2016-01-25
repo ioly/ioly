@@ -15,6 +15,7 @@
             "project": "https://github.com/proudcommerce/psAgeGate",
             "url": "https://github.com/proudcommerce/psAgeGate/archive/master.zip",
             "supported": [
+                "4.9",
                 "4.8",
                 "4.7"
             ],
