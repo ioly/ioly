@@ -1,0 +1,47 @@
+{
+    "name": "jxAdminLog",
+    "vendor": "job963",
+    "type": "oxid",
+    "price": "0.00",
+    "license": "GNU",
+    "desc": {
+        "de": "OXID eShop Modul für Anzeige der Admin-Logs für diverse Objekte und als Report",
+        "en": "OXID eShop Module for Displaying Logged Information on several Objects and as Report"
+    },
+    "tags": [
+        "logs",
+        "backend"
+    ],
+    "versions": {
+        "master": {
+            "project": "https://github.com/job963/jxAdminLog",
+            "url": "https://github.com/job963/jxAdminLog/archive/master.zip",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/modules/jxmods/",
+                    "dest": "modules/jxmods/"
+                }
+            ]
+        },
+        "0.2.1": {
+            "project": "https://github.com/job963/jxAdminLog",
+            "url": "https://github.com/job963/jxAdminLog/archive/0.2.1.zip",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/modules/jxmods/",
+                    "dest": "modules/jxmods/"
+                }
+            ]
+        }
+    }
+}
