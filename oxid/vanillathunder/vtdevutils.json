@@ -24,8 +24,8 @@
             ],
             "mapping": [
                 {
-                    "src": "copy_this/",
-                    "dest": ""
+                    "src": "",
+                    "dest": "modules/bla/"
                 }
             ]
         }
