@@ -1,0 +1,31 @@
+{
+    "name": "psInquiryForm",
+    "vendor": "proudcommerce",
+    "type": "oxid",
+    "price": "0.00",
+    "license": "GNU",
+    "desc": "Inquiry form with individual fields (analogical contact form).",
+    "tags": [
+        "frontend",
+        "inuqiry",
+        "contact",
+        "form"
+    ],
+    "versions": {
+        "1.0.0": {
+            "project": "https://github.com/proudcommerce/psInquiryForm",
+            "url": "https://github.com/proudcommerce/psInquiryForm/archive/master.zip",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/",
+                    "dest": ""
+                }
+            ]
+        }
+    }
+}
