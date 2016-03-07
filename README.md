@@ -26,6 +26,7 @@ Download `ioly` core via console or via HTTP or:
 Using `ioly` module manager via console. In this example, we'll add a module to an installation of OXID eSales:
 
 ``` sh
+$ cd /var/www/myshop.de/
 $ export IOLY_SYSTEM_BASE=/var/www/myshop.de/
 $ export IOLY_SYSTEM_VERSION=4.9
 $ php ioly.php update
@@ -35,6 +36,10 @@ $ php ioly.php search paypal
 $ php ioly.php show oxid/paypal
 $ php ioly.php install oxid/paypal 3.2.1
 ```
+
+`NOTE:`
+If you are in the base directory of an OXID eShop, you don't have to set `IOLY_SYSTEM_BASE` and `IOLY_SYSTEM_VERSION`, since
+`ioly core` uses the current directory and the OXID package info "pkg.info" file to automatically set those variables.
 
 ### Contributing
 
@@ -101,7 +106,7 @@ $ php ioly.php install oxid/paypal 3.2.1
 ---
 Dave Holloway - <http://www.gn2-netwerk.de> - <http://twitter.com/dajoho><br />
 Tobias Merkl - <http://www.proudsourcing.de> - <http://twitter.com/tabsl><br />
-Stefan Moises - <http://www.rent-a-hero.de> - <http://twitter.com/smxsm><br />
+Stefan Moises - <http://www.rent-a-hero.de> - <http://twitter.com/upsettweety><br />
 
 You can also view the list of [contributors](https://github.com/ioly/ioly/contributors) who participated in this project.
 
