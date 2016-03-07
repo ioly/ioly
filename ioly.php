@@ -11,13 +11,13 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version	 1.8.3
+ * @version	 1.8.5
  */
 namespace ioly;
 
 class ioly
 {
-    protected $_version = "1.8.4";
+    protected $_version = "1.8.5";
     
     protected $_baseDir = null;
     protected $_recipeCacheFile = null;
@@ -1037,10 +1037,24 @@ class ioly
 if (php_sapi_name() == 'cli') {
     try {
         $ioly = new ioly();
-        if (isset($_SERVER['IOLY_SYSTEM_BASE']))
+        if (isset($_SERVER['IOLY_SYSTEM_BASE'])) {
             $ioly->setSystemBasePath($_SERVER['IOLY_SYSTEM_BASE']);
-        if (isset($_SERVER['IOLY_SYSTEM_VERSION']))
+        } else {
+            // use current dir as default
+            $ioly->setSystemBasePath(dirname(__FILE__));
+        }
+        if (isset($_SERVER['IOLY_SYSTEM_VERSION'])) {
             $ioly->setSystemVersion($_SERVER['IOLY_SYSTEM_VERSION']);
+        } else {
+            $sFileName = dirname(__FILE__) . "/pkg.info";
+            if (file_exists($sFileName)) {
+                $aRev = @parse_ini_file($sFileName);
+                if ($aRev && is_array($aRev) && $aRev['version'] != '') {
+                    $ioly->setSystemVersion($aRev['version']);
+                }
+            }
+
+        }
 
         if (!isset($argv[1])) $argv[1] = 'help';
 
