@@ -14,9 +14,9 @@
         "display"
     ],
     "versions": {
-        "0.1.2": {
+        "0.1.4": {
             "project": "https://github.com/job963/jxConfig",
-            "url": "https://github.com/job963/jxConfig/archive/v0.1.2.zip",
+            "url": "https://github.com/job963/jxConfig/archive/v0.1.4.zip",
             "supported": [
                 "4.9",
                 "4.8",
@@ -24,8 +24,8 @@
             ],
             "mapping": [
                 {
-                    "src": "copy_this/modules/jxconfig/",
-                    "dest": "modules/jxconfig/"
+                    "src": "copy_this/modules/jxmods/",
+                    "dest": "modules/jxmods/"
                 }
             ]
         }

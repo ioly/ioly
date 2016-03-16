@@ -1,24 +1,27 @@
 {
-    "name": "jxAdminLog",
+    "name": "jxUpdate",
     "vendor": "job963",
     "type": "oxid",
     "price": "0.00",
     "license": "GNU",
     "desc": {
-        "de": "Admin-Modul für die Anzeige der protokollierten Admin Aktionen an jedem Objekt und als Gesamtbericht",
-        "en": "Admin Module for Displaying logged administrator actions for each object and as complete report"
+        "de": "Admin-Modul für die Aktualisierung von Artikeln durch CSV Importe",
+        "en": "Admin Module for Updating the products by CSV imports"
     },
     "tags": [
         "backend",
         "admin",
-        "log",
-        "logged",
-        "history"
+        "articles",
+        "products",
+        "csv",
+        "import",
+        "bulk",
+        "update"
     ],
     "versions": {
-        "0.2.4": {
-            "project": "https://github.com/job963/jxAdminLog",
-            "url": "https://github.com/job963/jxAdminLog/archive/v0.2.4.zip",
+        "0.3.1": {
+            "project": "https://github.com/job963/jxTaxo",
+            "url": "https://github.com/job963/jxTaxo/archive/v0.3.1.zip",
             "supported": [
                 "4.9",
                 "4.8",
