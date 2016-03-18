@@ -21,9 +21,9 @@
         "statistics"
     ],
     "versions": {
-        "0.8.4": {
+        "0.8.6": {
             "project": "https://github.com/job963/oxProbs",
-            "url": "https://github.com/job963/oxProbs/archive/v0.8.4.zip",
+            "url": "https://github.com/job963/oxProbs/archive/v0.8.6.zip",
             "supported": [
                 "4.9",
                 "4.8",

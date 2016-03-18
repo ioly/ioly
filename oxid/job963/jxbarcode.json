@@ -15,12 +15,13 @@
         "barcode",
         "scanner",
         "delivery",
+        "packing",
         "receipt"
     ],
     "versions": {
-        "0.4.4": {
+        "0.3.2": {
             "project": "https://github.com/job963/jxBarcode",
-            "url": "https://github.com/job963/jxBarcode/archive/v0.3.zip",
+            "url": "https://github.com/job963/jxBarcode/archive/v0.3.2.zip",
             "supported": [
                 "4.9",
                 "4.8",
