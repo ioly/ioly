@@ -1,0 +1,9 @@
+{
+  "name": "ioly/core",
+  "description": "ioly Core",
+  "license": "MIT",
+  "require": {
+    "php": ">=5.3.3",
+    "composer/installers": "~1.0"
+  }
+}
