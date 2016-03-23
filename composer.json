@@ -1,5 +1,5 @@
 {
-  "name": "ioly/oxid-connector",
+  "name": "ioly/connector-oxid",
   "description": "ioly Module Manager",
   "type": "oxid-module",
   "license": "MIT",
