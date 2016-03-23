@@ -1,7 +1,7 @@
 {
-  "name": "ioly/ioly",
+  "name": "ioly/oxid-connector",
   "description": "ioly Module Manager",
-  "type": "PHP module installer",
+  "type": "oxid-module",
   "license": "MIT",
   "require": {
     "php": ">=5.3.3",
