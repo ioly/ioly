@@ -1,5 +1,6 @@
 {
   "name": "ioly/core",
+  "version": "1.8.6",
   "description": "ioly Core",
   "license": "MIT",
   "require": {
