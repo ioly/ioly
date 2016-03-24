@@ -11,7 +11,7 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version	 1.8.5
+ * @version	 1.8.6
  */
 namespace ioly;
 
@@ -1141,7 +1141,6 @@ if (php_sapi_name() == 'cli') {
             case "help":
             case "-v":
             case "--v":
-            default:
                 echo "ioly - Modulmanager\n";
                 echo "===================\n\n";
                 echo "Usage Examples:\n\n";
@@ -1187,6 +1186,8 @@ if (php_sapi_name() == 'cli') {
                 
                 echo "\tclear cookbooks:\n";
                 echo "\t php ioly.php clearcookbooks\n";
+                break;
+            default:
                 break;
         }
     } catch (Exception $e) {
