@@ -1056,7 +1056,7 @@ if (php_sapi_name() == 'cli') {
 
         }
 
-        if (!isset($argv[1])) $argv[1] = 'help';
+        if (!isset($argv[1])) $argv[1] = '';
 
         switch (strtolower($argv[1])) {
             case "search":
