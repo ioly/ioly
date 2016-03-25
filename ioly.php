@@ -18,7 +18,7 @@ namespace ioly;
 class ioly
 {
     protected $_version = "1.8.5";
-    
+
     protected $_baseDir = null;
     protected $_recipeCacheFile = null;
     protected $_recipeCache = array();
@@ -31,7 +31,7 @@ class ioly
     protected $_cookbooks = array(
         array('ioly', 'http://github.com/ioly/ioly/archive/master.zip')
     );
-    
+
     /**
      * Sets up file databases. Updates if the cache is empty.
      */
@@ -104,11 +104,11 @@ class ioly
     {
         return $this->_version;
     }
-  
+
     /**
      * Gets cookbook/s version
      * @return array
-     */  
+     */
     public function getCookbookVersion()
     {
     	$aCookbooks = array();
@@ -123,7 +123,7 @@ class ioly
         }
         return $aCookbooks;
     }
-    
+
     /**
      * Gets base path to the PHP installation.
      * @return string Base Path
@@ -222,7 +222,7 @@ class ioly
     {
         return $this->_systemVersion;
     }
-    
+
     /**
      * Activate debug logging
      * @param boolean $writeLog
@@ -314,7 +314,7 @@ class ioly
         }
         $this->_cookbooks = array();
     }
-    
+
     /**
      * Updates the internal list of recipes
      */
@@ -428,7 +428,7 @@ class ioly
      * @param string $jsonKey
      * @return array
      */
-    public function getJsonValueFromPackage($packageString, $packageVersion, $jsonKey) 
+    public function getJsonValueFromPackage($packageString, $packageVersion, $jsonKey)
     {
         if (strpos($packageString, '/') !== false) {
             $results = $this->search($packageString);
@@ -436,7 +436,7 @@ class ioly
                 $package = $results[0];
                 if (array_key_exists($packageVersion, $package['versions'])) {
                     return $this->recursiveFind($package, $jsonKey);
-                    
+
                 }
             }
         }
@@ -473,11 +473,11 @@ class ioly
                 $sLogMessage = "\n" . date('Y-m-d H:i:s') . " " . $sLogMessage;
                 fwrite( $oHandle, $sLogMessage );
                 $blOk = fclose( $oHandle );
-            }  
+            }
         }
         return $blOk;
     }
-    
+
     /**
      * Get a list of files for the installed package
      * @param string $packageString
@@ -494,7 +494,7 @@ class ioly
         }
         return null;
     }
-    
+
     /**
      * Uninstalls a version of a specific package
      * @param $packageString
@@ -552,7 +552,7 @@ class ioly
                         $modifiedFiles[] = $k;
                         unset($filesToDelete[$k]);
                     } else {
-                        
+
                         if (file_exists($deletePath)) {
                             $msg .= "\ntrying to deletePath: $deletePath";
                             @unlink($deletePath);
@@ -650,7 +650,7 @@ class ioly
         }
         return false;
     }
-    
+
     /**
      * Checks if a package is installed in a specific version
      * @param string $packageString
@@ -670,7 +670,7 @@ class ioly
      * @return string The path with \ changed to /
      */
     protected function _dirName($path) {
-        return str_replace("\\", "/", dirname($path));        
+        return str_replace("\\", "/", dirname($path));
     }
     /**
      * Always use '/' for directories, even on Windows
@@ -678,9 +678,9 @@ class ioly
      * @return string The path with '\' changed to '/'
      */
     protected function _endsWith($haystack, $needle) {
-        return $needle === "" || substr($haystack, -strlen($needle)) === $needle;        
+        return $needle === "" || substr($haystack, -strlen($needle)) === $needle;
     }
-    
+
     /**
      * usort callback. Sorts a list of folders by depth.
      * Could probably be improved
@@ -959,7 +959,7 @@ class ioly
         $db = array();
         $cachedCookbooks = unserialize(file_get_contents($this->_cookbookCacheFile));
         foreach ($cachedCookbooks as $cookbook) {
-            $cookbookArchive = $this->_baseDir.'/cookbook.'.$cookbook[0].'.zip'; 
+            $cookbookArchive = $this->_baseDir.'/cookbook.'.$cookbook[0].'.zip';
 
             $tmpDir = tempnam(sys_get_temp_dir(), 'IOLY_');
             unlink($tmpDir);
@@ -974,7 +974,7 @@ class ioly
             if (is_writable($tmpDir)) {
                 $files = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($tmpDir));
                 foreach ($files as $file) {
-                    if (substr($file, -5) == '.json') {
+                    if (substr($file, -5) == '.json' && strpos($file, 'composer.json') === false) {
                         $packageData = file_get_contents($file);
                         $package = json_decode($packageData, true);
                         if ($package !== null) {
@@ -991,7 +991,7 @@ class ioly
                                 $package['installed'] = true;
                             }
                             // handle multilang desc
-                            if (!is_array($package['desc']) || !isset($package['desc']['en'])) {
+                            if (!isset($package['desc']) || !is_array($package['desc']) || !isset($package['desc']['en'])) {
                                 $package['desc'] = array();
                                 $package['desc']['en'] = $package['desc'];
                             }
@@ -1149,7 +1149,7 @@ if (php_sapi_name() == 'cli') {
                 echo "\t php ioly.php list <filterkey=filtervalue>\n";
                 echo "\t php ioly.php list vendor=gn2netwerk\n";
                 echo "\t php ioly.php list\n\n";
-                
+
                 echo "\tupdate recipes:\n";
                 echo "\t php ioly.php update\n\n";
 
@@ -1171,19 +1171,19 @@ if (php_sapi_name() == 'cli') {
                 echo "\tuninstall recipe:\n";
                 echo "\t php ioly.php uninstall <vendor>/<package> <version>\n";
                 echo "\t php ioly.php uninstall gn2netwerk/processor 1.0.0\n\n";
-                
+
                 echo "\tget JSON value from recipe:\n";
                 echo "\t php ioly.php getjsonvalue <vendor>/<package> <version> <key>\n";
                 echo "\t php ioly.php getjsonvalue gn2netwerk/processor 1.0.0 versions\n\n";
-                
+
                 echo "\tadd cookbook:\n";
                 echo "\t php ioly.php addcookbook <key> <url>\n";
                 echo "\t php ioly.php addcookbook ioly http://github.com/ioly/ioly/archive/master.zip\n\n";
-                
+
                 echo "\tremove cookbook:\n";
                 echo "\t php ioly.php removecookbook <key>\n";
                 echo "\t php ioly.php removecookbook ioly\n\n";
-                
+
                 echo "\tclear cookbooks:\n";
                 echo "\t php ioly.php clearcookbooks\n";
                 break;
