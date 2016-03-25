@@ -4,7 +4,9 @@
     "type": "oxid",
     "price": "0.00",
     "license": "GNU",
-    "desc": "Hide articles from articles lists.",
+    "desc": {
+        "en": "Hide articles from articles lists."
+    },
     "tags": [
         "frontend",
         "articles",
