@@ -11,13 +11,13 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version	 1.8.6
+ * @version	 1.9.0
  */
 namespace ioly;
 
 class ioly
 {
-    protected $_version = "1.8.5";
+    protected $_version = "1.9.0";
 
     protected $_baseDir = null;
     protected $_recipeCacheFile = null;
@@ -28,6 +28,7 @@ class ioly
     protected $_systemBasePath = null;
     protected $_systemVersion = null;
     protected $_debugLogging = true;
+    protected $_authFile = null;
     protected $_cookbooks = array(
         array('ioly', 'http://github.com/ioly/ioly/archive/master.zip')
     );
@@ -90,7 +91,7 @@ class ioly
     public function setSystemBasePath($systemBasePath)
     {
         // path should not end with /  or \ so remove it
-        if($this->_endsWith($systemBasePath, '/') || $this->_endsWith($systemBasePath, '\\')) {
+        if ($this->_endsWith($systemBasePath, '/') || $this->_endsWith($systemBasePath, '\\')) {
             $systemBasePath = substr($systemBasePath, 0, strlen($systemBasePath)-1);
         }
         $this->_systemBasePath = $systemBasePath;
@@ -111,14 +112,12 @@ class ioly
      */
     public function getCookbookVersion()
     {
-    	$aCookbooks = array();
-    	foreach (glob($this->_baseDir.'/cookbook.*.zip') as $cookbookArchive)
-    	{
+        $aCookbooks = array();
+        foreach (glob($this->_baseDir.'/cookbook.*.zip') as $cookbookArchive) {
             $aCookbook = explode("cookbook.", $cookbookArchive);
             $key = trim($aCookbook[1]);
-            if(!empty($key) && strstr($key, ".zip"))
-            {
-            	$aCookbooks[$key] = sha1_file($cookbookArchive);
+            if (!empty($key) && strstr($key, ".zip")) {
+                $aCookbooks[$key] = sha1_file($cookbookArchive);
             }
         }
         return $aCookbooks;
@@ -159,7 +158,7 @@ class ioly
      */
     public function addCookbook($key, $url)
     {
-    	if(!empty($key) && !empty($url)) {
+        if (!empty($key) && !empty($url)) {
             $this->_writeLog("Adding cookbook: $key => $url");
             $this->_cookbooks[] = array($key, $url);
             $this->update();
@@ -172,16 +171,16 @@ class ioly
      */
     public function removeCookbook($key)
     {
-    	if(!empty($key)) {
+        if (!empty($key)) {
             $zipFile = $this->_baseDir."/cookbook.{$key}.zip";
             $this->_writeLog("Removing cookbook: $key, file: " . $zipFile);
-            foreach ($this->_cookbooks as $k=>$cookbook) {
+            foreach ($this->_cookbooks as $k => $cookbook) {
                 if ($cookbook[0] == $key) {
                     unset($this->_cookbooks[$k]);
                 }
             }
             // remove file in any case
-            if(file_exists($zipFile)) {
+            if (file_exists($zipFile)) {
                 @unlink($zipFile);
             }
             // and update
@@ -195,7 +194,7 @@ class ioly
     public function setCookbooks($cookbooks)
     {
         $this->_cookbooks = array();
-        foreach ($cookbooks as $key=>$url) {
+        foreach ($cookbooks as $key => $url) {
             $this->_cookbooks[] = array($key, $url);
         }
         $this->update();
@@ -269,12 +268,12 @@ class ioly
                 // lowercase all tags and use them as keys for faster access
                 $search_array = array_combine(array_map('strtolower', $package['tags']), $package['tags']);
                 if ( !$filterRecipe  &&  ((stripos($package['name'], $query) !== false)
-                      || (stripos($package['vendor'], $query) !== false)
-                      || (stripos($package['_filename'], $query) !== false)
-                      || !empty($search_array[strtolower($query)])
-                      || (isset($vendor) && isset($packageName)
-                          && $package['vendor'] == $vendor
-                          && $package['_filename'] == $packageName)
+                        || (stripos($package['vendor'], $query) !== false)
+                        || (stripos($package['_filename'], $query) !== false)
+                        || !empty($search_array[strtolower($query)])
+                        || (isset($vendor) && isset($packageName)
+                            && $package['vendor'] == $vendor
+                            && $package['_filename'] == $packageName)
                     )) {
                     $results[] = $package;
                 }
@@ -328,7 +327,7 @@ class ioly
             $fn = 'cookbook.'.$repo.'.zip';
             if ($data[0] != '') {
                 $this->_writeLog("Successfully downloaded recipe $repo from $url");
-                if(file_exists($this->_baseDir.'/'.$fn)) {
+                if (file_exists($this->_baseDir.'/'.$fn)) {
                     unlink($this->_baseDir.'/'.$fn);
                 }
                 file_put_contents($this->_baseDir.'/'.$fn, $data[0]);
@@ -389,7 +388,22 @@ class ioly
                 $package = $results[0];
                 if (array_key_exists($packageVersion, $package['versions'])) {
                     $version = $package['versions'][$packageVersion];
-                    $filesystem = $this->_downloadPackage($version['url']);
+
+                    $license = $package['license'];
+                    if (strtolower($license) == "commercial") {
+                        $aVendorPackage = explode('/', $packageString);
+                        $aAuthData = $this->_checkPackageAuth($aVendorPackage[0], $aVendorPackage[1]);
+                        if (!$aAuthData) {
+                            $this->_writeLog("No license found for commercial package: " . $packageString);
+                            throw new Exception(
+                                "No license found for commercial package: "
+                                .$packageString."#".$packageVersion,
+                                1030
+                            );
+                        }
+                    }
+
+                    $filesystem = $this->_downloadPackage($version['url'], $packageString);
                     if ($filesystem !== null) {
                         $filelist = $this->_copyToSystem($version, $filesystem);
                         $digestEntry = array();
@@ -397,7 +411,6 @@ class ioly
                         $digestEntry['files'] = $filelist;
                         $this->_digestCache[$packageString] = $digestEntry;
                         $this->_saveDigestCache();
-                        $this->update();
                     }
                 } else {
                     throw new Exception(
@@ -517,9 +530,9 @@ class ioly
                 $msg .= "\nfiles to delete: " . print_r($filesToDelete, true);
 
                 /* Check other cached digests for the same file */
-                foreach ($this->_digestCache as $dgstPackageStr=>$dgstPackage) {
+                foreach ($this->_digestCache as $dgstPackageStr => $dgstPackage) {
                     if ($dgstPackageStr != $packageString) {
-                        foreach ($filesToDelete as $k=>$v) {
+                        foreach ($filesToDelete as $k => $v) {
                             if (array_key_exists($k, $dgstPackage['files'])) {
                                 $blockedFiles[] = $k;
                                 unset($filesToDelete[$k]);
@@ -528,9 +541,8 @@ class ioly
                     }
                 }
                 /* Check SHA1s and delete */
-                foreach ($filesToDelete as $k=>$v) {
+                foreach ($filesToDelete as $k => $v) {
                     $deletePath = $this->getSystemBasePath().'/'.$k;
-                    $msg .= "\ndeletePath: $deletePath";
                     $continue = true;
                     $delDir = $this->_dirName($deletePath);
                     /* Collect a list of directories to check for deletion */
@@ -544,7 +556,6 @@ class ioly
                         }
                         // go up ....
                         $delDir = $this->_dirName($delDir);
-                        $msg .= "\ndelDir: $delDir syspath: " . $this->getSystemBasePath();
                     }
 
                     if (file_exists($deletePath)
@@ -554,7 +565,6 @@ class ioly
                     } else {
 
                         if (file_exists($deletePath)) {
-                            $msg .= "\ntrying to deletePath: $deletePath";
                             @unlink($deletePath);
 
                         }
@@ -567,10 +577,9 @@ class ioly
 
                 usort($checkDeleteFolders, array($this, '_sortByFolderDepth'));
                 foreach ($checkDeleteFolders as $deleteFolder) {
-                    $msg .= "\nfolder to delete: $deleteFolder";
                     $pattern = $deleteFolder.'/{,.}*';
                     $remainingFiles = glob($pattern, GLOB_BRACE);
-                    foreach ($remainingFiles as $k=>$v) {
+                    foreach ($remainingFiles as $k => $v) {
                         $fn = basename($v);
                         if ($fn == '.' || $fn == '..' || $fn == '.DS_Store') {
                             unset($remainingFiles[$k]);
@@ -582,7 +591,6 @@ class ioly
                             @unlink($dsStore);
                         }
                         @rmdir($deleteFolder);
-                        $msg .= "\nfolder deleted: $deleteFolder";
                     }
                 }
 
@@ -610,7 +618,7 @@ class ioly
                     throw $exception;
                 }
 
-                foreach ($this->_digestCache as $dgstPackageStr=>$dgstPackage) {
+                foreach ($this->_digestCache as $dgstPackageStr => $dgstPackage) {
                     if ($dgstPackageStr == $packageString) {
                         if ($dgstPackage['version'] == $versionString) {
                             $msg .= "\nRemoving $packageString, version $versionString from digest...";
@@ -618,9 +626,7 @@ class ioly
                         }
                     }
                 }
-                $msg .= "\nSaving digest...";
                 $this->_saveDigestCache();
-                $this->update();
                 $this->_writeLog($msg);
             } else {
                 throw new Exception(
@@ -640,7 +646,7 @@ class ioly
 
     /**
      * Checks if a package is installed
-     * @param $packageString
+     * @param string $packageString
      * @return bool
      */
     public function isInstalled($packageString)
@@ -657,8 +663,9 @@ class ioly
      * @param string $versionString
      * @return boolean
      */
-    public function isInstalledInVersion($packageString, $versionString) {
-        if($this->isInstalled($packageString)) {
+    public function isInstalledInVersion($packageString, $versionString)
+    {
+        if ($this->isInstalled($packageString)) {
             $aDigestInfo = $this->_digestCache[$packageString];
             return $aDigestInfo['version'] == $versionString;
         }
@@ -669,15 +676,18 @@ class ioly
      * @param string $path
      * @return string The path with \ changed to /
      */
-    protected function _dirName($path) {
+    protected function _dirName($path)
+    {
         return str_replace("\\", "/", dirname($path));
     }
     /**
      * Always use '/' for directories, even on Windows
-     * @param string $path
+     * @param string $haystack
+     * @param string $needle
      * @return string The path with '\' changed to '/'
      */
-    protected function _endsWith($haystack, $needle) {
+    protected function _endsWith($haystack, $needle)
+    {
         return $needle === "" || substr($haystack, -strlen($needle)) === $needle;
     }
 
@@ -718,14 +728,15 @@ class ioly
     /**
      * Downloads a given package to a temporary file
      * @param $url URL to Zip
+     * @param $packageString The package to install
      * @return null|string Zip Filename
      * @throws Exception
      */
-    protected function _downloadPackage($url)
+    protected function _downloadPackage($url, $packageString)
     {
         $tmpName = tempnam(sys_get_temp_dir(), 'IOLY_').'.zip';
 
-        $data = $this->_curlRequest($url);
+        $data = $this->_curlRequest($url, false, $packageString);
         if ($data[1] == 200) {
             if ($data[0] != '') {
                 if (substr($url, -4) != ".zip") {
@@ -753,7 +764,7 @@ class ioly
     {
         $zip = new \ZipArchive;
         $res = $zip->open($zipName, \ZipArchive::CREATE);
-        if ($res === TRUE) {
+        if ($res === true) {
             $zip->addFromString($baseName, $content);
             $zip->close();
         }
@@ -765,10 +776,9 @@ class ioly
      * @param bool $authenticate
      * @return array Headers + Body
      */
-    protected function _curlRequest($url, $authenticate=false)
+    protected function _curlRequest($url, $authenticate=false, $packageString='')
     {
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         if ($this->_curlCallback) {
             curl_setopt($ch, CURLOPT_PROGRESSFUNCTION, $this->_curlCallback);
@@ -777,17 +787,87 @@ class ioly
         if ($authenticate && file_exists($this->_authFile)) {
             $auth = trim(file_get_contents($this->_authFile));
             curl_setopt($ch, CURLOPT_USERPWD, $auth);
+        } elseif ($packageString != '') {
+            // check if we need auth for a (commercial) package
+            $aVendorPackage = explode('/', $packageString);
+            if (count($aVendorPackage) == 2) {
+                $aAuthData = $this->_checkPackageAuth($aVendorPackage[0], $aVendorPackage[1]);
+                if ($aAuthData) {
+                    $auth = $aAuthData['auth'];
+                    $altUrl = $aAuthData['alt_url'];
+                    // set alternative URL?
+                    if ($altUrl != '') {
+                        $url = $altUrl;
+                        $this->_writeLog("CURL Alt. URL: " . $altUrl);
+                    }
+                    if ($auth) {
+                        switch ($auth['type']) {
+                            case "basic":
+                                // use basic auth
+                                curl_setopt($ch, CURLOPT_USERPWD, $auth['username'].":".$auth['password']);
+                                $this->_writeLog("CURL Basic Auth: " . $auth['username'].":".$auth['password']);
+                                break;
+                            case "token":
+                                // append to URL
+                                $param = strpos($url, "?") === false ? "?" : "&";
+                                $url .= $param . $auth['tokenname'] . "=" . $auth['tokenvalue'];
+                                $this->_writeLog("CURL Token Auth: " . $url);
+                                break;
+                            case "header":
+                                // set custom header
+                                $headers = array();
+                                $headers[] = $auth['headername'].": ".$auth['headervalue'];
+                                curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+                                $this->_writeLog("CURL Header Auth: " . $auth['headername'].": ".$auth['headervalue']);
+                                break;
+                            default:
+                                curl_setopt($ch, CURLOPT_USERPWD, $auth['username'].":".$auth['password']);
+                        }
+                    }
+                }
+            }
         }
+        // set URL
+        curl_setopt($ch, CURLOPT_URL, $url);
+
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         $data = curl_exec($ch);
-        if( ($err = curl_error($ch)) != '') {
+        if (($err = curl_error($ch)) != '') {
             $this->_writeLog("CURL error: " . $err);
         }
         $responseCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         curl_close($ch);
         $response = array($data, intVal($responseCode));
         return $response;
+    }
+
+    /**
+     * Check if a package has (commercial) auth info
+     * @param string $vendor
+     * @param string $package
+     * @return null
+     */
+    protected function _checkPackageAuth($vendor, $package)
+    {
+        $authDir = dirname(__FILE__) . "/auth";
+        if (file_exists($authDir)) {
+            $files = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($authDir));
+            foreach ($files as $file) {
+                if (substr($file, -5) == '.json') {
+                    $authData = json_decode(file_get_contents($file), true);
+                    if ($authData['vendor'] != $vendor) {
+                        continue;
+                    }
+                    foreach ($authData['modules'] as $moduleData) {
+                        if ($moduleData['name'] == $package) {
+                            return $moduleData;
+                        }
+                    }
+                }
+            }
+        }
+        return null;
     }
 
     /**
@@ -810,8 +890,8 @@ class ioly
                 $zip->close();
             }
             if (     (strpos($version['url'], 'github.com') !== false)
-                  || (strpos($version['url'], 'bitbucket.org') !== false)
-                 ) {
+                || (strpos($version['url'], 'bitbucket.org') !== false)
+            ) {
                 $dirs = glob($tmpDir.'/*', GLOB_ONLYDIR);
                 if (count($dirs) == 1) {
                     $tmpDir = $dirs[0];
@@ -1109,12 +1189,12 @@ if (php_sapi_name() == 'cli') {
 
 
             case "addcookbook":
-            	$cookbookKey= isset($argv[2]) ? $argv[2] : null;
+                $cookbookKey= isset($argv[2]) ? $argv[2] : null;
                 $cookbookUrl= isset($argv[3]) ? $argv[3] : null;
                 $ioly->addCookbook($cookbookKey, $cookbookUrl);
                 break;
             case "removecookbook":
-            	$cookbookKey= isset($argv[2]) ? $argv[2] : null;
+                $cookbookKey= isset($argv[2]) ? $argv[2] : null;
                 $ioly->removeCookbook($cookbookKey);
                 break;
             case "clearcookbooks":

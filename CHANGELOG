@@ -1,3 +1,12 @@
+1.9.0 (2016-03-27)
+- support for commercial packages via "auth/<vendor>.json" files, supporting basic, token or header auth
+
+1.8.6 (2016-03-24)
+- no default console spamming
+
+1.8.5 (2016-03-07)
+- Auto-guessing of IOLY_SYSTEM_BASE path and IOLY_SYSTEM_VERSION (at least for OXID)
+
 1.8.4 (2014-12-02)
 - fixed two php warnings
 
