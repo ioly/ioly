@@ -1,3 +1,6 @@
+1.6.4 (2016-03-28)
+  - Cleanup, formatting, new lang string
+
 1.6.3 (2015-07-22)
   - catch core exception, changed libs path to module directory
   

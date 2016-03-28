@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ioly
  *
@@ -11,7 +12,7 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version	 1.6.3
+ * @version     1.6.4
  */
 class ioly_main extends oxAdminView
 {
@@ -22,7 +23,7 @@ class ioly_main extends oxAdminView
     protected $_sThisTemplate = 'ioly_main.tpl';
     /**
      * URL to ioly core (ioly.php)
-     * @var string 
+     * @var string
      */
     protected $_iolyCoreUrl = "https://raw.githubusercontent.com/ioly/ioly/core/ioly.php";
 
@@ -38,14 +39,14 @@ class ioly_main extends oxAdminView
     protected $_currSortKey = '';
     /**
      * Required JS libs and versions
-     * @var array 
+     * @var array
      */
     protected $_requiredJsLibs = array(
         "ioly/oxid-connector-js-libs" => "1.0.0"
     );
     /**
      * Filter ioly modules for OXID
-     * @var array 
+     * @var array
      */
     protected $_iolyFilter = array('type' => 'oxid');
 
@@ -54,9 +55,9 @@ class ioly_main extends oxAdminView
      */
     public function __construct()
     {
-        $this->_iolyCore = getShopBasePath().'/modules/ioly/ioly/ioly.php';
-        $this->_authFile = getShopBasePath().'/modules/ioly/ioly/.auth';
-        if($this->_initIoly()) {
+        $this->_iolyCore = getShopBasePath() . '/modules/ioly/ioly/ioly.php';
+        $this->_authFile = getShopBasePath() . '/modules/ioly/ioly/.auth';
+        if ($this->_initIoly()) {
             $this->_checkForJsLibs();
         }
     }
@@ -65,21 +66,22 @@ class ioly_main extends oxAdminView
      * Check if AngularJS, JQuery etc. are avaliable
      * If not, download them via ioly core :)
      */
-    protected function _checkForJsLibs() {
-        foreach($this->_requiredJsLibs as $jsLib => $jsVersion) {
-            if(!$this->_ioly->isInstalled($jsLib)) {
+    protected function _checkForJsLibs()
+    {
+        foreach ($this->_requiredJsLibs as $jsLib => $jsVersion) {
+            if (!$this->_ioly->isInstalled($jsLib)) {
                 try {
                     $this->_ioly->install($jsLib, $jsVersion);
-                }
-                catch(Exception $ex) {
+                } catch (Exception $ex) {
                     $this->addTplParam("iolyerrorfatal", $ex->getMessage());
                 }
             }
         }
     }
-    
+
     /**
      * Gets ioly core if it doesn't exist.
+     * @return boolean
      */
     protected function _initIoly()
     {
@@ -89,7 +91,7 @@ class ioly_main extends oxAdminView
             }
         }
         if (file_exists($this->_iolyCore)) {
-            require_once $this->_iolyCore;
+            include_once $this->_iolyCore;
             $this->_ioly = new ioly\ioly();
             $this->_ioly->setSystemBasePath(oxRegistry::getConfig()->getConfigParam('sShopDir'));
             $this->_ioly->setSystemVersion($this->getShopMainVersion());
@@ -97,13 +99,14 @@ class ioly_main extends oxAdminView
         }
         return false;
     }
-    
+
     /**
      * Set multiple cookbooks as defined in module settings.
      * @return null
      */
-    protected function _setCookbooks() {
-        if(($aCookbookUrls = oxRegistry::getConfig()->getConfigParam('iolycookbookurl')) && is_array($aCookbookUrls)) {
+    protected function _setCookbooks()
+    {
+        if (($aCookbookUrls = oxRegistry::getConfig()->getConfigParam('iolycookbookurl')) && is_array($aCookbookUrls)) {
             // remove local zip files
             $this->_ioly->clearCookbooks();
             // and download new ones....
@@ -112,20 +115,19 @@ class ioly_main extends oxAdminView
         }
         return false;
     }
-    
+
     /**
      * Get modules
-     * @return type
      */
-    public function getAllModules() {
-        if($this->_allModules === null) {
+    public function getAllModules()
+    {
+        if ($this->_allModules === null) {
             $searchString = oxRegistry::getConfig()->getRequestParameter('searchstring');
-            if($searchString != '') {
+            if ($searchString != '') {
                 $allModules = $this->_ioly->search($searchString, $this->_iolyFilter);
                 $this->addTplParam('searchstring', $searchString);
-            }
-            else {
-                $allModules = $this->_ioly->listAll( $this->_iolyFilter );
+            } else {
+                $allModules = $this->_ioly->listAll($this->_iolyFilter);
             }
             $this->_allModules = $allModules;
         }
@@ -134,19 +136,18 @@ class ioly_main extends oxAdminView
     /**
      * Returns all modules as JSON
      */
-    public function getAllModulesAjax() {
+    public function getAllModulesAjax()
+    {
         $page = oxRegistry::getConfig()->getRequestParameter('page');
-        if(!$page && $page !== '0') {
+        if (!$page && $page !== '0') {
             $page = 0;
-        }
-        else {
+        } else {
             $page = (int)$page;
         }
         $pageSize = (int)oxRegistry::getConfig()->getRequestParameter('pageSize');
-        if(!$pageSize) {
+        if (!$pageSize) {
             $pageSize = 20;
-        }
-        else {
+        } else {
             $pageSize = (int)$pageSize;
         }
         $offset = $page * $pageSize;
@@ -156,14 +157,14 @@ class ioly_main extends oxAdminView
         $this->getAllModules();
         $numItems = 0;
         $data = array();
-        if($this->_allModules && is_array($this->_allModules)) {
+        if ($this->_allModules && is_array($this->_allModules)) {
             $numItems = count($this->_allModules);
             // sort by requested field
-            if($this->_currSortKey != '') {
+            if ($this->_currSortKey != '') {
                 uasort($this->_allModules, array($this, 'cmpModules'));
             }
             // reverse order?
-            if($orderDir == "desc") {
+            if ($orderDir == "desc") {
                 $this->_allModules = array_reverse($this->_allModules);
             }
             $data = array_slice($this->_allModules, $offset, $pageSize, false);
@@ -175,39 +176,43 @@ class ioly_main extends oxAdminView
         );
         $this->_returnJsonResponse($headerStatus, $res);
     }
-    
+
     /**
      * Comparator function to sort modules by name
-     * @param type $a
-     * @param type $b
+     * @param string $a
+     * @param string $b
+     * @return int
      */
-    public function cmpModules($a, $b) {
+    public function cmpModules($a, $b)
+    {
         if (strtolower($a[$this->_currSortKey]) == strtolower($b[$this->_currSortKey])) {
             return 0;
         }
-        return (strtolower($a[$this->_currSortKey]) < strtolower($b[$this->_currSortKey])) ? -1 : 1;        
+        return (strtolower($a[$this->_currSortKey]) < strtolower($b[$this->_currSortKey])) ? -1 : 1;
     }
-    
+
     /**
      * Update ioly via AJAX
      */
-    public function updateIolyAjax() {
+    public function updateIolyAjax()
+    {
         if (!$this->updateIoly()) {
             $msg = oxRegistry::getLang()->translateString('IOLY_IOLY_UPDATE_ERROR');
             $headerStatus = "HTTP/1.1 500 Internal Server Error";
             $res = array("status" => 500, "message" => $msg);
-        }
-        else {
+        } else {
             $msg = oxRegistry::getLang()->translateString('IOLY_IOLY_UPDATE_SUCCESS');
             $headerStatus = "HTTP/1.1 200 Ok";
             $res = array("status" => $msg);
         }
         $this->_returnJsonResponse($headerStatus, $res);
     }
+
     /**
      * Update ioly via AJAX
      */
-    public function updateRecipesAjax() {
+    public function updateRecipesAjax()
+    {
         try {
             $this->_setCookbooks();
             $msg = oxRegistry::getLang()->translateString('IOLY_RECIPE_UPDATE_SUCCESS');
@@ -222,63 +227,63 @@ class ioly_main extends oxAdminView
     }
 
     /**
-     * 
+     *
      * @param type $download_size
      * @param type $downloaded_size
      * @param type $upload_size
      * @param type $uploaded_size
      */
-    public static function getCurlStatus($download_size, $downloaded_size, $upload_size, $uploaded_size) {
+    public static function getCurlStatus($download_size, $downloaded_size, $upload_size, $uploaded_size)
+    {
         static $previousProgress = 0;
-        if ( $download_size == 0 ) {
+        if ($download_size == 0) {
             $progress = 0;
+        } else {
+            $progress = round($downloaded_size * 100 / $download_size);
         }
-        else {
-            $progress = round( $downloaded_size * 100 / $download_size );
-        }
-        if ( $progress > $previousProgress)
-        {
+        if ($progress > $previousProgress) {
             $aStatus = array("progress" => $progress, "download_size" => $download_size, "downloaded_size" => $downloaded_size);
             oxRegistry::getSession()->setVariable('iolyDownloadStatus', $aStatus);
-            #oxRegistry::getUtils()->writeToLog("\n" . date("Y-m-d H:i:s.u") . " Download progress: $progress [DOWN: $downloaded_size / $download_size - UP: $uploaded_size / $upload_size]", "curl.log");
         }
     }
-    
+
     /**
      * Read CURL download status from session via AJAX
      */
-    public function getCurlStatusAjax() {
+    public function getCurlStatusAjax()
+    {
         $aStatus = oxRegistry::getSession()->getVariable('iolyDownloadStatus');
-        if($aStatus && $aStatus != '') {
+        if ($aStatus && $aStatus != '') {
             $headerStatus = "HTTP/1.1 200 Ok";
             $res = array("status" => $aStatus);
             $this->_returnJsonResponse($headerStatus, $res);
         }
     }
-    
+
     /**
      * Read "hooks" data from module package
      * to get preinstall and postinstall hooks
      */
-    public function getModuleHooksAjax() {
+    public function getModuleHooksAjax()
+    {
         $moduleId = strtolower(urldecode(oxRegistry::getConfig()->getRequestParameter('moduleid')));
         $moduleVersion = oxRegistry::getConfig()->getRequestParameter('moduleversion');
         try {
             $value = $this->_ioly->getJsonValueFromPackage($moduleId, $moduleVersion, "hooks");
             $headerStatus = "HTTP/1.1 200 Ok";
             $res = array("status" => $value);
-        }
-        catch(Exception $ex) {
+        } catch (Exception $ex) {
             $headerStatus = "HTTP/1.1 500 Internal Server Error";
             $res = array("status" => 500, "message" => $this->_getIolyErrorMsg($ex));
         }
         $this->_returnJsonResponse($headerStatus, $res);
     }
-    
+
     /**
      * Download module via AJAX
      */
-    public function downloadModuleAjax() {
+    public function downloadModuleAjax()
+    {
         // reset status
         $moduleId = strtolower(urldecode(oxRegistry::getConfig()->getRequestParameter('moduleid')));
         $moduleVersion = oxRegistry::getConfig()->getRequestParameter('moduleversion');
@@ -288,30 +293,29 @@ class ioly_main extends oxAdminView
             $success = $this->_ioly->install($moduleId, $moduleVersion);
             $headerStatus = "HTTP/1.1 200 Ok";
             $res = array("status" => $success);
-        }
-        catch(Exception $ex) {
+        } catch (Exception $ex) {
             $headerStatus = "HTTP/1.1 500 Internal Server Error";
             $res = array("status" => 500, "message" => $this->_getIolyErrorMsg($ex));
         }
         $this->_returnJsonResponse($headerStatus, $res);
     }
-    
+
     /**
-     * 
+     *
      * @param type $ex
      * @return string
      */
-    protected function _getIolyErrorMsg($ex) {
-        if(get_class($ex) == "ioly\Exception") {
+    protected function _getIolyErrorMsg($ex)
+    {
+        if (get_class($ex) == "ioly\Exception") {
             $sLangCode = "IOLY_EXCEPTION_MESSAGE_CODE_" . $ex->getCode();
-            if(($sLang = oxRegistry::getLang()->translateString($sLangCode)) != $sLangCode) {
+            if (($sLang = oxRegistry::getLang()->translateString($sLangCode)) != $sLangCode) {
                 $sMsg = $sLang;
-            }
-            else {
+            } else {
                 $sMsg = $ex->getMessage();
             }
             $aData = $ex->getExtraData();
-            if(count($aData)) {
+            if (count($aData)) {
                 $sMsg .= " " . implode("\n", $aData);
             }
             return $sMsg;
@@ -322,29 +326,28 @@ class ioly_main extends oxAdminView
     /**
      * Uninstall module via AJAX
      */
-    public function removeModuleAjax() {
+    public function removeModuleAjax()
+    {
         $moduleId = strtolower(urldecode(oxRegistry::getConfig()->getRequestParameter('moduleid')));
         $moduleVersion = oxRegistry::getConfig()->getRequestParameter('moduleversion');
         try {
             // check if the module is still activated!
             $isStillActive = $this->isModuleActive($moduleId, $moduleVersion);
-            if(!$isStillActive) {
-            $success = $this->_ioly->uninstall($moduleId, $moduleVersion);
-            $headerStatus = "HTTP/1.1 200 Ok";
-            $res = array("status" => $success);
-        }
-            else {
+            if (!$isStillActive) {
+                $success = $this->_ioly->uninstall($moduleId, $moduleVersion);
+                $headerStatus = "HTTP/1.1 200 Ok";
+                $res = array("status" => $success);
+            } else {
                 $headerStatus = "HTTP/1.1 412 Precondition Failed";
                 $res = array("status" => 412, "message" => oxRegistry::getLang()->translateString('IOLY_EXCEPTION_MESSAGE_MODULE_ACTIVE'));
             }
-        }
-        catch(Exception $ex) {
+        } catch (Exception $ex) {
             $headerStatus = "HTTP/1.1 500 Internal Server Error";
             $res = array("status" => 500, "message" => $this->_getIolyErrorMsg($ex));
         }
         $this->_returnJsonResponse($headerStatus, $res);
     }
-    
+
     /**
      * Check if an installed module is still active in the shop
      * and should not be removed!
@@ -352,13 +355,14 @@ class ioly_main extends oxAdminView
      * @param string $moduleVersion
      * @return boolean
      */
-    public function isModuleActive($moduleId, $moduleVersion) {
+    public function isModuleActive($moduleId, $moduleVersion)
+    {
         $moduleOxid = $this->getModuleOxid($moduleId, $moduleVersion);
-        if($moduleOxid) {
+        if ($moduleOxid) {
             /* @var $oModule oxModule */
             $oModule = oxNew('oxModule');
-            if($oModule->load($moduleOxid) && $oModule->isActive()) {
-                    return true;
+            if ($oModule->load($moduleOxid) && $oModule->isActive()) {
+                return true;
             }
         }
         return false;
@@ -371,12 +375,13 @@ class ioly_main extends oxAdminView
      * @param string $moduleVersion
      * @return string
      */
-    public function getModuleOxid($moduleId, $moduleVersion) {
+    public function getModuleOxid($moduleId, $moduleVersion)
+    {
         $aFiles = $this->_ioly->getFileList($moduleId, $moduleVersion);
-        foreach(array_keys($aFiles) as $filePath) {
-            if(strpos($filePath, "metadata.php") !== FALSE) {
+        foreach (array_keys($aFiles) as $filePath) {
+            if (strpos($filePath, "metadata.php") !== false) {
                 $metaPath = oxRegistry::getConfig()->getConfigParam('sShopDir') . $filePath;
-                if(file_exists($metaPath)) {
+                if (file_exists($metaPath)) {
                     include_once $metaPath;
                     return $aModule['id'];
                 }
@@ -389,39 +394,46 @@ class ioly_main extends oxAdminView
     /**
      * Return JSON and exit
      * @param string $headerStatus
-     * @param array $res
+     * @param array  $res
      */
-    protected function _returnJsonResponse($headerStatus, $res) {
+    protected function _returnJsonResponse($headerStatus, $res)
+    {
         header("Content-Type: application/json");
         header($headerStatus);
         echo json_encode($res);
-        die();        
+        die();
     }
+
     /**
      * Return our helper class for the view
      * @return ioly_helper
      */
-    public function getIolyHelper() {
-        if($this->_iolyHelper === null) {
+    public function getIolyHelper()
+    {
+        if ($this->_iolyHelper === null) {
             $this->_iolyHelper = oxRegistry::get('ioly_helper');
         }
         return $this->_iolyHelper;
     }
+
     /**
      * Get session id
      * @return string
      */
-    public function getSessionId() {
-        if(($oSession = oxRegistry::getSession()) != null) {
+    public function getSessionId()
+    {
+        if (($oSession = oxRegistry::getSession()) != null) {
             return $oSession->getId();
         }
         return "";
     }
+
     /**
      * Get session token
      * @return string
      */
-    public function getSessionChallengeToken() {
+    public function getSessionChallengeToken()
+    {
         return oxRegistry::getSession()->getSessionChallengeToken();
     }
 
@@ -429,10 +441,11 @@ class ioly_main extends oxAdminView
      * Return the shop version string
      * @return string
      */
-    public function getShopMainVersion() {
-        return substr(oxRegistry::getConfig()->getVersion(),0,3);
+    public function getShopMainVersion()
+    {
+        return substr(oxRegistry::getConfig()->getVersion(), 0, 3);
     }
-    
+
     /**
      * Update ioly lib
      * @return boolean
@@ -450,12 +463,12 @@ class ioly_main extends oxAdminView
         $responseCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         curl_close($ch);
         $response = array($data, intVal($responseCode));
-        if($data && @file_put_contents($this->_iolyCore, $data)) {
-    		return $response;
+        if ($data && @file_put_contents($this->_iolyCore, $data)) {
+            return $response;
         }
         return false;
     }
-    
+
     /**
      * Gets ioly OXID connector version
      *
@@ -463,11 +476,11 @@ class ioly_main extends oxAdminView
      */
     public function getModuleVersion()
     {
-    	$sMetaDataPath = oxRegistry::getConfig()->getConfigParam("sShopDir")."modules/ioly/ioly/metadata.php";
-    	include_once($sMetaDataPath);
-    	return $aModule["version"];
+        $sMetaDataPath = oxRegistry::getConfig()->getConfigParam("sShopDir") . "modules/ioly/ioly/metadata.php";
+        include_once($sMetaDataPath);
+        return $aModule["version"];
     }
-    
+
     /**
      * Gets ioly core version
      *
@@ -475,7 +488,7 @@ class ioly_main extends oxAdminView
      */
     public function getIolyCoreVersion()
     {
-    	return $this->_ioly->getCoreVersion();
+        return $this->_ioly->getCoreVersion();
     }
 
     /**
@@ -485,52 +498,42 @@ class ioly_main extends oxAdminView
      */
     public function getIolyCookbookVersion()
     {
-    	return $this->_ioly->getCookbookVersion();
+        return $this->_ioly->getCookbookVersion();
     }
-    
+
     /**
-     * Gets ioly cookbooks version
-     *
-     * @return string
+     * Auto-uodate everything on load?
      */
     public function iolyAutoUpdate()
     {
-        if(oxRegistry::getConfig()->getConfigParam('iolyautoupdate') == true)
-        {
-        	if($this->updateIoly())
-        	{
-        		$message_success = oxRegistry::getLang()->translateString('IOLY_IOLY_UPDATE_SUCCESS').'<br>';
-        	}
-        	else
-        	{
-        		$message_error = oxRegistry::getLang()->translateString('IOLY_EXCEPTION_CORE_NOT_LOADED').'<br>';
-        	}
-        	
-        	if($this->_setCookbooks())
-        	{
-        		$message_success .= oxRegistry::getLang()->translateString('IOLY_RECIPE_UPDATE_SUCCESS').'<br>';
-        	}
-        	else
-        	{
-        		$message_error .= oxRegistry::getLang()->translateString('IOLY_EXCEPTION_CORE_NOT_LOADED').'<br>';
-        	}
-        	
-        	try {
-            	$this->_ioly->setCurlCallback(array($this, "getCurlStatus"));
-            	oxRegistry::getSession()->deleteVariable('iolyDownloadStatus');
-            	$success = $this->_ioly->install("ioly/ioly-oxid-connector", "latest");
-            	$message_success .= oxRegistry::getLang()->translateString('IOLY_CONNECTOR_UPDATE_SUCCESS').'<br>';
-            	$res = array("status" => $success);
-        	}
-        	catch(Exception $ex) {
-            	$message_error .= oxRegistry::getLang()->translateString('IOLY_CONNECTOR_UPDATE_ERROR').'<br>'.$this->_getIolyErrorMsg($ex).'<br>';
-        	}
-        	
-        	$this->addTplParam("iolymsg", $message_success);
-        	$this->addTplParam("iolyerror", $message_error);
+        if (oxRegistry::getConfig()->getConfigParam('iolyautoupdate') == true) {
+            if ($this->updateIoly()) {
+                $message_success = oxRegistry::getLang()->translateString('IOLY_IOLY_UPDATE_SUCCESS') . '<br>';
+            } else {
+                $message_error = oxRegistry::getLang()->translateString('IOLY_EXCEPTION_CORE_NOT_LOADED') . '<br>';
+            }
+
+            if ($this->_setCookbooks()) {
+                $message_success .= oxRegistry::getLang()->translateString('IOLY_RECIPE_UPDATE_SUCCESS') . '<br>';
+            } else {
+                $message_error .= oxRegistry::getLang()->translateString('IOLY_EXCEPTION_CORE_NOT_LOADED') . '<br>';
+            }
+
+            try {
+                $this->_ioly->setCurlCallback(array($this, "getCurlStatus"));
+                oxRegistry::getSession()->deleteVariable('iolyDownloadStatus');
+                $success = $this->_ioly->install("ioly/ioly-oxid-connector", "latest");
+                $message_success .= oxRegistry::getLang()->translateString('IOLY_CONNECTOR_UPDATE_SUCCESS') . '<br>';
+                $res = array("status" => $success);
+            } catch (Exception $ex) {
+                $message_error .= oxRegistry::getLang()->translateString('IOLY_CONNECTOR_UPDATE_ERROR') . '<br>' . $this->_getIolyErrorMsg($ex) . '<br>';
+            }
+
+            $this->addTplParam("iolymsg", $message_success);
+            $this->addTplParam("iolyerror", $message_error);
         }
     }
-    
+
     /**
      * Executes parent method parent::render(), passes shop configuration parameters
      * to Smarty and returns name of template file "shop_config.tpl".
@@ -540,7 +543,7 @@ class ioly_main extends oxAdminView
     public function render()
     {
         parent::render();
-        
+
         $this->iolyAutoUpdate();
         // add curr language abbrevation to the template
         $iLang = oxRegistry::getLang()->getTplLanguage();
@@ -548,10 +551,10 @@ class ioly_main extends oxAdminView
         $this->addTplParam("langabbrev", $sLang);
         // ajax call?
         $isAjax = oxRegistry::getConfig()->getRequestParameter('isajax');
-        if($isAjax) {
+        if ($isAjax) {
             die("ajax");
         }
-        
+
         return $this->_sThisTemplate;
     }
 }
