@@ -30,7 +30,7 @@ $aModule = array(
         'en' => 'ioly module manager (<a href="http://getioly.com" target="_blank">getioly.com</a> / <a href="https://github.com/ioly/ioly" target="_blank">github.com/ioly/ioly</a>)',
     ),
     'thumbnail'   => 'ioly_logo.png',
-    'version'     => '1.6.3',
+    'version'     => '1.6.4',
     'author'      => 'ioly',
     'url'         => 'https://github.com/ioly/ioly',
     'email'       => 'hello@getioly.com',
@@ -45,18 +45,18 @@ $aModule = array(
     ),
     'blocks'      => array(
         array(
-            'template' => 'headitem.tpl', 
-            'block' => 'admin_headitem_incjs', 
+            'template' => 'headitem.tpl',
+            'block' => 'admin_headitem_incjs',
             'file' => '/blocks/admin_headitem_incjs.tpl'
         ),
         array(
-            'template' => 'headitem.tpl', 
-            'block' => 'admin_headitem_js', 
+            'template' => 'headitem.tpl',
+            'block' => 'admin_headitem_js',
             'file' => '/blocks/admin_headitem_js.tpl'
         ),
         array(
-            'template' => 'headitem.tpl', 
-            'block' => 'admin_headitem_inccss', 
+            'template' => 'headitem.tpl',
+            'block' => 'admin_headitem_inccss',
             'file' => '/blocks/admin_headitem_inccss.tpl'
         ),
     ),
@@ -65,7 +65,7 @@ $aModule = array(
     ),
     'settings'    => array(
         array('group' => 'IOLY', 'name' => 'iolycookbookurl', 'type' => 'aarr',  'value' => array('ioly' => 'http://github.com/ioly/ioly/archive/master.zip')),
-        array('group' => 'IOLY', 'name' => 'iolyautoupdate', 'type' => 'bool',  'value' => true),        
+        array('group' => 'IOLY', 'name' => 'iolyautoupdate', 'type' => 'bool',  'value' => true),
     )
 );
 ?>
