@@ -168,7 +168,6 @@ class ioly
     /**
      * Add a cookbook.
      * @param string $key A unique identifier.
-     * @param string $url The url to the cookbook.
      */
     public function removeCookbook($key)
     {
