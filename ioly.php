@@ -11,13 +11,13 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version	 1.9.0
+ * @version	 1.9.1
  */
 namespace ioly;
 
 class ioly
 {
-    protected $_version = "1.9.0";
+    protected $_version = "1.9.1";
 
     protected $_baseDir = null;
     protected $_recipeCacheFile = null;
@@ -241,7 +241,8 @@ class ioly
 
     /**
      * Searches through the loaded cookbooks
-     * @param string $query Search string
+     * @param string $query   Search string
+     * @param array  $aFilter Optional filter array
      * @return array Associative array of results
      */
     public function search($query = null, $aFilter = array())
@@ -257,9 +258,9 @@ class ioly
             foreach ($this->_recipeCache as $package) {
                 // filter active?
                 $filterRecipe = false;
-                if($aFilter && is_array($aFilter) && count($aFilter) > 0) {
-                    foreach($aFilter as $sKey => $sVal) {
-                        if(isset($package[$sKey]) && $package[$sKey] != $sVal) {
+                if ($aFilter && is_array($aFilter) && count($aFilter) > 0) {
+                    foreach ($aFilter as $sKey => $sVal) {
+                        if (isset($package[$sKey]) && $package[$sKey] != $sVal) {
                             $filterRecipe = true;
                             break;
                         }
@@ -267,8 +268,9 @@ class ioly
                 }
                 // lowercase all tags and use them as keys for faster access
                 $search_array = array_combine(array_map('strtolower', $package['tags']), $package['tags']);
-                if ( !$filterRecipe  &&  ((stripos($package['name'], $query) !== false)
+                if (!$filterRecipe  &&  ((stripos($package['name'], $query) !== false)
                         || (stripos($package['vendor'], $query) !== false)
+                        || (stripos($package['license'], $query) !== false)
                         || (stripos($package['_filename'], $query) !== false)
                         || !empty($search_array[strtolower($query)])
                         || (isset($vendor) && isset($packageName)

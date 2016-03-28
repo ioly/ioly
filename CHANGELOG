@@ -1,3 +1,6 @@
+1.9.1 (2016-03-28)
+- added support to search for license type, e.g. "mit", "gnu" or "commercial"
+
 1.9.0 (2016-03-27)
 - support for commercial packages via "auth/<vendor>.json" files, supporting basic, token or header auth
 
