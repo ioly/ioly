@@ -11,7 +11,7 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version	 1.9.1
+ * @version     1.9.1
  */
 namespace ioly;
 
@@ -44,10 +44,10 @@ class ioly
         }
         date_default_timezone_set($tz);
         $this->_baseDir = $this->_dirName(__FILE__);
-        $this->_recipeCacheFile = $this->_baseDir.'/.recipes.db';
-        $this->_digestCacheFile = $this->_baseDir.'/.digest.db';
-        $this->_cookbookCacheFile = $this->_baseDir.'/.cookbooks.db';
-        $this->_authFile = $this->_baseDir.'/.auth';
+        $this->_recipeCacheFile = $this->_baseDir . '/.recipes.db';
+        $this->_digestCacheFile = $this->_baseDir . '/.digest.db';
+        $this->_cookbookCacheFile = $this->_baseDir . '/.cookbooks.db';
+        $this->_authFile = $this->_baseDir . '/.auth';
         $this->_init();
         if (empty($this->_recipeCache)) {
             $this->update();
@@ -92,7 +92,7 @@ class ioly
     {
         // path should not end with /  or \ so remove it
         if ($this->_endsWith($systemBasePath, '/') || $this->_endsWith($systemBasePath, '\\')) {
-            $systemBasePath = substr($systemBasePath, 0, strlen($systemBasePath)-1);
+            $systemBasePath = substr($systemBasePath, 0, strlen($systemBasePath) - 1);
         }
         $this->_systemBasePath = $systemBasePath;
     }
@@ -113,7 +113,7 @@ class ioly
     public function getCookbookVersion()
     {
         $aCookbooks = array();
-        foreach (glob($this->_baseDir.'/cookbook.*.zip') as $cookbookArchive) {
+        foreach (glob($this->_baseDir . '/cookbook.*.zip') as $cookbookArchive) {
             $aCookbook = explode("cookbook.", $cookbookArchive);
             $key = trim($aCookbook[1]);
             if (!empty($key) && strstr($key, ".zip")) {
@@ -135,7 +135,7 @@ class ioly
     /**
      * Defines an optional callback function used while
      * curl downloads from a remote server.
-     * @param $function
+     * @param object $function A function to call as callback
      */
     public function setCurlCallback($function)
     {
@@ -153,8 +153,8 @@ class ioly
 
     /**
      * Add a cookbook.
-     * @param $key A unique identifier.
-     * @param $url The url to the cookbook.
+     * @param string $key A unique identifier.
+     * @param string $url The url to the cookbook.
      */
     public function addCookbook($key, $url)
     {
@@ -164,15 +164,16 @@ class ioly
             $this->update();
         }
     }
+
     /**
      * Add a cookbook.
-     * @param $key A unique identifier.
-     * @param $url The url to the cookbook.
+     * @param string $key A unique identifier.
+     * @param string $url The url to the cookbook.
      */
     public function removeCookbook($key)
     {
         if (!empty($key)) {
-            $zipFile = $this->_baseDir."/cookbook.{$key}.zip";
+            $zipFile = $this->_baseDir . "/cookbook.{$key}.zip";
             $this->_writeLog("Removing cookbook: $key, file: " . $zipFile);
             foreach ($this->_cookbooks as $k => $cookbook) {
                 if ($cookbook[0] == $key) {
@@ -187,9 +188,10 @@ class ioly
             $this->update();
         }
     }
+
     /**
      * Set the cookbooks to use.
-     * @param array $aCookbooks
+     * @param array $cookbooks The cookbooks array
      */
     public function setCookbooks($cookbooks)
     {
@@ -199,8 +201,10 @@ class ioly
         }
         $this->update();
     }
+
     /**
      * Return a specific cookbook URL
+     * @param string $key The cookbook's unique key
      * @return string
      */
     public function getCookbook($key)
@@ -226,7 +230,8 @@ class ioly
      * Activate debug logging
      * @param boolean $writeLog
      */
-    public function setDebugLogging($writeLog) {
+    public function setDebugLogging($writeLog)
+    {
         $this->_debugLogging = $writeLog;
     }
 
@@ -268,7 +273,7 @@ class ioly
                 }
                 // lowercase all tags and use them as keys for faster access
                 $search_array = array_combine(array_map('strtolower', $package['tags']), $package['tags']);
-                if (!$filterRecipe  &&  ((stripos($package['name'], $query) !== false)
+                if (!$filterRecipe && ((stripos($package['name'], $query) !== false)
                         || (stripos($package['vendor'], $query) !== false)
                         || (stripos($package['license'], $query) !== false)
                         || (stripos($package['_filename'], $query) !== false)
@@ -276,7 +281,8 @@ class ioly
                         || (isset($vendor) && isset($packageName)
                             && $package['vendor'] == $vendor
                             && $package['_filename'] == $packageName)
-                    )) {
+                    )
+                ) {
                     $results[] = $package;
                 }
             }
@@ -286,15 +292,16 @@ class ioly
 
     /**
      * Lists all cached recipes
+     * @param array $aFilter Optional key/value filter array
      * @return array
      */
     public function listAll($aFilter = array())
     {
-        if($aFilter && is_array($aFilter) && count($aFilter) > 0) {
+        if ($aFilter && is_array($aFilter) && count($aFilter) > 0) {
             $aFilteredPackages = array();
-            foreach($this->_recipeCache as $package) {
-                foreach($aFilter as $sKey => $sVal) {
-                    if(isset($package[$sKey]) && $package[$sKey] != $sVal) {
+            foreach ($this->_recipeCache as $package) {
+                foreach ($aFilter as $sKey => $sVal) {
+                    if (isset($package[$sKey]) && $package[$sKey] != $sVal) {
                         continue;
                     }
                     $aFilteredPackages[] = $package;
@@ -308,9 +315,10 @@ class ioly
     /**
      * Clear all cookbooks, removes zip files
      */
-    public function clearCookbooks() {
+    public function clearCookbooks()
+    {
         // clear downloaded cookbooks
-        foreach (glob($this->_baseDir.'/cookbook.*.zip') as $cookbookArchive) {
+        foreach (glob($this->_baseDir . '/cookbook.*.zip') as $cookbookArchive) {
             @unlink($cookbookArchive);
         }
         $this->_cookbooks = array();
@@ -326,14 +334,14 @@ class ioly
             $url = $cookbook[1];
             $this->_writeLog("Trying to get recipe $repo from $url");
             $data = $this->_curlRequest($url, true);
-            $fn = 'cookbook.'.$repo.'.zip';
+            $fn = 'cookbook.' . $repo . '.zip';
             if ($data[0] != '') {
                 $this->_writeLog("Successfully downloaded recipe $repo from $url");
-                if (file_exists($this->_baseDir.'/'.$fn)) {
-                    unlink($this->_baseDir.'/'.$fn);
+                if (file_exists($this->_baseDir . '/' . $fn)) {
+                    unlink($this->_baseDir . '/' . $fn);
                 }
-                file_put_contents($this->_baseDir.'/'.$fn, $data[0]);
-                chmod($this->_baseDir.'/'.$fn, 0777);
+                file_put_contents($this->_baseDir . '/' . $fn, $data[0]);
+                chmod($this->_baseDir . '/' . $fn, 0777);
             }
         }
         file_put_contents($this->_cookbookCacheFile, serialize($this->_cookbooks));
@@ -343,7 +351,7 @@ class ioly
 
     /**
      * Shows internal package
-     * @param $packageString
+     * @param string $packageString
      * @return array
      */
     public function show($packageString)
@@ -376,8 +384,8 @@ class ioly
 
     /**
      * Installs a specific version of a given package
-     * @param $packageString
-     * @param $packageVersion
+     * @param string $packageString  The full package name
+     * @param string $packageVersion The version to install
      * @return bool
      * @throws Exception
      */
@@ -399,7 +407,7 @@ class ioly
                             $this->_writeLog("No license found for commercial package: " . $packageString);
                             throw new Exception(
                                 "No license found for commercial package: "
-                                .$packageString."#".$packageVersion,
+                                . $packageString . "#" . $packageVersion,
                                 1030
                             );
                         }
@@ -417,13 +425,13 @@ class ioly
                 } else {
                     throw new Exception(
                         "Could not find package version: "
-                        .$packageString."#".$packageVersion,
+                        . $packageString . "#" . $packageVersion,
                         1003
                     );
                 }
             } else {
                 throw new Exception(
-                    "Could not find package ".$packageString,
+                    "Could not find package " . $packageString,
                     1005
                 );
             }
@@ -459,13 +467,13 @@ class ioly
 
     /**
      * Iterate through an array recursively
-     * @param array $array
+     * @param array  $array
      * @param string $needle
      * @return array
      */
     private function recursiveFind(array $array, $needle)
     {
-        $iterator  = new \RecursiveArrayIterator($array);
+        $iterator = new \RecursiveArrayIterator($array);
         $recursive = new \RecursiveIteratorIterator($iterator, \RecursiveIteratorIterator::SELF_FIRST);
         $aHitList = array();
         foreach ($recursive as $key => $value) {
@@ -481,13 +489,14 @@ class ioly
      * @param string $sLogMessage
      * @return int
      */
-    protected function _writeLog($sLogMessage) {
-        if($this->_debugLogging) {
-            $sLogDist = dirname(__FILE__)."/ioly.log";
-            if ( ( $oHandle = fopen( $sLogDist, 'a' ) ) !== false ) {
+    protected function _writeLog($sLogMessage)
+    {
+        if ($this->_debugLogging) {
+            $sLogDist = dirname(__FILE__) . "/ioly.log";
+            if (($oHandle = fopen($sLogDist, 'a')) !== false) {
                 $sLogMessage = "\n" . date('Y-m-d H:i:s') . " " . $sLogMessage;
-                fwrite( $oHandle, $sLogMessage );
-                $blOk = fclose( $oHandle );
+                fwrite($oHandle, $sLogMessage);
+                $blOk = fclose($oHandle);
             }
         }
         return $blOk;
@@ -512,8 +521,8 @@ class ioly
 
     /**
      * Uninstalls a version of a specific package
-     * @param $packageString
-     * @param $versionString
+     * @param string $packageString The full package name to uninstall
+     * @param string $versionString The version to uninstall
      * @throws Exception
      */
     public function uninstall($packageString, $versionString)
@@ -544,7 +553,7 @@ class ioly
                 }
                 /* Check SHA1s and delete */
                 foreach ($filesToDelete as $k => $v) {
-                    $deletePath = $this->getSystemBasePath().'/'.$k;
+                    $deletePath = $this->getSystemBasePath() . '/' . $k;
                     $continue = true;
                     $delDir = $this->_dirName($deletePath);
                     /* Collect a list of directories to check for deletion */
@@ -561,7 +570,8 @@ class ioly
                     }
 
                     if (file_exists($deletePath)
-                        && sha1_file($deletePath) != $v) {
+                        && sha1_file($deletePath) != $v
+                    ) {
                         $modifiedFiles[] = $k;
                         unset($filesToDelete[$k]);
                     } else {
@@ -579,7 +589,7 @@ class ioly
 
                 usort($checkDeleteFolders, array($this, '_sortByFolderDepth'));
                 foreach ($checkDeleteFolders as $deleteFolder) {
-                    $pattern = $deleteFolder.'/{,.}*';
+                    $pattern = $deleteFolder . '/{,.}*';
                     $remainingFiles = glob($pattern, GLOB_BRACE);
                     foreach ($remainingFiles as $k => $v) {
                         $fn = basename($v);
@@ -588,7 +598,7 @@ class ioly
                         }
                     }
                     if (count($remainingFiles) == 0) {
-                        $dsStore = $deleteFolder.'/.DS_Store';
+                        $dsStore = $deleteFolder . '/.DS_Store';
                         if (file_exists($dsStore)) {
                             @unlink($dsStore);
                         }
@@ -599,9 +609,9 @@ class ioly
                 if (!empty($failedToDelete)) {
                     $this->_writeLog("Failed to delete: " . print_r($failedToDelete));
                     $exception = new Exception(
-                        "Module was uninstalled but the following ".
+                        "Module was uninstalled but the following " .
                         "files could not be deleted:\n"
-                        .implode("\n", $failedToDelete),
+                        . implode("\n", $failedToDelete),
                         1022
                     );
                     $exception->setExtraData(array($failedToDelete));
@@ -611,9 +621,9 @@ class ioly
                 if (!empty($modifiedFiles)) {
                     $this->_writeLog("Modified, failed to delete: " . print_r($failedToDelete));
                     $exception = new Exception(
-                        "Module was uninstalled but the following ".
+                        "Module was uninstalled but the following " .
                         "files were modified and not deleted:\n"
-                        .implode("\n", $modifiedFiles),
+                        . implode("\n", $modifiedFiles),
                         1022
                     );
                     $exception->setExtraData(array($modifiedFiles));
@@ -633,13 +643,13 @@ class ioly
             } else {
                 throw new Exception(
                     "Could not find specified digest version of "
-                    .$packageString,
+                    . $packageString,
                     1021
                 );
             }
         } else {
             throw new Exception(
-                "Could not find any digest version of ".trim($packageString),
+                "Could not find any digest version of " . trim($packageString),
                 1020
             );
         }
@@ -682,6 +692,7 @@ class ioly
     {
         return str_replace("\\", "/", dirname($path));
     }
+
     /**
      * Always use '/' for directories, even on Windows
      * @param string $haystack
@@ -696,13 +707,13 @@ class ioly
     /**
      * usort callback. Sorts a list of folders by depth.
      * Could probably be improved
-     * @param $a
-     * @param $b
+     * @param string $a
+     * @param string $b
      * @return int
      */
     protected function _sortByFolderDepth($a, $b)
     {
-        return strlen($b)-strlen($a);
+        return strlen($b) - strlen($a);
     }
 
     /**
@@ -717,9 +728,9 @@ class ioly
         );
         if (!is_readable($this->_digestCacheFile)) {
             $exception = new Exception(
-                "Please check permissions on the following files/folders ".
+                "Please check permissions on the following files/folders " .
                 "(use \$e->getExtraData());\n"
-                .$this->_digestCacheFile,
+                . $this->_digestCacheFile,
                 1008
             );
             $exception->setExtraData(array($this->_digestCacheFile));
@@ -729,14 +740,14 @@ class ioly
 
     /**
      * Downloads a given package to a temporary file
-     * @param $url URL to Zip
-     * @param $packageString The package to install
+     * @param string $url           URL to Zip
+     * @param string $packageString The package to install
      * @return null|string Zip Filename
      * @throws Exception
      */
     protected function _downloadPackage($url, $packageString)
     {
-        $tmpName = tempnam(sys_get_temp_dir(), 'IOLY_').'.zip';
+        $tmpName = tempnam(sys_get_temp_dir(), 'IOLY_') . '.zip';
 
         $data = $this->_curlRequest($url, false, $packageString);
         if ($data[1] == 200) {
@@ -750,8 +761,8 @@ class ioly
             }
         } else {
             throw new Exception(
-                "Download server ".$url
-                ." responded with an error. HTTP-Response: ".$data[1],
+                "Download server " . $url
+                . " responded with an error. HTTP-Response: " . $data[1],
                 1007
             );
         }
@@ -760,6 +771,9 @@ class ioly
 
     /**
      * Creates a pseudo zip file if the downloaded file isn't a zip.
+     * @param string $content
+     * @param string $baseName
+     * @param string $zipName
      * This is useful for snippets.
      **/
     protected function _createPseudoZip($content, $baseName, $zipName)
@@ -774,11 +788,12 @@ class ioly
 
     /**
      * Low level curl request
-     * @param $url
-     * @param bool $authenticate
+     * @param string $url           The URL to download from
+     * @param bool   $authenticate  Use general auth
+     * @param string $packageString The package name, if a package download
      * @return array Headers + Body
      */
-    protected function _curlRequest($url, $authenticate=false, $packageString='')
+    protected function _curlRequest($url, $authenticate = false, $packageString = '')
     {
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -806,8 +821,8 @@ class ioly
                         switch ($auth['type']) {
                             case "basic":
                                 // use basic auth
-                                curl_setopt($ch, CURLOPT_USERPWD, $auth['username'].":".$auth['password']);
-                                $this->_writeLog("CURL Basic Auth: " . $auth['username'].":".$auth['password']);
+                                curl_setopt($ch, CURLOPT_USERPWD, $auth['username'] . ":" . $auth['password']);
+                                $this->_writeLog("CURL Basic Auth: " . $auth['username'] . ":" . $auth['password']);
                                 break;
                             case "token":
                                 // append to URL
@@ -818,12 +833,12 @@ class ioly
                             case "header":
                                 // set custom header
                                 $headers = array();
-                                $headers[] = $auth['headername'].": ".$auth['headervalue'];
+                                $headers[] = $auth['headername'] . ": " . $auth['headervalue'];
                                 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-                                $this->_writeLog("CURL Header Auth: " . $auth['headername'].": ".$auth['headervalue']);
+                                $this->_writeLog("CURL Header Auth: " . $auth['headername'] . ": " . $auth['headervalue']);
                                 break;
                             default:
-                                curl_setopt($ch, CURLOPT_USERPWD, $auth['username'].":".$auth['password']);
+                                curl_setopt($ch, CURLOPT_USERPWD, $auth['username'] . ":" . $auth['password']);
                         }
                     }
                 }
@@ -874,12 +889,12 @@ class ioly
 
     /**
      * Copies a package to the base filesystem.
-     * @param $version
-     * @param null $filesystem
+     * @param string $version
+     * @param null   $filesystem
      * @return array
      * @throws Exception
      */
-    protected function _copyToSystem($version, $filesystem=null)
+    protected function _copyToSystem($version, $filesystem = null)
     {
         $filelist = array();
         if ($filesystem) {
@@ -891,10 +906,10 @@ class ioly
                 $zip->extractTo($tmpDir);
                 $zip->close();
             }
-            if (     (strpos($version['url'], 'github.com') !== false)
+            if ((strpos($version['url'], 'github.com') !== false)
                 || (strpos($version['url'], 'bitbucket.org') !== false)
             ) {
-                $dirs = glob($tmpDir.'/*', GLOB_ONLYDIR);
+                $dirs = glob($tmpDir . '/*', GLOB_ONLYDIR);
                 if (count($dirs) == 1) {
                     $tmpDir = $dirs[0];
                 }
@@ -906,30 +921,30 @@ class ioly
                     if ($src === '') {
                         $src = '.';
                     }
-                    $src = $tmpDir.'/'.trim($src, '/');
+                    $src = $tmpDir . '/' . trim($src, '/');
                     $dest = $mapping['dest'];
-                    $dest = $this->getSystemBasePath().'/'.$dest;
+                    $dest = $this->getSystemBasePath() . '/' . $dest;
                     $this->_recursiveCopy($src, $dest, $filelist);
                 }
                 if (isset($version['touch'])) {
                     foreach ($version['touch'] as $file) {
                         $baseFile = $file;
-                        $file = $this->getSystemBasePath().'/'.$baseFile;
+                        $file = $this->getSystemBasePath() . '/' . $baseFile;
                         if (!file_exists($file)) {
                             file_put_contents($file, "");
                             if (!is_readable($file)) {
                                 $exception = new Exception(
-                                    "Please check permissions on the ".
-                                    "following files/folder ".
+                                    "Please check permissions on the " .
+                                    "following files/folder " .
                                     "(use \$e->getExtraData());\n"
-                                    .$file,
+                                    . $file,
                                     1010
                                 );
                                 $exception->setExtraData($file);
                                 throw $exception;
                             }
                         }
-                        $filelist['/'.trim($baseFile, '/')] = sha1_file($file);
+                        $filelist['/' . trim($baseFile, '/')] = sha1_file($file);
                     }
                 }
             }
@@ -940,15 +955,15 @@ class ioly
 
     /**
      * Recursively copies a file to a given folder
-     * @param $source
-     * @param $dest
-     * @param array $filelist Array of copied files
+     * @param string $source   The source path
+     * @param string $dest     The destination path
+     * @param array  $filelist Array of copied files
      * @throws Exception Applicable errors
      */
-    protected function _recursiveCopy($source, $dest, &$filelist=array())
+    protected function _recursiveCopy($source, $dest, &$filelist = array())
     {
         if (is_dir($source)) {
-            $pattern = $source.'/{,.}*';
+            $pattern = $source . '/{,.}*';
             $files = glob($pattern, GLOB_BRACE);
         } else {
             $files = array($source);
@@ -958,12 +973,12 @@ class ioly
         foreach ($files as $file) {
             $basename = basename($file);
             if ($basename != "." && $basename != "..") {
-                $destpath = $dest.'/'.$basename;
+                $destpath = $dest . '/' . $basename;
                 $destpath = str_replace("//", "/", $destpath);
                 if (is_dir($file)) {
                     $this->_recursiveCopy(
                         $file,
-                        $dest.'/'.basename($file),
+                        $dest . '/' . basename($file),
                         $filelist
                     );
                 } else {
@@ -994,8 +1009,8 @@ class ioly
         if (count($failedFiles) > 0) {
             $exception = new Exception(
                 "Please check permissions on the following "
-                ."files/folders (use \$e->getExtraData());\n"
-                .implode($failedFiles, "\n"),
+                . "files/folders (use \$e->getExtraData());\n"
+                . implode($failedFiles, "\n"),
                 1011
             );
             $exception->setExtraData($failedFiles);
@@ -1016,15 +1031,14 @@ class ioly
         $numFoldersBasePath = count(explode('/', $this->_dirName($this->_baseDir)));
         $aSubfolders = explode('/', $dirName);
         $numSubfolders = count($aSubfolders);
-        for($i=1; $i<=$numSubfolders; $i++) {
-            if(isset($aSubfolders[$i]) && $aSubfolders[$i] != '') {
+        for ($i = 1; $i <= $numSubfolders; $i++) {
+            if (isset($aSubfolders[$i]) && $aSubfolders[$i] != '') {
                 $subDir .= $aSubfolders[$i] . '/';
             }
-            if(!file_exists($subDir)) {
+            if (!file_exists($subDir)) {
                 mkdir($subDir, 0777, true);
-            }
-            else {
-                if($i >= $numFoldersBasePath) {
+            } else {
+                if ($i >= $numFoldersBasePath) {
                     // for every new part that exists, try chmod
                     chmod($subDir, 0777);
                 }
@@ -1041,7 +1055,7 @@ class ioly
         $db = array();
         $cachedCookbooks = unserialize(file_get_contents($this->_cookbookCacheFile));
         foreach ($cachedCookbooks as $cookbook) {
-            $cookbookArchive = $this->_baseDir.'/cookbook.'.$cookbook[0].'.zip';
+            $cookbookArchive = $this->_baseDir . '/cookbook.' . $cookbook[0] . '.zip';
 
             $tmpDir = tempnam(sys_get_temp_dir(), 'IOLY_');
             unlink($tmpDir);
@@ -1068,7 +1082,7 @@ class ioly
                             );
                             $package['packageString'] =
                                 basename($this->_dirName($file))
-                                .'/'.$package['_filename'];
+                                . '/' . $package['_filename'];
                             if ($this->isInstalled($package['packageString'])) {
                                 $package['installed'] = true;
                             }
@@ -1079,17 +1093,17 @@ class ioly
                             }
                             $defaultDesc = $package['desc']['en'];
                             // for now, set the DE desc to the EN desc, if not set in the JSON file yet...
-                            if(!isset($package['desc']['de']) || $package['desc']['de'] == '') {
+                            if (!isset($package['desc']['de']) || $package['desc']['de'] == '') {
                                 $package['desc']['de'] = $defaultDesc;
                             }
-                            foreach($package['versions'] as $version => $versionData) {
-                                if($this->isInstalledInVersion($package['packageString'], $version)) {
+                            foreach ($package['versions'] as $version => $versionData) {
+                                if ($this->isInstalledInVersion($package['packageString'], $version)) {
                                     $package['versions'][$version]['installed'] = true;
                                 }
                                 $matchingVersions = is_array($versionData['supported']) ? $versionData['supported'] : explode(",", trim($versionData['supported']));
-                                if(count($matchingVersions)) {
-                                    foreach($matchingVersions as $matchingVersion) {
-                                        if($matchingVersion == $this->getSystemVersion()) {
+                                if (count($matchingVersions)) {
+                                    foreach ($matchingVersions as $matchingVersion) {
+                                        if ($matchingVersion == $this->getSystemVersion()) {
                                             $package['versions'][$version]['matches'] = true;
                                             break;
                                         }
@@ -1097,7 +1111,7 @@ class ioly
                                 }
                             }
                             $replacePackage = null;
-                            foreach ($db as $k=>$cachedPackage) {
+                            foreach ($db as $k => $cachedPackage) {
                                 if ($cachedPackage['packageString'] == $package['packageString']) {
                                     $replacePackage = $k;
                                 }
@@ -1138,33 +1152,35 @@ if (php_sapi_name() == 'cli') {
 
         }
 
-        if (!isset($argv[1])) $argv[1] = '';
+        if (!isset($argv[1])) {
+            $argv[1] = '';
+        }
 
         switch (strtolower($argv[1])) {
             case "search":
                 $query = isset($argv[2]) ? $argv[2] : null;
                 $filter = isset($argv[3]) ? $argv[3] : null;
                 $aFilter = array();
-                if($filter !== null && strpos($filter, "=") !== FALSE) {
+                if ($filter !== null && strpos($filter, "=") !== false) {
                     $aTmp = explode("=", $filter);
                     $aFilter = array($aTmp[0] => $aTmp[1]);
                 }
                 $results = $ioly->search($query, $aFilter);
                 foreach ($results as $package) {
-                    echo $package['vendor'].'/'.$package['_filename']."\n";
+                    echo $package['vendor'] . '/' . $package['_filename'] . "\n";
                 }
                 break;
 
             case "list":
                 $filter = isset($argv[2]) ? $argv[2] : null;
                 $aFilter = array();
-                if($filter !== null && strpos($filter, "=") !== FALSE) {
+                if ($filter !== null && strpos($filter, "=") !== false) {
                     $aTmp = explode("=", $filter);
                     $aFilter = array($aTmp[0] => $aTmp[1]);
                 }
-                $results = $ioly->listAll( $aFilter );
+                $results = $ioly->listAll($aFilter);
                 foreach ($results as $package) {
-                    echo $package['vendor'].'/'.$package['_filename']."\n";
+                    echo $package['vendor'] . '/' . $package['_filename'] . "\n";
                 }
                 break;
 
@@ -1191,12 +1207,12 @@ if (php_sapi_name() == 'cli') {
 
 
             case "addcookbook":
-                $cookbookKey= isset($argv[2]) ? $argv[2] : null;
-                $cookbookUrl= isset($argv[3]) ? $argv[3] : null;
+                $cookbookKey = isset($argv[2]) ? $argv[2] : null;
+                $cookbookUrl = isset($argv[3]) ? $argv[3] : null;
                 $ioly->addCookbook($cookbookKey, $cookbookUrl);
                 break;
             case "removecookbook":
-                $cookbookKey= isset($argv[2]) ? $argv[2] : null;
+                $cookbookKey = isset($argv[2]) ? $argv[2] : null;
                 $ioly->removeCookbook($cookbookKey);
                 break;
             case "clearcookbooks":
@@ -1215,7 +1231,7 @@ if (php_sapi_name() == 'cli') {
                 $version = isset($argv[3]) ? $argv[3] : null;
                 $key = isset($argv[4]) ? $argv[4] : null;
                 $res = $ioly->getJsonValueFromPackage($package, $version, $key);
-                if($res) {
+                if ($res) {
                     print_r($res);
                 }
                 break;
@@ -1273,7 +1289,7 @@ if (php_sapi_name() == 'cli') {
                 break;
         }
     } catch (Exception $e) {
-        echo $e."\n";
+        echo $e . "\n";
     }
 }
 
@@ -1312,6 +1328,6 @@ class Exception extends \Exception
      */
     public function __toString()
     {
-        return "[".$this->getCode()."]: ".$this->getMessage();
+        return "[" . $this->getCode() . "]: " . $this->getMessage();
     }
 }
