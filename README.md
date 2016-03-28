@@ -70,7 +70,7 @@ $ioly = new \ioly\ioly();
 $ioly->setSystemBasePath(dirname(__FILE__));
 $ioly->setSystemVersion('5.2');
 
-// add custom cookbook :)
+// add custom cookbook(s) - this is optional, see WIKI :)
 $ioly->addCookbook('myowncookbook', "http://my.domain.de/git-archives/myCookbook/develop.zip");
 
 /**
@@ -78,6 +78,7 @@ $ioly->addCookbook('myowncookbook', "http://my.domain.de/git-archives/myCookbook
  */
 $aPackages = array(
     'ioly/ioly-oxid-connector' => 'latest',
+    //'myvendor/my-own-custom-module' => 'latest',
 );
 
 foreach ($aPackages as $package => $version) {
