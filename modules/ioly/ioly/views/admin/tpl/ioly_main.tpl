@@ -94,6 +94,8 @@
                         	<p>{{module.desc.[{$langabbrev}]}}</p>
                         	<span class="glyphicon glyphicon-user"></span>&nbsp; {{module.vendor}}
                         	&nbsp;&nbsp;&nbsp;
+                            <span class="glyphicon glyphicon-info-sign"></span>&nbsp; {{module.license}}
+                            &nbsp;&nbsp;&nbsp;
                         	<span class="glyphicon glyphicon-euro"></span>&nbsp; <span ng-if="module.price == '0.00'">[{oxmultilang ident='IOLY_PRICE_FREE'}]</span><span ng-if="module.price != '0.00'">{{module.price}}</span>
                         	<br><br>
                         </div>
@@ -102,6 +104,8 @@
                         	<p>{{module.desc.[{$langabbrev}]}}</p>
                         	<span class="glyphicon glyphicon-user"></span>&nbsp; {{module.vendor}}
                         	&nbsp;&nbsp;&nbsp;
+                            <span class="glyphicon glyphicon-info-sign"></span>&nbsp; {{module.license}}
+                            &nbsp;&nbsp;&nbsp;
                         	<span class="glyphicon glyphicon-euro"></span>&nbsp; <span ng-if="module.price == '0.00'">kostenlos</span><span ng-if="module.price != '0.00'">{{module.price}}</span>
                         	<br><br>
                         </div>
