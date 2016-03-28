@@ -11,13 +11,13 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version     1.9.1
+ * @version     1.9.2
  */
 namespace ioly;
 
 class ioly
 {
-    protected $_version = "1.9.1";
+    protected $_version = "1.9.2";
 
     protected $_baseDir = null;
     protected $_recipeCacheFile = null;
@@ -420,6 +420,7 @@ class ioly
                         $digestEntry['files'] = $filelist;
                         $this->_digestCache[$packageString] = $digestEntry;
                         $this->_saveDigestCache();
+                        $this->update();
                     }
                 } else {
                     throw new Exception(
@@ -638,6 +639,7 @@ class ioly
                     }
                 }
                 $this->_saveDigestCache();
+                $this->update();
                 $this->_writeLog($msg);
             } else {
                 throw new Exception(
