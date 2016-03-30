@@ -1,3 +1,9 @@
+1.9.3 (2016-03-30)
+- print hook messages on console, too
+
+1.9.2 (2016-03-28)
+- Bugfix: we need to update() after un-/install
+
 1.9.1 (2016-03-28)
 - added support to search for license type, e.g. "mit", "gnu" or "commercial"
 

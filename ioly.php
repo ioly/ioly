@@ -11,13 +11,13 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version     1.9.2
+ * @version     1.9.3
  */
 namespace ioly;
 
 class ioly
 {
-    protected $_version = "1.9.2";
+    protected $_version = "1.9.3";
 
     protected $_baseDir = null;
     protected $_recipeCacheFile = null;
@@ -397,6 +397,7 @@ class ioly
                 $package = $results[0];
                 if (array_key_exists($packageVersion, $package['versions'])) {
                     $version = $package['versions'][$packageVersion];
+                    $this->printHookMessages($packageString, $packageVersion, "preinstall");
 
                     $license = $package['license'];
                     if (strtolower($license) == "commercial") {
@@ -419,6 +420,7 @@ class ioly
                         $digestEntry['version'] = $packageVersion;
                         $digestEntry['files'] = $filelist;
                         $this->_digestCache[$packageString] = $digestEntry;
+                        $this->printHookMessages($packageString, $packageVersion, "postinstall");
                         $this->_saveDigestCache();
                         $this->update();
                     }
@@ -442,6 +444,32 @@ class ioly
             );
         }
         return true;
+    }
+
+    /**
+     * Print info message if available
+     * @param string $packageString
+     * @param string $packageVersion
+     * @param string $type
+     */
+    public function printHookMessages($packageString, $packageVersion, $type = "preinstall")
+    {
+        $sMessage = "";
+        $aHookData = $this->getJsonValueFromPackage($packageString, $packageVersion, "hooks");
+        if ($aHookData && is_array($aHookData)) {
+            foreach ($aHookData as $hookInfo) {
+                if (!isset($hookInfo[$type])) {
+                    continue;
+                }
+                if (isset($hookInfo[$type]['message']) && $hookInfo[$type]['message'] != '') {
+                    $sMessage .= "$packageString - Message: " . $hookInfo[$type]['message'] . "\n";
+                }
+                if (isset($hookInfo[$type]['link']) && $hookInfo[$type]['link'] != '') {
+                    $sMessage .= "$packageString - Link: " . $hookInfo[$type]['link'];
+                }
+            }
+            echo $sMessage;
+        }
     }
 
     /**
