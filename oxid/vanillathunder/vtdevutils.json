@@ -39,8 +39,8 @@
             ],
             "mapping": [
                 {
-                    "src": "",
-                    "dest": "modules/vt-devutils/"
+                    "src": "copy_this/",
+                    "dest": ""
                 }
             ]
         }
