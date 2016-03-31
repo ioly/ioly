@@ -1,3 +1,6 @@
+2.0.0 (2016-03-31)
+- added parameter "preserveExisting" to install() function to allow to keep existing files in a dir
+
 1.9.3 (2016-03-30)
 - print hook messages on console, too
 

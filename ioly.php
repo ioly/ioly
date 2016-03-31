@@ -11,13 +11,13 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version     1.9.3
+ * @version     2.0.0
  */
 namespace ioly;
 
 class ioly
 {
-    protected $_version = "1.9.3";
+    protected $_version = "2.0.0";
 
     protected $_baseDir = null;
     protected $_recipeCacheFile = null;
@@ -383,12 +383,13 @@ class ioly
 
     /**
      * Installs a specific version of a given package
-     * @param string $packageString  The full package name
-     * @param string $packageVersion The version to install
+     * @param string $packageString    The full package name
+     * @param string $packageVersion   The version to install
+     * @param bool   $preserveExisting Keep already existing files?
      * @return bool
      * @throws Exception
      */
-    public function install($packageString, $packageVersion)
+    public function install($packageString, $packageVersion, $preserveExisting = false)
     {
         $this->_checkEnvironment();
         if (strpos($packageString, '/') !== false) {
@@ -415,7 +416,7 @@ class ioly
 
                     $filesystem = $this->_downloadPackage($version['url'], $packageString);
                     if ($filesystem !== null) {
-                        $filelist = $this->_copyToSystem($version, $filesystem);
+                        $filelist = $this->_copyToSystem($version, $filesystem, $preserveExisting);
                         $digestEntry = array();
                         $digestEntry['version'] = $packageVersion;
                         $digestEntry['files'] = $filelist;
@@ -920,10 +921,11 @@ class ioly
      * Copies a package to the base filesystem.
      * @param string $version
      * @param null   $filesystem
+     * @param bool   $preserveExisting Keep already existing files?
      * @return array
      * @throws Exception
      */
-    protected function _copyToSystem($version, $filesystem = null)
+    protected function _copyToSystem($version, $filesystem = null, $preserveExisting = false)
     {
         $filelist = array();
         if ($filesystem) {
@@ -953,7 +955,7 @@ class ioly
                     $src = $tmpDir . '/' . trim($src, '/');
                     $dest = $mapping['dest'];
                     $dest = $this->getSystemBasePath() . '/' . $dest;
-                    $this->_recursiveCopy($src, $dest, $filelist);
+                    $this->_recursiveCopy($src, $dest, $filelist, $preserveExisting);
                 }
                 if (isset($version['touch'])) {
                     foreach ($version['touch'] as $file) {
@@ -984,12 +986,13 @@ class ioly
 
     /**
      * Recursively copies a file to a given folder
-     * @param string $source   The source path
-     * @param string $dest     The destination path
-     * @param array  $filelist Array of copied files
+     * @param string $source           The source path
+     * @param string $dest             The destination path
+     * @param array  $filelist         Array of copied files
+     * @param bool   $preserveExisting Keep already existing files?
      * @throws Exception Applicable errors
      */
-    protected function _recursiveCopy($source, $dest, &$filelist = array())
+    protected function _recursiveCopy($source, $dest, &$filelist = array(), $preserveExisting = false)
     {
         if (is_dir($source)) {
             $pattern = $source . '/{,.}*';
@@ -1008,28 +1011,31 @@ class ioly
                     $this->_recursiveCopy(
                         $file,
                         $dest . '/' . basename($file),
-                        $filelist
+                        $filelist,
+                        $preserveExisting
                     );
                 } else {
                     $destdir = $this->_dirName($destpath);
                     if (!file_exists($destdir)) {
                         $this->_mkdirRecursive($destdir);
                     }
-                    if (@copy($file, $destpath)) {
-                        if (is_file($destpath)) {
-                            $path = str_replace(
-                                '//',
-                                '/',
-                                str_replace(
-                                    $this->getSystemBasePath(),
-                                    '',
-                                    $destpath
-                                )
-                            );
-                            $filelist[$path] = sha1_file($destpath);
+                    if (!file_exists($destpath) || !$preserveExisting) {
+                        if (@copy($file, $destpath)) {
+                            if (is_file($destpath)) {
+                                $path = str_replace(
+                                    '//',
+                                    '/',
+                                    str_replace(
+                                        $this->getSystemBasePath(),
+                                        '',
+                                        $destpath
+                                    )
+                                );
+                                $filelist[$path] = sha1_file($destpath);
+                            }
+                        } else {
+                            $failedFiles[] = str_replace('//', '/', $destpath);
                         }
-                    } else {
-                        $failedFiles[] = str_replace('//', '/', $destpath);
                     }
                 }
             }
