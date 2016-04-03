@@ -19,6 +19,8 @@ The ioly system is driven by a "cookbook", stored on GitHub, which contains "rec
 
 ## Installation
 
+### Manual installation
+
 Download `ioly` core via console or via HTTP or:
 
 `curl -O https://raw.githubusercontent.com/ioly/ioly/core/ioly.php`
@@ -26,6 +28,7 @@ Download `ioly` core via console or via HTTP or:
 Using `ioly` module manager via console. In this example, we'll add a module to an installation of OXID eSales:
 
 ``` sh
+$ cd /var/www/myshop.de/
 $ export IOLY_SYSTEM_BASE=/var/www/myshop.de/
 $ export IOLY_SYSTEM_VERSION=4.9
 $ php ioly.php update
@@ -35,6 +38,62 @@ $ php ioly.php search paypal
 $ php ioly.php show oxid/paypal
 $ php ioly.php install oxid/paypal 3.2.1
 ```
+
+`NOTE:`
+If you are in the base directory of an OXID eShop, you don't have to set `IOLY_SYSTEM_BASE` and `IOLY_SYSTEM_VERSION`, since
+`ioly core` uses the current directory and the OXID package info "pkg.info" file to automatically set those variables.
+
+### Install ioly Core via Composer
+
+You can also use the ioly Core via Composer:
+
+``` json
+{
+  "repositories": {
+    "ioly/ioly": {
+      "type": "vcs",
+      "url": "https://github.com/ioly/ioly.git"
+    }
+  },
+  "require": {
+    "ioly/ioly": "dev-core"
+  }
+}
+````
+
+and also use it from PHP e.g.:
+
+```php
+require_once 'vendor/autoload.php';
+
+$ioly = new \ioly\ioly();
+$ioly->setSystemBasePath(dirname(__FILE__));
+$ioly->setSystemVersion('5.2');
+
+// add custom cookbook(s) - this is optional, see WIKI :)
+$ioly->addCookbook('myowncookbook', "http://my.domain.de/git-archives/myCookbook/develop.zip");
+
+/**
+ * define ioly packages here
+ */
+$aPackages = array(
+    'ioly/ioly-oxid-connector' => 'latest',
+    //'myvendor/my-own-custom-module' => 'latest',
+);
+
+foreach ($aPackages as $package => $version) {
+    if (!$ioly->isInstalledInVersion($package, $version)) {
+        try {
+            $ioly->install($package, $version);
+            echo "\nPackage: $package installed in version: $version";
+        } catch (Exception $ex) {
+            echo "\nError installing package '$package': " . $ex->getMessage();
+        }
+    } else {
+        echo "\nPackage $package already installed in version: $version";
+    }
+}
+````
 
 ### Contributing
 
@@ -101,7 +160,7 @@ $ php ioly.php install oxid/paypal 3.2.1
 ---
 Dave Holloway - <http://www.gn2-netwerk.de> - <http://twitter.com/dajoho><br />
 Tobias Merkl - <http://www.proudsourcing.de> - <http://twitter.com/tabsl><br />
-Stefan Moises - <http://www.rent-a-hero.de> - <http://twitter.com/smxsm><br />
+Stefan Moises - <http://www.rent-a-hero.de> - <http://twitter.com/upsettweety><br />
 
 You can also view the list of [contributors](https://github.com/ioly/ioly/contributors) who participated in this project.
 

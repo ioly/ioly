@@ -16,6 +16,7 @@
             "project": "https://github.com/proudcommerce/psRedirect404",
             "url": "https://github.com/proudcommerce/psRedirect404/archive/master.zip",
             "supported": [
+                "4.9",
                 "4.8",
                 "4.7"
             ],

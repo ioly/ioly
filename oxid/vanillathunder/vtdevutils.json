@@ -24,6 +24,21 @@
             ],
             "mapping": [
                 {
+                    "src": "",
+                    "dest": "modules/vt-devutils/"
+                }
+            ]
+        },
+        "legacy": {
+            "project": "https://github.com/vanilla-thunder/vt-devutils",
+            "url": "https://github.com/vanilla-thunder/vt-devutils/archive/4.8.zip",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
                     "src": "copy_this/",
                     "dest": ""
                 }

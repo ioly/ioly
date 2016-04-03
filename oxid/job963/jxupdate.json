@@ -19,9 +19,9 @@
         "update"
     ],
     "versions": {
-        "0.3.1": {
-            "project": "https://github.com/job963/jxTaxo",
-            "url": "https://github.com/job963/jxTaxo/archive/v0.3.1.zip",
+        "master": {
+            "project": "https://github.com/job963/jxUpdate",
+            "url": "https://github.com/job963/jxUpdate/archive/master.zip",
             "supported": [
                 "4.9",
                 "4.8",

@@ -1,22 +1,23 @@
 {
-    "name": "psHiddenArticles",
+    "name": "psInquiryForm",
     "vendor": "proudcommerce",
     "type": "oxid",
     "price": "0.00",
     "license": "GNU",
     "desc": {
-        "en": "Hide articles from articles lists."
+        "de": "Anfrageformular mit eigenen Felder (analog Kontaktformular).",
+        "en": "Inquiry form with individual fields (analogical contact form)."
     },
     "tags": [
         "frontend",
-        "articles",
-        "articlelist",
-        "modules"
+        "inuqiry",
+        "contact",
+        "form"
     ],
     "versions": {
-        "1.0.1": {
-            "project": "https://github.com/proudcommerce/psHiddenArticles",
-            "url": "https://github.com/proudcommerce/psHiddenArticles/archive/master.zip",
+        "1.0.0": {
+            "project": "https://github.com/proudcommerce/psInquiryForm",
+            "url": "https://github.com/proudcommerce/psInquiryForm/archive/master.zip",
             "supported": [
                 "4.9",
                 "4.8",
