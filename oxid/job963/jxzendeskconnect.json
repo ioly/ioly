@@ -5,7 +5,7 @@
     "price": "0.00",
     "license": "GNU",
     "desc": {
-        "de": "Admin-Modul zum Anzeigen und Erstellen von interner und kundengezogener Zendesk Tickets",
+        "de": "Admin-Modul zum Anzeigen und Erstellen von internen und kundengezogenen Zendesk Tickets",
         "en": "Admin Module for Displaying and Creation of internal and customer related Zendesk Tickets"
     },
     "tags": [
@@ -19,9 +19,9 @@
         "connector"
     ],
     "versions": {
-        "0.1.1": {
+        "0.1.2": {
             "project": "https://github.com/job963/jxZendeskConnect",
-            "url": "https://github.com/job963/jxZendeskConnect/archive/v0.1.1.zip",
+            "url": "https://github.com/job963/jxZendeskConnect/archive/v0.1.2.zip",
             "supported": [
                 "4.9",
                 "4.8",
@@ -33,6 +33,12 @@
                     "dest": "modules/jxmods/"
                 }
             ]
+        }
+    },
+    "hooks": {
+        "postinstall": {
+            "type": "overlay",
+            "message": "Don't forget to go to Zendesk and create a token and the fields for customer e-mail and order number"
         }
     }
 }
