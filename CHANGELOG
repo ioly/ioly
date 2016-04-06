@@ -1,3 +1,7 @@
+2.0.1 (2016-04-05)
+- added some logging for the download and extraction process
+- improved _downloadPackage(): download urls don't have to end with .zip, the only have to contain ".zip" (e.g. for token parameters in gitlab etc.)
+
 2.0.0 (2016-03-31)
 - added parameter "preserveExisting" to install() function to allow to keep existing files in a dir
 

@@ -11,13 +11,13 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version     2.0.0
+ * @version     2.0.1
  */
 namespace ioly;
 
 class ioly
 {
-    protected $_version = "2.0.0";
+    protected $_version = "2.0.1";
 
     protected $_baseDir = null;
     protected $_recipeCacheFile = null;
@@ -273,13 +273,13 @@ class ioly
                 // lowercase all tags and use them as keys for faster access
                 $search_array = array_combine(array_map('strtolower', $package['tags']), $package['tags']);
                 if (!$filterRecipe && ((stripos($package['name'], $query) !== false)
-                        || (stripos($package['vendor'], $query) !== false)
-                        || (stripos($package['license'], $query) !== false)
-                        || (stripos($package['_filename'], $query) !== false)
-                        || !empty($search_array[strtolower($query)])
-                        || (isset($vendor) && isset($packageName)
-                            && $package['vendor'] == $vendor
-                            && $package['_filename'] == $packageName)
+                                       || (stripos($package['vendor'], $query) !== false)
+                                       || (stripos($package['license'], $query) !== false)
+                                       || (stripos($package['_filename'], $query) !== false)
+                                       || !empty($search_array[strtolower($query)])
+                                       || (isset($vendor) && isset($packageName)
+                                           && $package['vendor'] == $vendor
+                                           && $package['_filename'] == $packageName)
                     )
                 ) {
                     $results[] = $package;
@@ -778,13 +778,16 @@ class ioly
     protected function _downloadPackage($url, $packageString)
     {
         $tmpName = tempnam(sys_get_temp_dir(), 'IOLY_') . '.zip';
-
+        $this->_writeLog("Downloading package '$url' ...");
         $data = $this->_curlRequest($url, false, $packageString);
         if ($data[1] == 200) {
             if ($data[0] != '') {
-                if (substr($url, -4) != ".zip") {
+                //if (substr($url, -4) != ".zip") {
+                if (strpos(strtolower($url), ".zip") === false) {
+                    $this->_writeLog("No zip, creating pseudo zip file ...");
                     $this->_createPseudoZip($data[0], basename($url), $tmpName);
                 } else {
+                    $this->_writeLog("Got zip file, saving to '$tmpName' ...");
                     file_put_contents($tmpName, $data[0]);
                 }
                 return $tmpName;
@@ -929,6 +932,7 @@ class ioly
     {
         $filelist = array();
         if ($filesystem) {
+            $this->_writeLog("Copying file '$filesystem' to system ...");
             $tmpDir = tempnam(sys_get_temp_dir(), 'IOLY_');
             unlink($tmpDir);
             mkdir($tmpDir);
@@ -936,6 +940,8 @@ class ioly
             if ($zip->open($filesystem)) {
                 $zip->extractTo($tmpDir);
                 $zip->close();
+
+                $this->_writeLog("Dir contents: " . print_r(scandir($tmpDir), true));
             }
             if ((strpos($version['url'], 'github.com') !== false)
                 || (strpos($version['url'], 'bitbucket.org') !== false)
