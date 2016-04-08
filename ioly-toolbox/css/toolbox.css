@@ -2,6 +2,12 @@
     margin-left: 10px;
 }
 
+#toolboxarea #iolylogo {
+    float:right;
+    margin-right: 5px;
+    margin-top:-17px;
+}
+
 div.modal-content label {
     min-width: 110px;
 }

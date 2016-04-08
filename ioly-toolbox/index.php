@@ -35,6 +35,9 @@
         <div id="toolboxHead">
             <h1>ioly Toolbox</h1>
         </div>
+        <div id="iolylogo">
+            <img src="../modules/ioly/ioly/ioly_logo.png" border="0" alt="" title="">
+        </div>
 
         <div class="clear"></div>
         <br>
