@@ -2,9 +2,11 @@
 
 > "Everybody loves ioly!"
 
-<img align="right" width="150" src="https://raw.github.com/ioly/ioly/gh-pages/assets/img/ioly-logo-github.png"> 
 
 ioly OXID Toolbox is pretty much a collection of usefull functions for maintaining an OXID eShop.
+
+
+<img src="https://raw.githubusercontent.com/ioly/ioly/master/ioly_toolbox.png">
 
 ## Getting started
 
