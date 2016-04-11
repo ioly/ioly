@@ -8,10 +8,12 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
              * Nice modal messsages
              */
             $scope.content = '';
-            $scope.showMsg = function (content) {
+            $scope.headline = '';
+            $scope.showMsg = function (headline, content, callback) {
                 // Add our overflow hidden class on opening
                 // to prevent from scrollbar / page flickering
                 bodyRef.addClass('ovh');
+                $scope.headline = headline;
                 $scope.content = content;
                 var modalInstance = $modal.open({
                     templateUrl: 'myModalContent.html',
@@ -20,12 +22,18 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
                     resolve: {
                         content: function () {
                             return $scope.content;
+                        },
+                        headline: function () {
+                            return $scope.headline;
                         }
                     }
                 });
                 modalInstance.result.then(function () {
                     // Remove it on closing
                     //bodyRef.removeClass('ovh');
+                    if(typeof callback !== "undefined") {
+                        callback($scope.content);
+                    }
                 }, function () {
                     // Remove it on dismissal
                     //bodyRef.removeClass('ovh');
@@ -58,7 +66,7 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
                 var responsePromise = IolyService.updateIoly();
 
                 responsePromise.then(function (response) {
-                    $scope.showMsg(response.data.status);
+                    $scope.showMsg("Info", response.data.status);
                 }, function (error) {
                     console.log(error);
                     $scope.addAlert('danger', error.data.message);
@@ -89,7 +97,7 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
                 var responsePromise = IolyService.updateRecipes();
 
                 responsePromise.then(function (response) {
-                    $scope.showMsg(response.data.status);
+                    $scope.showMsg("Info", response.data.status);
                     // reload ng-table, too
                     $scope.refreshTable();
                 }, function (error) {
@@ -105,7 +113,7 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
                 var responsePromise = IolyService.downloadModule("ioly/ioly-oxid-connector", "latest", '');
 
                 responsePromise.then(function (response) {
-                    $scope.showMsg(successtext);
+                    $scope.showMsg("Info", successtext);
                     // reload ng-table, too
                     $scope.refreshTable();
                 }, function (error) {
@@ -135,7 +143,7 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
                 var responsePromise = IolyService.removeModule(packageString, moduleversion);
 
                 responsePromise.then(function (response) {
-                    $scope.showMsg(successtext);
+                    $scope.showMsg("Info", successtext);
                     // reload ng-table, too
                     $scope.refreshTable();
                 }, function (error) {
@@ -176,14 +184,14 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
                             }
                             else {
                                 // add overlay
-                                $scope.showMsg(msg);
+                                $scope.showMsg("Info", msg);
                             }
                         }
                     }
                     // now start the download
                 var responsePromise = IolyService.downloadModule(packageString, moduleversion);
                     // and wait for response...
-                responsePromise.then(function (response) {
+                    responsePromise.then(function (response) {
                         // in case of success, check postinstall hook data...
                         msg = '';
                         if(postInstall && typeof postInstall.message !== "undefined") {
@@ -197,7 +205,7 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
                         if(msg !== '') {
                             if(typeof  postInstall.type === "undefined" ||  postInstall.type === "overlay") {
                                 // default: add overlay
-                                $scope.showMsg(msg);
+                                $scope.showMsg("Info", msg);
                             }
                             else {
                                 // add alert
@@ -206,7 +214,7 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
                         }
                         else {
                             // show default text only
-                    $scope.showMsg(successtext);
+                            $scope.showMsg("Info", successtext);
                         }
                     // reload ng-table, too
                     $scope.refreshTable();
@@ -219,6 +227,45 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
                     $scope.addAlert('danger', error.data.message);
                 });
             };
+
+        /**
+         * Activate module
+         */
+        $scope.activateModule = function (activate, moduleid, moduleVersion) {
+            var headline = "Activate module";
+            var responsePromise = IolyService.getActiveModuleSubshops(moduleid, moduleVersion);
+            responsePromise.then(function (response) {
+                var minput = "<input type='hidden' name='moduleid' id='moduleid' value='"+moduleid+"'><input type='hidden' name='moduleversion' id='moduleversion' value='"+moduleVersion+"'>";
+                var iDeact = 0;
+                if(!activate) {
+                    iDeact = 1;
+                    headline = "Deactivate module";
+                }
+                minput += "<br/><input type='hidden' name='deactivate' id='deactivate' value='"+iDeact+"'></div>";
+                minput += "<div id='shopsact'><h2>Active Shop-Ids</h2>"+response.data.subshops.toString()+"</div>";
+                minput += "<div id='shops'><h2>Shop-Ids (comma-separated, e.g. '1,2,5' or 'all' for all shops)</h2><input type='text' name='shopids' id='shopids' value='all'></div>";
+                $scope.showMsg(headline + " " + moduleid, minput, $scope.submitActivateModule);
+            }, function (error) {
+                console.log(error);
+                $scope.addAlert('danger', error.data.status);
+            });
+        };
+        $scope.submitActivateModule = function(content) {
+            var moduleId = $document[0].querySelector('#moduleid').value;
+            var moduleVersion = $document[0].querySelector('#moduleversion').value;
+            var deactivate = $document[0].querySelector('#deactivate').value;
+            var shopIds = $document[0].querySelector('#shopids').value;
+            var responsePromise = IolyService.activateModule(moduleId, shopIds, deactivate, moduleVersion);
+
+            responsePromise.then(function (response) {
+                $scope.showMsg("Info", response.data.status);
+                // reload ng-table, too
+                $scope.refreshTable();
+            }, function (error) {
+                console.log(error);
+                $scope.addAlert('danger', error.data.status);
+            });
+        };
 
             /**
              * ng-table settings
@@ -264,15 +311,16 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
         /**
          * Modal controller
          */
-        .controller('ModalInstanceCtrl', function ($scope, $modalInstance, content, $sce) {
+        .controller('ModalInstanceCtrl', function ($scope, $modalInstance, content, headline, $sce) {
             $scope.content = $sce.trustAsHtml(content);
+            $scope.headline = $sce.trustAsHtml(headline);
             $scope.ok = function () {
                 $modalInstance.close();
             };
             $scope.cancel = function () {
                 $modalInstance.dismiss('cancel');
             };
-})
+        })
 ;
 
 

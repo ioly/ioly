@@ -73,7 +73,14 @@ $aLang = array(
     'SHOP_MODULE_GROUP_IOLY'                    => 'ioly Einstellungen',
     'SHOP_MODULE_iolycookbookurl'               => 'ioly Cookbook URL (URL der Rezepte als ZIP-Archiv)',
     'SHOP_MODULE_iolyautoupdate'                => 'ioly (Core, Rezepte, Connector) automatisch aktualisieren?',
+    'SHOP_MODULE_iolyenableinst'                => 'Modul-De-/Installation mit ioly aktivieren?',
+    'HELP_SHOP_MODULE_iolyenableinst'           => 'Mit ioly k&ouml;nnen dann Module f&uuml;r beliebige Subshops deaktiviert oder aktiviert werden.',
+    'SHOP_MODULE_iolycheckactive'               => 'In Liste pr&uuml;fen, ob Module aktiv sind (kostet Performance)?',
+    'HELP_SHOP_MODULE_iolycheckactive'          => 'Beim Laden der Liste in der &Uuml;bersicht pr&uuml;fen, ob die installierten Module aktiv sind (kostet Performance, weil alle metadata.php Dateien der Module eingelesen werden)?',
     'IOLY_RECIPES'                              => 'Rezepte',
     'IOLY_EXCEPTION_MESSAGE_MODULE_ACTIVE'      => 'Das Modul ist noch im Shop aktiv und kann nicht entfernt werden! Bitte deaktivieren Sie es vor dem Entfernen.',
+    'IOLY_ACTIVATE_MODULE'                      => 'Modul aktivieren ...',
+    'IOLY_DEACTIVATE_MODULE'                    => 'Modul deaktivieren ...',
+    'IOLY_DROPDOWN_MORE_ACTIONS'                => 'Weitere Aktionen',
 );
 ?>

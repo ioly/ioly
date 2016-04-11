@@ -25,12 +25,13 @@
 
             <script type="text/ng-template" id="myModalContent.html">
                 <div class="modal-header">
-                    <h3 class="modal-title">Info</h3>
+                    <h3 class="modal-title">{{headline}}</h3>
                 </div>
                 <div class="modal-body" ng-bind-html="content">
                     {{content}}
                 </div>
                 <div class="modal-footer">
+                    <button class="btn btn-primary" ng-click="cancel()">Cancel</button>
                     <button class="btn btn-primary" ng-click="ok()">OK</button>
                 </div>
             </script>
@@ -84,7 +85,7 @@
             <div>
                 <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)"><span ng-bind-html="alert.trustedMsg"></span></alert>
             </div>
-            
+
             <table id="iolyNgTable" ng-table="tableParams" show-filter="true" class="table">
                 <tbody>
                 <tr ng-repeat="module in $data">
@@ -97,6 +98,9 @@
                             <span class="glyphicon glyphicon-info-sign"></span>&nbsp; {{module.license}}
                             &nbsp;&nbsp;&nbsp;
                         	<span class="glyphicon glyphicon-euro"></span>&nbsp; <span ng-if="module.price == '0.00'">[{oxmultilang ident='IOLY_PRICE_FREE'}]</span><span ng-if="module.price != '0.00'">{{module.price}}</span>
+                            &nbsp;&nbsp;&nbsp;
+                            <span ng-show="module.active" class="glyphicon glyphicon-check"></span>&nbsp;
+                            <span ng-show="module.active">active</span>&nbsp;
                         	<br><br>
                         </div>
                         <div ng-show="module.installed" style="color: #449d44;">
@@ -107,6 +111,9 @@
                             <span class="glyphicon glyphicon-info-sign"></span>&nbsp; {{module.license}}
                             &nbsp;&nbsp;&nbsp;
                         	<span class="glyphicon glyphicon-euro"></span>&nbsp; <span ng-if="module.price == '0.00'">kostenlos</span><span ng-if="module.price != '0.00'">{{module.price}}</span>
+                            &nbsp;&nbsp;&nbsp;
+                            <span ng-show="module.active" class="glyphicon glyphicon-check"></span>&nbsp;
+                            <span ng-show="module.active">active</span>&nbsp;
                         	<br><br>
                         </div>
                     </td>
@@ -118,6 +125,20 @@
                                     <div ng-hide="version.installed" style="margin-bottom: 5px;"><button tooltip-placement="left" tooltip="[{oxmultilang ident='IOLY_INSTALL_MODULE_HINT'}]" type="submit" ng-click="downloadModule(module.packageString, key, '[{oxmultilang ident="IOLY_MODULE_DOWNLOAD_SUCCESS"}]')" class="loadModuleButton btn btn-large buttonwidth" ng-class="{'btn-success': version.matches, 'btn-error' : !version.matches}"><span class="glyphicon glyphicon-download"></span> [{oxmultilang ident="IOLY_BUTTON_DOWNLOAD_VERSION_1"}] {{key}} [{oxmultilang ident="IOLY_BUTTON_DOWNLOAD_VERSION_2" }]</button></div>
                                     <div ng-show="version.installed" style="margin-bottom: 5px;"><button tooltip-placement="left" tooltip="[{oxmultilang ident='IOLY_REINSTALL_MODULE_HINT'}]" type="submit" ng-click="downloadModule(module.packageString, key, '[{oxmultilang ident="IOLY_MODULE_DOWNLOAD_SUCCESS"}]')" class="loadModuleButton btn btn-large buttonwidth" ng-class="{'btn-warning': version.matches, 'btn-error' : !version.matches}"><span class="glyphicon glyphicon-play-circle"></span> [{oxmultilang ident="IOLY_BUTTON_DOWNLOAD_VERSION_1"}] {{key}} [{oxmultilang ident="IOLY_BUTTON_DOWNLOAD_VERSION_3" }]</button></div>
                                     <div ng-show="version.installed" style="margin-bottom: 5px;"><button tooltip-placement="bottom" tooltip="[{oxmultilang ident='IOLY_UNINSTALL_MODULE_HINT'}]" type="submit" ng-click="removeModule(module.packageString, key, '[{oxmultilang ident="IOLY_MODULE_UNINSTALL_SUCCESS"}]')" class="loadModuleButton  btn btn-large btn-danger buttonwidth"><span class="glyphicon glyphicon-remove-circle"></span> [{oxmultilang ident="IOLY_BUTTON_REMOVE_VERSION_1"}] {{key}} [{oxmultilang ident="IOLY_BUTTON_REMOVE_VERSION_2"}]</button><br/></div>
+
+                                    [{if $oView->allowActivation()}]
+                                        <!-- Split button -->
+                                        <div class="btn-group dropdown" ng-show="version.installed">
+                                            <button type="button" class="btn btn-primary dropdown-toggle btn-large buttonwidth">
+                                                [{oxmultilang ident='IOLY_DROPDOWN_MORE_ACTIONS'}] <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li><a href="#" ng-click="activateModule(true, module.packageString, key)">[{oxmultilang ident='IOLY_ACTIVATE_MODULE'}]</a></li>
+                                                <li><a href="#" ng-click="activateModule(false, module.packageString, key)">[{oxmultilang ident='IOLY_DEACTIVATE_MODULE'}]</a></li>
+                                            </ul>
+                                        </div>
+                                    [{/if}]
+
                                     <div class="clear"></div>
                                     <div class="iolyinfodiv">
                                             <div ng:repeat="(subkey, versiondata) in version">
@@ -140,6 +161,7 @@
                                 </td>    
                             </tr>
                         </table>
+
                     </td>
                 </tr>
                 </tbody>

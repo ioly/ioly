@@ -49,6 +49,15 @@ angular.module('main.services', [])
     getModuleHooks: function(moduleid, moduleversion){
         return $http.get(gOxidSelfLink, {params: {cl:'ioly_main', isajax:true, fnc:'getModuleHooksAjax',moduleid: moduleid, moduleversion: moduleversion}});
     },
+    isModuleActive: function(moduleid, moduleversion){
+        return $http.get(gOxidSelfLink, {params: {cl:'ioly_main', isajax:true, fnc:'isModuleActiveAjax',moduleid: moduleid, moduleversion: moduleversion}});
+    },
+    getActiveModuleSubshops: function(moduleid, moduleversion){
+        return $http.get(gOxidSelfLink, {params: {cl:'ioly_main', isajax:true, fnc:'getActiveModuleSubshopsAjax',moduleid: moduleid, moduleversion: moduleversion}});
+    },
+    activateModule: function(moduleid, shopids, deactivate, moduleversion){
+        return $http.get(gOxidSelfLink, {params: {cl:'ioly_main', isajax:true, fnc:'activateModuleAjax', moduleid: moduleid, shopids: shopids, deactivate: deactivate, moduleversion: moduleversion}});
+    },
     saveFooBar: function(mapping){
         return postFormData('savefoobar', mapping);
     }

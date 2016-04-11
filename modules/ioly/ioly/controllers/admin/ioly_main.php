@@ -12,7 +12,7 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version     1.6.4
+ * @version     1.7.0
  */
 class ioly_main extends oxAdminView
 {
@@ -117,6 +117,15 @@ class ioly_main extends oxAdminView
     }
 
     /**
+     * Allow module activation via ioly?
+     * @return bool
+     */
+    public function allowActivation()
+    {
+        return oxRegistry::getConfig()->getShopConfVar('iolyenableinst');
+    }
+
+    /**
      * Get modules
      */
     public function getAllModules()
@@ -168,6 +177,23 @@ class ioly_main extends oxAdminView
                 $this->_allModules = array_reverse($this->_allModules);
             }
             $data = array_slice($this->_allModules, $offset, $pageSize, false);
+            // check if module is active?
+            if (oxRegistry::getConfig()->getShopConfVar('iolycheckactive')) {
+                foreach ($data as $idx => $aPackage) {
+                    $aVersions = $aPackage['versions'];
+                    $packageId = $aPackage['packageString'];
+                    foreach ($aVersions as $packageVersion => $versionInfo) {
+                        // if not even installed yet, continue!
+                        if (!$this->_ioly->isInstalledInVersion($packageId, $packageVersion)) {
+                            continue;
+                        }
+                        if ($this->isModuleActive($packageId, $packageVersion)) {
+                            $aPackage['active'] = true;
+                        }
+                    }
+                    $data[$idx] = $aPackage;
+                }
+            }
             $headerStatus = "HTTP/1.1 200 Ok";
         }
         $res = array(
@@ -324,6 +350,173 @@ class ioly_main extends oxAdminView
     }
 
     /**
+     * Get subshop IDs where the module is active
+     */
+    public function getActiveModuleSubshopsAjax()
+    {
+        $moduleId = oxRegistry::getConfig()->getRequestParameter("moduleid");
+        $moduleVersion = oxRegistry::getConfig()->getRequestParameter("moduleversion");
+        if (strpos($moduleId, "/") !== false) {
+            $moduleId = $this->getModuleOxid($moduleId, $moduleVersion);
+        }
+        $aSubshopsActive = $this->getActiveModuleSubshops($moduleId);
+        $headerStatus = "HTTP/1.1 200 Ok";
+        $res = array("status" => "ok", "subshops" => $aSubshopsActive);
+        $this->_returnJsonResponse($headerStatus, $res);
+    }
+
+    /**
+     * Get subshop IDs where the module is active
+     * @param string $moduleOxid The module OXID
+     *
+     * @return array
+     */
+    public function getActiveModuleSubshops($moduleOxid)
+    {
+        $aSubshopsActive = array();
+        $oConfig = oxRegistry::getConfig();
+        $aShopIds = oxRegistry::getConfig()->getShopIds();
+        /**
+         * @var oxmodulelist $oModuleList
+         */
+        $oModuleList = oxNew('oxModuleList');
+        $sModulesDir = $oConfig->getModulesDir();
+        $aModules = $oModuleList->getModulesFromDir($sModulesDir);
+        if (in_array($moduleOxid, array_keys($aModules))) {
+            foreach ($aShopIds as $sShopId) {
+                // set shopId
+                $oConfig->setShopId($sShopId);
+                /**
+                 * @var oxmodule $oModule
+                 */
+                $oModule = oxNew('oxModule');
+                if ($oModule->load($moduleOxid) && $oModule->isActive()) {
+                    $aSubshopsActive[] = $sShopId;
+                }
+            }
+        }
+        return $aSubshopsActive;
+    }
+
+    /**
+     * Activate a module in one or more shops
+     */
+    public function activateModuleAjax()
+    {
+        $sShopIds = oxRegistry::getConfig()->getRequestParameter("shopids");
+        $moduleId = oxRegistry::getConfig()->getRequestParameter("moduleid");
+        $moduleVersion = oxRegistry::getConfig()->getRequestParameter("moduleversion");
+        if (strpos($moduleId, "/") !== false) {
+            $moduleId = $this->getModuleOxid($moduleId, $moduleVersion);
+        }
+        $deactivate = oxRegistry::getConfig()->getRequestParameter("deactivate");
+        $aShopIds = array();
+        if ($sShopIds == "all") {
+            $aShopIds = oxRegistry::getConfig()->getShopIds();
+        } elseif (strpos($sShopIds, ",") !== false) {
+            $aShopIds = explode(",", $sShopIds);
+        } else {
+            // single shopid
+            $aShopIds[] = $sShopIds;
+        }
+
+        $msg = "";
+
+        $oConfig = oxRegistry::getConfig();
+        /**
+         * @var oxmodulelist $oModuleList
+         */
+        $oModuleList = oxNew('oxModuleList');
+        $sModulesDir = $oConfig->getModulesDir();
+        $aModules = $oModuleList->getModulesFromDir($sModulesDir);
+
+        $headerStatus = "HTTP/1.1 200 Ok";
+
+        if (!in_array($moduleId, array_keys($aModules))) {
+            $msg .= "module not found: $moduleId!<br/>";
+        } else {
+            if ($deactivate) {
+                $msg .= "De-";
+            }
+            $msg .= "Activating module $moduleId for shop ids: " . implode(", ", $aShopIds) . "<br/>";
+            foreach ($aShopIds as $sShopId) {
+                // set shopId
+                $oConfig->setShopId($sShopId);
+
+                foreach ($aModules as $sModuleId => $oModule) {
+                    if ($moduleId != $sModuleId) {
+                        continue;
+                    }
+                    /**
+                     * @var oxmodule $oModule
+                     */
+                    if (!$deactivate) {
+                        if (!$oModule->isActive()) {
+                            $msg .= "shopId [$sShopId]: activating module: $sModuleId<br/>";
+                            try {
+                                if (class_exists('oxModuleInstaller')) {
+                                    /** @var oxModuleCache $oModuleCache */
+                                    $oModuleCache = oxNew('oxModuleCache', $oModule);
+                                    /** @var oxModuleInstaller $oModuleInstaller */
+                                    $oModuleInstaller = oxNew('oxModuleInstaller', $oModuleCache);
+
+                                    if ($oModuleInstaller->activate($oModule)) {
+                                        $msg .= "$sModuleId - activated<br/>";
+                                    } else {
+                                        $msg .= "$sModuleId - error activating<br/>";
+                                    }
+                                } else {
+                                    if ($oModule->activate()) {
+                                        $msg .= "$sModuleId - aktivated<br/>";
+                                    } else {
+                                        $msg .= "$sModuleId - error activating<br/>";
+                                    }
+                                }
+                            } catch (oxException $oEx) {
+                                $msg .= $oEx->getMessage();
+                                $headerStatus = "HTTP/1.1 500 Internal Server Error";
+                            }
+                        } else {
+                            $msg .= "shopId [$sShopId]: module already active: $sModuleId<br/>";
+                        }
+                    } else { // deactivate!
+                        if ($oModule->isActive()) {
+                            $msg .= "shopId [$sShopId]: deactivating module: $sModuleId<br/>";
+                            try {
+                                if (class_exists('oxModuleInstaller')) {
+                                    /** @var oxModuleCache $oModuleCache */
+                                    $oModuleCache = oxNew('oxModuleCache', $oModule);
+                                    /** @var oxModuleInstaller $oModuleInstaller */
+                                    $oModuleInstaller = oxNew('oxModuleInstaller', $oModuleCache);
+
+                                    if ($oModuleInstaller->deactivate($oModule)) {
+                                        $msg .= "$sModuleId - deactivated<br/>";
+                                    } else {
+                                        $msg .= "$sModuleId - error deactivating<br/>";
+                                    }
+                                } else {
+                                    if ($oModule->deactivate()) {
+                                        $msg .= "$sModuleId - deactivated<br/>";
+                                    } else {
+                                        $msg .= "$sModuleId - error deactivating<br/>";
+                                    }
+                                }
+                            } catch (oxException $oEx) {
+                                $headerStatus = "HTTP/1.1 500 Internal Server Error";
+                                $msg .= $oEx->getMessage();
+                            }
+                        } else {
+                            $msg .= "shopId [$sShopId]: module already inactive: $sModuleId<br/>";
+                        }
+                    }
+                }
+            }
+        }
+        $res = array("status" => $msg);
+        $this->_returnJsonResponse($headerStatus, $res);
+    }
+
+    /**
      * Uninstall module via AJAX
      */
     public function removeModuleAjax()
@@ -358,14 +551,21 @@ class ioly_main extends oxAdminView
     public function isModuleActive($moduleId, $moduleVersion)
     {
         $moduleOxid = $this->getModuleOxid($moduleId, $moduleVersion);
-        if ($moduleOxid) {
-            /* @var $oModule oxModule */
-            $oModule = oxNew('oxModule');
-            if ($oModule->load($moduleOxid) && $oModule->isActive()) {
-                return true;
-            }
-        }
-        return false;
+        return (count($this->getActiveModuleSubshops($moduleOxid)) > 0) ? true : false;
+    }
+
+    /**
+     * Check if an installed module is still active in the shop
+     * and should not be removed!
+     */
+    public function isModuleActiveAjax()
+    {
+        $moduleId = oxRegistry::getConfig()->getRequestParameter("moduleid");
+        $moduleVersion = oxRegistry::getConfig()->getRequestParameter("moduleversion");
+        $headerStatus = "HTTP/1.1 200 Ok";
+        $active = $this->isModuleActive($moduleId, $moduleVersion);
+        $res = array("status" => 1, "active" => $active);
+        $this->_returnJsonResponse($headerStatus, $res);
     }
 
     /**
@@ -378,18 +578,19 @@ class ioly_main extends oxAdminView
     public function getModuleOxid($moduleId, $moduleVersion)
     {
         $aFiles = $this->_ioly->getFileList($moduleId, $moduleVersion);
-        foreach (array_keys($aFiles) as $filePath) {
-            if (strpos($filePath, "metadata.php") !== false) {
-                $metaPath = oxRegistry::getConfig()->getConfigParam('sShopDir') . $filePath;
-                if (file_exists($metaPath)) {
-                    include_once $metaPath;
-                    return $aModule['id'];
+        if ($aFiles && is_array($aFiles)) {
+            foreach (array_keys($aFiles) as $filePath) {
+                if (strpos($filePath, "metadata.php") !== false) {
+                    $metaPath = oxRegistry::getConfig()->getConfigParam('sShopDir') . $filePath;
+                    if (file_exists($metaPath)) {
+                        include $metaPath;
+                        return $aModule['id'];
+                    }
                 }
             }
         }
         return null;
     }
-
 
     /**
      * Return JSON and exit

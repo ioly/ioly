@@ -55,8 +55,10 @@
 ul.iolylist {
     list-style-type: none !important;
 }
-ul.iolylist li, ul.pagination li{
+ul.iolylist li, ul.pagination li, ul.dropdown-menu li{
     background: none;
+    margin-left: 0;
+    padding-left: 0;
 }
 
 .pagination {

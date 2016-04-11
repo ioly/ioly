@@ -30,7 +30,7 @@ $aModule = array(
         'en' => 'ioly module manager (<a href="http://getioly.com" target="_blank">getioly.com</a> / <a href="https://github.com/ioly/ioly" target="_blank">github.com/ioly/ioly</a>)',
     ),
     'thumbnail'   => 'ioly_logo.png',
-    'version'     => '1.6.4',
+    'version'     => '1.7.0',
     'author'      => 'ioly',
     'url'         => 'https://github.com/ioly/ioly',
     'email'       => 'hello@getioly.com',
@@ -65,7 +65,9 @@ $aModule = array(
     ),
     'settings'    => array(
         array('group' => 'IOLY', 'name' => 'iolycookbookurl', 'type' => 'aarr',  'value' => array('ioly' => 'http://github.com/ioly/ioly/archive/master.zip')),
-        array('group' => 'IOLY', 'name' => 'iolyautoupdate', 'type' => 'bool',  'value' => true),
+        array('group' => 'IOLY', 'name' => 'iolyautoupdate', 'type' => 'bool',  'value' => false),
+        array('group' => 'IOLY', 'name' => 'iolyenableinst', 'type' => 'bool',  'value' => true),
+        array('group' => 'IOLY', 'name' => 'iolycheckactive', 'type' => 'bool',  'value' => false),
     )
 );
 ?>
