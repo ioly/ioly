@@ -1,3 +1,6 @@
+1.7.1 (2016-04-12)
+  - moved activateModule function to ioly_helper class so that it can be used from ioly Toolbox, too
+
 1.7.0 (2016-04-11)
   - added options to de/install modules via ioly and to check / show if the modules are active in the shop (enable in module settings!)
   
