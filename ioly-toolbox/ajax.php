@@ -9,7 +9,7 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version  0.1.0
+ * @version  0.2.0
  */
 
 require_once '../bootstrap.php';
@@ -65,16 +65,7 @@ switch ($cmd) {
         $sShopIds = oxRegistry::getConfig()->getRequestParameter("shopIds");
         $moduleId = oxRegistry::getConfig()->getRequestParameter("moduleId");
         $deactivate = oxRegistry::getConfig()->getRequestParameter("deactivate") == "true" ? 1 : 0;
-        $aShopIds = array();
-        if ($sShopIds == "all") {
-            $aShopIds = oxRegistry::getConfig()->getShopIds();
-        } elseif (strpos($sShopIds, ",") !== false) {
-            $aShopIds = explode(",", $sShopIds);
-        } else {
-            // single shopid
-            $aShopIds[] = $sShopIds;
-        }
-        $oWorkHorse->activateModule($moduleId, $aShopIds, $deactivate);
+        $oWorkHorse->activateModule($moduleId, $sShopIds, $deactivate);
         break;
     case "getModuleList":
         $oWorkHorse->getModuleList();

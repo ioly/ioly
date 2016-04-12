@@ -9,14 +9,30 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version  0.1.0
+ * @version  0.2.0
  */
 require_once '../bootstrap.php';
+require_once '../modules/ioly/ioly/core/ioly_helper.php';
 /**
  * Class Workhorse, works for the AJAX script :)
  */
 class Workhorse
 {
+
+    /**
+     * Helper class
+     * @var ioly_helper|null
+     */
+    protected $_iolyHelper = null;
+
+    /**
+     * Workhorse constructor.
+     */
+    public function __construct()
+    {
+        $this->_iolyHelper = oxRegistry::get('ioly_helper');
+    }
+
     /**
      * Generate views
      * @param array $aShopIds
@@ -124,101 +140,14 @@ class Workhorse
     /**
      * Activate a module in one or more shops
      * @param string $moduleId
-     * @param array  $aShopIds
+     * @param string $sShopIds
      * @param bool   $deactivate
      */
-    public function activateModule($moduleId, $aShopIds, $deactivate = false)
+    public function activateModule($moduleId, $sShopIds, $deactivate = false)
     {
-        $msg = "";
-
-        $oConfig = oxRegistry::getConfig();
-        /**
-         * @var oxmodulelist $oModuleList
-         */
-        $oModuleList = oxNew('oxModuleList');
-        $sModulesDir = $oConfig->getModulesDir();
-        $aModules = $oModuleList->getModulesFromDir($sModulesDir);
-        if (!in_array($moduleId, array_keys($aModules))) {
-            $msg .= "module not found: $moduleId!<br/>";
-        } else {
-            if ($deactivate) {
-                $msg .= "De-";
-            }
-            $msg .= "Activating module $moduleId for shop ids: " . implode(", ", $aShopIds) . "<br/>";
-            foreach ($aShopIds as $sShopId) {
-                // set shopId
-                $oConfig->setShopId($sShopId);
-
-                foreach ($aModules as $sModuleId => $oModule) {
-                    if ($moduleId != $sModuleId) {
-                        continue;
-                    }
-                    /**
-                     * @var oxmodule $oModule
-                     */
-                    if (!$deactivate) {
-                        if (!$oModule->isActive()) {
-                            $msg .= "shopId [$sShopId]: activating module: $sModuleId<br/>";
-                            try {
-                                if (class_exists('oxModuleInstaller')) {
-                                    /** @var oxModuleCache $oModuleCache */
-                                    $oModuleCache = oxNew('oxModuleCache', $oModule);
-                                    /** @var oxModuleInstaller $oModuleInstaller */
-                                    $oModuleInstaller = oxNew('oxModuleInstaller', $oModuleCache);
-
-                                    if ($oModuleInstaller->activate($oModule)) {
-                                        $msg .= "$sModuleId - activated<br/>";
-                                    } else {
-                                        $msg .= "$sModuleId - error activating<br/>";
-                                    }
-                                } else {
-                                    if ($oModule->activate()) {
-                                        $msg .= "$sModuleId - aktivated<br/>";
-                                    } else {
-                                        $msg .= "$sModuleId - error activating<br/>";
-                                    }
-                                }
-                            } catch (oxException $oEx) {
-                                $msg .= $oEx->getMessage();
-                            }
-                        } else {
-                            $msg .= "shopId [$sShopId]: module already active: $sModuleId<br/>";
-                        }
-                    } else { // deactivate!
-                        if ($oModule->isActive()) {
-                            $msg .= "shopId [$sShopId]: deactivating module: $sModuleId<br/>";
-                            try {
-                                if (class_exists('oxModuleInstaller')) {
-                                    /** @var oxModuleCache $oModuleCache */
-                                    $oModuleCache = oxNew('oxModuleCache', $oModule);
-                                    /** @var oxModuleInstaller $oModuleInstaller */
-                                    $oModuleInstaller = oxNew('oxModuleInstaller', $oModuleCache);
-
-                                    if ($oModuleInstaller->deactivate($oModule)) {
-                                        $msg .= "$sModuleId - deactivated<br/>";
-                                    } else {
-                                        $msg .= "$sModuleId - error deactivating<br/>";
-                                    }
-                                } else {
-                                    if ($oModule->deactivate()) {
-                                        $msg .= "$sModuleId - deactivated<br/>";
-                                    } else {
-                                        $msg .= "$sModuleId - error deactivating<br/>";
-                                    }
-                                }
-                            } catch (oxException $oEx) {
-                                $msg .= $oEx->getMessage();
-                            }
-                        } else {
-                            $msg .= "shopId [$sShopId]: module already inactive: $sModuleId<br/>";
-                        }
-                    }
-                }
-            }
-        }
-        $headerStatus = "HTTP/1.1 200 Ok";
-        $res = array("status" => $msg);
-        $this->_sendJsonResponse($headerStatus, $res);
+        $aRet = $this->_iolyHelper->activateModule($moduleId, $sShopIds, $deactivate);
+        $res = array("status" => $aRet['message']);
+        $this->_sendJsonResponse($aRet['header'], $res);
     }
 
     /**
