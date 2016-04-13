@@ -39,17 +39,9 @@ class Workhorse
      */
     public function generateViews($aShopIds)
     {
-        $msg = "";
-        $oShop = oxNew('oxShop');
-        $oShop->generateViews();
-        foreach ($aShopIds as $sShopId) {
-            $oShop->load($sShopId);
-            $msg .= "Generating views for ShopID $sShopId ...<br/>";
-            $oShop->generateViews();
-        }
-        $headerStatus = "HTTP/1.1 200 Ok";
-        $res = array("status" => $msg . "<br/>Views generated!");
-        $this->_sendJsonResponse($headerStatus, $res);
+        $aRet = $this->_iolyHelper->generateViews($aShopIds);
+        $res = array("status" => $aRet['message']);
+        $this->_sendJsonResponse($aRet['header'], $res);
     }
 
     /**
@@ -57,19 +49,9 @@ class Workhorse
      */
     public function emptyTmp()
     {
-        $msg = "";
-        $tmpdir = oxRegistry::getConfig()->getConfigParam('sCompileDir');
-        $d = opendir($tmpdir);
-        while (($filename = readdir($d)) !== false) {
-            $filepath = $tmpdir . $filename;
-            if (is_file($filepath)) {
-                $msg .= "Deleting $filepath ...<br>";
-                unlink($filepath);
-            }
-        }
-        $headerStatus = "HTTP/1.1 200 Ok";
-        $res = array("status" => "Tmp clean!!<br/>" . $msg);
-        $this->_sendJsonResponse($headerStatus, $res);
+        $aRet = $this->_iolyHelper->emptyTmp();
+        $res = array("status" => $aRet['message']);
+        $this->_sendJsonResponse($aRet['header'], $res);
     }
 
     /**
