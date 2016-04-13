@@ -11,7 +11,7 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version  1.7.1
+ * @version  1.7.2
  */
 class ioly_helper extends oxSuperCfg
 {
@@ -157,6 +157,45 @@ class ioly_helper extends oxSuperCfg
         }
         return array("header" => $headerStatus, "message" => $msg);
     }
+    /**
+     * Generate views
+     * @param array $aShopIds
+     * @return array
+     */
+    public function generateViews($aShopIds)
+    {
+        $msg = "";
+        $oShop = oxNew('oxShop');
+        $oShop->generateViews();
+        foreach ($aShopIds as $sShopId) {
+            $oShop->load($sShopId);
+            $msg .= "Generating views for ShopID $sShopId ...<br/>";
+            $oShop->generateViews();
+        }
+        $msg .= "<br/>Views generated!";
+        $headerStatus = "HTTP/1.1 200 Ok";
+        return array("header" => $headerStatus, "message" => $msg);
+    }
 
+    /**
+     * Clear tmp dir
+     * @return array
+     */
+    public function emptyTmp()
+    {
+        $msg = "";
+        $tmpdir = oxRegistry::getConfig()->getConfigParam('sCompileDir');
+        $d = opendir($tmpdir);
+        while (($filename = readdir($d)) !== false) {
+            $filepath = $tmpdir . $filename;
+            if (is_file($filepath)) {
+                $msg .= "Deleting $filepath ...<br>";
+                unlink($filepath);
+            }
+        }
+        $headerStatus = "HTTP/1.1 200 Ok";
+        $msg .= "<br/>Tmp clean!!";
+        return array("header" => $headerStatus, "message" => $msg);
+    }
 }
 ?>

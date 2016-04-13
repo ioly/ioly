@@ -12,7 +12,7 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version     1.7.1
+ * @version     1.7.2
  */
 class ioly_main extends oxAdminView
 {
@@ -328,7 +328,7 @@ class ioly_main extends oxAdminView
 
     /**
      *
-     * @param type $ex
+     * @param Exception $ex
      * @return string
      */
     protected function _getIolyErrorMsg($ex)
@@ -578,7 +578,7 @@ class ioly_main extends oxAdminView
     public function getModuleVersion()
     {
         $sMetaDataPath = oxRegistry::getConfig()->getConfigParam("sShopDir") . "modules/ioly/ioly/metadata.php";
-        include_once($sMetaDataPath);
+        include $sMetaDataPath;
         return $aModule["version"];
     }
 
@@ -607,6 +607,7 @@ class ioly_main extends oxAdminView
      */
     public function iolyAutoUpdate()
     {
+        $message_success = $message_error = '';
         if (oxRegistry::getConfig()->getConfigParam('iolyautoupdate') == true) {
             if ($this->updateIoly()) {
                 $message_success = oxRegistry::getLang()->translateString('IOLY_IOLY_UPDATE_SUCCESS') . '<br>';
