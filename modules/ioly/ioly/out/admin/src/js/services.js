@@ -58,6 +58,12 @@ angular.module('main.services', [])
     activateModule: function(moduleid, shopids, deactivate, moduleversion){
         return $http.get(gOxidSelfLink, {params: {cl:'ioly_main', isajax:true, fnc:'activateModuleAjax', moduleid: moduleid, shopids: shopids, deactivate: deactivate, moduleversion: moduleversion}});
     },
+    generateViews: function(shopIds){
+        return $http.get(gOxidSelfLink, {params: {cl:'ioly_main', isajax:true, fnc:'generateViewsAjax', shopIds: shopIds}});
+    },
+    emptyTmp: function(){
+        return $http.get(gOxidSelfLink, {params: {cl:'ioly_main', isajax:true, fnc:'emptyTmpAjax'}});
+    },
     saveFooBar: function(mapping){
         return postFormData('savefoobar', mapping);
     }

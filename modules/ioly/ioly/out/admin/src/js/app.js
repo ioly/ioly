@@ -266,6 +266,39 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
                 $scope.addAlert('danger', error.data.status);
             });
         };
+        /**
+         * Generate views
+         */
+        $scope.generateViews = function () {
+            var minput = "<div id='shops'><h2>Shop-Ids (comma-separated or 'all' for all shops)</h2><input type='text' name='shopids' id='shopids' value='all'></div>";
+            $scope.showMsg("Info", minput, $scope.submitGenerateViews);
+        };
+        $scope.submitGenerateViews = function(content) {
+            var shopIds = $document[0].querySelector('#shopids').value;
+            console.log("Generating views for shopIds: " + shopIds);
+            var responsePromise = IolyService.generateViews(shopIds);
+
+            responsePromise.then(function (response) {
+                $scope.showMsg("Info", response.data.status);
+            }, function (error) {
+                console.log(error);
+                $scope.addAlert('danger', error.data.message);
+            });
+        };
+        /**
+         * Clear tmp
+         */
+        $scope.emptyTmp = function () {
+            console.log("Clearing tmp folder ...");
+            var responsePromise = IolyService.emptyTmp();
+
+            responsePromise.then(function (response) {
+                $scope.showMsg("Info", response.data.status);
+            }, function (error) {
+                console.log(error);
+                $scope.addAlert('danger', error.data.message);
+            });
+        };
 
             /**
              * ng-table settings

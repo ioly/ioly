@@ -49,10 +49,24 @@
                     </div>
                 </div>
                 <br/>
-                <div class="">
-                    <label class="btn btn-primary" ng-click="updateIoly()">[{oxmultilang ident='IOLY_IOLY_UPDATE_BUTTON'}]</label>
-                    <label class="btn btn-primary" ng-click="updateRecipes()">[{oxmultilang ident='IOLY_RECIPE_UPDATE_BUTTON'}]</label>
-                    <label class="btn btn-primary" ng-click="updateConnector('[{oxmultilang ident='IOLY_CONNECTOR_UPDATE_SUCCESS'}]')">[{oxmultilang ident='IOLY_CONNECTOR_UPDATE_BUTTON'}]</label>
+                <div class="row">
+                    <div class="col-sm-10">
+                        <label class="btn btn-primary" ng-click="updateIoly()">[{oxmultilang ident='IOLY_IOLY_UPDATE_BUTTON'}]</label>
+                        <label class="btn btn-primary" ng-click="updateRecipes()">[{oxmultilang ident='IOLY_RECIPE_UPDATE_BUTTON'}]</label>
+                        <label class="btn btn-primary" ng-click="updateConnector('[{oxmultilang ident='IOLY_CONNECTOR_UPDATE_SUCCESS'}]')">[{oxmultilang ident='IOLY_CONNECTOR_UPDATE_BUTTON'}]</label>
+                    </div>
+                    <!-- Split button -->
+                    <div class="col-sm-2">
+                        <div class="btn-group dropdown">
+                            <button type="button" class="btn btn-primary dropdown-toggle btn-small buttonwidth">
+                                [{oxmultilang ident='IOLY_DROPDOWN_MORE_ACTIONS'}] <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#" ng-click="generateViews()">[{oxmultilang ident='IOLY_CREATE_VIEWS'}]</a></li>
+                                <li><a href="#" ng-click="emptyTmp()">[{oxmultilang ident='IOLY_CLEAR_TEMP'}]</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>      
             </div>
             <div id="iolylogo">

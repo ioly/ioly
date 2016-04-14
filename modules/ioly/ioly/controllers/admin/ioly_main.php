@@ -12,7 +12,7 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version     1.7.2
+ * @version     1.8.0
  */
 class ioly_main extends oxAdminView
 {
@@ -412,6 +412,29 @@ class ioly_main extends oxAdminView
             $moduleId = $this->getModuleOxid($moduleId, $moduleVersion);
         }
         $aRet = $helper->activateModule($moduleId, $sShopIds, $deactivate);
+        $res = array("status" => $aRet['message']);
+        $this->_returnJsonResponse($aRet['header'], $res);
+    }
+
+    /**
+     * Generate views
+     */
+    public function generateViewsAjax()
+    {
+        $sShopIds = oxRegistry::getConfig()->getRequestParameter("shopIds");
+        $helper = $this->getIolyHelper();
+        $aRet = $helper->generateViews($sShopIds);
+        $res = array("status" => $aRet['message']);
+        $this->_returnJsonResponse($aRet['header'], $res);
+    }
+
+    /**
+     * Clear tmp dir
+     */
+    public function emptyTmpAjax()
+    {
+        $helper = $this->getIolyHelper();
+        $aRet = $helper->emptyTmp();
         $res = array("status" => $aRet['message']);
         $this->_returnJsonResponse($aRet['header'], $res);
     }

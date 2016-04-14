@@ -82,5 +82,7 @@ $aLang = array(
     'IOLY_ACTIVATE_MODULE'                      => 'Activate module ...',
     'IOLY_DEACTIVATE_MODULE'                    => 'Deactivate module ...',
     'IOLY_DROPDOWN_MORE_ACTIONS'                => 'More actions',
+    'IOLY_CLEAR_TEMP'                           => 'Clear tmp dir',
+    'IOLY_CREATE_VIEWS'                         => 'Create views ...',
 );
 ?>

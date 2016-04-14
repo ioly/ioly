@@ -11,7 +11,7 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version  1.7.2
+ * @version  1.8.0
  */
 class ioly_helper extends oxSuperCfg
 {
@@ -24,6 +24,7 @@ class ioly_helper extends oxSuperCfg
      */
     public function getIolyLibPath($sModuleId, $sVersion, $sFileName = '')
     {
+        // fallback for old version
         $sFilePath = oxRegistry::getConfig()->getCurrentShopUrl(false).'ioly/libs/' .$sModuleId . '/' . $sVersion;
         if (!file_exists($sFilePath)) {
             $sFilePath = oxRegistry::getConfig()->getCurrentShopUrl(false).'modules/ioly/ioly/libs/' .$sModuleId . '/' . $sVersion;
@@ -45,13 +46,12 @@ class ioly_helper extends oxSuperCfg
     }
 
     /**
-     * Activate a module in one or more shops
-     * @param string  $moduleId   The ID of the OXID module
-     * @param string  $sShopIds
-     * @param boolean $deactivate
+     * Get array of shop ids from a string
+     * @param string $sShopIds
+     *
      * @return array
      */
-    public function activateModule($moduleId, $sShopIds, $deactivate = false)
+    public function getShopIdsFromString($sShopIds)
     {
         $aShopIds = array();
         if ($sShopIds == "all") {
@@ -62,6 +62,19 @@ class ioly_helper extends oxSuperCfg
             // single shopid
             $aShopIds[] = $sShopIds;
         }
+        return $aShopIds;
+    }
+
+    /**
+     * Activate a module in one or more shops
+     * @param string  $moduleId   The ID of the OXID module
+     * @param string  $sShopIds
+     * @param boolean $deactivate
+     * @return array
+     */
+    public function activateModule($moduleId, $sShopIds, $deactivate = false)
+    {
+        $aShopIds = $this->getShopIdsFromString($sShopIds);
 
         $msg = "";
 
@@ -164,6 +177,9 @@ class ioly_helper extends oxSuperCfg
      */
     public function generateViews($aShopIds)
     {
+        if (!is_array($aShopIds)) {
+            $aShopIds = $this->getShopIdsFromString($aShopIds);
+        }
         $msg = "";
         $oShop = oxNew('oxShop');
         $oShop->generateViews();
