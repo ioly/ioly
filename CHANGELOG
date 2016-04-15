@@ -1,3 +1,6 @@
+1.8.1 (2016-04-15)
+  - fixed a problem with module activation in subshops
+
 1.8.0 (2016-04-14)
   - added clean tmp and create views functions / buttons to ioly backend view, too
   
