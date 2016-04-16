@@ -29,8 +29,8 @@
             ],
             "mapping": [
                 {
-                    "src": "copy_this/modules/jxbarcode/",
-                    "dest": "modules/jxbarcode/"
+                    "src": "copy_this/modules/jxmods/",
+                    "dest": "modules/jxmods/"
                 }
             ]
         }
