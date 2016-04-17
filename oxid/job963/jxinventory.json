@@ -11,13 +11,15 @@
     "tags": [
         "backend",
         "articles",
-        "stock"
+        "stock",
+        "inventory"
     ],
     "versions": {
-        "0.2.2": {
+        "0.3.1": {
             "project": "https://github.com/job963/jxInventory",
-            "url": "https://github.com/job963/jxInventory/archive/master.zip",
+            "url": "https://github.com/job963/jxInventory/archive/v0.3.1.zip",
             "supported": [
+                "4.9",
                 "4.8",
                 "4.7"
             ],
