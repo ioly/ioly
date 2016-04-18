@@ -60,7 +60,9 @@ class ioly_helper extends oxSuperCfg
             $aShopIds = explode(",", $sShopIds);
         } else {
             // single shopid
-            $aShopIds[] = $sShopIds;
+            if (trim($sShopIds) != '') {
+                $aShopIds[] = $sShopIds;
+            }
         }
         return $aShopIds;
     }
@@ -180,6 +182,7 @@ class ioly_helper extends oxSuperCfg
             $msg .= "Generating views for ShopID $sShopId ...<br/>";
             $oShop->generateViews();
         }
+
         $msg .= "<br/>Views generated!";
         $headerStatus = "HTTP/1.1 200 Ok";
         return array("header" => $headerStatus, "message" => $msg);
