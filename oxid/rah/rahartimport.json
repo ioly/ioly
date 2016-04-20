@@ -27,7 +27,7 @@
             ],
             "mapping": [
                 {
-                    "src": "copy_this/",
+                    "src": "rahartimport/copy_this/",
                     "dest": ""
                 }
             ]
