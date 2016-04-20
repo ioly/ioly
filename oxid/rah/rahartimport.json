@@ -16,7 +16,7 @@
     "versions": {
         "2.2.2": {
             "project": "http://www.rent-a-hero.de",
-            "url": "www.rent-a-hero",
+            "url": "http://www.rent-a-hero/dummy.zip",
             "supported": [
                 "5.2",
                 "5.1",
