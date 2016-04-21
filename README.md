@@ -95,6 +95,24 @@ foreach ($aPackages as $package => $version) {
 }
 ````
 
+So, you can even get fancy and combine Composer and ioly for some kind of auto-deployment, e.g. in Composer, load the ioly core and then call a PHP script at the end:
+
+```php
+  "scripts": {
+    "post-autoload-dump": [
+      "php ./install_with_ioly.php"
+    ]
+  },
+````
+
+which then installs  and activates your OXID modules :) If you run into timeouts with your script, try to add this to your "composer.json" file,  too:
+
+```php
+  "config": {
+    "process-timeout": 5000
+  },
+````
+
 ### Contributing
 
 1. write a recipe
