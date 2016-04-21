@@ -11,13 +11,13 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version     2.0.1
+ * @version     2.0.2
  */
 namespace ioly;
 
 class ioly
 {
-    protected $_version = "2.0.1";
+    protected $_version = "2.0.2";
 
     protected $_baseDir = null;
     protected $_recipeCacheFile = null;
@@ -636,7 +636,7 @@ class ioly
                 }
 
                 if (!empty($failedToDelete)) {
-                    $this->_writeLog("Failed to delete: " . print_r($failedToDelete));
+                    $this->_writeLog("Failed to delete: " . print_r($failedToDelete, true));
                     $exception = new Exception(
                         "Module was uninstalled but the following " .
                         "files could not be deleted:\n"
@@ -648,7 +648,7 @@ class ioly
                 }
 
                 if (!empty($modifiedFiles)) {
-                    $this->_writeLog("Modified, failed to delete: " . print_r($failedToDelete));
+                    $this->_writeLog("Modified, failed to delete: " . print_r($failedToDelete, true));
                     $exception = new Exception(
                         "Module was uninstalled but the following " .
                         "files were modified and not deleted:\n"
@@ -855,20 +855,20 @@ class ioly
                             case "basic":
                                 // use basic auth
                                 curl_setopt($ch, CURLOPT_USERPWD, $auth['username'] . ":" . $auth['password']);
-                                $this->_writeLog("CURL Basic Auth: " . $auth['username'] . ":" . $auth['password']);
+                                $this->_writeLog("CURL Basic Auth: " . $auth['username'] . ": *****");
                                 break;
                             case "token":
                                 // append to URL
                                 $param = strpos($url, "?") === false ? "?" : "&";
                                 $url .= $param . $auth['tokenname'] . "=" . $auth['tokenvalue'];
-                                $this->_writeLog("CURL Token Auth: " . $url);
+                                $this->_writeLog("CURL Token Auth processed ... ");
                                 break;
                             case "header":
                                 // set custom header
                                 $headers = array();
                                 $headers[] = $auth['headername'] . ": " . $auth['headervalue'];
                                 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-                                $this->_writeLog("CURL Header Auth: " . $auth['headername'] . ": " . $auth['headervalue']);
+                                $this->_writeLog("CURL Header Auth: " . $auth['headername'] . ": *****");
                                 break;
                             default:
                                 curl_setopt($ch, CURLOPT_USERPWD, $auth['username'] . ":" . $auth['password']);
