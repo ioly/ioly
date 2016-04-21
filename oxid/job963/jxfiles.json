@@ -17,7 +17,7 @@
         "upload"
     ],
     "versions": {
-        "0.2.1": {
+        "0.2.2": {
             "project": "https://github.com/job963/jxFiles",
             "url": "https://github.com/job963/jxFiles/archive/v0.2.2.zip",
             "supported": [

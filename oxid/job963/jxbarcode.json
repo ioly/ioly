@@ -19,9 +19,9 @@
         "receipt"
     ],
     "versions": {
-        "0.3.2": {
+        "0.3.4": {
             "project": "https://github.com/job963/jxBarcode",
-            "url": "https://github.com/job963/jxBarcode/archive/v0.3.2.zip",
+            "url": "https://github.com/job963/jxBarcode/archive/v0.3.4.zip",
             "supported": [
                 "4.9",
                 "4.8",
@@ -29,8 +29,8 @@
             ],
             "mapping": [
                 {
-                    "src": "copy_this/modules/jxbarcode/",
-                    "dest": "modules/jxbarcode/"
+                    "src": "copy_this/modules/jxmods/",
+                    "dest": "modules/jxmods/"
                 }
             ]
         }
