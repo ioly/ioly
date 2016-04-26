@@ -1,3 +1,6 @@
+1.8.2 (2016-04-26)
+  - fixed a problem with the "modulegenerator" module and active checking in backend
+
 1.8.1 (2016-04-15)
   - fixed a problem with module activation in subshops
 

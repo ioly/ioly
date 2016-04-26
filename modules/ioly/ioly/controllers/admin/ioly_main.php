@@ -12,7 +12,7 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version     1.8.1
+ * @version     1.8.2
  */
 class ioly_main extends oxAdminView
 {
@@ -503,7 +503,7 @@ class ioly_main extends oxAdminView
         $aFiles = $this->_ioly->getFileList($moduleId, $moduleVersion);
         if ($aFiles && is_array($aFiles)) {
             foreach (array_keys($aFiles) as $filePath) {
-                if (strpos($filePath, "metadata.php") !== false) {
+                if (strpos($filePath, "metadata.php") !== false && strpos($filePath, "metadata.php.") === false) {
                     $metaPath = oxRegistry::getConfig()->getConfigParam('sShopDir') . $filePath;
                     if (file_exists($metaPath)) {
                         include $metaPath;
