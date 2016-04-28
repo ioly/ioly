@@ -11,13 +11,13 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version     2.0.2
+ * @version     2.1.0
  */
 namespace ioly;
 
 class ioly
 {
-    protected $_version = "2.0.2";
+    protected $_version = "2.1.0";
 
     protected $_baseDir = null;
     protected $_recipeCacheFile = null;
@@ -1000,7 +1000,8 @@ class ioly
      */
     protected function _recursiveCopy($source, $dest, &$filelist = array(), $preserveExisting = false)
     {
-        if (is_dir($source)) {
+        // support wildcards in folder paths, too, e.g. for Gitlab download URLs with commit hashes...
+        if (is_dir($source) || strpos($source, '*') !== false) {
             $pattern = $source . '/{,.}*';
             $files = glob($pattern, GLOB_BRACE);
         } else {

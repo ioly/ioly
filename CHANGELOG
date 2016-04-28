@@ -1,3 +1,6 @@
+2.1.0 (2016-04-27)
+- support wildcards in folder paths, too, e.g. for Gitlab download URLs with commit hashes ...
+
 2.0.2 (2016-04-21)
 - bugfix: do not output print_r() log message
 - do not log full auth info for commercial downloads
