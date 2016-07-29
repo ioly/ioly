@@ -14,7 +14,7 @@
         "logs"
     ],
     "versions": {
-        "2.1.0": {
+        "latest": {
             "project": "https://github.com/vanilla-thunder/vt-devutils",
             "url": "https://github.com/vanilla-thunder/vt-devutils/archive/master.zip",
             "supported": [
