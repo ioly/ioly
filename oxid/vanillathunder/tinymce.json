@@ -13,10 +13,11 @@
         "wysiwyg"
     ],
     "versions": {
-        "1.3.1": {
+        "2.0.0": {
             "project": "https://github.com/vanilla-thunder/bla-tinymce",
-            "url": "https://github.com/vanilla-thunder/bla-tinymce/archive/master.zip",
+            "url": "https://github.com/vanilla-thunder/bla-tinymce/archive/3ad23e789cee121af4643209fc6dd6de42214bae.zip",
             "supported": [
+                "4.10",
                 "4.9",
                 "4.8",
                 "4.7"
