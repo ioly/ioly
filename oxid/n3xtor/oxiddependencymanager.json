@@ -18,8 +18,8 @@
             "project": "https://github.com/N3XT0R/OXID-DependencyManager",
             "url": "https://github.com/N3XT0R/OXID-DependencyManager/archive/master.zip",
             "supported": [
-                "4.9",
-                "5.2"
+                "4.10",
+                "5.3"
             ],
             "mapping": [
                 {
