@@ -27,6 +27,20 @@
                     "dest": "modules/ib_DependencyManager/"
                 }
             ]
+        },
+        "1.0.0": {
+            "project": "https://github.com/N3XT0R/OXID-DependencyManager/tree/v1.0.0",
+            "url": "https://github.com/N3XT0R/OXID-DependencyManager/archive/v1.0.0.zip",
+            "supported": [
+                "4.9",
+                "5.2"
+            ],
+            "mapping": [
+                {
+                    "src": "",
+                    "dest": "modules/ib_DependencyManager/"
+                }
+            ]
         }
     }
 }
