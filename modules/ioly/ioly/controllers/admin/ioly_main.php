@@ -169,8 +169,8 @@ class ioly_main extends oxAdminView
         if ($this->_allModules && is_array($this->_allModules)) {
 
             // filter module list
-            $onlyInstalled = oxRegistry::getConfig()->getRequestParameter('onlyInstalled') == "false" ? false : true;
-            $onlyActive = oxRegistry::getConfig()->getRequestParameter('onlyActive') == "false" ? false : true;
+            $onlyInstalled = (oxRegistry::getConfig()->getRequestParameter('onlyInstalled') == "true" || oxRegistry::getConfig()->getRequestParameter('onlyInstalled') == "1" ) ? true : false;
+            $onlyActive = (oxRegistry::getConfig()->getRequestParameter('onlyActive') == "true" || oxRegistry::getConfig()->getRequestParameter('onlyActive') == "1") ? true : false;
             $this->_filterModules($onlyInstalled, $onlyActive);
 
             $numItems = count($this->_allModules);
