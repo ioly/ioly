@@ -12,7 +12,7 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version     1.8.2
+ * @version     1.9.0
  */
 class ioly_main extends oxAdminView
 {
@@ -167,6 +167,12 @@ class ioly_main extends oxAdminView
         $numItems = 0;
         $data = array();
         if ($this->_allModules && is_array($this->_allModules)) {
+
+            // filter module list
+            $onlyInstalled = oxRegistry::getConfig()->getRequestParameter('onlyInstalled') == "false" ? false : true;
+            $onlyActive = oxRegistry::getConfig()->getRequestParameter('onlyActive') == "false" ? false : true;
+            $this->_filterModules($onlyInstalled, $onlyActive);
+
             $numItems = count($this->_allModules);
             // sort by requested field
             if ($this->_currSortKey != '') {
@@ -201,6 +207,47 @@ class ioly_main extends oxAdminView
             'result' => $data,
         );
         $this->_returnJsonResponse($headerStatus, $res);
+    }
+
+    /**
+     * Filter modules
+     * @param boolean $onlyInstalled Only show installed modules
+     * @param boolean $onlyActive    Only show installed and active modules
+     */
+    protected function _filterModules($onlyInstalled = false, $onlyActive = true)
+    {
+        if ($onlyActive) {
+            $onlyInstalled = true;
+        }
+        foreach ($this->_allModules as $idx => $aPackage) {
+            $aVersions = $aPackage['versions'];
+            $packageId = $aPackage['packageString'];
+            $addModule = false;
+            foreach ($aVersions as $packageVersion => $versionInfo) {
+                if ($this->_ioly->isInstalledInVersion($packageId, $packageVersion)) {
+                    if ($onlyInstalled) {
+                        $addModule = true;
+                    }
+                    if ($onlyActive) {
+                        if ($this->isModuleActive($packageId, $packageVersion)) {
+                            $addModule = true;
+                            $aPackage['active'] = true;
+                        } else {
+                            $addModule = false;
+                        }
+                    }
+                } else {
+                    if (!$onlyInstalled) {
+                        $addModule = true;
+                    }
+                }
+            }
+            if ($addModule) {
+                $this->_allModules[$idx] = $aPackage;
+            } else {
+                unset($this->_allModules[$idx]);
+            }
+        }
     }
 
     /**

@@ -11,7 +11,7 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version	 1.6.4
+ * @version  1.9.0
  */
 $sLangName  = "English";
 // -------------------------------
@@ -84,5 +84,7 @@ $aLang = array(
     'IOLY_DROPDOWN_MORE_ACTIONS'                => 'More actions',
     'IOLY_CLEAR_TEMP'                           => 'Clear tmp dir',
     'IOLY_CREATE_VIEWS'                         => 'Create views ...',
+    'IOLY_ONLY_INSTALLED'                       => 'Only installed',
+    'IOLY_ONLY_ACTIVE'                          => 'Only activated',
 );
 ?>

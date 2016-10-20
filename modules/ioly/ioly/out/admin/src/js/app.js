@@ -328,7 +328,9 @@ var app = angular.module('main', ['ngTable', 'main.services','main.filters','ui.
                     if (typeof searchText === "undefined" || searchText === "undefined") {
                         searchText = '';
                     }
-                    var responsePromise = IolyService.getAllModules(searchText, params.page() - 1, params.count(), sortString, sortDir);
+                    var onlyInstalled = document.getElementById('onlyInstalled').checked;
+                    var onlyActive = document.getElementById('onlyActive').checked;
+                    var responsePromise = IolyService.getAllModules(searchText, params.page() - 1, params.count(), sortString, sortDir, onlyInstalled, onlyActive);
                     responsePromise.then(function (response) {
                         params.total(response.data.numObjects);
                         var data = response.data.result;

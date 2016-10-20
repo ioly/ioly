@@ -25,8 +25,8 @@ angular.module('main.services', [])
     });
   }
   return {
-    getAllModules: function(searchText, page, pageSize, orderBy, orderDir){
-        return $http.get(gOxidSelfLink, {params: {cl:'ioly_main', isajax:true, fnc:'getAllModulesAjax',page: page, pageSize: pageSize, orderBy: orderBy, orderDir: orderDir, searchstring: searchText}});
+    getAllModules: function(searchText, page, pageSize, orderBy, orderDir, onlyInstalled, onlyActive){
+        return $http.get(gOxidSelfLink, {params: {cl:'ioly_main', isajax:true, fnc:'getAllModulesAjax',page: page, pageSize: pageSize, orderBy: orderBy, orderDir: orderDir, searchstring: searchText, onlyInstalled: onlyInstalled, onlyActive: onlyActive}});
     },
     downloadModule: function(moduleid, moduleversion){
         return $http.get(gOxidSelfLink, {params: {cl:'ioly_main', isajax:true, fnc:'downloadModuleAjax',moduleid: moduleid, moduleversion: moduleversion}});

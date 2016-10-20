@@ -100,6 +100,11 @@
                 <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)"><span ng-bind-html="alert.trustedMsg"></span></alert>
             </div>
 
+            <div id="filters">
+                <input type="checkbox" name="onlyInstalled" id="onlyInstalled" value="1" ng-click="refreshTable()"> [{oxmultilang ident="IOLY_ONLY_INSTALLED"}]
+                <input type="checkbox" name="onlyActive" id="onlyActive" value="1" ng-click="refreshTable()"> [{oxmultilang ident="IOLY_ONLY_ACTIVE"}]
+            </div>
+
             <table id="iolyNgTable" ng-table="tableParams" show-filter="true" class="table">
                 <tbody>
                 <tr ng-repeat="module in $data">

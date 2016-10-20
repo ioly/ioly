@@ -1,3 +1,6 @@
+1.9.0 (2016-10-20)
+  - added filter checkboxes to only show installed and/or active modules in the list
+
 1.8.2 (2016-04-26)
   - fixed a problem with the "modulegenerator" module and active checking in backend
 
