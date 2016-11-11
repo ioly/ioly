@@ -2,7 +2,7 @@
     "name": "Later Review",
     "vendor": "marmalade",
     "type": "oxid",
-    "picture": "",
+    "picture": "https://github.com/marmaladeDE/marmLaterReview/blob/master/modules/marm/laterreview/marmalade.jpg",
     "price": "0.00",
     "license": "unknown",
     "desc": {
