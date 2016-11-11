@@ -2,7 +2,7 @@
     "name": "oxProbs",
     "vendor": "job963",
     "type": "oxid",
-    "picture": "",
+    "picture": "https://github.com/job963/oxProbs/blob/master/copy_this/modules/jxmods/oxprobs/oxprobs.png",
     "price": "0.00",
     "license": "GNU",
     "desc": {
@@ -21,7 +21,26 @@
         "problems",
         "statistics"
     ],
-    "versions": {
+    "versions":
+    {
+      "0.8.10": {
+        "project": "https://github.com/job963/oxProbs",
+        "url": "https://github.com/job963/oxProbs/archive/v0.8.10.zip",
+        "supported": [
+          "4.10",
+          "4.9",
+          "4.8",
+          "4.7"
+        ],
+        "mapping": [
+          {
+            "src": "copy_this/modules/jxmods/",
+            "dest": "modules/jxmods/"
+          }
+        ]
+      }
+    },
+
         "0.8.6": {
             "project": "https://github.com/job963/oxProbs",
             "url": "https://github.com/job963/oxProbs/archive/v0.8.6.zip",
@@ -38,4 +57,3 @@
             ]
         }
     }
-}
