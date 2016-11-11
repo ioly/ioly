@@ -2,7 +2,7 @@
     "name": "ModuleActivator",
     "vendor": "gn2netwerk",
     "type": "oxid",
-    "picture": "",
+    "picture": "https://bitbucket.org/gn2netwerk/gn2_module_activator/src/6dbe6dc3f1fdacddfdad9d6419cc640b9e048323/modules/gn2netwerk/module_activator/gn2.jpg?at=master&fileviewer=file-view-default",
     "price": "0.00",
     "license": "GNU",
     "desc": {
@@ -19,6 +19,7 @@
             "project": "https://bitbucket.org/gn2netwerk/gn2_module_activator",
             "url": "https://bitbucket.org/gn2netwerk/gn2_module_activator/get/master.zip",
             "supported": [
+                "4.10",
                 "4.9",
                 "4.8",
                 "4.7"
