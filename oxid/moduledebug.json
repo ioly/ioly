@@ -15,7 +15,7 @@
     ],
     "versions": {
         "1.0.0": {
-            "project": "http://www.proudcommerce.com/Blog/OXID-Module-Debug-Modul.html",
+            "project": "https://www.proudcommerce.com/OXID-Blog/OXID-Module-Debug-Modul.html",
             "url": "http://www.oxid-module.eu/wp-content/uploads/2012/10/moduledebug.zip",
             "supported": [
                 "4.8",
