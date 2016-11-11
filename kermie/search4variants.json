@@ -19,6 +19,7 @@
             "project": "https://github.com/kermie/search4variants",
             "url": "https://github.com/kermie/search4variants/archive/master.zip",
             "supported": [
+                "4.10",
                 "4.9",
                 "4.8"
             ],
