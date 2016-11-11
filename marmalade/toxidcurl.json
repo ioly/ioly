@@ -2,7 +2,7 @@
     "name": "TOXID cURL",
     "vendor": "marmalade",
     "type": "oxid",
-    "picture": "",
+    "picture": "https://github.com/jkrug/TOXID-cURL/blob/v2.0/toxid.jpg",
     "price": "0.00",
     "license": "unknown",
     "desc": {
@@ -16,7 +16,7 @@
         "redaxo"
     ],
     "versions": {
-        "2.0.0": {
+        "2.3.2": {
             "project": "https://github.com/jkrug/TOXID-cURL",
             "url": "https://github.com/jkrug/TOXID-cURL/archive/master.zip",
             "supported": [
