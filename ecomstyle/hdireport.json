@@ -18,6 +18,7 @@
             "project": "https://github.com/ecomstyle/HDI-Report",
             "url": "https://github.com/ecomstyle/HDI-Report/archive/996a371e70a1017f32e356d11401135ea03246ab.zip",
             "supported": [
+                "4.10",
                 "4.9",
                 "4.8",
                 "4.7"
