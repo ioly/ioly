@@ -2,7 +2,7 @@
     "name": "Displaying Active Discounts",
     "vendor": "vanillathunder",
     "type": "oxid",
-    "picture": "",
+    "picture": "https://github.com/vanilla-thunder/vt-cmsstructure/blob/master/vt-cmsstructure/oxid-vt.jpg",
     "price": "0.00",
     "license": "GPL",
     "desc": {

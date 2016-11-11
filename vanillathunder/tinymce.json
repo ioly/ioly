@@ -2,7 +2,7 @@
     "name": "TinyMCE",
     "vendor": "vanillathunder",
     "type": "oxid",
-    "picture": "",
+    "picture": "https://github.com/vanilla-thunder/vt-cmsstructure/blob/master/vt-cmsstructure/oxid-vt.jpg",
     "price": "0.00",
     "license": "GNU",
     "desc": {
@@ -14,7 +14,7 @@
         "wysiwyg"
     ],
     "versions": {
-        "2.0.0": {
+        "2.0.1": {
             "project": "https://github.com/vanilla-thunder/bla-tinymce",
             "url": "https://github.com/vanilla-thunder/bla-tinymce/archive/3ad23e789cee121af4643209fc6dd6de42214bae.zip",
             "supported": [
