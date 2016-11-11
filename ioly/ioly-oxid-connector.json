@@ -2,7 +2,7 @@
     "name": "ioly OXID Connector",
     "vendor": "ioly",
     "type": "oxid",
-    "picture": "",
+    "picture": "https://avatars3.githubusercontent.com/u/9504545?v=3&s=200",
     "price": "0.00",
     "license": "MIT",
     "desc": {
@@ -17,6 +17,7 @@
             "project": "https://github.com/ioly/",
             "url": "https://github.com/ioly/ioly/archive/connector-oxid.zip",
             "supported": [
+                "4.10",
                 "4.9",
                 "4.8",
                 "4.7"
