@@ -6,7 +6,8 @@
     "price": "0.00",
     "license": "GNU",
     "desc": {
-        "en": "This module always calculates VAT also in foreign countries."
+        "en": "This module always calculates VAT when shipping to foreign countries",
+        "de": "Dieses Modul kalkuliert die Mehrwertsteuer auch bei Versand ins Ausland"
     },
     "tags": [
         "frontend",

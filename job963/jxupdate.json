@@ -7,7 +7,7 @@
     "license": "GNU",
     "desc": {
         "de": "Admin-Modul für die Aktualisierung von Artikeln durch CSV Importe",
-        "en": "Admin Module for Updating the products by CSV imports"
+        "en": "Admin module for updating the products by CSV imports"
     },
     "tags": [
         "backend",

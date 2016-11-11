@@ -6,7 +6,8 @@
     "price": "0.00",
     "license": "GNU",
     "desc": {
-        "en": "Diamond Search - Simply brilliant out-of-the-box search engine for OXID eShop!"
+        "en": "Diamond Search - a simply brilliant out-of-the-box search engine for OXID eShop!",
+        "de": "Diamnod Search - eine einfach brilliante Out-of-the-Box Suchmaschine für OXID eShop!"
     },
     "tags": [
         "frontend",

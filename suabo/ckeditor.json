@@ -6,7 +6,8 @@
   "price": "0.00",
   "license": "GPL",
   "desc": {
-    "en": "Integrates CKEditor into the OXID eshop."
+    "en": "Integrates CKEditor into the OXID eShop",
+    "de": "Integriert den CKEditor in den OXID eShop"
   },
   "tags": [
     "backend",

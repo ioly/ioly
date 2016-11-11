@@ -5,7 +5,8 @@
     "picture": "",
     "license": "unknown",
     "desc": {
-        "en": "Lists in OXID eShop Backend scroll automatically to the currently selected entry."
+        "en": "Lists in OXID eShop backend scroll automatically to the currently selected entry",
+        "de": "Listen im OXID eShop Admin-Bereich scrollen automatisch zum aktuell ausgewählten Eintrag"
     },
     "tags": [
         "backend",

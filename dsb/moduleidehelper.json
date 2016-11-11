@@ -6,7 +6,8 @@
     "price": "0.00",
     "license": "unknown",
     "desc": {
-        "en": "This Module makes it impossible for IDE's to create auto completion for the existing parent classes - the IDE simply can't know that the current class extends the other."
+        "en": "An OXID module that creates parent classes on the disk and helps IDEs to auto complete OXID code",
+        "de": "Ein OXID-Module, welches Parent-Klassen auf die Platte schreibt und so der IDE beim Autocomplete für OXID Code zu helfen."
     },
     "tags": [
         "backend",

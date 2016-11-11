@@ -6,7 +6,8 @@
     "price": "0.00",
     "license": "GNU",
     "desc": {
-        "en": "Individual status information for orders. / Sending mails directly from shop admin to customer."
+        "en": "Individual status information for orders/end e-mails directly from shop admin to customers",
+        "de": "Individuelle Statusinformationen für Bestellungen/E-Mails direkt vom Shop-Admin an den Kunden versenden"
     },
     "tags": [
         "backend",

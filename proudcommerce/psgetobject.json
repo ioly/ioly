@@ -6,7 +6,7 @@
     "price": "0.00",
     "license": "GNU",
     "desc": {
-    	"de": "Smarty Plugin um ein beliebiges OXID Objekt im Template zu laden.",
+    	"de": "Smarty Plugin, um ein beliebiges OXID Objekt im Template zu laden.",
         "en": "Smarty plugin to load any kind of an oxid object in a template."
     },
     "tags": [

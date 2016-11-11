@@ -6,7 +6,9 @@
     "price": "0.00",
     "license": "GPLv3",
     "desc": {
-        "en": "Spanish language file translations for OXID eShop front end and admin panel"
+        "en": "Spanish language file translations for OXID eShop front end and admin panel",
+        "de": "Übersetzung der Sprachdateien für OXID eShop in Spanisch (Frontend und Admin-Panel)"
+
     },
     "tags": [
         "frontend",

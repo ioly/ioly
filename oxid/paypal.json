@@ -6,7 +6,8 @@
     "price": "0.00",
     "license": "GNU",
     "desc": {
-        "en": "PayPal payment method for checkout."
+        "en": "PayPal payment method for checkout",
+        "de": "PayPal als Zahlungsmethode zum OXID eShop hinzufügen"
     },
     "tags": [
         "frontend",

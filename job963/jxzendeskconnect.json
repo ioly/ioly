@@ -7,7 +7,7 @@
     "license": "GNU",
     "desc": {
         "de": "Admin-Modul zum Anzeigen und Erstellen von internen und kundengezogenen Zendesk Tickets",
-        "en": "Admin Module for Displaying and Creation of internal and customer related Zendesk Tickets"
+        "en": "Admin module for displaying and creation of internal and customer related Zendesk tickets"
     },
     "tags": [
         "backend",

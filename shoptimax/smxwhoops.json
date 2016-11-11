@@ -6,7 +6,8 @@
     "price": "0.00",
     "license": "GNU",
     "desc": {
-        "en": "Integration of the whoops error handler base/framework for PHP into the OXID eShop."
+        "en": "Integration of the whoops error handler base/framework for PHP into the OXID eShop.",
+        "de": "Integration des whoops Error Handler Frameworks für PHP in OXID eShop"
     },
     "tags": [
         "frontend",

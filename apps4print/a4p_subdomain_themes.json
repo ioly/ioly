@@ -7,7 +7,7 @@
     "license": "unknown",
     "desc": {
 		"de": "Themes je (Sub-)Domain wechseln",
-        "en": "change themes by (sub-)domain"
+        "en": "Change themes per (sub) domain"
     },
     "tags": [
         "theme",

@@ -7,7 +7,7 @@
     "license": "GNU",
     "desc": {
         "de": "Admin-Modul für die Anzeige der protokollierten Admin Aktionen an jedem Objekt und als Gesamtbericht",
-        "en": "Admin Module for Displaying logged administrator actions for each object and as complete report"
+        "en": "Admin Module for displaying logged administrator actions for each object and as complete report"
     },
     "tags": [
         "backend",

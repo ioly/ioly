@@ -6,7 +6,8 @@
     "price": "0.00",
     "license": "GPL",
     "desc": {
-        "en": "Displaying active discounts in frontend."
+        "en": "Displaying active discounts in frontend",
+        "de": "Aktive Preisnachlässe im Frontend anzeigen"
     },
     "tags": [
         "frontend",

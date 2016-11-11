@@ -6,7 +6,8 @@
     "price": "0.00",
     "license": "GNU",
     "desc": {
-        "en": "WBL_Olark is an OXID eShop module for easy integration of the website chat tool Olark into OXID eShop."
+        "en": "WBL_Olark is an OXID eShop module for easy integration of the website chat tool Olark into OXID eShop",
+        "de": "WBL_Olark ist ein OXID eShop Modul für die einfache Integration des Website-Chat-Tools Olark in OXID eShop"
     },
     "tags": [
         "backend",

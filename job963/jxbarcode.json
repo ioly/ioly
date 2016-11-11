@@ -7,7 +7,7 @@
     "license": "GNU",
     "desc": {
         "de": "Admin-Modul für die Barcode-Reader Unterstützung bei Wareneingang und Verpacken",
-        "en": "Admin Module for barcode reader support on goods receipt and packing"
+        "en": "Admin module for barcode reader support on goods receipt and packing"
     },
     "tags": [
         "backend",

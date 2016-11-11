@@ -6,7 +6,8 @@
     "price": "0.00",
     "license": "GNU",
     "desc": {
-        "en": "Processor minifies, compresses and hashes any HTML files, .css and .js files within your OXID-Installation."
+        "en": "Processor minimizes, compresses and hashes any HTML, .css and .js files within your OXID-Installation",
+        "de": "Der Prozessor minimiert und komprimiert jegliche HTML-, CSS- und JS-Dateien der OXID-Installation"
     },
     "tags": [
         "frontend",

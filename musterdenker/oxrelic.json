@@ -6,7 +6,8 @@
     "price": "0.00",
     "license": "GNU",
     "desc": {
-        "en": "A OXID eShop module that integrates New Relic Application Monitor."
+        "en": "An OXID eShop module that integrates New Relic Application Monitor",
+        "de": "Ein OXID eShop-Modul, das den New Relic Application Monitor integriert"
     },
     "tags": [
         "backend",

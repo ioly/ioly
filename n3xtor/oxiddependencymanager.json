@@ -6,7 +6,8 @@
     "price": "0.00",
     "license": "gpl",
     "desc": {
-        "en": "Module for handling dependencies between modules in OXID CE/PE/EE http://blog.php-dev.info"
+        "en": "Module for handling dependencies between modules in OXID CE/PE/EE http://blog.php-dev.info",
+        "de": "Ein Modul, um Abhängigkeiten in OXID CE, PE und EE zu verwalten"
     },
     "tags": [
         "backend",

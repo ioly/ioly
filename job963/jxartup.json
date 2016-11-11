@@ -7,7 +7,7 @@
     "license": "GPL 3+",
     "desc": {
         "de": "Admin-Modul für die Planung und Ausführung von Artikel-Updates",
-        "en": "Admin Module for Scheduling and Running Product Updates"
+        "en": "Admin module for scheduling and running product updates"
     },
     "tags": [
         "backend",

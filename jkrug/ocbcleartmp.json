@@ -6,7 +6,8 @@
     "price": "0.00",
     "license": "GNU",
     "desc": {
-        "en": "This module adds a new option in the header to clear the tmp directory from each page."
+        "en": "This module adds a new option in the header to clear the tmp directory from each page",
+        "de": "Dieses Modul fügt eine neue Option im Seitenheader hinzu, um das tmp/-Verzeichnis zu leeren"
     },
     "tags": [
         "backend",

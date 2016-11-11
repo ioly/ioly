@@ -6,7 +6,8 @@
     "price": "0.00",
     "license": "unknown",
     "desc": {
-        "en": "Connector which makes it possible to edit the currently visible texts in OXID's frontend via oTranCe."
+        "en": "A connector that makes it possible to edit the currently visible language keys and their values of any OXID page via oTranCe.",
+        "de": "Ein Konnektor, um die auf der aktuellen OXID-Seite sichtbaren Sprachvariablen in oTranCe editierbar zu machen."
     },
     "tags": [
         "backend",

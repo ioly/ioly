@@ -6,7 +6,8 @@
     "price": "0.00",
     "license": "GNU",
     "desc": {
-        "en": "Module for advanced control and troubleshooting."
+        "en": "Module for advanced control and troubleshooting",
+        "de": "Modul für erweiterte Kontrolle und Fehlerbehebung in Modulen"
     },
     "tags": [
         "backend",

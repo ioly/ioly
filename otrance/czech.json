@@ -6,7 +6,9 @@
     "price": "0.00",
     "license": "GPLv3",
     "desc": {
-        "en": "Czech language file translations for OXID eShop front end and admin panel"
+        "en": "Czech language file translations for OXID eShop front end and admin panel",
+        "de": "Übersetzung der Sprachdateien für OXID eShop in Tschechisch (Frontend und Admin-Panel)"
+
     },
     "tags": [
         "frontend",

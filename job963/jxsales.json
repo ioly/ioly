@@ -7,7 +7,7 @@
     "license": "GNU",
     "desc": {
         "de": "OXID eShop Admin Modul für die Suche von Bestellungen und Kunden anhand von Artikeln",
-        "en": "OXID eShop Admin Module for Searching Orders and Customers by Articles"
+        "en": "OXID eShop admin module for searching orders and customers by articles"
     },
     "tags": [
         "backend",

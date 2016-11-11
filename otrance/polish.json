@@ -6,7 +6,9 @@
     "price": "0.00",
     "license": "GPLv3",
     "desc": {
-        "en": "Polish language file translations for OXID eShop front end and admin panel"
+        "en": "Polish language file translations for OXID eShop front end and admin panel",
+        "de": "Übersetzung der Sprachdateien für OXID eShop in Polnisch (Frontend und Admin-Panel)"
+
     },
     "tags": [
         "frontend",

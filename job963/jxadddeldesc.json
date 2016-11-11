@@ -7,7 +7,7 @@
     "license": "GNU",
     "desc": {
         "de": "OXID eShop Modul für die Erweiterung der Versandarten um ein Beschreibungsfeld",
-        "en": "OXID eShop Module for Enhancing the Shipping Methods by a Description field"
+        "en": "OXID eShop module for enhancing the shipping methods by a description field"
     },
     "tags": [
         "shipping",

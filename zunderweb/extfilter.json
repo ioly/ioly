@@ -6,7 +6,8 @@
     "price": "0.00",
     "license": "MIT",
     "desc": {
-        "en": "With OXID standard attribute filters, if a customer has selected a filter value, all other values are hidden in the select-box. When this module is active, all possible values are selectable. "
+        "en": "With OXID standard attribute filters, if a customer has selected a filter value, all other values are hidden in the select-box. When this module is active, all possible values are selectable. ",
+        "de": "Mit den Standard-OXID-Attributfiltern werden andere Werte in der Selectbox nicht angezeigt, wenn der Kunde einen Filter aktiviert hat. Mit diesem Modul werden alle möglichen Werte ausgegeben und sind auswählbar."
     },
     "tags": [
         "frontend",

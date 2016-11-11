@@ -6,7 +6,8 @@
     "price": "0.00",
     "license": "GNU",
     "desc": {
-        "en": "Folders structure, empty classes and metadata generation for new OXID eShop modules."
+        "en": "Folders structure, empty classes and metadata generation for new OXID eShop modules",
+        "de": "Ordnerstrukturen, leere Klassen und Metadaten für OXID eShop Module anlegen"
     },
     "tags": [
         "oxid",

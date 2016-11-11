@@ -6,7 +6,8 @@
     "price": "179.00",
     "license": "Commercial",
     "desc": {
-        "en": "Import all kinds of article related data via CSV."
+        "en": "Import all kinds of product related data via CSV",
+        "de": "Alle Arten von Artikeldaten per CSV importieren"
     },
     "tags": [
         "backend",

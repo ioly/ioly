@@ -6,7 +6,8 @@
     "price": "0.00",
     "license": "GNU",
     "desc": {
-        "en": "Setting a minimum order quantity of articles."
+        "en": "Setting a minimum order quantity of products",
+        "de": "Minimale Bestellmenge für Artikel setzen"
     },
     "tags": [
         "frontend",

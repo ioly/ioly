@@ -6,7 +6,8 @@
     "price": "0.00",
     "license": "MIT",
     "desc": {
-        "en": "infinite scrolling aka dynamic pagination for article lists on category pages, vendors pages and within search"
+        "en": "Infinite scrolling AKA dynamic pagination for article lists on category pages, vendors pages and within search",
+        "de": "Endlos-Scrollen (auch als dynamische Pagination bekannt) für Artikellisten auf Kategorieseiten, Herstellerseiten und in den Suchergebnissen"
     },
     "tags": [
         "frontend",

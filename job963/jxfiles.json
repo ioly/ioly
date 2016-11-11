@@ -7,7 +7,7 @@
     "license": "GNU",
     "desc": {
         "de": "OXID eShop Admin Modul für die Verwaltung von Dateien",
-        "en": "OXID eShop Admin Module for Managing Files"
+        "en": "OXID eShop admin module for managing files"
     },
     "tags": [
         "backend",

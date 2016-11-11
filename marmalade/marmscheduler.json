@@ -6,7 +6,8 @@
     "price": "0.00",
     "license": "MIT",
     "desc": {
-        "en": "A Schedular for OXID eShop to manage cronjobs from the backend."
+        "en": "A scheduler for OXID eShop to manage cron jobs from the backend",
+        "de": "Ein Scheduler für OXID eShop, um Cron-Jobs aus dem Admin-Bereich heraus zu steuern"
     },
     "tags": [
         "backend",

@@ -6,7 +6,8 @@
     "price": "0.00",
     "license": "GNU",
     "desc": {
-        "en": "Generated an XML sitemap for OXID eshop."
+        "en": "Generates an XML sitemap for OXID eShop",
+        "de": "Generiert eine XML-Sitemap für OXID eShop"
     },
     "tags": [
         "frontend",

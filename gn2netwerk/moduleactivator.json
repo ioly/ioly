@@ -6,7 +6,8 @@
     "price": "0.00",
     "license": "GNU",
     "desc": {
-        "en": "Module Activator lets you de-/activate multiple or even all modules at once in the OXID backend."
+        "en": "Module Activator lets you de-/activate multiple or even all modules at once in the OXID backend",
+        "de": "Mit dem Modul-Activator können mehrere oder auch alle Module auf einmal im OXID Admin de- oder aktiviert werden"
     },
     "tags": [
         "backend",

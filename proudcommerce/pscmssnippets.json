@@ -6,7 +6,8 @@
     "price": "0.00",
     "license": "GNU",
     "desc": {
-        "en": "Setting for CMS pages, which may not be accessible via browser."
+        "en": "Setting for CMS pages, which shall not be accessible via URL",
+        "de": "Option für CMS-Seiten, die nicht über eine URL aufrufbar sein sollen"
     },
     "tags": [
         "backend",

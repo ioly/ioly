@@ -6,7 +6,8 @@
     "price": "0.00",
     "license": "GNU",
     "desc": {
-        "en": "Passes defined parent fields to child articles (variants)."
+        "en": "Jump to the first buyable variant, independent from the stock",
+        "de": "Unabhängig vom Lagerbestand direkt auf die erste kaufbare Variante springen"
     },
     "tags": [
         "frontend",

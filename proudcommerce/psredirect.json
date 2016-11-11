@@ -6,7 +6,8 @@
     "price": "0.00",
     "license": "GNU",
     "desc": {
-        "en": "Redirect on 404 eror pages with levenshtein algorithm."
+        "en": "Redirect for potential 404 error pages using the Levenshtein algorithm",
+        "de": "Potentielle 404-Fehlerseiten mit Hilfe des Levenshtein-Algorithmus weiterleiten"
     },
     "tags": [
         "frontend",

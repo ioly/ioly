@@ -6,7 +6,8 @@
     "price": "0.00",
     "license": "MIT",
     "desc": {
-        "en": "The ioly OXID Connector Backend. You should not uninstall this :)"
+        "en": "The ioly OXID connector backend. You should not uninstall this :)",
+        "de": "Das ioly OXID Connector Backend. Du solltest dieses Modul nicht installieren :-)"
     },
     "tags": [
         "ioly",

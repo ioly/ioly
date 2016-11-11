@@ -7,7 +7,7 @@
     "license": "GNU",
     "desc": {
         "de": "Admin Modul für die Anzeige, Filterung und Export von Newsletter Benutzern",
-        "en": "Admin Module displaying, filtering and exporting newsletter users."
+        "en": "Admin module displaying, filtering and exporting newsletter users."
     },
     "tags": [
         "backend",

@@ -7,7 +7,7 @@
     "license": "GNU",
     "desc": {
         "de": "Erweiterung für eine konfigurierbare Anzeige von eingebetten YouTube und Vimeo Videos sowie Vererbung der Mediendateien an Varianten",
-        "en": "Extension for configurable Display of embedded YouTube and Vimeo Videos and inheritance of media files to variants"
+        "en": "Extension for configurable display of embedded YouTube and Vimeo videos and inheritance of media files to variants"
     },
     "tags": [
         "configure",

@@ -6,7 +6,8 @@
     "price": "0.00",
     "license": "unkown",
     "desc": {
-        "en": "This test checks your OXID eShop and assists you when updating. It detects if you missed to update files and tells you which file has been modified."
+        "en": "This script checks your OXID eShop installation for inconsistand files.",
+        "de": "Dieses Skript prüft deine OXID eShop Installation auf inkonsistente Dateien"
     },
     "tags": [
         "backend",

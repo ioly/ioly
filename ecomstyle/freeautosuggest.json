@@ -6,7 +6,8 @@
     "price": "0.00",
     "license": "GNU",
     "desc": {
-        "en": "Search suggestions for OXID eshop."
+        "en": "Search suggestions for OXID eShop",
+        "de": "Suchvorschläge für OXID eShop"
     },
     "tags": [
         "frontend",

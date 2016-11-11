@@ -6,7 +6,8 @@
     "price": "0.00",
     "license": "GNU",
     "desc": {
-        "en": "Notification tool if non-deliverable item is back in stock."
+        "en": "Notification tool if non-deliverable item is back in stock",
+        "de": "Benachrichtigung, wenn ein nicht lieferbarer Artikel wieder verfügbar wird"
     },
     "tags": [
         "frontend",

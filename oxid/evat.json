@@ -6,7 +6,8 @@
     "price": "0.00",
     "license": "GNU",
     "desc": {
-        "en": "This module implements requirements that is to allow an OXID eShop to comply with the EU regulations as specified by the EU VAT directive 1042/2013 regarding VAT for telecommunications, broadcasting and electronic services."
+        "en": "This module implements requirements that is to allow an OXID eShop to comply with the EU regulations as specified by the EU VAT directive 1042/2013 regarding VAT for telecommunications, broadcasting and electronic services.",
+        "de": "Dieses Modul implementiert die Anforderungen der EU MwSt-Direktive 1042/2013 bezüglich Telekommunikation, Übertragungsdienste und elektronische Services in OXID eShop"
     },
     "tags": [
         "frontend",

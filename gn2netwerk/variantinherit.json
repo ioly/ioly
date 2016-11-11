@@ -6,7 +6,8 @@
     "price": "0.00",
     "license": "GNU",
     "desc": {
-        "en": "Passes defined parent fields to child articles (variants)."
+        "en": "Passes defined parent fields to child products (variants)",
+        "de": "Übergibt definierte Felder vom Vater- auf den Variantenartikel"
     },
     "tags": [
         "frontend",
