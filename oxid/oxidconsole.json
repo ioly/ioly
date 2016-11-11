@@ -19,20 +19,6 @@
         "automation"
     ],
     "versions": {
-        "master": {
-            "project": "https://github.com/EllisV/oxid-console/",
-            "url": "https://github.com/EllisV/oxid-console/archive/master.zip",
-            "supported": [
-                "5.2",
-                "4.9"
-            ],
-            "mapping": [
-                {
-                    "src": "copy_this/",
-                    "dest": ""
-                }
-            ]
-        },
         "1.3.0": {
             "project": "https://github.com/EllisV/oxid-console/",
             "url": "https://github.com/EllisV/oxid-console/archive/1.3.zip",
