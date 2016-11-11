@@ -6,7 +6,8 @@
     "price": "0.00",
     "license": "unknown",
     "desc": {
-        "en": "Internal OXID eShop module system information and troubleshooting tools."
+        "en": "Internal OXID eShop module system information and troubleshooting tools.",
+        "de": "Interne OXID eShop Modulsystem-Informationen und Troubleshooting-Werkzeuge"
     },
     "tags": [
         "backend",
@@ -18,6 +19,9 @@
             "project": "https://github.com/acirtautas/oxid-module-internals",
             "url": "https://github.com/acirtautas/oxid-module-internals/archive/master.zip",
             "supported": [
+                "5.3",
+                "5.2",
+                "4.10",
                 "4.9"
             ],
             "mapping": [
@@ -31,9 +35,9 @@
             "project": "https://github.com/acirtautas/oxid-module-internals/tree/pre_5.2",
             "url": "https://github.com/acirtautas/oxid-module-internals/archive/pre_5.2.zip",
             "supported": [
-                "4.6",
+                "4.8",
                 "4.7",
-                "4.8"
+                "4.6"
             ],
             "mapping": [
                 {

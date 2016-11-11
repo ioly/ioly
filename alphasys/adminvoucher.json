@@ -2,7 +2,7 @@
     "name": "asy_adminvoucher",
     "vendor": "alphasys",
     "type": "oxid",
-    "picture": "",
+    "picture": "https://github.com/Alpha-Sys/asy_adminvoucher/blob/master/for_oxid_4.9_and_greater/copy_this/modules/asy/module_logo.png",
     "price": "0.00",
     "license": "GNU",
     "desc": {
@@ -14,7 +14,21 @@
         "marketing"
     ],
     "versions": {
-        "1.7.0": {
+      "1.9.0": {
+        "project": "https://github.com/Alpha-Sys/asy_adminvoucher",
+        "url": "https://github.com/Alpha-Sys/asy_adminvoucher/archive/master.zip",
+        "supported": [
+          "4.10",
+          "4.9"
+        ],
+        "mapping": [
+          {
+            "src": "for_oxid_4.9_and_greater/copy_this/",
+            "dest": ""
+          }
+        ]
+      },
+        "1.8.0": {
             "project": "https://github.com/Alpha-Sys/asy_adminvoucher",
             "url": "https://github.com/Alpha-Sys/asy_adminvoucher/archive/master.zip",
             "supported": [
