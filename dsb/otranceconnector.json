@@ -13,10 +13,12 @@
         "ide"
     ],
     "versions": {
-        "1.0.0": {
+        "1.0.1": {
             "project": "https://github.com/DSB/Oxid-oTranCe-Connector",
             "url": "https://github.com/DSB/Oxid-oTranCe-Connector/archive/master.zip",
             "supported": [
+                "4.10",
+                "4.9",
                 "4.8",
                 "4.7"
             ],
