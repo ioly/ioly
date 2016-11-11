@@ -2,7 +2,7 @@
     "name": "OXID Module Configuration Im-/Exporter",
     "vendor": "oxid",
     "type": "oxid",
-    "picture": "",
+    "picture": "https://github.com/druteika/oxid_modules_config/blob/master/copy_this/modules/oxps/modulesconfig/out/pictures/oxpsmodulesconfig.png",
     "price": "0.00",
     "license": "GNU",
     "desc": {
@@ -20,9 +20,10 @@
     ],
     "versions": {
         "0.2.0": {
-            "project": "https://github.com/druteika/oxid_modules_config/tree/master",
+            "project": "https://github.com/druteika/oxid_modules_config/",
             "url": "https://github.com/druteika/oxid_modules_config/archive/v020.zip",
             "supported": [
+                "4.10",
                 "4.9",
                 "4.8"
             ],
