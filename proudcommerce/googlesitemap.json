@@ -18,6 +18,7 @@
             "project": "https://github.com/proudcommerce/google_sitemap",
             "url": "https://github.com/proudcommerce/google_sitemap/archive/master.zip",
             "supported": [
+                "4.10",
                 "4.9",
                 "4.8",
                 "4.7",
