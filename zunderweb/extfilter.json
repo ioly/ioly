@@ -19,6 +19,7 @@
             "project": "https://github.com/leofonic/oxid_extfilter",
             "url": "https://github.com/leofonic/oxid_extfilter/archive/ff2ce2cbc0a6ddf18329175a4751880deffcbf05.zip",
             "supported": [
+                "4.10",
                 "4.9",
                 "4.8",
                 "4.7"

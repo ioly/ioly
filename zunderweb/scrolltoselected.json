@@ -17,6 +17,7 @@
             "project": "https://github.com/leofonic/oxid_admin_autoscroll",
             "url": "https://github.com/leofonic/oxid_admin_autoscroll/archive/0772e71fb3eb96e3e4616b044dfd5a6c03642a69.zip",
             "supported": [
+                "4.10",
                 "4.9",
                 "4.8",
                 "4.7",
