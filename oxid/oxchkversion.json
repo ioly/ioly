@@ -15,12 +15,13 @@
     ],
     "versions": {
         "3.2.1": {
-            "project": "https://github.com/tabsl/oxchkversion",
+            "project": "https://github.com/OXIDprojects/oxchkversion",
             "url": "https://github.com/tabsl/oxchkversion/archive/v3.2.1.zip",
             "supported": [
-                "4.7",
-                "4.6",
-                "4.5"
+                "4.10",
+                "4.9",
+                "4.8",
+                "4.7"
             ],
             "mapping": [
                 {
@@ -28,6 +29,20 @@
                     "dest": "oxchkversion.php"
                 }
             ]
-        }
+        },
+      "3.0.14": {
+        "project": "https://github.com/OXIDprojects/oxchkversion/tree/40_46",
+        "url": "https://github.com/OXIDprojects/oxchkversion/archive/40_46.zip",
+        "supported": [
+          "4.6",
+          "4.5"
+        ],
+        "mapping": [
+          {
+            "src": "oxchkversion.php",
+            "dest": "oxchkversion.php"
+          }
+        ]
+      }
     }
 }
