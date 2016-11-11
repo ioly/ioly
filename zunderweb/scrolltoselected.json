@@ -2,6 +2,7 @@
     "name": "scrolltoselected",
     "vendor": "zunderweb",
     "type": "oxid",
+    "picture": "",
     "license": "unknown",
     "desc": {
         "en": "Lists in OXID eShop Backend scroll automatically to the currently selected entry."

@@ -2,6 +2,7 @@
     "name": "mysaving",
     "vendor": "kermie",
     "type": "oxid",
+    "picture": "",
     "price": "0.00",
     "license": "GPLv3",
     "desc": {

@@ -2,6 +2,7 @@
     "name": "OXID Dependency Manager",
     "vendor": "n3xtor",
     "type": "oxid",
+    "picture": "",
     "price": "0.00",
     "license": "gpl",
     "desc": {

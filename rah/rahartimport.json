@@ -2,6 +2,7 @@
     "name": "CSV Article importer for OXID eShop.",
     "vendor": "rah",
     "type": "oxid",
+    "picture": "",
     "price": "179.00",
     "license": "Commercial",
     "desc": {

@@ -2,6 +2,7 @@
     "name": "psGetObject",
     "vendor": "proudcommerce",
     "type": "oxid",
+    "picture": "",
     "price": "0.00",
     "license": "GNU",
     "desc": {
