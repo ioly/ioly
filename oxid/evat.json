@@ -2,7 +2,7 @@
     "name": "eVAT",
     "vendor": "oxid",
     "type": "oxid",
-    "picture": "",
+    "picture": "https://github.com/OXID-eSales/vat_tbe_services/blob/b-dev/source/modules/oe/oevattbe/logo.png",
     "price": "0.00",
     "license": "GNU",
     "desc": {
@@ -20,6 +20,7 @@
             "project": "https://github.com/OXID-eSales/vat_tbe_services",
             "url": "https://github.com/OXID-eSales/vat_tbe_services/archive/b-dev.zip",
             "supported": [
+                "4.10",
                 "4.9",
                 "4.8",
                 "4.7"
