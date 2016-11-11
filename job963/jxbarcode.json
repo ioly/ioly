@@ -33,6 +33,10 @@
                 {
                     "src": "copy_this/modules/jxmods/",
                     "dest": "modules/jxmods/"
+                },
+                {
+                    "src": "copy_this/core/tcpdf/barcodes.php",
+                    "dest": "core/tcpdf/"
                 }
             ]
         }
