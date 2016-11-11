@@ -2,7 +2,7 @@
     "name": "smxSurveys",
     "vendor": "shoptimax",
     "type": "oxid",
-    "picture": "",
+    "picture": "https://github.com/shoptimax/smxsurveys/blob/master/modules/shoptimax/smxsurveys/box_smxsurveys.jpg",
     "price": "0.00",
     "license": "GNU",
     "desc": {
