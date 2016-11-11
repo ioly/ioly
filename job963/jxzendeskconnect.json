@@ -2,7 +2,7 @@
     "name": "jxZendeskConnect",
     "vendor": "job963",
     "type": "oxid",
-    "picture": "",
+    "picture": "https://github.com/job963/jxZendeskConnect/blob/v0.1.3/copy_this/modules/jxmods/jxzendeskconnect/jxzendeskconnect.png",
     "price": "0.00",
     "license": "GNU",
     "desc": {
@@ -20,6 +20,22 @@
         "connector"
     ],
     "versions": {
+        "0.1.3": {
+            "project": "https://github.com/job963/jxZendeskConnect",
+            "url": "https://github.com/job963/jxZendeskConnect/archive/v0.1.3.zip",
+            "supported": [
+               "4.10",
+               "4.9",
+               "4.8",
+               "4.7"
+             ],
+            "mapping": [
+                {
+                "src": "copy_this/modules/jxmods/",
+                "dest": "modules/jxmods/"
+                 }
+            ]
+      },
         "0.1.2": {
             "project": "https://github.com/job963/jxZendeskConnect",
             "url": "https://github.com/job963/jxZendeskConnect/archive/v0.1.2.zip",
