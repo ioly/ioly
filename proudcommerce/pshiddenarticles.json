@@ -2,7 +2,7 @@
     "name": "psHiddenArticles",
     "vendor": "proudcommerce",
     "type": "oxid",
-    "picture": "",
+    "picture": "https://github.com/proudcommerce/psCmsSnippets/blob/master/copy_this/modules/proudsourcing/psCmsSnippets/logo-ps.jpg",
     "price": "0.00",
     "license": "GNU",
     "desc": {
@@ -19,6 +19,7 @@
             "project": "https://github.com/proudcommerce/psHiddenArticles",
             "url": "https://github.com/proudcommerce/psHiddenArticles/archive/master.zip",
             "supported": [
+                "4.10",
                 "4.9",
                 "4.8",
                 "4.7"

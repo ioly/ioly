@@ -2,7 +2,7 @@
     "name": "psGetObject",
     "vendor": "proudcommerce",
     "type": "oxid",
-    "picture": "",
+    "picture": "https://github.com/proudcommerce/psCmsSnippets/blob/master/copy_this/modules/proudsourcing/psCmsSnippets/logo-ps.jpg",
     "price": "0.00",
     "license": "GNU",
     "desc": {
@@ -19,6 +19,7 @@
             "project": "https://github.com/proudcommerce/psGetObject",
             "url": "https://github.com/proudcommerce/psGetObject/archive/11b03b8774c79c63d48d0ee04627b916b8b813b7.zip",
             "supported": [
+                "4.10",
                 "4.9",
                 "4.8",
                 "4.7",

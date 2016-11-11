@@ -2,7 +2,7 @@
     "name": "psRedirect404",
     "vendor": "proudcommerce",
     "type": "oxid",
-    "picture": "",
+    "picture": "https://github.com/proudcommerce/psCmsSnippets/blob/master/copy_this/modules/proudsourcing/psCmsSnippets/logo-ps.jpg",
     "price": "0.00",
     "license": "GNU",
     "desc": {
@@ -17,6 +17,7 @@
             "project": "https://github.com/proudcommerce/psRedirect404",
             "url": "https://github.com/proudcommerce/psRedirect404/archive/master.zip",
             "supported": [
+                "4.10",
                 "4.9",
                 "4.8",
                 "4.7"
