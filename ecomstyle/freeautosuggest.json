@@ -17,6 +17,7 @@
             "project": "https://github.com/ecomstyle/freeAutoSuggest",
             "url": "https://github.com/ecomstyle/freeAutoSuggest/archive/2b1085ce27ed68c54441900e621a58751a1cde30.zip",
             "supported": [
+                "4.10",
                 "4.9",
                 "4.8",
                 "4.7"
