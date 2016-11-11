@@ -18,6 +18,7 @@
             "project": "https://github.com/eComStyle-de/ECS_Mindestbestellmenge",
             "url": "https://github.com/eComStyle-de/ECS_Mindestbestellmenge/archive/master.zip",
             "supported": [
+                "4.10",
                 "4,9",
                 "4.8",
                 "4.7"
