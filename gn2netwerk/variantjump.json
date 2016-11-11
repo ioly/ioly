@@ -2,7 +2,7 @@
     "name": "VariantJump",
     "vendor": "gn2netwerk",
     "type": "oxid",
-    "picture": "",
+    "picture": "https://bitbucket.org/gn2netwerk/variantjump/src/69d4e508c9b47af2be78b41943b0daab2f860c37/gn2.jpg?at=master&fileviewer=file-view-default",
     "price": "0.00",
     "license": "GNU",
     "desc": {
@@ -20,7 +20,9 @@
             "url": "https://bitbucket.org/gn2netwerk/variantjump/get/master.zip",
             "supported": [
                 "4.8",
-                "4.7"
+                "4.7",
+                "4.6",
+                "4.5"
             ],
             "mapping": [
                 {
