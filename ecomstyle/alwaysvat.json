@@ -2,7 +2,7 @@
     "name": "AlwaysVAT",
     "vendor": "ecomstyle",
     "type": "oxid",
-    "picture": "",
+    "picture": "https://github.com/eComStyle-de/ECS_AlwaysVAT/blob/master/copy_this/modules/ecomstyle.de/ecs_alwaysvat/ecomstyle.png",
     "price": "0.00",
     "license": "GNU",
     "desc": {
