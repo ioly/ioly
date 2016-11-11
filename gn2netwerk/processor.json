@@ -23,6 +23,7 @@
             "project": "https://bitbucket.org/gn2netwerk/processor",
             "url": "https://bitbucket.org/gn2netwerk/processor/get/universal.zip",
             "supported": [
+                "4.10",
                 "4.9",
                 "4.8",
                 "4.7",
