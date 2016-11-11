@@ -2,7 +2,7 @@
     "name": "OXID-Module-IDE",
     "vendor": "dsb",
     "type": "oxid",
-    "picture": "",
+    "picture": "https://github.com/DSB/Oxid-Module-IDE-Helper/blob/master/modules/dsb/dsb_ide_helper/out/thumb.png",
     "price": "0.00",
     "license": "unknown",
     "desc": {
@@ -17,6 +17,8 @@
             "project": "https://github.com/DSB/Oxid-Module-IDE-Helper",
             "url": "https://github.com/DSB/Oxid-Module-IDE-Helper/archive/master.zip",
             "supported": [
+                "4.10",
+                "4.9",
                 "4.8",
                 "4.7",
                 "4.6"
