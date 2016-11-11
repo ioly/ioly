@@ -2,7 +2,7 @@
     "name": "a4p_subdomain_themes",
     "vendor": "apps4print",
     "type": "oxid",
-    "picture": "",
+    "picture": "https://github.com/a4p-ASD/a4p_subdomain_themes/blob/master/out/img/apps4print/a4p_logo.jpg",
     "price": "0.00",
     "license": "unknown",
     "desc": {
@@ -16,10 +16,11 @@
         "demoshop"
     ],
     "versions": {
-        "1.0.1": {
+        "1.0.6": {
             "project": "https://github.com/a4p-ASD/a4p_subdomain_themes",
             "url": "https://github.com/a4p-ASD/a4p_subdomain_themes/archive/master.zip",
             "supported": [
+                "4.10",
                 "4.9",
                 "4.8",
                 "4.7"
