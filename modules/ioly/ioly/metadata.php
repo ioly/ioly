@@ -30,7 +30,7 @@ $aModule = array(
         'en' => 'ioly module manager (<a href="http://getioly.com" target="_blank">getioly.com</a> / <a href="https://github.com/ioly/ioly" target="_blank">github.com/ioly/ioly</a>)',
     ),
     'thumbnail'   => 'ioly_logo.png',
-    'version'     => '1.9.0',
+    'version'     => '1.9.1',
     'author'      => 'ioly',
     'url'         => 'https://github.com/ioly/ioly',
     'email'       => 'hello@getioly.com',

@@ -1,3 +1,6 @@
+1.9.1 (2016-11-11)
+  - bugfix: show installed modules in list if checkbox "only installed" is not active
+
 1.9.0 (2016-10-20)
   - added filter checkboxes to only show installed and/or active modules in the list
 

@@ -12,7 +12,7 @@
  * @author   Stefan Moises <stefan@rent-a-hero.de>
  * @license  MIT License http://opensource.org/licenses/MIT
  * @link     http://getioly.com/
- * @version     1.9.0
+ * @version     1.9.1
  */
 class ioly_main extends oxAdminView
 {
@@ -225,9 +225,7 @@ class ioly_main extends oxAdminView
             $addModule = false;
             foreach ($aVersions as $packageVersion => $versionInfo) {
                 if ($this->_ioly->isInstalledInVersion($packageId, $packageVersion)) {
-                    if ($onlyInstalled) {
-                        $addModule = true;
-                    }
+                    $addModule = true;
                     if ($onlyActive) {
                         if ($this->isModuleActive($packageId, $packageVersion)) {
                             $addModule = true;
