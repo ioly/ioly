@@ -1,5 +1,5 @@
 {
-    "name": "Caching module for OXID",
+    "name": "psCache",
     "vendor": "proudcommerce",
     "type": "oxid",
     "picture": "",
