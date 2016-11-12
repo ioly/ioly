@@ -1,17 +1,16 @@
 # OXID Module Connector
 
-OXID Module Connector (OMC) is a module itself that integrates with the _Extensions_ section of the administration panel of OXID eShop. It is created to display available modules, their most important data and install these modules automatically (if possible) and directly from the OXID eShop admin panel. If an automated installation is not possible for some reason, OMC links to the original module page.
+OXID Module Connector (OMC) displays available modules, a short description and allows to install these modules automatically (if possible) and directly from the OXID eShop admin panel. If an automated installation is not possible for some reason, OMC links to the original module page.
+OMC is implemented as an OXID module itself that integrates with the _Extensions_ section of the administration panel of OXID eShop.
 
 >**ATTENTION!**
-* Please do not install any module in your live shop environment!
-* Please backup your installation (database + files) before installing a module via OXID Module Connector!
-* Best case, please use an development environment when installing modules via OXID Module Connector!
+This module is designed for development and testing environments. Please do not install any module in your live shop environment! Please backup your installation (database + files) before installing a module via OXID Module Connector!
 
 After installing a module via OXID Module Connector (OMC), simply go to _Extensions_ -> _Modules_, find your just installed module here and activate it in order to get it running.
 
-This module is based on [ioly](https://github.com/ioly/) and was developerd during the [#oxhackathon16](https://openspacer.org/12-oxid-community/136-oxid-hackathon-nuernberg-2016/) event. The OXIDforge editorial team takes care of the content (modules).
+This module is based on [ioly](https://github.com/ioly/) and was developed during the [#oxhackathon16](https://openspacer.org/12-oxid-community/136-oxid-hackathon-nuernberg-2016/) event. The OXIDforge editorial team currently takes care of the content (modules) in their leisure time as best as they can.
 
-Please note that this is a community project that comes with absolutely no warranty nor claim for completeness or correctness of the content.
+Please note that this is a community project that comes with absolutely no warranty nor claim for completeness or correctness of the content. If you like it, we appreciate if you contribute either modules or general improvements.
 
 ![OXID Module Connector](oxid_module_connector.png)
 
@@ -19,7 +18,7 @@ Please note that this is a community project that comes with absolutely no warra
 
 Unfortunately, the module OXID Module Connector (OMC) still has to be installed the classic, manual way ;)
 1. download [OXID Module Connector (OMC)](https://github.com/OXIDprojects/OXID-Module-Connector/archive/module.zip) to your local machine
-2. unzip it with a tool of your choosing
+2. unzip it with a tool of your choice
 3. upload the content of the folder modules/ into the modules/ folder of your OXID eShop installation
 4. fire up your browser and go to the admin panel of your OXID eShop installation
 5. go to _Extensions_ -> _Modules_, select "OXID Module Connector" from the list of the modules and activate it
@@ -34,7 +33,7 @@ You're not satisfied with this module? Bummer! Of course you can uninstall this 
 
 ## Users, stay up-to-date!
 
-Staying up-to-date with OXID Module Connector is easy: simply activate the appropriate function in module settings to receive core, connector and recipe (modules in the OMC list) updates.
+Staying up-to-date with OXID Module Connector is easy: simply activate the auto update function in module settings to receive core, connector and recipe (modules in the OMC list) updates.
 
 ## Help & trouble shooting for users
 
