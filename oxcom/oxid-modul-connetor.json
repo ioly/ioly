@@ -1,0 +1,36 @@
+{
+    "name": "OXID Modul Connector",
+    "vendor": "oxcom",
+    "type": "oxid",
+    "picture": "",
+    "price": "0.00",
+    "license": "MIT",
+    "desc": {
+        "en": "The OXID module connector backend. You should not uninstall this :)",
+        "de": "Das OXID Modul Connector Backend. Du solltest dieses Modul nicht installieren :-)"
+    },
+    "tags": [
+        "oxid",
+        "module",
+        "connector",
+        "backend"
+    ],
+    "versions": {
+        "latest": {
+            "project": "https://github.com/OXIDprojects/OXID-Module-Connector/",
+            "url": "https://github.com/OXIDprojects/OXID-Module-Connector/archive/module.zip",
+            "supported": [
+                "4.10",
+                "4.9",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "modules/oxcom/",
+                    "dest": "modules/oxcom/"
+                }
+            ]
+        }
+    }
+}
