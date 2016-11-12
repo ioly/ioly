@@ -1,0 +1,35 @@
+{
+    "name": "ioly OXID Connector JS Libs",
+    "vendor": "ioly",
+    "type": "library",
+    "license": "MIT",
+    "desc": {
+        "en": "JS libs needed for the ioly OXID Connector Backend, mainly AngularJS related."
+    },
+    "tags": [
+        "ioly",
+        "js",
+        "backend",
+        "angular"
+    ],
+    "versions": {
+        "1.0.0": {
+            "project": "https://github.com/ioly/",
+            "url": "https://github.com/ioly/ioly/raw/sauces/ioly/oxid-connector-js-libs/1.0.0.zip",
+            "supported": [
+                "5.2",
+                "5.1",
+                "5.0",
+                "4.9",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "",
+                    "dest": "modules/oxcom/oxcom-omc/libs/"
+                }
+            ]
+        }
+    }
+}
