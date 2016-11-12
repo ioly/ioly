@@ -11,10 +11,7 @@
     },
     "tags": [
         "backend",
-        "admin",
-        "log",
-        "logged",
-        "history"
+        "admin tools"
     ],
     "versions": {
         "0.3.1": {

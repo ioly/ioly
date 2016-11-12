@@ -10,10 +10,8 @@
         "en": "Change themes per (sub) domain"
     },
     "tags": [
-        "theme",
-        "domain",
-        "themeswitch",
-        "demoshop"
+        "themes",
+        "frontend"
     ],
     "versions": {
         "1.0.6": {

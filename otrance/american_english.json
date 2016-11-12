@@ -11,9 +11,8 @@
     },
     "tags": [
         "frontend",
-        "admin",
-        "translation",
-        "language"
+        "backend",
+        "languages"
     ],
     "versions": {
         "4.9.2": {

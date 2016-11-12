@@ -11,9 +11,7 @@
     },
     "tags": [
         "backend",
-        "articles",
-        "stock",
-        "inventory"
+        "admin tool"
     ],
     "versions": {
         "0.3.1": {

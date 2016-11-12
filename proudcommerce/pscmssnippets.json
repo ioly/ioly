@@ -10,9 +10,8 @@
         "de": "Option für CMS-Seiten, die nicht über eine URL aufrufbar sein sollen"
     },
     "tags": [
-        "backend",
-        "content",
-        "cms"
+        "frontend",
+        "admin tools"
     ],
     "versions": {
         "1.1.0": {

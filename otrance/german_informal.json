@@ -10,10 +10,9 @@
         "de": "Übersetzung der Sprachdateien für OXID eShop in informelles Deutsch (\"Du-Form\", Frontend und Admin-Panel)"
     },
     "tags": [
-        "frontend",
-        "admin",
-        "translation",
-        "language"
+      "frontend",
+      "backend",
+      "languages"
     ],
     "versions": {
         "4.9.2": {

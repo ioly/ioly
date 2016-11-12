@@ -11,13 +11,8 @@
     },
     "tags": [
         "backend",
-        "admin",
-        "articles",
-        "products",
-        "csv",
-        "import",
-        "bulk",
-        "update"
+        "admin tool",
+        "product presentation"
     ],
     "versions": {
         "0.3.1": {

@@ -11,8 +11,7 @@
     },
     "tags": [
         "frontend",
-        "basket",
-        "order"
+        "checkout"
     ],
     "versions": {
         "1.1.0": {

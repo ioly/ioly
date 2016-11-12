@@ -7,10 +7,9 @@
         "en": "JS libs needed for the ioly OXID Connector Backend, mainly AngularJS related."
     },
     "tags": [
-        "ioly",
-        "js",
         "backend",
-        "angular"
+        "admin tools",
+        "dev tools"
     ],
     "versions": {
         "1.0.0": {

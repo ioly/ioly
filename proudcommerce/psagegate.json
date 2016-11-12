@@ -10,7 +10,8 @@
         "de": "Zeigt eine Altersabfrage für Kunden beim Betreten des Shops"
     },
     "tags": [
-        "frontend"
+        "frontend",
+        "customer management"
     ],
     "versions": {
         "1.1.2": {

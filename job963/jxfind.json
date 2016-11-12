@@ -11,8 +11,7 @@
     },
     "tags": [
         "backend",
-        "search",
-        "text"
+        "search"
     ],
     "versions": {
         "0.1.5": {

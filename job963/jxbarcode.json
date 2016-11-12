@@ -11,13 +11,8 @@
     },
     "tags": [
         "backend",
-        "articles",
-        "products",
-        "barcode",
-        "scanner",
-        "delivery",
-        "packing",
-        "receipt"
+        "logistics",
+        "admin tools"
     ],
     "versions": {
         "0.3.4": {

@@ -10,12 +10,10 @@
         "en": "Extension for configurable display of embedded YouTube and Vimeo videos and inheritance of media files to variants"
     },
     "tags": [
-        "configure",
-        "media",
-        "video",
-        "youtube",
-        "settings",
-        "inherit"
+        "backend",
+        "frontend",
+        "product presentation",
+        "marketing"
     ],
     "versions": {
         "0.2.0": {

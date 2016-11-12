@@ -10,14 +10,7 @@
         "de": "OXID Console ist eine PHP-Konsolenapplikation für OXID Shop. Es bietet einen API zum schreiben verschiedener Befehle. Oft benötigte Kommandos wurden bereits integriert."
     },
     "tags": [
-        "frontend",
-        "backend",
-        "console",
-        "tools",
-        "generator",
-        "migration",
-        "symfony",
-        "automation"
+        "dev tools"
     ],
     "versions": {
         "1.3.0": {

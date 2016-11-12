@@ -10,16 +10,9 @@
         "en": "Analysis module for finding problematical shop data in articles, pictures, categories, users, orders and shipping definitions."
     },
     "tags": [
-        "analysis",
+        "analytics",
         "backend",
-        "articles",
-        "categories",
-        "orders",
-        "pictures",
-        "shipping",
-        "users",
-        "problems",
-        "statistics"
+        "admin tools"
     ],
     "versions":
     {

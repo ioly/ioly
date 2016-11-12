@@ -11,9 +11,9 @@
     },
     "tags": [
         "backend",
-        "customers",
-        "orders",
-        "history"
+        "admin tools",
+        "customer management",
+        "logistics"
     ],
     "versions": {
         "1.1.0": {

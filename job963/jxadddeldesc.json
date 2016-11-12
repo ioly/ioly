@@ -10,8 +10,8 @@
         "en": "OXID eShop module for enhancing the shipping methods by a description field"
     },
     "tags": [
-        "shipping",
-        "description"
+        "checkout",
+        "frontend"
     ],
     "versions": {
         "0.1": {

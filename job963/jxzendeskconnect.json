@@ -6,18 +6,13 @@
     "price": "0.00",
     "license": "GNU",
     "desc": {
-        "de": "Admin-Modul zum Anzeigen und Erstellen von internen und kundengezogenen Zendesk Tickets",
+        "de": "Admin-Modul zum Anzeigen und Erstellen von internen und kundenbezogenen Zendesk Tickets",
         "en": "Admin module for displaying and creation of internal and customer related Zendesk tickets"
     },
     "tags": [
         "backend",
-        "admin",
-        "customer",
-        "orders",
-        "tickets",
-        "zendesk",
-        "helpdesk",
-        "connector"
+        "admin tool",
+        "customer management"
     ],
     "versions": {
         "0.1.3": {

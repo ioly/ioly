@@ -11,8 +11,7 @@
     },
     "tags": [
         "backend",
-        "statistics",
-        "piwik"
+        "analytics"
     ],
     "versions": {
         "0.7.0": {

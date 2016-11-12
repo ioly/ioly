@@ -12,9 +12,7 @@
     "tags": [
         "backend",
         "search",
-        "orders",
-        "customers",
-        "articles"
+        "admin tool"
     ],
     "versions": {
         "0.3": {

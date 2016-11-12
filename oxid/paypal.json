@@ -10,10 +10,7 @@
         "de": "PayPal als Zahlungsmethode zum OXID eShop hinzufügen"
     },
     "tags": [
-        "frontend",
-        "paypal",
-        "payment",
-        "checkout"
+        "payment"
     ],
     "versions": {
       "3.2.3": {

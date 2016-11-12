@@ -6,12 +6,12 @@
     "price": "0.00",
     "license": "GNU",
     "desc": {
-        "de": "OXID eShop Admin Modul für die Anzeige von Befehlen als Button Tabelle",
+        "de": "OXID eShop Admin Modul für die Anzeige von Befehlen als Button-Tabelle",
         "en": "OXID eShop admin module for displaying commands as button matrix"
     },
     "tags": [
         "backend",
-        "execute"
+        "admin tools"
     ],
     "versions": {
         "master": {

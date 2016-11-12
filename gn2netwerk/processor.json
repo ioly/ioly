@@ -11,13 +11,7 @@
     },
     "tags": [
         "frontend",
-        "performance",
-        "minify",
-        "less",
-        "javascript",
-        "js",
-        "css",
-        "compress"
+        "performance"
     ],
     "versions": {
         "1.5.1": {

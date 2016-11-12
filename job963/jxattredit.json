@@ -11,9 +11,7 @@
     },
     "tags": [
         "backend",
-        "articles",
-        "products",
-        "attributes"
+        "admin tools"
     ],
     "versions": {
         "0.4.5": {

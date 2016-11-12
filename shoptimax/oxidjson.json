@@ -11,9 +11,7 @@
     },
     "tags": [
         "backend",
-        "REST",
-        "Tonic",
-        "angularjs"
+        "dev tools"
     ],
     "versions": {
         "1.1.0": {

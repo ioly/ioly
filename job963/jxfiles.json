@@ -11,11 +11,7 @@
     },
     "tags": [
         "backend",
-        "delete",
-        "files",
-        "manage",
-        "rename",
-        "upload"
+        "admin tools"
     ],
     "versions": {
         "0.2.2": {

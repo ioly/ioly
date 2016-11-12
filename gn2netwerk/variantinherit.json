@@ -10,9 +10,8 @@
         "de": "Übergibt definierte Felder vom Vater- auf den Variantenartikel"
     },
     "tags": [
-        "frontend",
-        "articles",
-        "variants"
+        "backend",
+        "admin tools"
     ],
     "versions": {
         "1.0.0": {

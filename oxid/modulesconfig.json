@@ -10,14 +10,9 @@
         "de": "Werkzeug zum Export, Backup und Import von OXID eShop Modulkonfigurationen"
     },
     "tags": [
-        "oxid",
-        "sdk",
         "backend",
-        "modules",
-        "configuration",
-        "import",
-        "export",
-        "backup"
+        "admin tools",
+        "dev tools"
     ],
     "versions": {
         "0.2.0": {

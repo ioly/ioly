@@ -10,9 +10,7 @@
         "de": "Dieses Skript prüft deine OXID eShop Installation auf inkonsistente Dateien"
     },
     "tags": [
-        "backend",
-        "modules",
-        "testing"
+        "dev tools"
     ],
     "versions": {
         "3.2.1": {

@@ -11,9 +11,8 @@
     },
     "tags": [
         "backend",
-        "exceptions",
-        "logfile",
-        "highlight"
+        "admin tools",
+        "dev tools"
     ],
     "versions": {
         "0.1.2": {

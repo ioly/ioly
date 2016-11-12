@@ -11,8 +11,8 @@
     },
     "tags": [
         "backend",
-        "customers",
-        "chat"
+        "frontend",
+        "customer management"
     ],
     "versions": {
         "1.1.0": {

@@ -7,12 +7,11 @@
     "license": "GNU",
     "desc": {
         "de": "Admin-Modul für die Anzeige der Shop- und Moduleinstellungen als Gesamtbericht",
-        "en": "Admin module for displaying of shop and module settings as complete report"
+        "en": "Admin module for displaying shop and module settings as a complete report"
     },
     "tags": [
         "backend",
-        "configuration",
-        "display"
+        "admin tools"
     ],
     "versions": {
         "0.1.4": {

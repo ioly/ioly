@@ -11,10 +11,8 @@
     },
     "tags": [
         "frontend",
-        "vat",
-        "tax",
-        "payment",
-        "checkout"
+        "checkout",
+        "calculation"
     ],
     "versions": {
         "1.0.0": {

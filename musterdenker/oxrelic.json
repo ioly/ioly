@@ -11,9 +11,8 @@
     },
     "tags": [
         "backend",
-        "monitoring",
-        "performance",
-        "newrelic"
+        "analytics",
+        "performance"
     ],
     "versions": {
         "0.1": {
