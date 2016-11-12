@@ -15,5 +15,18 @@
         "sitemap"
     ],
     "versions": {
+        "1.0.0": {
+            "project": "https://github.com/proudcommerce/google_sitemap",
+            "url": "",
+            "supported": [
+                "4.10",
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.6"
+            ],
+            "mapping": [
+            ]
+        }
     }
 }
