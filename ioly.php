@@ -11,14 +11,14 @@
  * @author      Stefan Moises <stefan@rent-a-hero.de>
  * @license     MIT License http://opensource.org/licenses/MIT
  * @link        http://getioly.com/
- * @version     2.1.1
+ * @version     2.1.2
  */
 namespace ioly;
 
 class ioly
 {
 
-    protected $_version = "2.1.1";
+    protected $_version = "2.1.2";
 
     protected $_baseDir = null;
     protected $_recipeCacheFile = null;
@@ -486,6 +486,9 @@ class ioly
      */
     public function printHookMessages($packageString, $packageVersion, $type = "preinstall")
     {
+        if (php_sapi_name() != "cli") {
+            return;
+        }
         $sMessage = "";
         $aHookData = $this->getJsonValueFromPackage($packageString, $packageVersion, "hooks");
         if ($aHookData && is_array($aHookData)) {

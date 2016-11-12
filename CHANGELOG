@@ -1,3 +1,6 @@
+2.1.2 (2016-11-12)
+- bugfix: do only print hook messages directly in CLI mode, otherwise the backend AJAX call is breaking with a JSON parse error
+
 2.1.1 (2016-08-17)
 - cleanup tmp dirs after zip downloads
 - bugfix: only add cookbook if not already added before
