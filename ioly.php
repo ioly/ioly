@@ -36,9 +36,9 @@ class ioly
 
     /**
      * Sets up file databases. Updates if the cache is empty.
-     * @param array $aCookbooks Initial cookbook array, overwrites default cookbook
+     * @param bool $resetCookbooks Reset default cookbook
      */
-    public function __construct($aCookbooks = array())
+    public function __construct($resetCookbooks = false)
     {
         $tz = ini_get('date.timezone');
         if (!$tz) {
@@ -50,8 +50,8 @@ class ioly
         $this->_digestCacheFile = $this->_baseDir . '/.digest.db';
         $this->_cookbookCacheFile = $this->_baseDir . '/.cookbooks.db';
         $this->_authFile = $this->_baseDir . '/.auth';
-        if ($aCookbooks && is_array($aCookbooks) && count($aCookbooks)) {
-            $this->_cookbooks = $aCookbooks;
+        if ($resetCookbooks) {
+            $this->_cookbooks = array();
         }
         $this->_init();
         if (empty($this->_recipeCache)) {
@@ -164,6 +164,27 @@ class ioly
     }
 
     /**
+     * Debug backtrace to string
+     * @return mixed|string
+     */
+    public function debug_string_backtrace()
+    {
+        ob_start();
+        debug_print_backtrace();
+        $trace = ob_get_contents();
+        ob_end_clean();
+
+        // Remove first item from backtrace as it's this function which
+        // is redundant.
+        $trace = preg_replace('/^#0\s+' . __FUNCTION__ . "[^\n]*\n/", '', $trace, 1);
+
+        // Renumber backtrace items.
+        $trace = preg_replace('/^#(\d+)/me', '\'#\' . ($1 - 1)', $trace);
+
+        return $trace;
+    }
+
+    /**
      * Add a cookbook.
      *
      * @param string $key A unique identifier.
@@ -206,14 +227,15 @@ class ioly
      * Set the cookbooks to use.
      *
      * @param array $cookbooks The cookbooks array
+     * @param bool  $forceDownload Force zip download?
      */
-    public function setCookbooks($cookbooks)
+    public function setCookbooks($cookbooks, $forceDownload = false)
     {
         $this->_cookbooks = array();
         foreach ($cookbooks as $key => $url) {
             $this->_cookbooks[] = array($key, $url);
         }
-        $this->update();
+        $this->update($forceDownload);
     }
 
     /**
@@ -348,27 +370,40 @@ class ioly
         foreach (glob($this->_baseDir . '/cookbook.*.zip') as $cookbookArchive) {
             @unlink($cookbookArchive);
         }
-        $this->_cookbooks = array();
+        $this->resetCookbooks();
     }
 
     /**
-     * Updates the internal list of recipes
+     * Reset cookbook array
      */
-    public function update()
+    public function resetCookbooks()
     {
-        foreach ($this->_getCookbooks() as $cookbook) {
+        $this->_cookbooks = array();
+    }
+    /**
+     * Updates the internal list of recipes
+     * @param bool $forceDownload Force zip download?
+     */
+    public function update($forceDownload = false)
+    {
+        //$this->_writeLog($this->debug_string_backtrace());
+        foreach ($this->_cookbooks as $cookbook) {
             $repo = $cookbook[0];
             $url = $cookbook[1];
+            $fn = 'cookbook.' . $repo . '.zip';
+            $zipLoc = $this->_baseDir . '/' . $fn;
+            if (file_exists($zipLoc) && !$forceDownload) {
+                continue;
+            }
             $this->_writeLog("Trying to get recipe $repo from $url");
             $data = $this->_curlRequest($url, true);
-            $fn = 'cookbook.' . $repo . '.zip';
             if ($data[0] != '') {
                 $this->_writeLog("Successfully downloaded recipe $repo from $url");
-                if (file_exists($this->_baseDir . '/' . $fn)) {
-                    unlink($this->_baseDir . '/' . $fn);
+                if (file_exists($zipLoc)) {
+                    unlink($zipLoc);
                 }
-                file_put_contents($this->_baseDir . '/' . $fn, $data[0]);
-                chmod($this->_baseDir . '/' . $fn, 0777);
+                file_put_contents($zipLoc, $data[0]);
+                chmod($zipLoc, 0777);
             }
         }
         file_put_contents($this->_cookbookCacheFile, serialize($this->_cookbooks));
@@ -1330,7 +1365,7 @@ if (php_sapi_name() == 'cli') {
                 break;
 
             case "update":
-                $ioly->update();
+                $ioly->update(true);
                 break;
 
             case "install":
