@@ -11,14 +11,14 @@
  * @author      Stefan Moises <stefan@rent-a-hero.de>
  * @license     MIT License http://opensource.org/licenses/MIT
  * @link        http://getioly.com/
- * @version     2.1.2
+ * @version     2.2.0
  */
 namespace ioly;
 
 class ioly
 {
 
-    protected $_version = "2.1.2";
+    protected $_version = "2.2.0";
 
     protected $_baseDir = null;
     protected $_recipeCacheFile = null;
@@ -36,8 +36,9 @@ class ioly
 
     /**
      * Sets up file databases. Updates if the cache is empty.
+     * @param array $aCookbooks Initial cookbook array, overwrites default cookbook
      */
-    public function __construct()
+    public function __construct($aCookbooks = array())
     {
         $tz = ini_get('date.timezone');
         if (!$tz) {
@@ -49,6 +50,9 @@ class ioly
         $this->_digestCacheFile = $this->_baseDir . '/.digest.db';
         $this->_cookbookCacheFile = $this->_baseDir . '/.cookbooks.db';
         $this->_authFile = $this->_baseDir . '/.auth';
+        if ($aCookbooks && is_array($aCookbooks) && count($aCookbooks)) {
+            $this->_cookbooks = $aCookbooks;
+        }
         $this->_init();
         if (empty($this->_recipeCache)) {
             $this->update();

@@ -1,3 +1,6 @@
+2.2.0 (2016-11-14)
+- added possibility to overwrite intial cookbook array in constructor
+
 2.1.2 (2016-11-12)
 - bugfix: do only print hook messages directly in CLI mode, otherwise the backend AJAX call is breaking with a JSON parse error
 
