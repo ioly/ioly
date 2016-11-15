@@ -1,22 +1,22 @@
 {
-    "name": "psCache",
+    "name": "psBundles",
     "vendor": "proudcommerce",
     "type": "oxid",
-    "picture": "https://www.proudcommerce.com/out/pictures/generated/product/1/100_150_100/pscache_oxid-module_proudcommerce_1.jpg",
+    "picture": "https://www.proudcommerce.com/out/pictures/generated/product/1/100_150_100/psbundles_oxid-module_proudcommerce_1.jpg",
     "price": "712.81",
     "license": "Commercial",
     "desc": {
         "en": "",
-        "de": "Das OXID Cache Modul psCache bietet die Möglichkeit Shopinhalte in sog. Cache-Files zwischenzuspeichern. Somit müssen diese nicht bei jedem Aufruf erneut generiert werden was zu einer schnelleren Seitenladezeit und Performance des Shops führt."
+        "de": "Mit dem OXID Bundle Modul psBundles ist es möglich eigene Artikel-Sets bzw. Bundleartikel, bestehend aus mehreren Einzelartikeln, anzulegen."
     },
     "tags": [
         "frontend",
-        "performance",
-        "seo"
+        "marketing",
+        "product presentation"
     ],
     "versions": {
-        "1.8.2": {
-            "project": "https://www.proudcommerce.com/OXID-Module/psCache.html",
+        "1.2.0": {
+            "project": "https://www.proudcommerce.com/OXID-Module/psBundles.html",
             "url": "",
             "supported": [
                 "5.3",

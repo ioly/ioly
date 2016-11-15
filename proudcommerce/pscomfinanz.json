@@ -1,0 +1,38 @@
+{
+    "name": "psComFinanz",
+    "vendor": "proudcommerce",
+    "type": "oxid",
+    "picture": "https://www.proudcommerce.com/out/pictures/generated/product/1/100_150_100/pscomfinanz_oxid-module_proudcommerce_1.jpg",
+    "price": "236.81",
+    "license": "Commercial",
+    "desc": {
+        "en": "",
+        "de": "Durch das OXID Zahlarten Modul psComFinanz können Kunden eine Finanzierungsmöglichkeit (über Commerz Finanz München) als Zahlart nutzen."
+    },
+    "tags": [
+        "frontend",
+        "marketing",
+        "payment",
+        "product presentation"
+    ],
+    "versions": {
+        "2.6.1": {
+            "project": "https://www.proudcommerce.com/OXID-Module/psComFinanz.html",
+            "url": "",
+            "supported": [
+                "5.3",
+                "5.2",
+                "5.1",
+                "5.0",
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.10"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

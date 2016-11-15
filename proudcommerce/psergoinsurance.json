@@ -1,0 +1,37 @@
+{
+    "name": "psErgoInsurance",
+    "vendor": "proudcommerce",
+    "type": "oxid",
+    "picture": "https://www.proudcommerce.com/out/pictures/generated/product/1/100_150_100/psergoinsurance_oxid-module_proudcommerce_1.jpg",
+    "price": "0.00",
+    "license": "Commercial",
+    "desc": {
+        "en": "",
+        "de": "Mit dem OXID Modul psErgoInsurance können Sie Ihren Kunden ein Zusatzversicherung (Geräteschutz, Garantieverlängerung) mit der ERGOdirekt anbieten."
+    },
+    "tags": [
+        "frontend",
+        "marketing",
+        "product presentation"
+    ],
+    "versions": {
+        "1.7.0": {
+            "project": "https://www.proudcommerce.com/OXID-Module/psErgoInsurance.html",
+            "url": "",
+            "supported": [
+                "5.3",
+                "5.2",
+                "5.1",
+                "5.0",
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.10"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

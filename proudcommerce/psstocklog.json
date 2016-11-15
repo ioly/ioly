@@ -1,0 +1,37 @@
+{
+    "name": "psStockLog",
+    "vendor": "proudcommerce",
+    "type": "oxid",
+    "picture": "https://www.proudcommerce.com/out/pictures/generated/product/1/100_150_100/psstocklog_oxid-module_proudcommerce_1.jpg",
+    "price": "117.81",
+    "license": "Commercial",
+    "desc": {
+        "en": "",
+        "de": "Mit dem OXID Lagerbestands Modul psStockLog werden alle Änderungen des Lagerbestandes eines Artikels gespeichert und können im Shop-Admin angezeigt werden."
+    },
+    "tags": [
+        "admin tools",
+        "backend",
+        "logistics"
+    ],
+    "versions": {
+        "1.0.0": {
+            "project": "https://www.proudcommerce.com/OXID-Module/psStockLog.html",
+            "url": "",
+            "supported": [
+                "5.3",
+                "5.2",
+                "5.1",
+                "5.0",
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.10"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}
