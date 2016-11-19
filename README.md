@@ -1,6 +1,6 @@
-# OXID module vonnector (en)
+# OXID module connector (en)
 
-OXID module connector (OMC) displays available modules, a short description and allows to install these modules automatically (if possible) and directly from the OXID eShop admin panel. If an automated installation is not possible for some reason, OMC links to the original module page.
+OXID module connector (OMC) displays available modules, a short description and allows to install these modules automatically (if possible) and directly from the OXID eShop admin panel. If an automated installation is not possible for some reason, OMC links to the original module page. ([deutsche Version](https://github.com/OXIDprojects/OXID-Module-Connector/blob/recipes/LIESMICH.md))
 
 
 ## Installation
@@ -20,6 +20,8 @@ Installation with Composer or using console? No problem! ;-) [Installation instr
 - Sobald die Modulliste angezeigt wird kann mit nur einem Klick ein Modul installiert/aktiviert werden.
 - Sollte ein Modul nicht als Download zur Verfügung stehen gibt es einen direkten Link zur Modulseite des Anbieters.
 
+![OXID Module Connector](oxid_module_connector.png)
+
 
 ## Notices
 
@@ -38,8 +40,7 @@ This module is designed for development and testing environments. Please do not 
   * cUrl
   * JSON
   * ZIP
-  
----
+
 
 ## License
 OXID module connector is licensed under the MIT License - see the [LICENSE file](https://github.com/OXIDprojects/OXID-Module-Connector/blob/recipes/LICENSE) for details.
