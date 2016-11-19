@@ -20,7 +20,7 @@ Installation with Composer or using console? No problem! ;-) [Read more](https:/
 - Sobald die Modulliste angezeigt wird kann mit nur einem Klick ein Modul installiert/aktiviert werden.
 - Sollte ein Modul nicht als Download zur Verfügung stehen gibt es einen direkten Link zur Modulseite des Anbieters.
 
-![OXID Module Connector](oxid_module_connector.png)
+![OXID module connector](screenshot_omc.png)
 
 
 ## Notices
