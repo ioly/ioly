@@ -1,4 +1,4 @@
-# OXID Module Connector (de)
+# OXID Modul Connector (de)
 
 Der OXID Modul Connector (OMC) ist ein Modulkatalog für verfügbare OXID Module. Man hat direkt aus dem Shop-Admin die Möglichkeit Module zu installieren, sofern vom Modulanbieter unterstützt. Sollte dies nicht möglich sein ist ein Link zur Modulseite des Anbieters vorhanden.
 
@@ -8,6 +8,8 @@ Der OXID Modul Connector (OMC) ist ein Modulkatalog für verfügbare OXID Module
 2. Modul (oxcom-omc) ist das /modules Verzeichnis kopieren
 3. Modul aktivieren
 4. That´s it!
+
+Installation mit Composer oder per Konsole? Kein Problem! ;-) [Installationsanleitung](https://github.com/OXIDprojects/OXID-Module-Connector/wiki/Installation)
 
 ## Nutzung
 
@@ -40,6 +42,8 @@ OXID Module Connector (OMC) displays available modules, a short description and 
 2. Extract module (oxcom-omc) to the /modules directory
 3. Activate module
 4. That´s it!
+
+Installation with Composer or using console? No problem! ;-) [Installation instructions](https://github.com/OXIDprojects/OXID-Module-Connector/wiki/Installation)
 
 
 ## Usage
