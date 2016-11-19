@@ -10,7 +10,7 @@ OXID module connector (OMC) displays available modules, a short description and 
 3. Activate module
 4. That´s it!
 
-Installation with Composer or using console? No problem! ;-) [Installation instructions](https://github.com/OXIDprojects/OXID-Module-Connector/wiki/Installation)
+Installation with Composer or using console? No problem! ;-) [Read more](https://github.com/OXIDprojects/OXID-Module-Connector/wiki/Installation)
 
 
 ## Usage
@@ -31,6 +31,16 @@ Please note that this is a community project that comes with absolutely no warra
 
 >**ATTENTION!**
 This module is designed for development and testing environments. Please do not install any module in your live shop environment! Please backup your installation (database + files) before installing a module via OXID Module Connector!
+
+
+## Contribute modules
+
+1. write a recipe
+2. commit your recipe
+3. send a pull request
+4. done, everybody can use it!
+
+[Read more](https://github.com/OXIDprojects/OXID-Module-Connector/wiki/Contributing)
 
 
 ## Requirements
