@@ -10,7 +10,7 @@ Der OXID Modul Connector (OMC) ist ein Modulkatalog für verfügbare OXID Module
 3. Modul aktivieren
 4. That´s it!
 
-Installation mit Composer oder per Konsole? Kein Problem! ;-) [Installationsanleitung](https://github.com/OXIDprojects/OXID-Module-Connector/wiki/Installation)
+Installation mit Composer oder per Konsole? Kein Problem! ;-) [Mehr lesen](https://github.com/OXIDprojects/OXID-Module-Connector/wiki/Installation)
 
 
 ## Nutzung
@@ -28,6 +28,16 @@ Der OXID Modul Connector basiert auf [ioly](https://github.com/ioly/) und ist w�
 
 >**ACHTUNG!**
 Der OXID Modul Connector wurde primär für Entwicklungs- und Testumgebungen entwickelt. Vor der Nutzung unbedingt ein Backup (Dateien + Datenbank) anfertigen bevor das erste Modul installiert wird.
+
+
+## Module einreichen
+
+1. Modulrezept schreiben
+2. Rezept auf Github committen
+3. Pull-Request senden
+4. Fertig, jeder kann das Modul nutzen!
+
+[Mehr lesen](https://github.com/OXIDprojects/OXID-Module-Connector/wiki/Contributing)
 
 
 ## Anforderungen
