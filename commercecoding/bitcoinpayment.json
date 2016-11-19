@@ -2,7 +2,7 @@
     "name": "Bitcoin Payment",
     "vendor": "commercecoding",
     "type": "oxid",
-    "picture": "https://github.com/adiebler/oxid-bitcoin-payment/blob/master/src/copy_this/modules/cc_bitcoin/out/img/bitcoin-accepted-logo.png",
+    "picture": "https://raw.githubusercontent.com/adiebler/oxid-bitcoin-payment/master/src/copy_this/modules/cc_bitcoin/out/img/bitcoin-accepted-logo.png",
     "price": "0.00",
     "license": "GNU",
     "desc": {

@@ -2,7 +2,7 @@
     "name": "OXID Module Skeleton Generator",
     "vendor": "oxid",
     "type": "oxid",
-    "picture": "https://github.com/OXID-eSales/module_skeleton_generator/blob/master/copy_this/modules/oxps/modulegenerator/out/pictures/oxpsmodulegenerator.png",
+    "picture": "https://raw.githubusercontent.com/OXID-eSales/module_skeleton_generator/master/copy_this/modules/oxps/modulegenerator/out/pictures/oxpsmodulegenerator.png",
     "price": "0.00",
     "license": "GNU",
     "desc": {

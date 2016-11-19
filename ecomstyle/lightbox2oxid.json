@@ -2,7 +2,7 @@
     "name": "Lightbox2OXID",
     "vendor": "ecomstyle",
     "type": "oxid",
-    "picture": "https://github.com/eComStyle-de/ECS_Lightbox2OXID/blob/master/copy_this/modules/ecomstyle.de/ecs_light2ox/ecomstyle.png",
+    "picture": "https://raw.githubusercontent.com/eComStyle-de/ECS_Lightbox2OXID/master/copy_this/modules/ecomstyle.de/ecs_light2ox/ecomstyle.png",
     "price": "0.00",
     "license": "GNU",
     "desc": {

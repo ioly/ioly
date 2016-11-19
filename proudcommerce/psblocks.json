@@ -2,7 +2,7 @@
     "name": "psBlocks",
     "vendor": "proudcommerce",
     "type": "oxid",
-    "picture": "https://github.com/proudcommerce/psBlocks/blob/master/copy_this/modules/proudsourcing/psBlocks/logo.jpg",
+    "picture": "https://raw.githubusercontent.com/proudcommerce/psBlocks/master/copy_this/modules/proudsourcing/psBlocks/logo.jpg",
     "price": "0.00",
     "license": "GNU",
     "desc": {

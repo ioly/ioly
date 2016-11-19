@@ -2,7 +2,7 @@
     "name": "mysaving",
     "vendor": "kermie",
     "type": "oxid",
-    "picture": "https://github.com/kermie/mysaving/blob/master/mst/mysaving/thumb.png",
+    "picture": "https://raw.githubusercontent.com/kermie/mysaving/master/mst/mysaving/thumb.png",
     "price": "0.00",
     "license": "GPLv3",
     "desc": {

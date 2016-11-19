@@ -2,7 +2,7 @@
     "name": "marmalade Scheduler",
     "vendor": "marmalade",
     "type": "oxid",
-    "picture": "https://github.com/marmaladeDE/marmScheduler/blob/master/modules/marm/scheduler/marmalade.jpg",
+    "picture": "https://raw.githubusercontent.com/marmaladeDE/marmScheduler/master/modules/marm/scheduler/marmalade.jpg",
     "price": "0.00",
     "license": "MIT",
     "desc": {

@@ -2,7 +2,7 @@
     "name": "elefunds OXID",
     "vendor": "suabo",
     "type": "oxid",
-    "picture": "https://github.com/suabo/elefunds-OXID/blob/master/copy_this/modules/suabo/logo.png",
+    "picture": "https://raw.githubusercontent.com/suabo/elefunds-OXID/master/copy_this/modules/suabo/logo.png",
     "price": "0.00",
     "license": "unknown",
     "desc": {

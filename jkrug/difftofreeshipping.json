@@ -2,7 +2,7 @@
     "name": "diffToFreeShipping ",
     "vendor": "jkrug",
     "type": "oxid",
-    "picture": "https://github.com/jkrug/diffToFreeShipping/blob/master/modules/marm/difftofreeshipping/marmalade.jpg",
+    "picture": "https://raw.githubusercontent.com/jkrug/diffToFreeShipping/master/modules/marm/difftofreeshipping/marmalade.jpg",
     "price": "0.00",
     "license": "unknown",
     "desc": {

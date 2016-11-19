@@ -2,7 +2,7 @@
     "name": "eVAT",
     "vendor": "oxid",
     "type": "oxid",
-    "picture": "https://github.com/OXID-eSales/vat_tbe_services/blob/b-dev/source/modules/oe/oevattbe/logo.png",
+    "picture": "https://raw.githubusercontent.com/OXID-eSales/vat_tbe_services/b-dev/source/modules/oe/oevattbe/logo.png",
     "price": "0.00",
     "license": "GNU",
     "desc": {

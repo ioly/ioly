@@ -2,7 +2,7 @@
     "name": "Admin Bestell Statistik",
     "vendor": "suabo",
     "type": "oxid",
-    "picture": "https://github.com/suabo/oxid-order-analytics/blob/master/Order_Statistic_4_7_x-5_x_x/copy_this/modules/suabo/logo.png",
+    "picture": "https://raw.githubusercontent.com/suabo/oxid-order-analytics/master/Order_Statistic_4_7_x-5_x_x/copy_this/modules/suabo/logo.png",
     "price": "0.00",
     "license": "unknown",
     "desc": {

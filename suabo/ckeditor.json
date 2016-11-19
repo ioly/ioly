@@ -2,7 +2,7 @@
   "name": "ckEditor",
   "vendor": "suabo",
   "type": "oxid",
-  "picture": "https://github.com/suabo/oxid_ckEditor/blob/master/copy_this/modules/suabo/logo.png",
+  "picture": "https://raw.githubusercontent.com/suabo/oxid_ckEditor/master/copy_this/modules/suabo/logo.png",
   "price": "0.00",
   "license": "GPL",
   "desc": {

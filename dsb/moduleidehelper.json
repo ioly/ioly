@@ -2,7 +2,7 @@
     "name": "OXID-Module-IDE",
     "vendor": "dsb",
     "type": "oxid",
-    "picture": "https://github.com/DSB/Oxid-Module-IDE-Helper/blob/master/modules/dsb/dsb_ide_helper/out/thumb.png",
+    "picture": "https://raw.githubusercontent.com/DSB/Oxid-Module-IDE-Helper/master/modules/dsb/dsb_ide_helper/out/thumb.png",
     "price": "0.00",
     "license": "unknown",
     "desc": {

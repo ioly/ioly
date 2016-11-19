@@ -2,7 +2,7 @@
     "name": "TOXID cURL",
     "vendor": "marmalade",
     "type": "oxid",
-    "picture": "https://github.com/jkrug/TOXID-cURL/blob/v2.0/toxid.jpg",
+    "picture": "https://raw.githubusercontent.com/jkrug/TOXID-cURL/v2.0/toxid.jpg",
     "price": "0.00",
     "license": "unknown",
     "desc": {

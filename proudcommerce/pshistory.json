@@ -2,7 +2,7 @@
     "name": "psHistory",
     "vendor": "proudcommerce",
     "type": "oxid",
-    "picture": "https://github.com/proudcommerce/psCmsSnippets/blob/master/copy_this/modules/proudsourcing/psCmsSnippets/logo-ps.jpg",
+    "picture": "https://raw.githubusercontent.com/proudcommerce/psCmsSnippets/master/copy_this/modules/proudsourcing/psCmsSnippets/logo-ps.jpg",
     "price": "0.00",
     "license": "GNU",
     "desc": {

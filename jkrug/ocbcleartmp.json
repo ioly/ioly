@@ -2,7 +2,7 @@
     "name": "OXID Cookbook clear tmp",
     "vendor": "jkrug",
     "type": "oxid",
-    "picture": "https://github.com/OXIDCookbook/ocb_cleartmp/blob/master/cookbook.jpg",
+    "picture": "https://raw.githubusercontent.com/OXIDCookbook/ocb_cleartmp/master/cookbook.jpg",
     "price": "0.00",
     "license": "GNU",
     "desc": {

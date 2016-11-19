@@ -2,7 +2,7 @@
     "name": "Mobile Theme",
     "vendor": "oxid",
     "type": "oxid",
-    "picture": "https://github.com/OXID-eSales/mobile_theme/blob/b-dev/mobile.png",
+    "picture": "https://raw.githubusercontent.com/OXID-eSales/mobile_theme/b-dev/mobile.png",
     "price": "0.00",
     "license": "GNU",
     "desc": {

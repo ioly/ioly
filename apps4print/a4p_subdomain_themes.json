@@ -2,7 +2,7 @@
     "name": "a4p_subdomain_themes",
     "vendor": "apps4print",
     "type": "oxid",
-    "picture": "https://github.com/a4p-ASD/a4p_subdomain_themes/blob/master/out/img/apps4print/a4p_logo.jpg",
+    "picture": "https://raw.githubusercontent.com/a4p-ASD/a4p_subdomain_themes/master/out/img/apps4print/a4p_logo.jpg",
     "price": "0.00",
     "license": "unknown",
     "desc": {

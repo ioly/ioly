@@ -37,7 +37,7 @@
         "postinstall": {
             "type": "overlay",
             "message": "Please update changed_full files.",
-            "link": "https://github.com/proudcommerce/psSeaTracker/blob/master/README.md"
+            "link": "https://github.com/proudcommerce/psSeaTracker/master/README.md"
         }
     }
 }

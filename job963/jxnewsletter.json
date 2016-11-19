@@ -2,7 +2,7 @@
     "name": "jxNewsletter",
     "vendor": "job963",
     "type": "oxid",
-    "picture": "https://github.com/job963/jxNewsletter/blob/master/copy_this/modules/jxmods/jxnewsletter/jxnewsletter.png",
+    "picture": "https://raw.githubusercontent.com/job963/jxNewsletter/master/copy_this/modules/jxmods/jxnewsletter/jxnewsletter.png",
     "price": "0.00",
     "license": "GNU",
     "desc": {

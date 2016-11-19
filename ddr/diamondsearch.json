@@ -2,7 +2,7 @@
     "name": "Diamond Search CE",
     "vendor": "ddr",
     "type": "oxid",
-    "picture": "https://github.com/druteika/diamond_search_for_oxid_eshop/blob/master/copy_this/modules/ddr/diamondsearch/out/pictures/ddrdiamondsearch.png",
+    "picture": "https://raw.githubusercontent.com/druteika/diamond_search_for_oxid_eshop/master/copy_this/modules/ddr/diamondsearch/out/pictures/ddrdiamondsearch.png",
     "price": "0.00",
     "license": "GNU",
     "desc": {
