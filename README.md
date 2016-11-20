@@ -7,5 +7,5 @@ For more information see [Contributing](https://github.com/OXIDprojects/OXID-Mod
 
 # Module connector description
 
-- [deutsche Version](https://github.com/OXIDprojects/OXID-Module-Connector/blob/module/LIESMICH.md))
-- [english version](https://github.com/OXIDprojects/OXID-Module-Connector/blob/module/LIESMICH.md))
+- [deutsche Version](https://github.com/OXIDprojects/OXID-Module-Connector/blob/module/LIESMICH.md)
+- [english version](https://github.com/OXIDprojects/OXID-Module-Connector/blob/module/LIESMICH.md)
