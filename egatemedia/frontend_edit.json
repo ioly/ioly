@@ -1,24 +1,23 @@
 {
-    "name": "Amazon Interface",
+    "name": "Frontend Edit",
     "vendor": "egatemedia",
     "type": "oxid",
-    "picture": "http://www.egate-media.com/out/pictures/generated/product/1/380_340_75/ico_250x250__0005_interface.png",
-    "price": "1199.00",
+    "picture": "http://www.egate-media.com/out/pictures/generated/product/1/380_340_75/ico_250x250__0004_administration.png",
+    "price": "199.00",
     "license": "Commercial",
     "id": "",
     "desc": {
         "en": "",
-        "de": "Interface zu Amazon mit Artikel-Export und Bestell-Import."
+        "de": "Editieren Sie Artikel, Kategorien und Content-Seiten direkt auf der Shop-Oberfläche."
     },
     "tags": [
-        "backend",
-        "interfaces",
-        "marketing",
-        "product presentation."
+        "dev tools",
+        "frontend",
+        "product presentation"
     ],
     "versions": {
         "": {
-            "project": "http://www.egate-media.com/Oxid-Module/Interface/Amazon-Interface.html",
+            "project": "http://www.egate-media.com/Oxid-Module/Administration/Frontend-Edit.html",
             "url": "",
             "supported": [
                 "5.3",

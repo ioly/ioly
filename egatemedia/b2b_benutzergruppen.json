@@ -1,24 +1,24 @@
 {
-    "name": "Amazon Interface",
+    "name": "B2B Benutzergruppen",
     "vendor": "egatemedia",
     "type": "oxid",
-    "picture": "http://www.egate-media.com/out/pictures/generated/product/1/380_340_75/ico_250x250__0005_interface.png",
-    "price": "1199.00",
+    "picture": "http://www.egate-media.com/out/pictures/generated/product/1/380_340_75/ico_250x250__0013_b2b.png",
+    "price": "149.00",
     "license": "Commercial",
     "id": "",
     "desc": {
         "en": "",
-        "de": "Interface zu Amazon mit Artikel-Export und Bestell-Import."
+        "de": "Kombinierter B2C und B2B Betrieb Ihres Shops."
     },
     "tags": [
-        "backend",
-        "interfaces",
+        "customer management",
+        "frontend",
         "marketing",
-        "product presentation."
+        "product presentation"
     ],
     "versions": {
         "": {
-            "project": "http://www.egate-media.com/Oxid-Module/Interface/Amazon-Interface.html",
+            "project": "http://www.egate-media.com/Oxid-Module/B2B/B2B-Benutzer-gruppen.html",
             "url": "",
             "supported": [
                 "5.3",

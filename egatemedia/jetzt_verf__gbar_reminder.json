@@ -1,24 +1,23 @@
 {
-    "name": "Amazon Interface",
+    "name": "Jetzt Verfügbar Reminder",
     "vendor": "egatemedia",
     "type": "oxid",
-    "picture": "http://www.egate-media.com/out/pictures/generated/product/1/380_340_75/ico_250x250__0005_interface.png",
-    "price": "1199.00",
+    "picture": "http://www.egate-media.com/out/pictures/generated/product/1/380_340_75/ico_250x250__0012_marketing.png",
+    "price": "199.00",
     "license": "Commercial",
     "id": "",
     "desc": {
         "en": "",
-        "de": "Interface zu Amazon mit Artikel-Export und Bestell-Import."
+        "de": "Informieren Sie Ihre Kunden per automatisierter E-Mail, sobald Produkte wieder auf Lager sind."
     },
     "tags": [
-        "backend",
-        "interfaces",
+        "frontend",
         "marketing",
-        "product presentation."
+        "product presentation"
     ],
     "versions": {
         "": {
-            "project": "http://www.egate-media.com/Oxid-Module/Interface/Amazon-Interface.html",
+            "project": "http://www.egate-media.com/Oxid-Module/Marketing/Jetzt-Verfuegbar-Reminder.html",
             "url": "",
             "supported": [
                 "5.3",
@@ -28,6 +27,7 @@
                 "4.9",
                 "4.8",
                 "4.7",
+                "4.6",
                 "4.10"
             ],
             "mapping": {

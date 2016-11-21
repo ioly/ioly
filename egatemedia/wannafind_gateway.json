@@ -1,24 +1,22 @@
 {
-    "name": "Amazon Interface",
+    "name": "Wannafind Gateway",
     "vendor": "egatemedia",
     "type": "oxid",
-    "picture": "http://www.egate-media.com/out/pictures/generated/product/1/380_340_75/ico_250x250__0005_interface.png",
-    "price": "1199.00",
+    "picture": "http://www.egate-media.com/out/pictures/generated/product/1/380_340_75/ico_250x250__0003_payment(3).png",
+    "price": "199.00",
     "license": "Commercial",
     "id": "",
     "desc": {
         "en": "",
-        "de": "Interface zu Amazon mit Artikel-Export und Bestell-Import."
+        "de": "Das Interface zum dänischen Zahlungsanbieter."
     },
     "tags": [
-        "backend",
-        "interfaces",
-        "marketing",
-        "product presentation."
+        "frontend",
+        "payment"
     ],
     "versions": {
         "": {
-            "project": "http://www.egate-media.com/Oxid-Module/Interface/Amazon-Interface.html",
+            "project": "http://www.egate-media.com/Oxid-Module/Payment/Wannafind-Gateway.html",
             "url": "",
             "supported": [
                 "5.3",

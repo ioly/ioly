@@ -1,24 +1,23 @@
 {
-    "name": "Amazon Interface",
+    "name": "CMS Edit",
     "vendor": "egatemedia",
     "type": "oxid",
-    "picture": "http://www.egate-media.com/out/pictures/generated/product/1/380_340_75/ico_250x250__0005_interface.png",
-    "price": "1199.00",
+    "picture": "http://www.egate-media.com/out/pictures/generated/product/1/380_340_75/ico_250x250__0004_administration(1).png",
+    "price": "499.00",
     "license": "Commercial",
     "id": "",
     "desc": {
         "en": "",
-        "de": "Interface zu Amazon mit Artikel-Export und Bestell-Import."
+        "de": "Editieren Sie Artikel, Kategorien und Content-Seiten direkt im Shop."
     },
     "tags": [
-        "backend",
-        "interfaces",
+        "frontend",
         "marketing",
-        "product presentation."
+        "product presentation"
     ],
     "versions": {
         "": {
-            "project": "http://www.egate-media.com/Oxid-Module/Interface/Amazon-Interface.html",
+            "project": "http://www.egate-media.com/Oxid-Module/Administration/CMS-Edit.html",
             "url": "",
             "supported": [
                 "5.3",
