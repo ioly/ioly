@@ -1,6 +1,7 @@
 {
     "name": "psArticleRequest",
     "vendor": "proudcommerce",
+	"id": "psArticleRequest",
     "type": "oxid",
     "picture": "https://raw.githubusercontent.com/proudcommerce/psArticleRequest/master/copy_this/modules/proudsourcing/psArticleRequest/logo-ps.jpg",
     "price": "0.00",

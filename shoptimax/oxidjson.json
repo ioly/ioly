@@ -1,6 +1,7 @@
 {
     "name": "oxid|JSON",
     "vendor": "shoptimax",
+	"id": "oxjson",
     "type": "oxid",
     "picture": "https://raw.githubusercontent.com/shoptimax/oxidjson/master/modules/oxjson/logo.png",
     "price": "0.00",

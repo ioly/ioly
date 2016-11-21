@@ -1,6 +1,7 @@
 {
     "name": "jxCmdBoard",
     "vendor": "job963",
+	"id": "jxcmdboard",
     "type": "oxid",
     "picture": "https://raw.githubusercontent.com/job963/jxCmdBoard/master/copy_this/modules/jxmods/jxcmdboard/jxcmdboard.png",
     "price": "0.00",

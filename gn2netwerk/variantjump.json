@@ -1,6 +1,7 @@
 {
     "name": "VariantJump",
     "vendor": "gn2netwerk",
+	"id": "gn2_variantjump",
     "type": "oxid",
     "picture": "https://bitbucket.org/gn2netwerk/variantjump/src/69d4e508c9b47af2be78b41943b0daab2f860c37/gn2.jpg?at=master&fileviewer=file-view-default",
     "price": "0.00",

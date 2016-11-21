@@ -1,6 +1,7 @@
 {
     "name": "jxFiles",
     "vendor": "job963",
+	"id": "jxfiles",
     "type": "oxid",
     "picture": "https://raw.githubusercontent.com/job963/jxFiles/master/copy_this/modules/jxmods/jxfiles/jxfiles.png",
     "price": "0.00",

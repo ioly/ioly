@@ -1,6 +1,7 @@
 {
     "name": "jxTaxo",
     "vendor": "job963",
+	"id": "jxtaxo",
     "type": "oxid",
     "picture": "https://raw.githubusercontent.com/job963/jxTaxo/master/copy_this/modules/jxmods/jxtaxo/jxtaxo.png",
     "price": "0.00",

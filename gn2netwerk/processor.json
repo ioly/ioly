@@ -1,6 +1,7 @@
 {
     "name": "Processor",
     "vendor": "gn2netwerk",
+	"id": "processor",
     "type": "oxid",
     "picture": "",
     "price": "0.00",

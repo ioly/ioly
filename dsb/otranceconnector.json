@@ -1,6 +1,7 @@
 {
     "name": "OXID-oTranCe-Connector",
     "vendor": "dsb",
+	"id": "otrance-connector",
     "type": "oxid",
     "picture": "",
     "price": "0.00",

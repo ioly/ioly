@@ -1,6 +1,7 @@
 {
     "name": "TOXID cURL",
     "vendor": "marmalade",
+	"id": "toxid_curl",
     "type": "oxid",
     "picture": "https://raw.githubusercontent.com/jkrug/TOXID-cURL/v2.0/toxid.jpg",
     "price": "0.00",

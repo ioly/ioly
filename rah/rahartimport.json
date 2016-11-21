@@ -1,6 +1,7 @@
 {
     "name": "CSV Article importer for OXID eShop.",
     "vendor": "rah",
+	"id": "",
     "type": "oxid",
     "picture": "",
     "price": "179.00",

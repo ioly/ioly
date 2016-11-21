@@ -1,6 +1,7 @@
 {
     "name": "OXID Module Skeleton Generator",
     "vendor": "oxid",
+	"id": "oxpsmodulegenerator",
     "type": "oxid",
     "picture": "https://raw.githubusercontent.com/OXID-eSales/module_skeleton_generator/master/copy_this/modules/oxps/modulegenerator/out/pictures/oxpsmodulegenerator.png",
     "price": "0.00",

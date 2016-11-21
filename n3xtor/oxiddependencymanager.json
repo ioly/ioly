@@ -1,6 +1,7 @@
 {
     "name": "OXID Dependency Manager",
     "vendor": "n3xtor",
+	"id": "ib_DependencyManager",
     "type": "oxid",
     "picture": "",
     "price": "0.00",

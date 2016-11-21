@@ -1,6 +1,7 @@
 {
     "name": "psAgeGate",
     "vendor": "proudcommerce",
+	"id": "psAgeGate",
     "type": "oxid",
     "picture": "",
     "price": "0.00",

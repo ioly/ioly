@@ -1,6 +1,7 @@
 {
     "name": "jxAttrEdit",
     "vendor": "job963",
+	"id": "jxattredit",
     "type": "oxid",
     "picture": "https://raw.githubusercontent.com/job963/jxAttrEdit/master/copy_this/modules/jxattredit/jxattredit.png",
     "price": "0.00",

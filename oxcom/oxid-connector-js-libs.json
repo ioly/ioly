@@ -1,6 +1,7 @@
 {
     "name": "ioly OXID Connector JS Libs",
     "vendor": "oxcom",
+	"id": "",
     "type": "library",
     "license": "MIT",
     "desc": {

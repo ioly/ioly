@@ -1,6 +1,7 @@
 {
     "name": "OXID Module Internals",
     "vendor": "acirtautas",
+	"id": "oxid-module-internals",
     "type": "oxid",
     "picture": "",
     "price": "0.00",

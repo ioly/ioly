@@ -1,6 +1,7 @@
 {
     "name": "psSeaTracker",
     "vendor": "proudcommerce",
+	"id": "",
     "type": "oxid",
     "picture": "",
     "price": "0.00",

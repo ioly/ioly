@@ -1,6 +1,7 @@
 {
     "name": "smxSurveys",
     "vendor": "shoptimax",
+	"id": "smxsurveys",
     "type": "oxid",
     "picture": "https://raw.githubusercontent.com/shoptimax/smxsurveys/master/modules/shoptimax/smxsurveys/box_smxsurveys.jpg",
     "price": "0.00",

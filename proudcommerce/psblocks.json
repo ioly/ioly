@@ -1,6 +1,7 @@
 {
     "name": "psBlocks",
     "vendor": "proudcommerce",
+	"id": "psBlocks",
     "type": "oxid",
     "picture": "https://raw.githubusercontent.com/proudcommerce/psBlocks/master/copy_this/modules/proudsourcing/psBlocks/logo.jpg",
     "price": "0.00",

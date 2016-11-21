@@ -1,6 +1,7 @@
 {
     "name": "Module Debug",
     "vendor": "oxid",
+	"id": "moduledebug",
     "type": "oxid",
     "picture": "",
     "price": "0.00",

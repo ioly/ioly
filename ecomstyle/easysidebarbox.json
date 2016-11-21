@@ -1,6 +1,7 @@
 {
     "name": "easySidebarBox",
     "vendor": "ecomstyle",
+	"id": "ecs_sidebarbox",
     "type": "oxid",
     "picture": "https://raw.githubusercontent.com/eComStyle-de/ECS_easySidebarBox/master/copy_this/modules/ecomstyle.de/ecs_sidebarbox/ecomstyle.png",
     "price": "0.00",

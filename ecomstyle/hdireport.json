@@ -1,6 +1,7 @@
 {
     "name": "HDI-Report",
     "vendor": "ecomstyle",
+	"id": "hdiReport",
     "type": "oxid",
     "picture": "",
     "price": "0.00",

@@ -1,6 +1,7 @@
 {
     "name": "mysaving",
     "vendor": "kermie",
+	"id": "mysaving",
     "type": "oxid",
     "picture": "https://raw.githubusercontent.com/kermie/mysaving/master/mst/mysaving/thumb.png",
     "price": "0.00",

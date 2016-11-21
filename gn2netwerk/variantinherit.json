@@ -1,6 +1,7 @@
 {
     "name": "VariantInherit",
     "vendor": "gn2netwerk",
+	"id": "gn2_variantinherit",
     "type": "oxid",
     "picture": "https://bitbucket.org/gn2netwerk/variantinherit/src/6c9d50c3d7545815f0286c1a6ffbb2e94f525513/gn2.jpg?at=master&fileviewer=file-view-default",
     "price": "0.00",

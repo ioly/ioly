@@ -1,6 +1,7 @@
 {
     "name": "Admin Bestell Statistik",
     "vendor": "suabo",
+	"id": "suaboorderstat",
     "type": "oxid",
     "picture": "https://raw.githubusercontent.com/suabo/oxid-order-analytics/master/Order_Statistic_4_7_x-5_x_x/copy_this/modules/suabo/logo.png",
     "price": "0.00",

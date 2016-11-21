@@ -1,6 +1,7 @@
 {
     "name": "jxInventory",
     "vendor": "job963",
+	"id": "jxinventory",
     "type": "oxid",
     "picture": "https://raw.githubusercontent.com/job963/jxInventory/master/copy_this/modules/jxmods/jxinventory/jxinventory.png",
     "price": "0.00",

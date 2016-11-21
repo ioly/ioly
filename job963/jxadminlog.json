@@ -1,6 +1,7 @@
 {
     "name": "jxAdminLog",
     "vendor": "job963",
+	"id": "jxadminlog",
     "type": "oxid",
     "picture": "https://raw.githubusercontent.com/job963/jxAdminLog/master/copy_this/modules/jxmods/jxadminlog/jxadminlog.png",
     "price": "0.00",

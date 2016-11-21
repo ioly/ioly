@@ -1,6 +1,7 @@
 {
     "name": "jxExtYoutube",
     "vendor": "job963",
+	"id": "jxExtYoutube",
     "type": "oxid",
     "picture": "https://raw.githubusercontent.com/job963/jxExtYoutube/master/copy_this/modules/jxmods/jxextyoutube/jxextyoutube.png",
     "price": "0.00",

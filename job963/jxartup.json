@@ -1,6 +1,7 @@
 {
     "name": "jxArtUp",
     "vendor": "job963",
+	"id": "jxartup",
     "type": "oxid",
     "picture": "https://raw.githubusercontent.com/job963/jxArtUp/master/copy_this/modules/jxmods/jxartup/jxartup.png",
     "price": "0.00",

@@ -1,6 +1,7 @@
 {
     "name": "jxSales",
     "vendor": "job963",
+	"id": "jxsales",
     "type": "oxid",
     "picture": "https://raw.githubusercontent.com/job963/jxSales/master/copy_this/modules/jxmods/jxsales/jxsales.png",
     "price": "0.00",

@@ -1,6 +1,7 @@
 {
   "name": "ckEditor",
   "vendor": "suabo",
+  "id": "suabo_ckeditor",
   "type": "oxid",
   "picture": "https://raw.githubusercontent.com/suabo/oxid_ckEditor/master/copy_this/modules/suabo/logo.png",
   "price": "0.00",

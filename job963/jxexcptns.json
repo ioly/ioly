@@ -1,6 +1,7 @@
 {
     "name": "jxExcptns",
     "vendor": "job963",
+	"id": "jxexcptns",
     "type": "oxid",
     "picture": "https://raw.githubusercontent.com/job963/jxExcptns/master/copy_this/modules/jxexcptns/jxexcptns.png",
     "price": "0.00",

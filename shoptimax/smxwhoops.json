@@ -1,6 +1,7 @@
 {
     "name": "smxWhoops",
     "vendor": "shoptimax",
+	"id": "smx_whoops",
     "type": "oxid",
     "picture": "https://raw.githubusercontent.com/shoptimax/smx_whoops/master/modules/shoptimax/smx_whoops/logo.png",
     "price": "0.00",

@@ -1,6 +1,7 @@
 {
     "name": "elefunds OXID",
     "vendor": "suabo",
+	"id": "suabolfnds",
     "type": "oxid",
     "picture": "https://raw.githubusercontent.com/suabo/elefunds-OXID/master/copy_this/modules/suabo/logo.png",
     "price": "0.00",

@@ -1,6 +1,7 @@
 {
     "name": "OXID Module Configuration Im-/Exporter",
     "vendor": "oxid",
+	"id": "oxpsmodulesconfig",
     "type": "oxid",
     "picture": "https://raw.githubusercontent.com/druteika/oxid_modules_config/master/copy_this/modules/oxps/modulesconfig/out/pictures/oxpsmodulesconfig.png",
     "price": "0.00",

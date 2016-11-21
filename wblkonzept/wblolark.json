@@ -1,6 +1,7 @@
 {
     "name": "WBL Olark",
     "vendor": "wblkonzept",
+	"id": "WBL_Olark",
     "type": "oxid",
     "picture": "",
     "price": "0.00",

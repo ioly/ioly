@@ -1,6 +1,7 @@
 {
     "name": "ModuleActivator",
     "vendor": "gn2netwerk",
+	"id": "gn2_module_activator",
     "type": "oxid",
     "picture": "https://bitbucket.org/gn2netwerk/gn2_module_activator/src/6dbe6dc3f1fdacddfdad9d6419cc640b9e048323/modules/gn2netwerk/module_activator/gn2.jpg?at=master&fileviewer=file-view-default",
     "price": "0.00",

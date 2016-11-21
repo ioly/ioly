@@ -1,6 +1,7 @@
 {
     "name": "jxBarcode",
     "vendor": "job963",
+	"id": "jxbarcode",
     "type": "oxid",
     "picture": "https://raw.githubusercontent.com/job963/jxBarcode/master/copy_this/modules/jxmods/jxbarcode/jxbarcode.png",
     "price": "0.00",

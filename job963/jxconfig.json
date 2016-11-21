@@ -1,6 +1,7 @@
 {
     "name": "jxConfig",
     "vendor": "job963",
+	"id": "jxconfig",
     "type": "oxid",
     "picture": "https://raw.githubusercontent.com/job963/jxConfig/master/copy_this/modules/jxmods/jxconfig/jxadminlog.png",
     "price": "0.00",

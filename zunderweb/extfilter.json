@@ -1,6 +1,7 @@
 {
     "name": "Attribute Filter Extension",
     "vendor": "zunderweb",
+	"id": "z_extfilter",
     "type": "oxid",
     "picture": "",
     "price": "0.00",

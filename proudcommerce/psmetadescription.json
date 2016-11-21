@@ -1,6 +1,7 @@
 {
     "name": "psMetaDescription",
     "vendor": "proudcommerce",
+	"id": "",
     "type": "oxid",
     "picture": "https://www.proudcommerce.com/OXID-Module/psMetaDescription.html",
     "price": "117.81",

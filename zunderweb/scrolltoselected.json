@@ -1,6 +1,7 @@
 {
     "name": "scrolltoselected",
     "vendor": "zunderweb",
+	"id": "scrolltoselected",
     "type": "oxid",
     "picture": "",
     "license": "unknown",

@@ -1,6 +1,7 @@
 {
     "name": "search4variants",
     "vendor": "kermie",
+	"id": "search4variants",
     "type": "oxid",
     "picture": "",
     "price": "0.00",

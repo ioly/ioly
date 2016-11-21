@@ -1,6 +1,7 @@
 {
     "name": "marmalade Piwik Plugin",
     "vendor": "marmalade",
+	"id": "marmpiwik",
     "type": "oxid",
     "picture": "https://raw.githubusercontent.com/jkrug/marmPiwik/master/marmalade.jpg",
     "price": "0.00",

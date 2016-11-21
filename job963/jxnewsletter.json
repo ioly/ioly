@@ -1,6 +1,7 @@
 {
     "name": "jxNewsletter",
     "vendor": "job963",
+	"id": "jxnewsletter",
     "type": "oxid",
     "picture": "https://raw.githubusercontent.com/job963/jxNewsletter/master/copy_this/modules/jxmods/jxnewsletter/jxnewsletter.png",
     "price": "0.00",

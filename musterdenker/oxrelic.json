@@ -1,6 +1,7 @@
 {
     "name": "oxRelic",
     "vendor": "musterdenker",
+	"id": "mude_oxrelic",
     "type": "oxid",
     "picture": "",
     "price": "0.00",

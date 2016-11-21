@@ -1,6 +1,7 @@
 {
     "name": "OXID Module Connector",
     "vendor": "oxcom",
+	"id": "oxcom-omc",
     "type": "oxid",
     "price": "0.00",
     "license": "MIT",

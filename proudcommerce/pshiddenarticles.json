@@ -1,6 +1,7 @@
 {
     "name": "psHiddenArticles",
     "vendor": "proudcommerce",
+	"id": "psHiddenArticles",
     "type": "oxid",
     "picture": "https://raw.githubusercontent.com/proudcommerce/psCmsSnippets/master/copy_this/modules/proudsourcing/psCmsSnippets/logo-ps.jpg",
     "price": "0.00",

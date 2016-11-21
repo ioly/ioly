@@ -1,6 +1,7 @@
 {
     "name": "Mobile Theme",
     "vendor": "oxid",
+	"id": "oethemeswitcher",
     "type": "oxid",
     "picture": "https://raw.githubusercontent.com/OXID-eSales/mobile_theme/b-dev/mobile.png",
     "price": "0.00",

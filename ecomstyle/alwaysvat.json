@@ -1,6 +1,7 @@
 {
     "name": "AlwaysVAT",
     "vendor": "ecomstyle",
+	"id": "ecs_alwaysvat",
     "type": "oxid",
     "picture": "https://raw.githubusercontent.com/eComStyle-de/ECS_AlwaysVAT/master/copy_this/modules/ecomstyle.de/ecs_alwaysvat/ecomstyle.png",
     "price": "0.00",

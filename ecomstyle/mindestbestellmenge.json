@@ -1,6 +1,7 @@
 {
     "name": "Mindestbestellmenge",
     "vendor": "ecomstyle",
+	"id": "ecs-mindestbestellmenge",
     "type": "oxid",
     "picture": "",
     "price": "0.00",

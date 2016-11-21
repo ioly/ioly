@@ -1,6 +1,7 @@
 {
     "name": "jxFind",
     "vendor": "job963",
+	"id": "jxfind",
     "type": "oxid",
     "picture": "https://raw.githubusercontent.com/job963/jxFind/master/copy_this/modules/jxmods/jxfind/jxfind.png",
     "price": "0.00",

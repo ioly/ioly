@@ -1,6 +1,7 @@
 {
     "name": "PayPal",
     "vendor": "oxid",
+	"id": "oepaypal",
     "type": "oxid",
     "picture": "https://raw.githubusercontent.com/OXID-eSales/paypal/v3.2.3/source/modules/oe/oepaypal/logo.jpg",
     "price": "0.00",

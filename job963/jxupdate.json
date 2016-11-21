@@ -1,6 +1,7 @@
 {
     "name": "jxUpdate",
     "vendor": "job963",
+	"id": "jxupdate",
     "type": "oxid",
     "picture": "https://raw.githubusercontent.com/job963/jxUpdate/master/copy_this/modules/jxmods/jxupdate/jxupdate.png",
     "price": "0.00",

@@ -1,6 +1,7 @@
 {
     "name": "OXID Cookbook clear tmp",
     "vendor": "jkrug",
+	"id": "ocb_cleartmp",
     "type": "oxid",
     "picture": "https://raw.githubusercontent.com/OXIDCookbook/ocb_cleartmp/master/cookbook.jpg",
     "price": "0.00",
