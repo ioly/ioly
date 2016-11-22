@@ -1,0 +1,35 @@
+{
+    "name": "Backend Bestellung / Backend Order",
+    "vendor": "aggrosoft",
+    "type": "oxid",
+    "picture": "https://www.ecomponents.de/out/pictures/generated/product/1/147_209_75/backend.png",
+    "price": "69.00",
+    "license": "Commercial",
+    "id": "",
+    "desc": {
+        "en": "",
+        "de": "Statt Aufträge die über einen anderen Kanal als Ihren Online Shop kommen separat abzuwickeln, oder Kunden über das Frontend zu simulieren, können Sie jetzt im Auftrag des Kunden Bestellungen direkt aus dem Backend heraus erstellen."
+    },
+    "tags": [
+        "admin tools",
+        "backend"
+    ],
+    "versions": {
+        "": {
+            "project": "https://www.ecomponents.de/Module/Backend-Bestellung-Backend-Order.html",
+            "url": "",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.6",
+                "4.5",
+                "4.4"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "name": "Erweiterte Gutscheine Gutschein++",
+    "vendor": "aggrosoft",
+    "type": "oxid",
+    "picture": "https://www.ecomponents.de/out/pictures/generated/product/1/147_209_75/gutschein(1).png",
+    "price": "149.00",
+    "license": "Commercial",
+    "id": "",
+    "desc": {
+        "en": "",
+        "de": "Mit dem neuen Gutscheinmodul \"Gutschein++\" erweitern Sie Ihren Online Shop problemlos um diese kritische fehlende Funktion, und das völlig ohne Programmierkenntnisse!"
+    },
+    "tags": [
+        "frontend",
+        "marketing",
+        "product presentation"
+    ],
+    "versions": {
+        "": {
+            "project": "https://www.ecomponents.de/Module/Erweiterte-Gutscheine-Gutschein.html",
+            "url": "",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.6",
+                "4.5",
+                "4.4"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}
