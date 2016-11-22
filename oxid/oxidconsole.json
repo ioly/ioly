@@ -14,11 +14,13 @@
         "dev tools"
     ],
     "versions": {
-        "1.3.0": {
+        "master": {
             "project": "https://github.com/EllisV/oxid-console/",
-            "url": "https://github.com/EllisV/oxid-console/archive/1.3.zip",
+            "url": "https://github.com/EllisV/oxid-console/archive/master.zip",
             "supported": [
+                "5.3",
                 "5.2",
+                "4.10",
                 "4.9"
             ],
             "mapping": [
@@ -28,12 +30,14 @@
                 }
             ]
         },
-        "1.1.0": {
+        "1.2.0": {
             "project": "https://github.com/EllisV/oxid-console/",
-            "url": "https://github.com/EllisV/oxid-console/archive/1.1.zip",
+            "url": "https://github.com/EllisV/oxid-console/archive/1.2.zip",
             "supported": [
+                "5.2",
                 "5.1",
                 "5.0",
+                "4.9",
                 "4.8",
                 "4.7"
             ],
