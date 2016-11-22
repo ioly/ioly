@@ -19,6 +19,10 @@
             "project": "https://github.com/vanilla-thunder/vt-cmsstructure",
             "url": "https://github.com/vanilla-thunder/vt-cmsstructure/archive/master.zip",
             "supported": [
+                "5.5",
+                "5.2",
+                "5.1",
+                "5.0",
                 "4.10",
                 "4.9",
                 "4.8",
@@ -26,8 +30,8 @@
             ],
             "mapping": [
                 {
-                    "src": "copy_this/",
-                    "dest": ""
+                    "src": "vt-cmsstructure/",
+                    "dest": "modules/vt-cmsstructure"
                 }
             ]
         }
