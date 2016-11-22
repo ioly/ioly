@@ -1,0 +1,36 @@
+{
+    "name": "Sicherheitsprüfung für OXID CE + PE + EE",
+    "vendor": "d3",
+    "type": "oxid",
+    "picture": "http://www.oxidmodule.com/out/mod/pictures/1/sicherheitspruefung_p1.png",
+    "price": "0.00",
+    "license": "Commercial",
+    "id": "",
+    "desc": {
+        "en": "",
+        "de": "Unzureichende Sicherungsmaßnahmen gefährden Ihren Shop. "
+    },
+    "tags": [
+        "admin tools",
+        "backend",
+        "dev tools"
+    ],
+    "versions": {
+        "": {
+            "project": "http://www.oxidmodule.com/kostenfreie-Module/Sicherheitspruefung-fuer-Oxid-CE-PE-EE.html",
+            "url": "",
+            "supported": [
+                "5.2",
+                "5.1",
+                "5.0",
+                "4.9",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

@@ -1,0 +1,40 @@
+{
+    "name": "Inselzuschlag für OXID CE",
+    "vendor": "d3",
+    "type": "oxid",
+    "picture": "",
+    "price": "0.00",
+    "license": "Commercial",
+    "id": "",
+    "desc": {
+        "en": "",
+        "de": "Inselzuschläge lassen sich in den Versandkosten immer nur schwer berücksichtigen."
+    },
+    "tags": [
+        "checkout",
+        "frontend"
+    ],
+    "versions": {
+        "": {
+            "project": "http://www.oxidmodule.com/kostenfreie-Module/Inselzuschlag-fuer-Oxid-CE-PE-EE.html",
+            "url": "",
+            "supported": [
+                "5.2",
+                "5.1",
+                "5.0",
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.6",
+                "4.5",
+                "4.4",
+                "4.3",
+                "4.2"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

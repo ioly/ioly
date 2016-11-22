@@ -1,0 +1,36 @@
+{
+    "name": "Kundenmanager für OXID EE",
+    "vendor": "d3",
+    "type": "oxid",
+    "picture": "http://www.oxidmodule.com/out/mod/pictures/1/kundenmanager_p1.png",
+    "price": "0.00",
+    "license": "Commercial",
+    "id": "",
+    "desc": {
+        "en": "",
+        "de": "Auf Basis der im Shop verfügbaren Nutzer können Aufgaben angelegt werden."
+    },
+    "tags": [
+        "admin tools",
+        "backend",
+        "customer management"
+    ],
+    "versions": {
+        "": {
+            "project": "http://www.oxidmodule.com/kostenfreie-Module/Kundenmanager-fuer-OXID-EE.html",
+            "url": "",
+            "supported": [
+                "5.2",
+                "5.1",
+                "5.0",
+                "4.9",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}
