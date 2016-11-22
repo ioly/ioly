@@ -19,6 +19,10 @@
             "project": "https://github.com/DSB/Oxid-Module-IDE-Helper",
             "url": "https://github.com/DSB/Oxid-Module-IDE-Helper/archive/master.zip",
             "supported": [
+                "5.3",
+                "5.2",
+                "5.1",
+                "5.0",
                 "4.10",
                 "4.9",
                 "4.8",
@@ -27,8 +31,8 @@
             ],
             "mapping": [
                 {
-                    "src": "modules/dsb_ide_helper",
-                    "dest": "modules/dsb_ide_helper"
+                    "src": "modules/dsb",
+                    "dest": "modules/dsb"
                 }
             ]
         }
