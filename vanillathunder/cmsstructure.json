@@ -1,7 +1,7 @@
 {
     "name": "cmsStructure",
     "vendor": "vanillathunder",
-	"id": "",
+	"id": "vt-cmsstructure",
     "type": "oxid",
     "picture": "https://raw.githubusercontent.com/vanilla-thunder/vt-cmsstructure/master/vt-cmsstructure/oxid-vt.jpg",
     "price": "0.00",
@@ -19,7 +19,7 @@
             "project": "https://github.com/vanilla-thunder/vt-cmsstructure",
             "url": "https://github.com/vanilla-thunder/vt-cmsstructure/archive/master.zip",
             "supported": [
-                "5.5",
+                "5.3",
                 "5.2",
                 "5.1",
                 "5.0",
