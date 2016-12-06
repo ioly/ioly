@@ -1,7 +1,7 @@
 {
     "name": "psBonusProducts",
     "vendor": "proudcommerce",
-	"id": "",
+	"id": "psBonusProducts",
     "type": "oxid",
     "picture": "https://www.proudcommerce.com/out/pictures/generated/product/1/100_150_100/psbonusproducts_oxid-module_proudcommerce_1.jpg",
     "price": "236.81",

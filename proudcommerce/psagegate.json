@@ -3,7 +3,7 @@
     "vendor": "proudcommerce",
 	"id": "psAgeGate",
     "type": "oxid",
-    "picture": "",
+    "picture": "https://raw.githubusercontent.com/proudcommerce/psArticleRequest/master/copy_this/modules/proudsourcing/psArticleRequest/logo_pc-os.jpg",
     "price": "0.00",
     "license": "GNU",
     "desc": {
@@ -19,9 +19,14 @@
             "project": "https://github.com/proudcommerce/psAgeGate",
             "url": "https://github.com/proudcommerce/psAgeGate/archive/master.zip",
             "supported": [
+                "4.10",
                 "4.9",
                 "4.8",
-                "4.7"
+                "4.7",
+                "5.3",
+                "5.2",
+                "5.1",
+                "5.0"
             ],
             "mapping": [
                 {

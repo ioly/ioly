@@ -3,7 +3,7 @@
     "vendor": "proudcommerce",
 	"id": "psHistory",
     "type": "oxid",
-    "picture": "https://raw.githubusercontent.com/proudcommerce/psCmsSnippets/master/copy_this/modules/proudsourcing/psCmsSnippets/logo-ps.jpg",
+    "picture": "https://raw.githubusercontent.com/proudcommerce/psArticleRequest/master/copy_this/modules/proudsourcing/psArticleRequest/logo_pc-os.jpg",
     "price": "0.00",
     "license": "GNU",
     "desc": {
@@ -24,7 +24,11 @@
                 "4.10",
                 "4.9",
                 "4.8",
-                "4.7"
+                "4.7",
+                "5.3",
+                "5.2",
+                "5.1",
+                "5.0"
             ],
             "mapping": [
                 {

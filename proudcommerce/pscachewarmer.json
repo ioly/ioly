@@ -1,9 +1,9 @@
 {
     "name": "psCacheWarmer",
     "vendor": "proudcommerce",
-	"id": "",
+	"id": "psCacheWarmer",
     "type": "oxid",
-    "picture": "",
+    "picture": "https://raw.githubusercontent.com/proudcommerce/psArticleRequest/master/copy_this/modules/proudsourcing/psArticleRequest/logo_pc-os.jpg",
     "price": "0.00",
     "license": "GNU",
     "desc": {
@@ -20,14 +20,14 @@
             "project": "https://github.com/proudcommerce/psCacheWarmer",
             "url": "https://github.com/proudcommerce/psCacheWarmer/archive/5d8ba32d82175140ca59746252d874db3c37ab6f.zip",
             "supported": [
-                "5.3",
-                "5.2",
-                "5.1",
-                "5.0",
                 "4.10",
                 "4.9",
                 "4.8",
-                "4.7"
+                "4.7",
+                "5.3",
+                "5.2",
+                "5.1",
+                "5.0"
             ],
             "mapping": {
                 "src": "copy_this/",
