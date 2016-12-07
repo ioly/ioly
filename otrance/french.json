@@ -16,10 +16,11 @@
       "languages"
     ],
     "versions": {
-        "4.9.2": {
+        "4.10.2": {
             "project": "https://github.com/OXIDprojects/languages",
             "url": "https://github.com/OXIDprojects/languages/archive/master.zip",
             "supported": [
+                "4.10",
                 "4.9",
                 "4.8"
             ],
@@ -37,8 +38,16 @@
                     "dest": "application/views/admin/fr/"
                 },
                 {
+                    "src": "application/views/flow/fr/",
+                    "dest": "application/views/flow/fr/"
+                },
+                {
                     "src": "out/azure/img/lang/fr.png",
                     "dest": "out/azure/img/lang/"
+                },
+                {
+                    "src": "out/flow/img/lang/fr.png",
+                    "dest": "out/flow/img/lang/"
                 }
             ]
         }

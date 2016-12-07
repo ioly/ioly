@@ -39,8 +39,16 @@
                     "dest": "application/views/admin/ru/"
                 },
                 {
+                    "src": "application/views/flow/ru/",
+                    "dest": "application/views/flow/ru/"
+                },
+                {
                     "src": "out/azure/img/lang/ru.png",
                     "dest": "out/azure/img/lang/"
+                },
+                {
+                    "src": "out/flow/img/lang/ru.png",
+                    "dest": "out/flow/img/lang/"
                 }
             ]
         }
