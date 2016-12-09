@@ -5,7 +5,7 @@
     "type": "oxid",
     "picture": "https://www.alpha-sys.de/out/pictures/promo/module_logo.png",
     "price": "29.00",
-    "license": "GNU",
+    "license": "Commercial",
     "desc": {
         "de": "Mit diesem Modul können Sie Ihren Kunden Versandkosten-Gutscheine anbieten. Das heißt wenn ein Kunde diesen Gutschein einlöst, ist die Bestellung versandkostenfrei.",
         "en": "Oxid module which allows to create vouchers so the order has no delivery costs."
