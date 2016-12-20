@@ -1,0 +1,36 @@
+{
+  "name": "blockgroups",
+  "vendor": "wolkenkrieger",
+  "id": "blockgroups",
+  "type": "oxid",
+  "picture": "",
+  "price": "0.00",
+  "license": "Gnu Gpl v3",
+  "desc": {
+    "en": "Disable user groups from using discounts and vouchers.",
+    "de": "Sperren von Benutzergruppen für die Verwendung von Rabatten und/oder Gutscheinserien."
+  },
+  "tags": [
+    "frontend",
+    "product presentation",
+    "themes"
+  ],
+  "versions": {
+    "1.0.0": {
+      "project": "https://github.com/wolkenkrieger/rwu/tree/master/blockgroups",
+      "url": "https://github.com/OXIDprojects/rwu/archive/master.zip",
+      "supported": [
+        "4.10",
+        "4.9",
+        "4.8",
+        "4.7"
+      ],
+      "mapping": [
+        {
+          "src": "",
+          "dest": "modules/wolkenkrieger"
+        }
+      ]
+    }
+  }
+}
