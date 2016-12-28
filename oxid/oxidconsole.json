@@ -30,6 +30,24 @@
                 }
             ]
         },
+        "1.2.5": {
+            "project": "https://github.com/EllisV/oxid-console/",
+            "url": "https://github.com/EllisV/oxid-console/archive/v1.2.5.zip",
+            "supported": [
+                "5.2",
+                "5.1",
+                "5.0",
+                "4.9",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/",
+                    "dest": ""
+                }
+            ]
+        },
         "1.2.0": {
             "project": "https://github.com/EllisV/oxid-console/",
             "url": "https://github.com/EllisV/oxid-console/archive/1.2.zip",
