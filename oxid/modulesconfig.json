@@ -3,7 +3,7 @@
     "vendor": "oxid",
 	"id": "oxpsmodulesconfig",
     "type": "oxid",
-    "picture": "https://raw.githubusercontent.com/druteika/oxid_modules_config/master/copy_this/modules/oxps/modulesconfig/out/pictures/oxpsmodulesconfig.png",
+    "picture": "https://github.com/OXIDprojects/oxid_modules_config/raw/master/copy_this/modules/oxps/modulesconfig/out/pictures/oxpsmodulesconfig.png",
     "price": "0.00",
     "license": "GNU",
     "desc": {
@@ -16,10 +16,30 @@
         "dev tools"
     ],
     "versions": {
-        "0.2.0": {
-            "project": "https://github.com/druteika/oxid_modules_config/",
-            "url": "https://github.com/druteika/oxid_modules_config/archive/v020.zip",
+        "master": {
+            "project": "https://github.com/OXIDprojects/oxid_modules_config",
+            "url": "https://github.com/OXIDprojects/oxid_modules_config/archive/master.zip",
             "supported": [
+                "5.3",
+                "5.2",
+                "5.1",
+                "4.9",
+                "4.8"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/",
+                    "dest": ""
+                }
+            ]
+        },
+        "0.2.0": {
+            "project": "https://github.com/OXIDprojects/oxid_modules_config",
+            "url": "https://github.com/OXIDprojects/oxid_modules_config/archive/v020.zip",
+            "supported": [
+                "5.3",
+                "5.2",
+                "5.1",
                 "4.10",
                 "4.9",
                 "4.8"
