@@ -1,0 +1,40 @@
+{
+    "name": "psElkStackLog",
+    "vendor": "proudcommerce",
+	"id": "psElkStackLog",
+    "type": "oxid",
+    "picture": "https://raw.githubusercontent.com/proudcommerce/psArticleRequest/master/copy_this/modules/proudsourcing/psArticleRequest/logo_pc-os.jpg",
+    "price": "0.00",
+    "license": "GNU",
+    "desc": {
+        "en": "Send shop information to log server, eg. elastic search.",
+        "de": "Shopinformationen an Logserver (z. B. elasticsearch) senden."
+    },
+    "tags": [
+        "backend",
+        "admin tools",
+        "analytics"
+    ],
+    "versions": {
+        "1.2.0": {
+            "project": "https://github.com/proudcommerce/psElkStackLog",
+            "url": "https://github.com/proudcommerce/psElkStackLog/archive/eaddbefea803a4085a95e4461de060138efd4e61.zip",
+            "supported": [
+                "4.10",
+            	"4.9",
+                "4.8",
+                "4.7",
+                "5.3",
+                "5.2",
+                "5.1",
+                "5.0"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/",
+                    "dest": ""
+                }
+            ]
+        }
+    }
+}
