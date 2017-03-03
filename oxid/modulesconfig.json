@@ -33,6 +33,42 @@
                 }
             ]
         },
+        "0.4.0": {
+            "project": "https://github.com/OXIDprojects/oxid_modules_config",
+            "url": "https://github.com/OXIDprojects/oxid_modules_config/archive/v040.zip",
+            "supported": [
+                "5.3",
+                "5.2",
+                "5.1",
+                "4.10",
+                "4.9",
+                "4.8"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/",
+                    "dest": ""
+                }
+            ]
+        },
+        "0.3.0": {
+            "project": "https://github.com/OXIDprojects/oxid_modules_config",
+            "url": "https://github.com/OXIDprojects/oxid_modules_config/archive/v030.zip",
+            "supported": [
+                "5.3",
+                "5.2",
+                "5.1",
+                "4.10",
+                "4.9",
+                "4.8"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/",
+                    "dest": ""
+                }
+            ]
+        },
         "0.2.0": {
             "project": "https://github.com/OXIDprojects/oxid_modules_config",
             "url": "https://github.com/OXIDprojects/oxid_modules_config/archive/v020.zip",
