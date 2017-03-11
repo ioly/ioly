@@ -1,6 +1,6 @@
 {
   "name": "omc/recipes",
-  "type":"library",
+  "type":"omc-library",
   "description": "OXID Module Connector Recipes",
   "keywords":["OXID", "modules", "recipes", "ioly", "connector"],
   "license": "MIT",
