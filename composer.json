@@ -1,0 +1,10 @@
+{
+  "name": "omc/recipes",
+  "type":"library",
+  "description": "OXID Module Connector Recipes",
+  "keywords":["OXID", "modules", "recipes", "ioly", "connector"],
+  "license": "MIT",
+  "require": {
+    "php": ">=5.3.3"
+  }
+}
