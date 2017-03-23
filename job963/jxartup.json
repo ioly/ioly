@@ -1,0 +1,37 @@
+{
+    "name": "jxArtUp",
+    "vendor": "job963",
+	"id": "jxartup",
+    "type": "oxid",
+    "picture": "https://raw.githubusercontent.com/job963/jxArtUp/master/copy_this/modules/jxmods/jxartup/jxartup.png",
+    "price": "0.00",
+    "license": "GPL 3+",
+    "desc": {
+        "de": "Admin-Modul für die Planung und Ausführung von Artikel-Updates",
+        "en": "Admin module for scheduling and running product updates"
+    },
+    "tags": [
+        "backend",
+        "admin tools",
+        "product presentation",
+        "marketing"
+    ],
+    "versions": {
+        "0.3.6": {
+            "project": "https://github.com/job963/jxArtUp",
+            "url": "https://github.com/job963/jxArtUp/archive/v0.3.6.zip",
+            "supported": [
+                "4.10",
+                "4.9",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/modules/jxmods/",
+                    "dest": "modules/jxmods/"
+                }
+            ]
+        }
+    }
+}

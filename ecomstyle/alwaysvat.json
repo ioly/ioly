@@ -1,0 +1,34 @@
+{
+    "name": "AlwaysVAT",
+    "vendor": "ecomstyle",
+	"id": "ecs_alwaysvat",
+    "type": "oxid",
+    "picture": "https://raw.githubusercontent.com/eComStyle-de/ECS_AlwaysVAT/master/copy_this/modules/ecomstyle.de/ecs_alwaysvat/ecomstyle.png",
+    "price": "0.00",
+    "license": "GNU",
+    "desc": {
+        "en": "This module always calculates VAT when shipping to foreign countries",
+        "de": "Dieses Modul kalkuliert die Mehrwertsteuer auch bei Versand ins Ausland"
+    },
+    "tags": [
+        "frontend",
+        "calculation"
+    ],
+    "versions": {
+        "1.1.0": {
+            "project": "https://github.com/eComStyle-de/ECS_AlwaysVAT",
+            "url": "https://github.com/eComStyle-de/ECS_AlwaysVAT/archive/bd2af6227fb78e846dd9a13565ec626d953c97c0.zip",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/modules/ecomstyle.de/",
+                    "dest": "modules/ecomstyle.de/"
+                }
+            ]
+        }
+    }
+}

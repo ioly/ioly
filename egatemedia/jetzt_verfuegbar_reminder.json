@@ -1,0 +1,39 @@
+{
+    "name": "Jetzt Verfügbar Reminder",
+    "vendor": "egatemedia",
+    "type": "oxid",
+    "picture": "http://www.egate-media.com/out/pictures/generated/product/1/380_340_75/ico_250x250__0012_marketing.png",
+    "price": "199.00",
+    "license": "Commercial",
+    "id": "",
+    "desc": {
+        "en": "",
+        "de": "Informieren Sie Ihre Kunden per automatisierter E-Mail, sobald Produkte wieder auf Lager sind."
+    },
+    "tags": [
+        "frontend",
+        "marketing",
+        "product presentation"
+    ],
+    "versions": {
+        "": {
+            "project": "http://www.egate-media.com/Oxid-Module/Marketing/Jetzt-Verfuegbar-Reminder.html",
+            "url": "",
+            "supported": [
+                "5.3",
+                "5.2",
+                "5.1",
+                "5.0",
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.6",
+                "4.10"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

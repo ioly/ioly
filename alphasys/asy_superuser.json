@@ -1,0 +1,35 @@
+{
+    "name": "Superuser (als Kunde anmelden)",
+    "vendor": "alphasys",
+    "id": "asy_superuser",
+    "type": "oxid",
+    "picture": "https://www.alpha-sys.de/out/pictures/promo/module_logo.png",
+    "price": "89.00",
+    "license": "Commercial",
+    "desc": {
+        "de": "Mit dem Superuser Modul können Sie sich über den Admin als jeden beliebigen Kunden im Shop anmelden. Somit können Sie Probleme eines Kunden nachvollziehen oder auch im Namen des Kunden bestellen.",
+        "en": "Login with every user account you want. So you can reproduce errors or create orders for the customer."
+    },
+    "tags": [
+        "frontend",
+        "backend",
+        "checkout"
+    ],
+    "versions": {
+        "1.0": {
+            "project": "https://www.alpha-sys.de/Oxid-Module/Superuser-als-Kunde-anmelden.html",
+            "url": "",
+            "supported": [
+                "4.10",
+                "4.9",
+                "4.8"
+            ],
+            "mapping": [
+                {
+                    "src": "",
+                    "dest": ""
+                }
+            ]
+        }
+    }
+}

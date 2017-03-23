@@ -1,0 +1,39 @@
+{
+    "name": "psHiddenArticles",
+    "vendor": "proudcommerce",
+	"id": "psHiddenArticles",
+    "type": "oxid",
+    "picture": "https://raw.githubusercontent.com/proudcommerce/psArticleRequest/master/copy_this/modules/proudsourcing/psArticleRequest/logo_pc-os.jpg",
+    "price": "0.00",
+    "license": "GNU",
+    "desc": {
+        "en": "Hide articles from articles lists",
+        "de": "Artikel in der Artikelauflistung verstecken"
+    },
+    "tags": [
+        "frontend",
+        "product presentation"
+    ],
+    "versions": {
+        "1.0.1": {
+            "project": "https://github.com/proudcommerce/psHiddenArticles",
+            "url": "https://github.com/proudcommerce/psHiddenArticles/archive/master.zip",
+            "supported": [
+                "4.10",
+                "4.9",
+                "4.8",
+                "4.7",
+                "5.3",
+                "5.2",
+                "5.1",
+                "5.0"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/",
+                    "dest": ""
+                }
+            ]
+        }
+    }
+}

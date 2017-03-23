@@ -1,0 +1,40 @@
+{
+	"name": "psSeaTracker",
+	"vendor": "proudcommerce",
+	"id": "psSeaTracker",
+	"type": "oxid",
+	"picture": "https://raw.githubusercontent.com/proudcommerce/psArticleRequest/master/copy_this/modules/proudsourcing/psArticleRequest/logo_pc-os.jpg",
+	"price": "0.00",
+	"license": "GNU",
+	"desc": {
+		"en": "Stores google adwords click id (gclid) by shop user.",
+		"de": "Speichert Google Adwords Klick-ID (gclid) am Shop-User (Benutzerkonto)."
+	},
+	"tags": [
+		"frontend",
+		"marketing"
+	],
+	"versions": {
+		"1.0.1": {
+			"project": "https://github.com/proudcommerce/psSeaTracker",
+			"url": "https://github.com/proudcommerce/psSeaTracker/archive/890084a84c27cd7189d1473644fc875de1450be4.zip",
+			"supported": [
+				"5.1",
+				"5.0",
+				"4.8",
+				"4.7"
+			],
+			"mapping": {
+				"src": "copy_this/",
+				"dest": ""
+			}
+		}
+	},
+	"hooks": {
+		"postinstall": {
+			"type": "overlay",
+			"message": "Please update changed_full files.",
+			"link": "https://github.com/proudcommerce/psSeaTracker/master/README.md"
+		}
+	}
+}

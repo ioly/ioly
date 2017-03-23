@@ -1,0 +1,63 @@
+{
+    "name": "Russian translations for OXID eShop",
+    "vendor": "otrance",
+	"id": "",
+    "type": "oxid",
+    "picture": "",
+    "price": "0.00",
+    "license": "GPLv3",
+    "desc": {
+        "en": "Russian language file translations for OXID eShop front end and admin panel",
+        "de": "Übersetzung der Sprachdateien für OXID eShop in Russisch (Frontend und Admin-Panel)"
+
+    },
+    "tags": [
+      "frontend",
+      "backend",
+      "languages"
+    ],
+    "versions": {
+        "4.10.2": {
+            "project": "https://github.com/OXIDprojects/languages",
+            "url": "https://github.com/OXIDprojects/languages/archive/master.zip",
+            "supported": [
+                "4.10",
+                "4.9",
+                "4.8"
+            ],
+            "mapping": [
+                {
+                    "src": "application/translations/ru/",
+                    "dest": "application/translations/ru/"
+                },
+                {
+                    "src": "application/views/azure/ru/",
+                    "dest": "application/views/azure/ru/"
+                },
+                {
+                    "src": "application/views/admin/ru/",
+                    "dest": "application/views/admin/ru/"
+                },
+                {
+                    "src": "application/views/flow/ru/",
+                    "dest": "application/views/flow/ru/"
+                },
+                {
+                    "src": "out/azure/img/lang/ru.png",
+                    "dest": "out/azure/img/lang/"
+                },
+                {
+                    "src": "out/flow/img/lang/ru.png",
+                    "dest": "out/flow/img/lang/"
+                }
+            ]
+        }
+    },
+    "hooks": {
+        "postinstall": {
+            "type": "overlay",
+            "message": "Please go to admin -> Master settings -> Languages. Create a new language by entering \"ru\" as locale and \"Russian\" as name. If you find any mistakes please feel free to register at the translation center.",
+            "link": "http://translate.oxidforge.org"
+        }
+    }
+}

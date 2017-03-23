@@ -1,15 +1,10 @@
 {
-  "name": "ioly/ioly",
-  "type":"library",
-  "description": "ioly - The ioly Module Manager",
-  "keywords":["PHP", "installer", "module manager", "composer"],
+  "name": "omc/recipes",
+  "type":"omc-library",
+  "description": "OXID Module Connector Recipes",
+  "keywords":["OXID", "modules", "recipes", "ioly", "connector"],
   "license": "MIT",
   "require": {
     "php": ">=5.3.3"
-  },
-  "autoload": {
-    "psr-4": {
-      "ioly\\": ""
-    }
   }
 }

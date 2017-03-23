@@ -1,0 +1,35 @@
+{
+    "name": "OXID-oTranCe-Connector",
+    "vendor": "dsb",
+	"id": "otrance-connector",
+    "type": "oxid",
+    "picture": "",
+    "price": "0.00",
+    "license": "unknown",
+    "desc": {
+        "en": "A connector that makes it possible to edit the currently visible language keys and their values of any OXID page via oTranCe.",
+        "de": "Ein Konnektor, um die auf der aktuellen OXID-Seite sichtbaren Sprachvariablen in oTranCe editierbar zu machen."
+    },
+    "tags": [
+        "backend",
+        "dev tools"
+    ],
+    "versions": {
+        "1.0.1": {
+            "project": "https://github.com/DSB/Oxid-oTranCe-Connector",
+            "url": "https://github.com/DSB/Oxid-oTranCe-Connector/archive/master.zip",
+            "supported": [
+                "4.10",
+                "4.9",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "modules/otrance-connector/",
+                    "dest": "modules/otrance-connector/"
+                }
+            ]
+        }
+    }
+}

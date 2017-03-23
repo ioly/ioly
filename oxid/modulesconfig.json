@@ -1,0 +1,91 @@
+{
+    "name": "OXID Module Configuration Im-/Exporter",
+    "vendor": "oxid",
+	"id": "oxpsmodulesconfig",
+    "type": "oxid",
+    "picture": "https://github.com/OXIDprojects/oxid_modules_config/raw/master/copy_this/modules/oxps/modulesconfig/out/pictures/oxpsmodulesconfig.png",
+    "price": "0.00",
+    "license": "GNU",
+    "desc": {
+        "en": "Tools to export, backup and import OXID eShop modules configuration data",
+        "de": "Werkzeug zum Export, Backup und Import von OXID eShop Modulkonfigurationen"
+    },
+    "tags": [
+        "backend",
+        "admin tools",
+        "dev tools"
+    ],
+    "versions": {
+        "master": {
+            "project": "https://github.com/OXIDprojects/oxid_modules_config",
+            "url": "https://github.com/OXIDprojects/oxid_modules_config/archive/master.zip",
+            "supported": [
+                "5.3",
+                "5.2",
+                "5.1",
+                "4.9",
+                "4.8"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/",
+                    "dest": ""
+                }
+            ]
+        },
+        "0.4.0": {
+            "project": "https://github.com/OXIDprojects/oxid_modules_config",
+            "url": "https://github.com/OXIDprojects/oxid_modules_config/archive/v040.zip",
+            "supported": [
+                "5.3",
+                "5.2",
+                "5.1",
+                "4.10",
+                "4.9",
+                "4.8"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/",
+                    "dest": ""
+                }
+            ]
+        },
+        "0.3.0": {
+            "project": "https://github.com/OXIDprojects/oxid_modules_config",
+            "url": "https://github.com/OXIDprojects/oxid_modules_config/archive/v030.zip",
+            "supported": [
+                "5.3",
+                "5.2",
+                "5.1",
+                "4.10",
+                "4.9",
+                "4.8"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/",
+                    "dest": ""
+                }
+            ]
+        },
+        "0.2.0": {
+            "project": "https://github.com/OXIDprojects/oxid_modules_config",
+            "url": "https://github.com/OXIDprojects/oxid_modules_config/archive/v020.zip",
+            "supported": [
+                "5.3",
+                "5.2",
+                "5.1",
+                "4.10",
+                "4.9",
+                "4.8"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/",
+                    "dest": ""
+                }
+            ]
+        }
+    }
+}

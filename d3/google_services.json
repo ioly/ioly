@@ -1,0 +1,38 @@
+{
+    "name": "Google Services",
+    "vendor": "d3",
+    "type": "oxid",
+    "picture": "http://www.oxidmodule.com/out/mod/pictures/1/googleservices_p1(1).png",
+    "price": "0.00",
+    "license": "Commercial",
+    "id": "",
+    "desc": {
+        "en": "",
+        "de": "Dieses Modul stellt Ihnen die schnelle und unkomplizierte Einbindung Ihres Google-Analytics-Kontos in Ihren Shop zur Verfügung."
+    },
+    "tags": [
+        "analytics",
+        "backend",
+        "interfaces"
+    ],
+    "versions": {
+        "": {
+            "project": "http://www.oxidmodule.com/kostenfreie-Module/Google-Services-beinhaltet-Analytics-Adwords-zertifizierte-Haendler-OXID-EE.html",
+            "url": "",
+            "supported": [
+                "5.3",
+                "5.2",
+                "5.1",
+                "5.0",
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.10"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

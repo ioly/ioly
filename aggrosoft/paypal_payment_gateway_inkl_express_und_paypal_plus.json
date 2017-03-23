@@ -1,0 +1,37 @@
+{
+    "name": "PayPal Payment Gateway inkl EXPRESS und PayPal Plus",
+    "vendor": "aggrosoft",
+    "type": "oxid",
+    "picture": "https://www.ecomponents.de/out/pictures/generated/product/1/147_209_75/paypal(1).png",
+    "price": "49.00",
+    "license": "Commercial",
+    "id": "",
+    "desc": {
+        "en": "",
+        "de": "Mit diesem Modul können Sie bzw. Ihre Shopkunden auch per Paypal, einem von eBay betriebenem Zahlungssystem - bezahlen. "
+    },
+    "tags": [
+        "frontend",
+        "payment"
+    ],
+    "versions": {
+        "": {
+            "project": "https://www.ecomponents.de/Module/PayPal-Payment-Gateway-inkl-EXPRESS-und-PayPal-Plus.html",
+            "url": "",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.6",
+                "4.5",
+                "4.4",
+                "4.3",
+                "4.10"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

@@ -1,0 +1,37 @@
+{
+    "name": "Flex Image",
+    "vendor": "egatemedia",
+    "type": "oxid",
+    "picture": "http://www.egate-media.com/out/pictures/generated/product/1/380_340_75/ico_250x250__0010_usability.png",
+    "price": "499.00",
+    "license": "Commercial",
+    "id": "",
+    "desc": {
+        "en": "",
+        "de": "Immer die passende Größe Ihrer Bilder auf allen Seiten."
+    },
+    "tags": [
+        "frontend",
+        "product presentation"
+    ],
+    "versions": {
+        "": {
+            "project": "http://www.egate-media.com/Oxid-Module/Useability/Flex-Image.html",
+            "url": "",
+            "supported": [
+                "5.3",
+                "5.2",
+                "5.1",
+                "5.0",
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.10"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

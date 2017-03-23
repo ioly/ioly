@@ -1,0 +1,40 @@
+{
+    "name": "jxBarcode",
+    "vendor": "job963",
+	"id": "jxbarcode",
+    "type": "oxid",
+    "picture": "https://raw.githubusercontent.com/job963/jxBarcode/master/copy_this/modules/jxmods/jxbarcode/jxbarcode.png",
+    "price": "0.00",
+    "license": "GNU",
+    "desc": {
+        "de": "Admin-Modul für die Barcode-Reader Unterstützung bei Wareneingang und Verpacken",
+        "en": "Admin module for barcode reader support on goods receipt and packing"
+    },
+    "tags": [
+        "backend",
+        "logistics",
+        "admin tools"
+    ],
+    "versions": {
+        "0.3.4": {
+            "project": "https://github.com/job963/jxBarcode",
+            "url": "https://github.com/job963/jxBarcode/archive/v0.3.4.zip",
+            "supported": [
+                "4.10",
+                "4.9",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/modules/jxmods/",
+                    "dest": "modules/jxmods/"
+                },
+                {
+                    "src": "copy_this/core/tcpdf/barcodes.php",
+                    "dest": "core/tcpdf/"
+                }
+            ]
+        }
+    }
+}

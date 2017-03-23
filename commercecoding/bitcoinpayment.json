@@ -1,0 +1,33 @@
+{
+    "name": "Bitcoin Payment",
+    "vendor": "commercecoding",
+	"id": "cc_bitcoin",
+    "type": "oxid",
+    "picture": "https://raw.githubusercontent.com/adiebler/oxid-bitcoin-payment/master/src/copy_this/modules/cc_bitcoin/out/img/bitcoin-accepted-logo.png",
+    "price": "0.00",
+    "license": "GNU",
+    "desc": {
+        "en": "Accept Bitcoins as payment method",
+        "de": "Bicoin als Zahlungsart akzeptieren"
+    },
+    "tags": [
+        "frontend",
+        "payment"
+    ],
+    "versions": {
+        "0.4.0": {
+            "project": "https://github.com/CommerceCoding/oxid-bitcoin-payment",
+            "url": "https://github.com/CommerceCoding/oxid-bitcoin-payment/archive/master.zip",
+            "supported": [
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "src/copy_this/",
+                    "dest": ""
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,35 @@
+{
+    "name": "jxFiles",
+    "vendor": "job963",
+	"id": "jxfiles",
+    "type": "oxid",
+    "picture": "https://raw.githubusercontent.com/job963/jxFiles/master/copy_this/modules/jxmods/jxfiles/jxfiles.png",
+    "price": "0.00",
+    "license": "GNU",
+    "desc": {
+        "de": "OXID eShop Admin Modul für die Verwaltung von Dateien",
+        "en": "OXID eShop admin module for managing files"
+    },
+    "tags": [
+        "backend",
+        "admin tools"
+    ],
+    "versions": {
+        "0.2.2": {
+            "project": "https://github.com/job963/jxFiles",
+            "url": "https://github.com/job963/jxFiles/archive/v0.2.2.zip",
+            "supported": [
+                "4.10",
+                "4.9",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/modules/jxmods/",
+                    "dest": "modules/jxmods/"
+                }
+            ]
+        }
+    }
+}

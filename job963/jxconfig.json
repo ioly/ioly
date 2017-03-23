@@ -1,0 +1,35 @@
+{
+    "name": "jxConfig",
+    "vendor": "job963",
+	"id": "jxconfig",
+    "type": "oxid",
+    "picture": "https://raw.githubusercontent.com/job963/jxConfig/master/copy_this/modules/jxmods/jxconfig/jxadminlog.png",
+    "price": "0.00",
+    "license": "GNU",
+    "desc": {
+        "de": "Admin-Modul für die Anzeige der Shop- und Moduleinstellungen als Gesamtbericht",
+        "en": "Admin module for displaying shop and module settings as a complete report"
+    },
+    "tags": [
+        "backend",
+        "admin tools"
+    ],
+    "versions": {
+        "0.1.4": {
+            "project": "https://github.com/job963/jxConfig",
+            "url": "https://github.com/job963/jxConfig/archive/v0.1.4.zip",
+            "supported": [
+                "4.10",
+                "4.9",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/modules/jxmods/",
+                    "dest": "modules/jxmods/"
+                }
+            ]
+        }
+    }
+}

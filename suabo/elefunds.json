@@ -1,0 +1,48 @@
+{
+    "name": "elefunds OXID",
+    "vendor": "suabo",
+	"id": "suabolfnds",
+    "type": "oxid",
+    "picture": "https://raw.githubusercontent.com/suabo/elefunds-OXID/master/copy_this/modules/suabo/logo.png",
+    "price": "0.00",
+    "license": "unknown",
+    "desc": {
+        "en": "Elefunds module for OXID eShop",
+        "de": "Elefunds-Modul für OXID eShop"
+    },
+    "tags": [
+        "frontend",
+        "customer management",
+        "marketing"
+    ],
+    "versions": {
+      "1.0.2": {
+        "project": "https://github.com/suabo/elefunds-OXID/",
+        "url": "https://github.com/suabo/elefunds-OXID/archive/v1.0.2.zip",
+        "supported": [
+          "4.10",
+          "4.9"
+        ],
+        "mapping": [
+          {
+            "src": "copy_this/",
+            "dest": ""
+          }
+        ]
+      },
+        "1.0.1": {
+            "project": "https://github.com/suabo/elefunds-OXID/",
+            "url": "https://github.com/suabo/elefunds-OXID/archive/v1.0.1.zip",
+            "supported": [
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/",
+                    "dest": ""
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,40 @@
+{
+    "name": "OXID-Module-IDE",
+    "vendor": "dsb",
+	"id": "dsb_ide_helper",
+    "type": "oxid",
+    "picture": "https://raw.githubusercontent.com/DSB/Oxid-Module-IDE-Helper/master/modules/dsb/dsb_ide_helper/out/thumb.png",
+    "price": "0.00",
+    "license": "unknown",
+    "desc": {
+        "en": "An OXID module that creates parent classes on the disk and helps IDEs to auto complete OXID code",
+        "de": "Ein OXID-Module, welches Parent-Klassen auf die Platte schreibt und so der IDE beim Autocomplete für OXID Code zu helfen."
+    },
+    "tags": [
+        "backend",
+        "dev tools"
+    ],
+    "versions": {
+        "1.0.0": {
+            "project": "https://github.com/DSB/Oxid-Module-IDE-Helper",
+            "url": "https://github.com/DSB/Oxid-Module-IDE-Helper/archive/master.zip",
+            "supported": [
+                "5.3",
+                "5.2",
+                "5.1",
+                "5.0",
+                "4.10",
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.6"
+            ],
+            "mapping": [
+                {
+                    "src": "modules/dsb",
+                    "dest": "modules/dsb"
+                }
+            ]
+        }
+    }
+}

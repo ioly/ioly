@@ -1,0 +1,35 @@
+{
+    "name": "Sitemap (HTML)",
+    "vendor": "alphasys",
+    "id": "asy_sitemap",
+    "type": "oxid",
+    "picture": "https://www.alpha-sys.de/out/pictures/promo/module_logo.png",
+    "price": "75.00",
+    "license": "Commercial",
+    "desc": {
+        "de": "Dieses Modul generiert automatisch eine HTML-Sitemap für Ihren Shop. Damit können sich Ihre Kunden sehr schnell einen Überblick über Ihr komplettes Produktsortiment verschaffen.",
+        "en": "Oxid module which generates a HTML sitemap."
+    },
+    "tags": [
+        "marketing",
+        "seo",
+        "frontend"
+    ],
+    "versions": {
+        "1.1": {
+            "project": "https://www.alpha-sys.de/Oxid-Module/Sitemap-HTML.html",
+            "url": "",
+            "supported": [
+                "4.10",
+                "4.9",
+                "4.8"
+            ],
+            "mapping": [
+                {
+                    "src": "",
+                    "dest": ""
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,35 @@
+{
+    "name": "User Online Anzeige für OXID CE",
+    "vendor": "d3",
+    "type": "oxid",
+    "picture": "http://www.oxidmodule.com/out/mod/pictures/1/boxshot_p1.png",
+    "price": "0.00",
+    "license": "Commercial",
+    "id": "",
+    "desc": {
+        "en": "",
+        "de": "Lassen Sie sich anonym im Shop anzeigen, wie viele Benutzer zur Zeit Ihren Shop besuchen und welche Seiten angezeigt werden. "
+    },
+    "tags": [
+        "frontend",
+        "marketing"
+    ],
+    "versions": {
+        "": {
+            "project": "http://www.oxidmodule.com/kostenfreie-Module/User-Online-Anzeige-fuer-Oxid-CE-PE-EE.html",
+            "url": "",
+            "supported": [
+                "5.2",
+                "5.1",
+                "5.0",
+                "4.9",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

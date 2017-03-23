@@ -1,0 +1,39 @@
+{
+    "name": "Amazon Interface",
+    "vendor": "egatemedia",
+    "type": "oxid",
+    "picture": "http://www.egate-media.com/out/pictures/generated/product/1/380_340_75/ico_250x250__0005_interface.png",
+    "price": "1199.00",
+    "license": "Commercial",
+    "id": "",
+    "desc": {
+        "en": "",
+        "de": "Interface zu Amazon mit Artikel-Export und Bestell-Import."
+    },
+    "tags": [
+        "backend",
+        "interfaces",
+        "marketing",
+        "product presentation"
+    ],
+    "versions": {
+        "": {
+            "project": "http://www.egate-media.com/Oxid-Module/Interface/Amazon-Interface.html",
+            "url": "",
+            "supported": [
+                "5.3",
+                "5.2",
+                "5.1",
+                "5.0",
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.10"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

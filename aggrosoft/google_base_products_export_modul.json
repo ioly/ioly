@@ -1,0 +1,38 @@
+{
+    "name": "Google Base / Products Export Modul",
+    "vendor": "aggrosoft",
+    "type": "oxid",
+    "picture": "https://www.ecomponents.de/out/pictures/generated/product/1/147_209_75/googleproducts.png",
+    "price": "49.00",
+    "license": "Commercial",
+    "id": "",
+    "desc": {
+        "en": "",
+        "de": "Mit dem Modul \"AG Google Base Export\" sind Sie in der Lage mit nur einem Knopfdruck sämtliche Produkte Ihres Webshops in die Produktsuche von Google zu exportieren."
+    },
+    "tags": [
+        "backend",
+        "interfaces",
+        "product presentation"
+    ],
+    "versions": {
+        "": {
+            "project": "https://www.ecomponents.de/Module/Google-Base-Products-Export-Modul.html",
+            "url": "",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.6",
+                "4.5",
+                "4.4",
+                "4.3",
+                "4.10"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

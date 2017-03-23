@@ -1,0 +1,48 @@
+{
+    "name": "OXID Cookbook clear tmp",
+    "vendor": "jkrug",
+	"id": "ocb_cleartmp",
+    "type": "oxid",
+    "picture": "https://raw.githubusercontent.com/OXIDCookbook/ocb_cleartmp/master/cookbook.jpg",
+    "price": "0.00",
+    "license": "GNU",
+    "desc": {
+        "en": "This module adds a new option in the header to clear the tmp directory from each page",
+        "de": "Dieses Modul fügt eine neue Option im Seitenheader hinzu, um das tmp/-Verzeichnis zu leeren"
+    },
+    "tags": [
+        "backend",
+        "dev tools"
+    ],
+    "versions": {
+        "1.0.0-v47": {
+            "project": "https://github.com/OXIDCookbook/ocb_cleartmp",
+            "url": "https://github.com/OXIDCookbook/ocb_cleartmp/archive/master.zip",
+            "supported": [
+                "4.10",
+                "4.9",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "",
+                    "dest": "modules/ocb_cleartmp/"
+                }
+            ]
+        },
+        "1.0.0-v46": {
+            "project": "https://github.com/OXIDCookbook/ocb_cleartmp/tree/oxid_4.6",
+            "url": "https://github.com/OXIDCookbook/ocb_cleartmp/archive/oxid_4.6.zip",
+            "supported": [
+                "4.6"
+            ],
+            "mapping": [
+                {
+                    "src": "",
+                    "dest": "modules/ocb_cleartmp/"
+                }
+            ]
+        }
+    }
+}

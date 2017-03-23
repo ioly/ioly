@@ -1,0 +1,35 @@
+{
+    "name": "Exceptions-Benachrichtigung",
+    "vendor": "alphasys",
+    "id": "asy_exceptions",
+    "type": "oxid",
+    "picture": "https://raw.githubusercontent.com/Alpha-Sys/asy_exceptions/master/copy_this/modules/asy_exceptions/module_logo.png",
+    "price": "0.00",
+    "license": "GNU",
+    "desc": {
+        "de": "Dieses Modul versendet eine Email an eine zuvor konfiguririerte Email-Adresse so bald eine Exception im Shop aufgetreten ist.",
+        "en": "Send an email if an exception occurs."
+    },
+    "tags": [
+        "frontend",
+        "seo"
+    ],
+    "versions": {
+        "2.1": {
+            "project": "https://github.com/Alpha-Sys/asy_exceptions",
+            "url": "https://github.com/Alpha-Sys/asy_exceptions/archive/master.zip",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.6"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/",
+                    "dest": ""
+                }
+            ]
+        }
+    }
+}

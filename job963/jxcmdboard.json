@@ -1,0 +1,50 @@
+{
+    "name": "jxCmdBoard",
+    "vendor": "job963",
+	"id": "jxcmdboard",
+    "type": "oxid",
+    "picture": "https://raw.githubusercontent.com/job963/jxCmdBoard/master/copy_this/modules/jxmods/jxcmdboard/jxcmdboard.png",
+    "price": "0.00",
+    "license": "GNU",
+    "desc": {
+        "de": "OXID eShop Admin Modul für die Anzeige von Befehlen als Button-Tabelle",
+        "en": "OXID eShop admin module for displaying commands as button matrix"
+    },
+    "tags": [
+        "backend",
+        "admin tools"
+    ],
+    "versions": {
+        "master": {
+          "project": "https://github.com/job963/jxCmdBoard",
+          "url": "https://github.com/job963/jxCmdBoard/archive/master.zip",
+          "supported": [
+            "4.10",
+            "4.9",
+            "4.8",
+            "4.7"
+          ],
+        "mapping": [
+          {
+            "src": "copy_this/modules/jxmods/",
+            "dest": "modules/jxmods/"
+          }
+          ]},
+
+          "0.3": {
+            "project": "https://github.com/job963/jxCmdBoard",
+            "url": "https://github.com/job963/jxCmdBoard/archive/0.3.zip",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/modules/jxmods/",
+                    "dest": "modules/jxmods/"
+                }
+            ]
+        }
+    }
+}

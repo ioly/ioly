@@ -1,0 +1,38 @@
+{
+    "name": "B2B Staffelpreise",
+    "vendor": "egatemedia",
+    "type": "oxid",
+    "picture": "http://www.egate-media.com/out/pictures/generated/product/1/380_340_75/ico_250x250__0013_b2b(1).png",
+    "price": "149.00",
+    "license": "Commercial",
+    "id": "",
+    "desc": {
+        "en": "",
+        "de": "Die B2B Erweiterung zur Staffelpreisfunktionaliät."
+    },
+    "tags": [
+        "frontend",
+        "marketing",
+        "product presentation"
+    ],
+    "versions": {
+        "": {
+            "project": "http://www.egate-media.com/Oxid-Module/B2B/B2B-Staffel-preise.html",
+            "url": "",
+            "supported": [
+                "5.3",
+                "5.2",
+                "5.1",
+                "5.0",
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.10"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}

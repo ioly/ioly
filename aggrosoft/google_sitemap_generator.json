@@ -1,0 +1,38 @@
+{
+    "name": "Google Sitemap Generator",
+    "vendor": "aggrosoft",
+    "type": "oxid",
+    "picture": "https://www.ecomponents.de/out/pictures/generated/product/1/147_209_75/sitemap.png",
+    "price": "49.00",
+    "license": "Commercial",
+    "id": "",
+    "desc": {
+        "en": "",
+        "de": "Dieses Modul ermöglicht es Ihnen, eine XML-Sitemap zu erstellen und alle Seiten Ihres Shops automatisch darin eintragen zu lassen. "
+    },
+    "tags": [
+        "frontend",
+        "performance",
+        "seo"
+    ],
+    "versions": {
+        "": {
+            "project": "https://www.ecomponents.de/Module/Google-Sitemap-Generator.html",
+            "url": "",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7",
+                "4.6",
+                "4.5",
+                "4.4",
+                "4.3",
+                "4.10"
+            ],
+            "mapping": {
+                "src": "",
+                "dest": ""
+            }
+        }
+    }
+}
