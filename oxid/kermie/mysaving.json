@@ -1,0 +1,34 @@
+{
+    "name": "mysaving",
+    "vendor": "kermie",
+    "type": "oxid",
+    "price": "0.00",
+    "license": "GPLv3",
+    "desc": {
+        "en": "Shows the percentage of saving in percent on the product detail page close to the price information",
+        "de": "Zeigt die Ersparnis bei Streichpreisen in Prozent auf der Produktdetailseite nahe der Preisinformation",
+        "ru": "Показывает процент экономии на странице продукта закрыто до информации о ценах."
+    },
+    "tags": [
+        "frontend",
+        "price",
+        "discount"
+    ],
+    "versions": {
+        "0.9": {
+            "project": "https://github.com/kermie/mysaving",
+            "url": "https://github.com/kermie/mysaving/archive/fd40b6c6adc497f185ca60b48f4ab9dc89afd614.zip",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "/mst/",
+                    "dest": "modules/mst/"
+                }
+            ]
+        }
+    }
+}

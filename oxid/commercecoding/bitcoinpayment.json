@@ -1,0 +1,30 @@
+{
+    "name": "Bitcoin Payment",
+    "vendor": "commercecoding",
+    "type": "oxid",
+    "price": "0.00",
+    "license": "GNU",
+    "desc": {
+        "en": "Accept Bitcoins as payment method."
+    },
+    "tags": [
+        "frontend",
+        "payments"
+    ],
+    "versions": {
+        "0.4.0": {
+            "project": "https://github.com/CommerceCoding/oxid-bitcoin-payment",
+            "url": "https://github.com/CommerceCoding/oxid-bitcoin-payment/archive/master.zip",
+            "supported": [
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "src/copy_this/",
+                    "dest": ""
+                }
+            ]
+        }
+    }
+}

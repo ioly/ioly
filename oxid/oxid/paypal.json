@@ -1,0 +1,33 @@
+{
+    "name": "PayPal",
+    "vendor": "oxid",
+    "type": "oxid",
+    "price": "0.00",
+    "license": "GNU",
+    "desc": {
+        "en": "PayPal payment method for checkout."
+    },
+    "tags": [
+        "frontend",
+        "paypal",
+        "payment",
+        "checkout"
+    ],
+    "versions": {
+        "3.2.1": {
+            "project": "https://github.com/OXID-eSales/paypal/tree/v3.2.1",
+            "url": "https://github.com/OXID-eSales/paypal/archive/v3.2.1.zip",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "source/modules/oe/",
+                    "dest": "modules/oe/"
+                }
+            ]
+        }
+    }
+}

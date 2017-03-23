@@ -1,0 +1,31 @@
+{
+    "name": "diffToFreeShipping ",
+    "vendor": "jkrug",
+    "type": "oxid",
+    "price": "0.00",
+    "license": "unknown",
+    "desc": {
+        "en": "Module to show difference to free Shipping."
+    },
+    "tags": [
+        "frontend",
+        "basket",
+        "shipping"
+    ],
+    "versions": {
+        "1.1.0": {
+            "project": "https://github.com/jkrug/diffToFreeShipping",
+            "url": "https://github.com/jkrug/diffToFreeShipping/archive/master.zip",
+            "supported": [
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "",
+                    "dest": ""
+                }
+            ]
+        }
+    }
+}

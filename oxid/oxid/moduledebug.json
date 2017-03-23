@@ -1,0 +1,32 @@
+{
+    "name": "Module Debug",
+    "vendor": "oxid",
+    "type": "oxid",
+    "price": "0.00",
+    "license": "GNU",
+    "desc": {
+        "en": "Module for advanced control and troubleshooting."
+    },
+    "tags": [
+        "backend",
+        "debug",
+        "modules"
+    ],
+    "versions": {
+        "1.0.0": {
+            "project": "http://www.proudcommerce.com/Blog/OXID-Module-Debug-Modul.html",
+            "url": "http://www.oxid-module.eu/wp-content/uploads/2012/10/moduledebug.zip",
+            "supported": [
+                "4.8",
+                "4.7",
+                "4.6"
+            ],
+            "mapping": [
+                {
+                    "src": "",
+                    "dest": "modules/"
+                }
+            ]
+        }
+    }
+}

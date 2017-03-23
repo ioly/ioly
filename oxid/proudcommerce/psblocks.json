@@ -1,0 +1,33 @@
+{
+    "name": "psBlocks",
+    "vendor": "proudcommerce",
+    "type": "oxid",
+    "price": "0.00",
+    "license": "GNU",
+    "desc": {
+        "en": "Modul for managing OXID template blocks.",
+        "de": "Modul zum Verwalten (erstellen, löschen, ändern, aktivieren, deaktivieren) von OXID Blocks (oxblocks) im Shop-Admin."
+    },
+    "tags": [
+        "backend",
+        "oxblocks",
+        "modules"
+    ],
+    "versions": {
+        "1.1.0": {
+            "project": "https://github.com/proudcommerce/psBlocks",
+            "url": "https://github.com/proudcommerce/psBlocks/archive/144762d175923bcb8f6bf43d08a9a868a2a48158.zip",
+            "supported": [
+            	"4.9",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/",
+                    "dest": ""
+                }
+            ]
+        }
+    }
+}

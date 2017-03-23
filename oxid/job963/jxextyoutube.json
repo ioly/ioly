@@ -1,0 +1,36 @@
+{
+    "name": "jxExtYoutube",
+    "vendor": "job963",
+    "type": "oxid",
+    "price": "0.00",
+    "license": "GNU",
+    "desc": {
+        "de": "Erweiterung für eine konfigurierbare Anzeige von eingebetten YouTube und Vimeo Videos sowie Vererbung der Mediendateien an Varianten",
+        "en": "Extension for configurable Display of embedded YouTube and Vimeo Videos and inheritance of media files to variants"
+    },
+    "tags": [
+        "configure",
+        "media",
+        "video",
+        "youtube",
+        "settings",
+        "inherit"
+    ],
+    "versions": {
+        "0.2.0": {
+            "project": "https://github.com/job963/jxExtYoutube",
+            "url": "https://github.com/job963/jxExtYoutube/archive/v0.2.0.zip",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/modules/jxmods/",
+                    "dest": "modules/jxmods/"
+                }
+            ]
+        }
+    }
+}
