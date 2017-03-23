@@ -1,0 +1,46 @@
+{
+    "name": "OXID Dependency Manager",
+    "vendor": "n3xtor",
+    "type": "oxid",
+    "price": "0.00",
+    "license": "gpl",
+    "desc": {
+        "en": "Module for handling dependencies between modules in OXID CE/PE/EE http://blog.php-dev.info"
+    },
+    "tags": [
+        "backend",
+        "tools",
+        "dependency",
+        "modules"
+    ],
+    "versions": {
+        "master": {
+            "project": "https://github.com/N3XT0R/OXID-DependencyManager",
+            "url": "https://github.com/N3XT0R/OXID-DependencyManager/archive/master.zip",
+            "supported": [
+                "4.10",
+                "5.3"
+            ],
+            "mapping": [
+                {
+                    "src": "",
+                    "dest": "modules/ib_DependencyManager/"
+                }
+            ]
+        },
+        "1.0.0": {
+            "project": "https://github.com/N3XT0R/OXID-DependencyManager/tree/v1.0.0",
+            "url": "https://github.com/N3XT0R/OXID-DependencyManager/archive/v1.0.0.zip",
+            "supported": [
+                "4.9",
+                "5.2"
+            ],
+            "mapping": [
+                {
+                    "src": "",
+                    "dest": "modules/ib_DependencyManager/"
+                }
+            ]
+        }
+    }
+}

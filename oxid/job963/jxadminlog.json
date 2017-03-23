@@ -1,0 +1,35 @@
+{
+    "name": "jxAdminLog",
+    "vendor": "job963",
+    "type": "oxid",
+    "price": "0.00",
+    "license": "GNU",
+    "desc": {
+        "de": "Admin-Modul für die Anzeige der protokollierten Admin Aktionen an jedem Objekt und als Gesamtbericht",
+        "en": "Admin Module for Displaying logged administrator actions for each object and as complete report"
+    },
+    "tags": [
+        "backend",
+        "admin",
+        "log",
+        "logged",
+        "history"
+    ],
+    "versions": {
+        "0.3.0": {
+            "project": "https://github.com/job963/jxAdminLog",
+            "url": "https://github.com/job963/jxAdminLog/archive/v0.3.0.zip",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/modules/jxmods/",
+                    "dest": "modules/jxmods/"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,51 @@
+{
+    "name": "British English translations for OXID eShop",
+    "vendor": "otrance",
+    "type": "oxid",
+    "price": "0.00",
+    "license": "GPLv3",
+    "desc": {
+        "en": "British English language file translations for OXID eShop front end and admin panel"
+    },
+    "tags": [
+        "frontend",
+        "admin",
+        "translation",
+        "language"
+    ],
+    "versions": {
+        "4.9.2": {
+            "project": "https://github.com/OXIDprojects/languages",
+            "url": "https://github.com/OXIDprojects/languages/archive/master.zip",
+            "supported": [
+                "4.9",
+                "4.8"
+            ],
+            "mapping": [
+                {
+                    "src": "application/translations/en_UK/",
+                    "dest": "application/translations/en_UK/"
+                },
+                {
+                    "src": "application/views/azure/en_UK/",
+                    "dest": "application/views/azure/en_UK/"
+                },
+                {
+                    "src": "application/views/admin/en_UK/",
+                    "dest": "application/views/admin/en_UK/"
+                },
+                {
+                    "src": "out/azure/img/lang/en_UK.png",
+                    "dest": "out/azure/img/lang/"
+                }
+            ]
+        }
+    },
+    "hooks": {
+        "postinstall": {
+            "type": "overlay",
+            "message": "Please go to admin -> Master settings -> Languages. Create a new language by entering \"en_UK\" as locale and \"British English\" as name. If you find any mistakes please feel free to register at the translation center.",
+            "link": "http://translate.oxidforge.org"
+        }
+    }
+}

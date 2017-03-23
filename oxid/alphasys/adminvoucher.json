@@ -1,0 +1,32 @@
+{
+    "name": "asy_adminvoucher",
+    "vendor": "alphasys",
+    "type": "oxid",
+    "price": "0.00",
+    "license": "GNU",
+    "desc": {
+        "en": "Oxid admin module which allows to generate voucher codes with your own code structure."
+    },
+    "tags": [
+        "backend",
+        "vouchers",
+        "marketing"
+    ],
+    "versions": {
+        "1.7.0": {
+            "project": "https://github.com/Alpha-Sys/asy_adminvoucher",
+            "url": "https://github.com/Alpha-Sys/asy_adminvoucher/archive/master.zip",
+            "supported": [
+                "4.8",
+                "4.7",
+                "4.6"
+            ],
+            "mapping": [
+                {
+                    "src": "for_oxid_4.6_and_4.7_and_4.8/copy_this/",
+                    "dest": ""
+                }
+            ]
+        }
+    }
+}

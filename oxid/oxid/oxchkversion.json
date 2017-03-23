@@ -1,0 +1,32 @@
+{
+    "name": "oxchkversion",
+    "vendor": "oxid",
+    "type": "oxid",
+    "price": "0.00",
+    "license": "unkown",
+    "desc": {
+        "en": "This test checks your OXID eShop and assists you when updating. It detects if you missed to update files and tells you which file has been modified."
+    },
+    "tags": [
+        "backend",
+        "modules",
+        "testing"
+    ],
+    "versions": {
+        "3.2.1": {
+            "project": "https://github.com/tabsl/oxchkversion",
+            "url": "https://github.com/tabsl/oxchkversion/archive/v3.2.1.zip",
+            "supported": [
+                "4.7",
+                "4.6",
+                "4.5"
+            ],
+            "mapping": [
+                {
+                    "src": "oxchkversion.php",
+                    "dest": "oxchkversion.php"
+                }
+            ]
+        }
+    }
+}

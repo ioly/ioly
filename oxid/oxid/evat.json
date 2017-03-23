@@ -1,0 +1,34 @@
+{
+    "name": "eVAT",
+    "vendor": "oxid",
+    "type": "oxid",
+    "price": "0.00",
+    "license": "GNU",
+    "desc": {
+        "en": "This module implements requirements that is to allow an OXID eShop to comply with the EU regulations as specified by the EU VAT directive 1042/2013 regarding VAT for telecommunications, broadcasting and electronic services."
+    },
+    "tags": [
+        "frontend",
+        "vat",
+        "tax",
+        "payment",
+        "checkout"
+    ],
+    "versions": {
+        "1.0.0": {
+            "project": "https://github.com/OXID-eSales/vat_tbe_services",
+            "url": "https://github.com/OXID-eSales/vat_tbe_services/archive/b-dev.zip",
+            "supported": [
+                "4.9",
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "source/modules/oe/",
+                    "dest": "modules/oe/"
+                }
+            ]
+        }
+    }
+}

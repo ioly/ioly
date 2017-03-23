@@ -1,0 +1,30 @@
+{
+    "name": "psErrorLog",
+    "vendor": "proudcommerce",
+    "type": "oxid",
+    "price": "0.00",
+    "license": "GNU",
+    "desc": {
+        "en": "Saves and shows php error messages."
+    },
+    "tags": [
+        "backend",
+        "monitoring"
+    ],
+    "versions": {
+        "1.0.0": {
+            "project": "https://github.com/proudcommerce/psErrorLog",
+            "url": "https://github.com/proudcommerce/psErrorLog/archive/master.zip",
+            "supported": [
+                "4.8",
+                "4.7"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/",
+                    "dest": ""
+                }
+            ]
+        }
+    }
+}

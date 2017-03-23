@@ -1,0 +1,32 @@
+{
+    "name": "rex_LESS",
+    "vendor": "cukabeka",
+    "type": "redaxo",
+    "price": "0.00",
+    "license": "GNU",
+    "desc": {
+        "en": "This Addon includes the LESS Stylesheet Parser into REDAXO. It includes the lessPHP project (http://leafo.net/lessphp/) class. The Version Number of this addon corresponds with the lessPHP class version."
+    },
+    "tags": [
+        "less",
+        "php"
+    ],
+    "versions": {
+        "0.4.0": {
+            "project": "https://github.com/cukabeka/rex_LESS/",
+            "url": "https://github.com/cukabeka/rex_LESS/archive/92f6cd4d.zip",
+            "supported": [
+                "4.3",
+                "4.4",
+                "4.5",
+                "4.6"
+            ],
+            "mapping": [
+                {
+                    "src": "",
+                    "dest": "redaxo/include/addons/rex_less"
+                }
+            ]
+        }
+    }
+}

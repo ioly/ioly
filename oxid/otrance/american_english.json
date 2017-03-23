@@ -1,0 +1,51 @@
+{
+    "name": "American English translations for OXID eShop",
+    "vendor": "otrance",
+    "type": "oxid",
+    "price": "0.00",
+    "license": "GPLv3",
+    "desc": {
+        "en": "American English language file translations for OXID eShop front end and admin panel"
+    },
+    "tags": [
+        "frontend",
+        "admin",
+        "translation",
+        "language"
+    ],
+    "versions": {
+        "4.9.2": {
+            "project": "https://github.com/OXIDprojects/languages",
+            "url": "https://github.com/OXIDprojects/languages/archive/master.zip",
+            "supported": [
+                "4.9",
+                "4.8"
+            ],
+            "mapping": [
+                {
+                    "src": "application/translations/en_US/",
+                    "dest": "application/translations/en_US/"
+                },
+                {
+                    "src": "application/views/azure/en_US/",
+                    "dest": "application/views/azure/en_US/"
+                },
+                {
+                    "src": "application/views/admin/en_US/",
+                    "dest": "application/views/admin/en_US/"
+                },
+                {
+                    "src": "out/azure/img/lang/en_US.png",
+                    "dest": "out/azure/img/lang/"
+                }
+            ]
+        }
+    },
+    "hooks": {
+        "postinstall": {
+            "type": "overlay",
+            "message": "Please go to admin -> Master settings -> Languages. Create a new language by entering \"en_US\" as locale and \"American English\" as name. If you find any mistakes please feel free to register at the translation center.",
+            "link": "http://translate.oxidforge.org"
+        }
+    }
+}

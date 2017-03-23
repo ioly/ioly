@@ -1,0 +1,32 @@
+{
+    "name": "psCmsSnippets",
+    "vendor": "proudcommerce",
+    "type": "oxid",
+    "price": "0.00",
+    "license": "GNU",
+    "desc": {
+        "en": "Setting for CMS pages, which may not be accessible via browser."
+    },
+    "tags": [
+        "backend",
+        "content",
+        "cms"
+    ],
+    "versions": {
+        "1.1.0": {
+            "project": "https://github.com/proudcommerce/psCmsSnippets",
+            "url": "https://github.com/proudcommerce/psCmsSnippets/archive/9611e8db2c4dae38751a9f33e2af8dc98c4e9d0d.zip",
+            "supported": [
+                "4.8",
+                "4.7",
+                "4.9"
+            ],
+            "mapping": [
+                {
+                    "src": "copy_this/",
+                    "dest": ""
+                }
+            ]
+        }
+    }
+}
