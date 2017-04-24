@@ -1,3 +1,6 @@
+2.2.1 (2017-04-24)
+- fixed problem with trying to read non-recipe JSON files in cookbooks
+
 2.2.0 (2016-11-14)
 - added possibility to overwrite intial cookbook array in constructor
 

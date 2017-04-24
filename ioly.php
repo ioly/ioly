@@ -11,7 +11,7 @@
  * @author      Stefan Moises <stefan@rent-a-hero.de>
  * @license     MIT License http://opensource.org/licenses/MIT
  * @link        http://getioly.com/
- * @version     2.2.0
+ * @version     2.2.1
  */
 namespace ioly;
 
@@ -1252,6 +1252,12 @@ class ioly
                         $packageData = file_get_contents($file);
                         $package = json_decode($packageData, true);
                         if ($package !== null) {
+                            // easy out if no valid ioly recipe JSON ...
+                            if (!isset($package['versions']) || !is_array($package['versions'])) {
+                                //echo "\nNo versions found, probably no ioly package: " . $package['packageString'] . " in JSON file: " . $file;
+                                //print_r($package);
+                                continue;
+                            }
                             $package['_cookbook'] = $cookbookArchive;
                             $package['_filename'] = substr(
                                 basename($file),
