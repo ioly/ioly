@@ -1047,11 +1047,13 @@ class ioly
             unlink($tmpDir);
             mkdir($tmpDir);
             $zip = new \ZipArchive();
-            if ($zip->open($filesystem)) {
+            $res = $zip->open($filesystem);
+            if ($res === true) {
                 $zip->extractTo($tmpDir);
                 $zip->close();
-
                 $this->_writeLog("Dir contents: " . print_r(scandir($tmpDir), true));
+            } else {
+                $this->_writeLog("Could not open ZipArchive: " . var_export($res, true), true);
             }
             if ((strpos($version['url'], 'github.com') !== false)
                 || (strpos($version['url'], 'bitbucket.org') !== false)
