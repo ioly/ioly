@@ -1047,11 +1047,13 @@ class ioly
             unlink($tmpDir);
             mkdir($tmpDir);
             $zip = new \ZipArchive();
-            if ($zip->open($filesystem)) {
+            $res = $zip->open($filesystem);
+            if ($res === true) {
                 $zip->extractTo($tmpDir);
                 $zip->close();
-
                 $this->_writeLog("Dir contents: " . print_r(scandir($tmpDir), true));
+            } else {
+                $this->_writeLog("Could not open ZipArchive: " . var_export($res, true), true);
             }
             if ((strpos($version['url'], 'github.com') !== false)
                 || (strpos($version['url'], 'bitbucket.org') !== false)
@@ -1241,10 +1243,14 @@ class ioly
             chmod($tmpDir, 0777);
             chmod($cookbookArchive, 0777);
             $zip = new \ZipArchive();
-            if ($zip->open($cookbookArchive)) {
+            $res = $zip->open($cookbookArchive);
+            if ($res === true) {
                 $zip->extractTo($tmpDir);
                 $zip->close();
+            } else {
+                $this->_writeLog("Could not open ZipArchive: " . var_export($res, true), true);
             }
+
             if (is_writable($tmpDir)) {
                 $files = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($tmpDir));
                 foreach ($files as $file) {
